@@ -1,0 +1,6 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "steering_pcb-eagle-import")(type "KiCad")(uri "${KIPRJMOD}/../../../Resources/steering_pcb-eagle-import.kicad_sym")(options "")(descr ""))
+  (lib (name "10TPB220ML")(type "KiCad")(uri "${KIPRJMOD}/../../../Resources/10TPB220ML.kicad_sym")(options "")(descr ""))
+  (lib (name "Steering_Wheel_project")(type "KiCad")(uri "${KIPRJMOD}/../../../Resources/project_components.kicad_sym")(options "")(descr ""))
+)
