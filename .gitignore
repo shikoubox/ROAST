@@ -1,3 +1,9 @@
+##### Software
+*.pio
+*.vscode
+##### Software end
+
+##### PCB
 # For PCBs designed using KiCad: https://www.kicad.org/
 # Format documentation: https://kicad.org/help/file-formats/
 
@@ -29,3 +35,26 @@ fp-info-cache
 # Exported BOM files
 *.xml
 *.csv
+### KiCad ignore end
+### Eagle ignore
+# Eagle backup files
+*.b##
+*.s##
+*.b#*
+*.s#*
+*.l#*
+*.d#*
+
+# Eagle project file
+# Contains the windows that were last open and such, and shouldn't be shared
+*.epf
+
+# Eagle outputs
+CAMOutputs/
+*.job
+*.dxf
+*.zip
+*.txt
+*.csv
+### Eagle ignore end
+##### PCB end

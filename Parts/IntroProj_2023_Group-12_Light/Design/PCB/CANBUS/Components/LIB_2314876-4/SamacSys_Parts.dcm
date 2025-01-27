@@ -1,0 +1,15 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP NE555DR
+D Single Precision Timer
+K
+F http://www.ti.com/lit/ds/symlink/ne555.pdf
+$ENDCMP
+#
+$CMP 2314876-4
+D TE CONNECTIVITY - 2314876-4 - Board-To-Board Connector, 2 mm, 4 Contacts, Receptacle, AMPMODU Series, Through Hole, 1 Rows.
+K
+F https://www.te.com/commerce/DocumentDelivery/DDEController?Action=showdoc&DocId=Customer+Drawing%7F2307764%7FA%7Fpdf%7FEnglish%7FENG_CD_2307764_A.pdf%7F1-2314876-0
+$ENDCMP
+#
+#End Doc Library

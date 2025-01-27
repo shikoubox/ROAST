@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "controller",
+			"path": "controller"
+		},
+		{
+			"name": "userInput",
+			"path": "userInput"
+		},
+		{
+			"name": "sim",
+			"path": "sim"
+		}
+	],
+	"settings": {}
+}

@@ -1,0 +1,21 @@
+Circuit: * C:\Users\marti\OneDrive - Danmarks Tekniske Universitet\FagProjekt\Ltspice simulation\Half_Half_LLC_Schematic.asc
+
+.OP point found by inspection.
+
+Date: Sun Mar 15 17:47:01 2020
+Total elapsed time: 8.834 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 567670
+traniter = 567670
+tranpoints = 263483
+accept = 253399
+rejected = 10084
+matrix size = 15
+fillins = 8
+solver = Normal
+Matrix Compiler1: 1.27 KB object code size  0.4/0.3/[0.1]
+Matrix Compiler2: 1.21 KB object code size  0.2/0.3/[0.2]
+
