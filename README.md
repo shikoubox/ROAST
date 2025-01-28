@@ -4,7 +4,7 @@ Code and source files for all Solar Car parts and other related files. (e.g. PCB
 
 # Structure
 For parts, put all relevant for your part/project in a corresponding parts folder with, part and year.
-For files that are larger than 100 MB, please upload them to onedrive instead.
+For files that are larger than 100 MB, please upload them to OneDrive instead, and leave a link if relevant in this repository.
 
 # CAD
 All CAD is done in Solidworks.
@@ -14,3 +14,7 @@ Please provide technical drawings in .pdf, to avoid need for SolidWorks.
 All PCB design is done in KiCad.
 There are old projects done in Eagle, but Autodesk has killed the Eagle.
 Please provide schematics in .pdf, to avoid need for KiCad or Eagle.
+
+# Communication, discussion and questions
+Please use the discord:
+https://discord.gg/Wzs3dZkhpT
