@@ -58,3 +58,17 @@ CAMOutputs/
 *.csv
 ### Eagle ignore end
 ##### PCB end
+
+### Nasty files
+Management/Elektro fagprojekter/2022/Fagprojekt id+�er.docx
+Meetings/General/GeneralAssemblyM+�de11_04_23.docx
+Meetings/General/GeneralAssemblyM+�de17_01_23.docx
+Meetings/General/GeneralAssemblyM+�de23_11_22.docx
+Parts/cruise_control_2022/PROCES-GRP22-MEK2-Ingibjo��rgThorsteinsdottir.pdf
+Parts/energy_storage/battery/ADV thermal management - k+�ling.xlsx
+Parts/energy_storage/battery/Batteripr+�sentation_03_11_2022.pptx
+Parts/energy_storage/SV_ Opf+�lgning p+� 'DTU Roadrunners - Solar Team' m+�de 23_1-2020.eml
+Parts/light_2023/bilskitser/M+�l p+� bil.pdf
+Parts/light_2023/Design/Spice/���ަ�+�
+Parts/steering_wheel_2023/Freml+�ggelse disposition.docx
+
