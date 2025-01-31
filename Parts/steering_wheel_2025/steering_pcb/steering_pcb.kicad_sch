@@ -5687,22 +5687,16 @@
 		(uuid "14a63316-c012-4485-8a27-861892d445ee")
 	)
 	(junction
+		(at 134.62 130.81)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "15510e37-7695-43cd-b7b5-ddbc4039549d")
+	)
+	(junction
 		(at 67.31 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1695a0e7-4db3-4779-8b81-394dc48fd78d")
-	)
-	(junction
-		(at 121.92 124.46)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "1c28e3a9-923a-4ef2-a84d-f25c9decfbb9")
-	)
-	(junction
-		(at 125.73 121.92)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "20393df7-2e5b-46d8-8b0a-4bb514336585")
 	)
 	(junction
 		(at 246.38 129.54)
@@ -5715,12 +5709,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "35c7e8f1-6d5d-4107-aa75-e86cf9b931db")
-	)
-	(junction
-		(at 133.35 116.84)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3d1f2d35-c7be-4263-88b1-54df3a41b708")
 	)
 	(junction
 		(at 45.72 157.48)
@@ -5807,6 +5795,12 @@
 		(uuid "99f680ce-d9e4-4d9e-9694-51275ceea732")
 	)
 	(junction
+		(at 127 135.89)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "9cb3c2da-16e3-44c6-b99f-f20ea4dec120")
+	)
+	(junction
 		(at 274.32 129.54)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5823,6 +5817,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ae0f5fc8-70fe-4406-9703-31c7bcd581f7")
+	)
+	(junction
+		(at 130.81 133.35)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ba0692d6-0bb9-4fe3-801c-17aed2c2bfe5")
 	)
 	(junction
 		(at 260.35 54.61)
@@ -5873,6 +5873,12 @@
 		(uuid "e762f09d-7046-4ab9-85a7-11945c5a8dbf")
 	)
 	(junction
+		(at 123.19 138.43)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ed34c440-e3ed-43de-b8e7-d9ce467fe867")
+	)
+	(junction
 		(at 260.35 46.99)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5883,12 +5889,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fad1446e-9692-43a1-90fc-94a34dcd49be")
-	)
-	(junction
-		(at 129.54 119.38)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fb1a57ec-59d3-495e-9b31-67ae80583558")
 	)
 	(junction
 		(at 198.12 54.61)
@@ -5911,12 +5911,12 @@
 		(uuid "1d26ea7a-3dd8-407d-abb7-ebba3d003c97")
 	)
 	(no_connect
-		(at 111.76 147.32)
-		(uuid "740b2f86-ba10-422e-a9b3-ea16a9d13690")
-	)
-	(no_connect
 		(at 111.76 111.76)
 		(uuid "78354e72-d08c-4af4-a50c-e2ba8061893b")
+	)
+	(no_connect
+		(at 111.76 147.32)
+		(uuid "7db60a6f-ad7b-44e1-ac19-f3378711c964")
 	)
 	(no_connect
 		(at 45.72 147.32)
@@ -5947,6 +5947,16 @@
 			(type default)
 		)
 		(uuid "0069b07e-1aef-4abb-acaa-2b33a09eceea")
+	)
+	(wire
+		(pts
+			(xy 127 135.89) (xy 127 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "00fcf0a7-78df-417a-a014-d8f8e33a2342")
 	)
 	(wire
 		(pts
@@ -5990,16 +6000,6 @@
 	)
 	(wire
 		(pts
-			(xy 129.54 119.38) (xy 135.89 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0e6e93bc-1c5b-4f11-812a-bf4917f00fdb")
-	)
-	(wire
-		(pts
 			(xy 246.38 129.54) (xy 247.65 129.54)
 		)
 		(stroke
@@ -6007,16 +6007,6 @@
 			(type default)
 		)
 		(uuid "11538d08-93a1-4ca2-9e37-a31651f92344")
-	)
-	(wire
-		(pts
-			(xy 125.73 121.92) (xy 125.73 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1206f643-e20a-46ca-833d-fb3b0c1dd35b")
 	)
 	(wire
 		(pts
@@ -6037,6 +6027,16 @@
 			(type default)
 		)
 		(uuid "138151f6-3cb6-4ced-97f8-e0c3af456eca")
+	)
+	(wire
+		(pts
+			(xy 127 135.89) (xy 135.89 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14dd73ad-a614-4e72-bbc2-4ed31fc4ade0")
 	)
 	(wire
 		(pts
@@ -6140,16 +6140,6 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 124.46) (xy 121.92 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "209c30dd-858b-415e-a6cc-5b59717be26b")
-	)
-	(wire
-		(pts
 			(xy 67.31 36.83) (xy 67.31 45.72)
 		)
 		(stroke
@@ -6170,6 +6160,16 @@
 	)
 	(wire
 		(pts
+			(xy 123.19 138.43) (xy 123.19 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "29e9c879-050c-4966-b081-d9eb66790b52")
+	)
+	(wire
+		(pts
 			(xy 66.04 48.26) (xy 69.85 48.26)
 		)
 		(stroke
@@ -6180,16 +6180,6 @@
 	)
 	(wire
 		(pts
-			(xy 133.35 116.84) (xy 133.35 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2a214e75-c0c2-4c66-87a7-56a6c7a38761")
-	)
-	(wire
-		(pts
 			(xy 199.39 127) (xy 199.39 129.54)
 		)
 		(stroke
@@ -6197,6 +6187,16 @@
 			(type default)
 		)
 		(uuid "2f1a3580-2d06-4997-bde5-f7a97b3a4751")
+	)
+	(wire
+		(pts
+			(xy 111.76 132.08) (xy 115.57 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2fb44856-ae63-44c7-8963-d5f465ddf58f")
 	)
 	(wire
 		(pts
@@ -6247,6 +6247,16 @@
 			(type default)
 		)
 		(uuid "3d36a242-2b29-4425-80ae-3f55e7d7b0a4")
+	)
+	(wire
+		(pts
+			(xy 115.57 130.81) (xy 115.57 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e86db41-9b95-4f20-81ef-c083887480dc")
 	)
 	(wire
 		(pts
@@ -6350,13 +6360,13 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 116.84) (xy 133.35 116.84)
+			(xy 115.57 135.89) (xy 115.57 137.16)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "4b1dcf10-0970-414e-bf0a-63b87e62c097")
+		(uuid "48787731-ba44-454f-aa7d-5efe71de86cf")
 	)
 	(wire
 		(pts
@@ -6430,6 +6440,16 @@
 	)
 	(wire
 		(pts
+			(xy 115.57 133.35) (xy 130.81 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "50dbefe0-17a3-47d6-b064-ad0ebf4542ec")
+	)
+	(wire
+		(pts
 			(xy 26.67 152.4) (xy 26.67 162.56)
 		)
 		(stroke
@@ -6437,16 +6457,6 @@
 			(type default)
 		)
 		(uuid "52c0dbdf-e77f-474c-bae4-b4847e813fed")
-	)
-	(wire
-		(pts
-			(xy 129.54 119.38) (xy 129.54 129.54)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "548d0569-cd43-49bf-a085-2bb4d0e54b0f")
 	)
 	(wire
 		(pts
@@ -6460,16 +6470,6 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 124.46) (xy 121.92 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "58e043d7-49ec-447f-947e-947a8d5a7d2d")
-	)
-	(wire
-		(pts
 			(xy 85.09 52.07) (xy 85.09 38.1)
 		)
 		(stroke
@@ -6477,16 +6477,6 @@
 			(type default)
 		)
 		(uuid "5920a951-5dfa-418a-a9e7-eb86619b85a4")
-	)
-	(wire
-		(pts
-			(xy 133.35 116.84) (xy 135.89 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5936a058-ea34-4871-bd32-94dfb241031c")
 	)
 	(wire
 		(pts
@@ -6540,13 +6530,13 @@
 	)
 	(wire
 		(pts
-			(xy 125.73 121.92) (xy 135.89 121.92)
+			(xy 115.57 138.43) (xy 115.57 142.24)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "61096a85-a5ab-464e-9399-36093e5d173c")
+		(uuid "60bef234-2fe4-447a-9fe1-938185966747")
 	)
 	(wire
 		(pts
@@ -6790,16 +6780,6 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 119.38) (xy 129.54 119.38)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "923f4edb-0c3d-40db-8cfa-a1d43eab694f")
-	)
-	(wire
-		(pts
 			(xy 198.12 31.75) (xy 198.12 36.83)
 		)
 		(stroke
@@ -6860,16 +6840,6 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 121.92) (xy 125.73 121.92)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "9cbdaddd-206b-428f-9342-b4df1a6fa1d8")
-	)
-	(wire
-		(pts
 			(xy 171.45 129.54) (xy 185.42 129.54)
 		)
 		(stroke
@@ -6877,6 +6847,16 @@
 			(type default)
 		)
 		(uuid "9dbdb8ea-8af4-4be7-8d8e-b0d6832e396a")
+	)
+	(wire
+		(pts
+			(xy 115.57 130.81) (xy 134.62 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ef1566c-79f5-43b7-836b-e1e4402a694e")
 	)
 	(wire
 		(pts
@@ -6897,6 +6877,16 @@
 			(type default)
 		)
 		(uuid "a47ff046-3336-41f9-ad44-a4e430fc378d")
+	)
+	(wire
+		(pts
+			(xy 111.76 127) (xy 115.57 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a61434fb-91a2-4f3d-a2d1-bfb0de6d66e0")
 	)
 	(wire
 		(pts
@@ -6980,6 +6970,16 @@
 	)
 	(wire
 		(pts
+			(xy 130.81 133.35) (xy 135.89 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bce45cad-826e-4d8d-9161-fd40b70ed8e2")
+	)
+	(wire
+		(pts
 			(xy 34.29 152.4) (xy 34.29 157.48)
 		)
 		(stroke
@@ -6987,6 +6987,16 @@
 			(type default)
 		)
 		(uuid "c04bec6a-2c28-463d-8c45-f49303a04a00")
+	)
+	(wire
+		(pts
+			(xy 130.81 133.35) (xy 130.81 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c0517be8-3d11-4d32-b687-36d3e2131624")
 	)
 	(wire
 		(pts
@@ -7017,6 +7027,16 @@
 			(type default)
 		)
 		(uuid "c3848718-1cdc-49a0-8439-de863ed9d02f")
+	)
+	(wire
+		(pts
+			(xy 115.57 135.89) (xy 127 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c6728cf7-28d8-408f-bf3e-405ac27073ed")
 	)
 	(wire
 		(pts
@@ -7080,6 +7100,16 @@
 	)
 	(wire
 		(pts
+			(xy 134.62 130.81) (xy 134.62 139.7)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cfbafa52-c1c0-4bc7-80f8-04bc0841e3e8")
+	)
+	(wire
+		(pts
 			(xy 184.15 54.61) (xy 170.18 54.61)
 		)
 		(stroke
@@ -7090,6 +7120,16 @@
 	)
 	(wire
 		(pts
+			(xy 115.57 137.16) (xy 111.76 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d3eaac9a-4029-47a9-b472-a03fc077f963")
+	)
+	(wire
+		(pts
 			(xy 246.38 121.92) (xy 246.38 129.54)
 		)
 		(stroke
@@ -7097,6 +7137,16 @@
 			(type default)
 		)
 		(uuid "d6a9e7db-f698-405c-bf7c-4bd557ecdb8a")
+	)
+	(wire
+		(pts
+			(xy 115.57 133.35) (xy 115.57 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6f05b28-1531-43d4-b6d4-aafddf00137e")
 	)
 	(wire
 		(pts
@@ -7140,6 +7190,16 @@
 	)
 	(wire
 		(pts
+			(xy 123.19 138.43) (xy 135.89 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e4183fcd-bf0e-48f4-94b1-e4d8853d090c")
+	)
+	(wire
+		(pts
 			(xy 82.55 44.45) (xy 74.93 44.45)
 		)
 		(stroke
@@ -7150,16 +7210,6 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 124.46) (xy 135.89 124.46)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e4e59467-874e-4da6-9c44-cbe6090b6c07")
-	)
-	(wire
-		(pts
 			(xy 45.72 43.18) (xy 77.47 43.18)
 		)
 		(stroke
@@ -7167,6 +7217,26 @@
 			(type default)
 		)
 		(uuid "e58d198f-e3b0-4f73-8d61-799cda6c6556")
+	)
+	(wire
+		(pts
+			(xy 115.57 138.43) (xy 123.19 138.43)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e5b3459a-6ad3-4e67-92f7-0331d30a5983")
+	)
+	(wire
+		(pts
+			(xy 111.76 142.24) (xy 115.57 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e67af766-fae1-40c9-ba94-2a52fac05398")
 	)
 	(wire
 		(pts
@@ -7217,6 +7287,16 @@
 			(type default)
 		)
 		(uuid "f49558a6-4577-4acd-844f-6f1e12d6ade4")
+	)
+	(wire
+		(pts
+			(xy 134.62 130.81) (xy 135.89 130.81)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f866a6ba-9ac6-4845-b8b7-83ba4a0a0431")
 	)
 	(wire
 		(pts
@@ -12569,7 +12649,7 @@
 	)
 	(global_label "CAN_H"
 		(shape input)
-		(at 184.15 80.01 0)
+		(at 184.15 82.55 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12579,7 +12659,7 @@
 		)
 		(uuid "10df114f-a683-4a2c-9767-e8dc510c594d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 191.2145 80.01 0)
+			(at 191.2145 82.55 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -12613,7 +12693,7 @@
 	)
 	(global_label "CAN_L"
 		(shape input)
-		(at 184.15 82.55 0)
+		(at 184.15 80.01 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -12623,7 +12703,7 @@
 		)
 		(uuid "140a08ef-c9fe-4a7b-9ca6-b55a89c529d1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 190.9764 82.55 0)
+			(at 190.9764 80.01 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14027,6 +14107,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 123.19 144.78 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0295af7e-389d-4fde-bd38-e5949b33c129")
+		(property "Reference" "#PWR0102"
+			(at 123.19 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 123.19 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 123.19 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 123.19 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 123.19 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c0b4a498-96d9-433f-b5f5-a0813b8a89d9")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
+					(reference "#PWR0102")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "+5V_1")
 		(lib_id "power:+5V")
 		(at 274.32 128.27 0)
@@ -14088,71 +14233,6 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
 					(reference "#PWRe0101")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 125.73 134.62 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0bfb1833-f999-4724-85fd-5067eaf0994f")
-		(property "Reference" "#PWR0104"
-			(at 125.73 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 125.73 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 125.73 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 125.73 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 125.73 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5d270b02-dbfb-4568-862b-55a07d71ebbf")
-		)
-		(instances
-			(project "steering_pcb"
-				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
-					(reference "#PWR0104")
 					(unit 1)
 				)
 			)
@@ -14329,101 +14409,6 @@
 			(project ""
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
 					(reference "C5")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small")
-		(at 129.54 132.08 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0f6d47f8-cf7f-4b5b-881e-e8433af51087")
-		(property "Reference" "R87"
-			(at 127.508 133.096 90)
-			(effects
-				(font
-					(size 0.9 0.9)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "10k"
-			(at 129.54 132.08 90)
-			(effects
-				(font
-					(size 0.9 0.9)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 129.54 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
-			(at 129.54 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 129.54 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C25531"
-			(at 129.54 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 129.54 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 129.54 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "81e8d8ff-aff4-47fb-a07f-6eb3c2d512a1")
-		)
-		(pin "2"
-			(uuid "aef30f79-d354-4bdf-9074-17594232ae28")
-		)
-		(instances
-			(project "steering_pcb"
-				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
-					(reference "R87")
 					(unit 1)
 				)
 			)
@@ -15934,6 +15919,196 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_Small")
+		(at 134.62 142.24 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "36841276-1c6e-452c-934d-b13714089c11")
+		(property "Reference" "R89"
+			(at 132.588 143.256 90)
+			(effects
+				(font
+					(size 0.9 0.9)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10k"
+			(at 134.62 142.24 90)
+			(effects
+				(font
+					(size 0.9 0.9)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 134.62 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
+			(at 134.62 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 134.62 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C25531"
+			(at 134.62 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 134.62 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 134.62 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fd949468-fb11-426f-a77f-32c3c499f2a1")
+		)
+		(pin "2"
+			(uuid "6338115a-3b1e-417f-9f4d-57e00a2b92fe")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
+					(reference "R89")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 130.81 142.24 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3af19d92-2d4a-473e-a27b-f9a82f1ec2a6")
+		(property "Reference" "R88"
+			(at 128.778 143.256 90)
+			(effects
+				(font
+					(size 0.9 0.9)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10k"
+			(at 130.81 142.24 90)
+			(effects
+				(font
+					(size 0.9 0.9)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 130.81 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
+			(at 130.81 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 130.81 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C25531"
+			(at 130.81 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 130.81 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 130.81 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "3b9bda69-0c0f-421a-9f4d-9c84e177ab58")
+		)
+		(pin "2"
+			(uuid "36945290-b7ed-41d7-939e-c4e95b6482a1")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
+					(reference "R88")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+12V")
 		(at 39.37 152.4 0)
 		(unit 1)
@@ -16000,6 +16175,71 @@
 	)
 	(symbol
 		(lib_id "power:GND")
+		(at 134.62 144.78 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3d0e095e-2317-4e43-8652-d72725291641")
+		(property "Reference" "#PWR0105"
+			(at 134.62 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 134.62 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 134.62 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 134.62 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 134.62 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bc898a0c-ddda-4cc9-b48f-9a6eb191f55b")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
+					(reference "#PWR0105")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
 		(at 45.72 179.07 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -16058,101 +16298,6 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
 					(reference "#PWR023")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small")
-		(at 125.73 132.08 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3e0854a8-db2a-4108-844a-594f087ef213")
-		(property "Reference" "R88"
-			(at 123.698 133.096 90)
-			(effects
-				(font
-					(size 0.9 0.9)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "10k"
-			(at 125.73 132.08 90)
-			(effects
-				(font
-					(size 0.9 0.9)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 125.73 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
-			(at 125.73 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 125.73 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C25531"
-			(at 125.73 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 125.73 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 125.73 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b17b758b-a270-46c9-b763-67207e154127")
-		)
-		(pin "2"
-			(uuid "12f3a210-70aa-4398-8cdb-1ebc97194a66")
-		)
-		(instances
-			(project "steering_pcb"
-				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
-					(reference "R88")
 					(unit 1)
 				)
 			)
@@ -16562,6 +16707,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 127 144.78 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5e65dd1f-edf9-4560-ae8f-7506f09cbf8e")
+		(property "Reference" "#PWR0103"
+			(at 127 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 127 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 127 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 127 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 127 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "399ae6d9-e25b-4330-9aea-bd85e62656d0")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
+					(reference "#PWR0103")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 260.35 50.8 0)
 		(mirror y)
@@ -16736,83 +16946,6 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
 					(reference "#PWR022")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:Conn_01x04_Pin")
-		(at 140.97 121.92 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "68f4806e-c691-4fbe-8043-beaa263e7fe0")
-		(property "Reference" "J14"
-			(at 142.24 119.3799 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "Conn_01x04_Pin"
-			(at 142.24 121.9199 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x04_P1.00mm_Vertical"
-			(at 140.97 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 140.97 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x04, script generated"
-			(at 140.97 121.92 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "ee2582e0-1493-49bb-8c1b-fb62989a1c37")
-		)
-		(pin "4"
-			(uuid "aa0162e9-d1ed-4e28-b0b6-d72cd024346f")
-		)
-		(pin "3"
-			(uuid "c6b60123-54b1-47fa-a28a-64f16cd9d0b1")
-		)
-		(pin "2"
-			(uuid "67208fe9-181b-4678-8b91-2a1efad00805")
-		)
-		(instances
-			(project ""
-				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
-					(reference "J14")
 					(unit 1)
 				)
 			)
@@ -17557,6 +17690,101 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_Small")
+		(at 127 142.24 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "834f83fe-d9d3-4fd0-9dc4-ea5cf1719176")
+		(property "Reference" "R87"
+			(at 124.968 143.256 90)
+			(effects
+				(font
+					(size 0.9 0.9)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10k"
+			(at 127 142.24 90)
+			(effects
+				(font
+					(size 0.9 0.9)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 127 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
+			(at 127 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 127 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C25531"
+			(at 127 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 127 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 127 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "03a39b43-3fe6-416b-b3ec-a5d4e469a95c")
+		)
+		(pin "2"
+			(uuid "6fc4a03d-1aa5-466e-8d94-fe493a89ab15")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
+					(reference "R87")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:+12V")
 		(at 199.39 127 0)
 		(unit 1)
@@ -17617,101 +17845,6 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
 					(reference "#PWR05")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small")
-		(at 133.35 132.08 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8509093b-2a17-4f0a-b9e1-78574e41bf88")
-		(property "Reference" "R86"
-			(at 131.318 133.096 90)
-			(effects
-				(font
-					(size 0.9 0.9)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "10k"
-			(at 133.35 132.08 90)
-			(effects
-				(font
-					(size 0.9 0.9)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 133.35 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
-			(at 133.35 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 133.35 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C25531"
-			(at 133.35 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 133.35 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 133.35 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "9b841728-a510-4034-9ef1-4235a0f7f85b")
-		)
-		(pin "2"
-			(uuid "ab1a1419-7d24-4aa1-9221-d31eb276aae1")
-		)
-		(instances
-			(project "steering_pcb"
-				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
-					(reference "R86")
 					(unit 1)
 				)
 			)
@@ -17808,71 +17941,6 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
 					(reference "C6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 121.92 134.62 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8886605f-7b78-4fbd-9f24-3f7929cc3e69")
-		(property "Reference" "#PWR0105"
-			(at 121.92 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 121.92 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 121.92 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 121.92 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 121.92 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "883c8bf7-b1aa-4cf5-ac4e-f4ade72ea5f5")
-		)
-		(instances
-			(project "steering_pcb"
-				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
-					(reference "#PWR0105")
 					(unit 1)
 				)
 			)
@@ -17996,6 +18064,71 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
 					(reference "C7")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 130.81 144.78 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8bb793ca-6369-41d5-a1e3-13c627bba5ba")
+		(property "Reference" "#PWR0104"
+			(at 130.81 151.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 130.81 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 130.81 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 130.81 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 130.81 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7bafd705-9175-439e-bb8d-637b94dedb4f")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
+					(reference "#PWR0104")
 					(unit 1)
 				)
 			)
@@ -18132,6 +18265,101 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_Small")
+		(at 123.19 142.24 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "99fb07fe-ffcd-441d-9a37-0db376226cff")
+		(property "Reference" "R86"
+			(at 121.158 143.256 90)
+			(effects
+				(font
+					(size 0.9 0.9)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "10k"
+			(at 123.19 142.24 90)
+			(effects
+				(font
+					(size 0.9 0.9)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 123.19 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
+			(at 123.19 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 123.19 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C25531"
+			(at 123.19 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 123.19 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 123.19 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "029d0ded-6572-4fcc-b00e-40601aa52f43")
+		)
+		(pin "2"
+			(uuid "bdd950f2-ef9d-4788-9334-868735f68f51")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
+					(reference "R86")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "+5V_2")
 		(lib_id "power:+5V")
 		(at 269.24 31.75 0)
@@ -18193,101 +18421,6 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
 					(reference "#PWR067")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small")
-		(at 121.92 132.08 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b29d0c86-33cf-40b3-9903-e68ef1b64cfe")
-		(property "Reference" "R89"
-			(at 119.888 133.096 90)
-			(effects
-				(font
-					(size 0.9 0.9)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "10k"
-			(at 121.92 132.08 90)
-			(effects
-				(font
-					(size 0.9 0.9)
-				)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 121.92 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
-			(at 121.92 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small symbol"
-			(at 121.92 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C25531"
-			(at 121.92 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 121.92 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 121.92 132.08 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "bc6c28f3-a677-4c81-8060-17b08c16c9d9")
-		)
-		(pin "2"
-			(uuid "9b559db3-9288-4d44-b58b-6711ca5197cb")
-		)
-		(instances
-			(project "steering_pcb"
-				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
-					(reference "R89")
 					(unit 1)
 				)
 			)
@@ -18399,71 +18532,6 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
 					(reference "L3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 129.54 134.62 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "b5902674-01d6-4348-9521-0c710558ee69")
-		(property "Reference" "#PWR0103"
-			(at 129.54 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 129.54 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 129.54 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 129.54 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 129.54 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "05aed9ef-3432-4eda-90f9-0d49a46d867f")
-		)
-		(instances
-			(project "steering_pcb"
-				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
-					(reference "#PWR0103")
 					(unit 1)
 				)
 			)
@@ -18816,71 +18884,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 133.35 134.62 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "dbf62896-d8cf-4947-b8fd-104fd1924c72")
-		(property "Reference" "#PWR0102"
-			(at 133.35 140.97 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 133.35 139.7 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 133.35 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 133.35 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 133.35 134.62 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "fae0f429-198a-419f-87be-8d6c5e0ac4fd")
-		)
-		(instances
-			(project "steering_pcb"
-				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
-					(reference "#PWR0102")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
 		(at 229.87 76.2 0)
 		(unit 1)
@@ -19122,6 +19125,83 @@
 			(project ""
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
 					(reference "D15")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:Conn_01x04_Pin")
+		(at 140.97 135.89 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f3f88578-f5d9-4048-8344-452cbcb6c7c7")
+		(property "Reference" "J14"
+			(at 142.24 133.3499 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "Conn_01x04_Pin"
+			(at 142.24 135.8899 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x04_P1.00mm_Vertical"
+			(at 140.97 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 140.97 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Generic connector, single row, 01x04, script generated"
+			(at 140.97 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "199a73f3-9118-4c88-ac7d-43186f5249a5")
+		)
+		(pin "4"
+			(uuid "973987a2-2901-4bf2-a838-8961ad30b1a7")
+		)
+		(pin "3"
+			(uuid "8c400035-2e97-4640-9ac1-2965c4757cc9")
+		)
+		(pin "2"
+			(uuid "5c63310f-9bd7-4a16-8c27-ddf2b5bdd2e3")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
+					(reference "J14")
 					(unit 1)
 				)
 			)
