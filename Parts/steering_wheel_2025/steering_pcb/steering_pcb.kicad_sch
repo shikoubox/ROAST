@@ -12497,7 +12497,7 @@
 		)
 		(uuid "b07cf242-630d-46e8-bbbc-46409ef8fbb6")
 	)
-	(text "PCB for Solar Car steering wheel\n12 input connectors that is capable of 4 buttons, 3 LEDs, or a mix.\nintegrated CAN receiver and transceiver\nGyroscope\nIntegrated switch mode PSU\netc."
+	(text "PCB for Solar Car steering wheel\n12 input connectors that is capable of 4 buttons, 3 LEDs, or a mix.\n4 extra button inputs for paddles behind\nintegrated CAN receiver and transceiver\nGyroscope\nIntegrated switch mode PSU\netc."
 		(exclude_from_sim no)
 		(at 178.308 167.386 0)
 		(effects

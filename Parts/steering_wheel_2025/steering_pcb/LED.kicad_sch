@@ -5759,16 +5759,27 @@
 			"uq1rxylnVbwAAAAASUVORK5CYII="
 		)
 	)
-	(text "Transistor for turning on LEDs\nThe 2N7002 requires a Vgs of around 2-4V to turn\non fully"
+	(text "Transistor for turning on LEDs\nThe 2N7002 requires a Vgs of around 2-4V to turn\non fully\n\nBZX84C3V3TS-7-F is a zener diode that blocks for voltages below 3.3v.\n"
 		(exclude_from_sim no)
-		(at 14.478 122.936 0)
+		(at 14.478 120.142 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "242d8a87-2ddc-4a77-94be-4384f4c1ea8b")
+	)
+	(text "Using other buttons than x_0, the 7V connection as HIGH is neccessary.\nFor x_0, one can get away with a 5V HIGH connection."
+		(exclude_from_sim no)
+		(at 14.478 143.51 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "242d8a87-2ddc-4a77-94be-4384f4c1ea8b")
+		(uuid "35dcdb3a-d56a-42be-b0c4-d35fc89ada6a")
 	)
 	(text "Suitable current-limiting resistor\n\nBy burning LEDs\n\nBlue and Green works fine at 3.3v\nRed works fine at 3.3V with 47Ω resistor\n\nFor red LED\n(3v-2.3v)/15mA = 47Ω\n(5v-2.3v)/15mA = 180Ω\n(7v-2.3v)/15mA = 313Ω\n\nFor green and blue at higher voltages\n(5v-3.3v)/15mA = 113Ω\n(7v-3.3v)/15mA = 246Ω"
 		(exclude_from_sim no)
