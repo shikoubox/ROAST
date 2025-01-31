@@ -1,0 +1,1008 @@
+classdef BMSapp < matlab.apps.AppBase
+
+    % Properties that correspond to app components
+    properties (Access = public)
+        UIFigure                       matlab.ui.Figure
+        QuitButton                     matlab.ui.control.Button
+        EditField                      matlab.ui.control.EditField
+        AlertLamp                      matlab.ui.control.Lamp
+        AlertLampLabel                 matlab.ui.control.Label
+        TabGroup                       matlab.ui.container.TabGroup
+        OverviewTab                    matlab.ui.container.Tab
+        RPMEditField                   matlab.ui.control.NumericEditField
+        RPMEditFieldLabel              matlab.ui.control.Label
+        Solar                          matlab.ui.control.NumericEditField
+        SolarWEditFieldLabel           matlab.ui.control.Label
+        RangekmEditFieldLabel          matlab.ui.control.Label
+        Range                          matlab.ui.control.NumericEditField
+        GoalkmEditField                matlab.ui.control.NumericEditField
+        GoalkmEditFieldLabel           matlab.ui.control.Label
+        Usage                          matlab.ui.control.NumericEditField
+        PowerkWEditFieldLabel          matlab.ui.control.Label
+        Lamp_3                         matlab.ui.control.Lamp
+        Lamp_2                         matlab.ui.control.Lamp
+        Lamp                           matlab.ui.control.Lamp
+        Capacity                       matlab.ui.control.NumericEditField
+        CapacityLabel                  matlab.ui.control.Label
+        TempC                          matlab.ui.control.NumericEditField
+        TempCEditFieldLabel            matlab.ui.control.Label
+        Speed                          matlab.ui.control.NumericEditField
+        SpeedkmhEditFieldLabel         matlab.ui.control.Label
+        UIAxes                         matlab.ui.control.UIAxes
+        BatteryTab                     matlab.ui.container.Tab
+        TabGroup2                      matlab.ui.container.TabGroup
+        BMSTab                         matlab.ui.container.Tab
+        TAUX11                         matlab.ui.control.NumericEditField
+        TAUX11EditFieldLabel           matlab.ui.control.Label
+        TAUX10                         matlab.ui.control.NumericEditField
+        TAUX10EditFieldLabel           matlab.ui.control.Label
+        TAUX9                          matlab.ui.control.NumericEditField
+        TAUX9EditFieldLabel            matlab.ui.control.Label
+        TAUX8                          matlab.ui.control.NumericEditField
+        TAUX8EditFieldLabel            matlab.ui.control.Label
+        TAUX7                          matlab.ui.control.NumericEditField
+        TAUX7EditFieldLabel            matlab.ui.control.Label
+        TAUX6                          matlab.ui.control.NumericEditField
+        TAUX6EditFieldLabel            matlab.ui.control.Label
+        TAUX5                          matlab.ui.control.NumericEditField
+        TAUX5EditFieldLabel            matlab.ui.control.Label
+        TAUX4                          matlab.ui.control.NumericEditField
+        TAUX4EditFieldLabel            matlab.ui.control.Label
+        TAUX3                          matlab.ui.control.NumericEditField
+        TAUX3EditFieldLabel            matlab.ui.control.Label
+        TAUX2                          matlab.ui.control.NumericEditField
+        TAUX2EditFieldLabel            matlab.ui.control.Label
+        TAUX1                          matlab.ui.control.NumericEditField
+        TAUX1EditFieldLabel            matlab.ui.control.Label
+        CMUstatusTab                   matlab.ui.container.Tab
+        HighestcelltemperatureLabel    matlab.ui.control.Label
+        TemperatureEditField_2         matlab.ui.control.NumericEditField
+        TemperatureEditField_2Label    matlab.ui.control.Label
+        CellEditField_4                matlab.ui.control.NumericEditField
+        CellEditField_4Label           matlab.ui.control.Label
+        CellCMUEditField_4             matlab.ui.control.NumericEditField
+        CellCMUEditField_4Label        matlab.ui.control.Label
+        LowestcelltemperatureLabel     matlab.ui.control.Label
+        TemperatureEditField           matlab.ui.control.NumericEditField
+        TemperatureEditFieldLabel      matlab.ui.control.Label
+        CellEditField_3                matlab.ui.control.NumericEditField
+        CellEditField_3Label           matlab.ui.control.Label
+        CellCMUEditField_3             matlab.ui.control.NumericEditField
+        CellCMUEditField_3Label        matlab.ui.control.Label
+        HighestcellvoltageLabel        matlab.ui.control.Label
+        VoltagemVEditField_2           matlab.ui.control.NumericEditField
+        VoltagemVEditField_2Label      matlab.ui.control.Label
+        CellEditField_2                matlab.ui.control.NumericEditField
+        CellEditField_2Label           matlab.ui.control.Label
+        CellCMUEditField_2             matlab.ui.control.NumericEditField
+        CellCMUEditField_2Label        matlab.ui.control.Label
+        CellEditField                  matlab.ui.control.NumericEditField
+        CellEditFieldLabel             matlab.ui.control.Label
+        LowestcellvoltageLabel         matlab.ui.control.Label
+        CellCMUEditField               matlab.ui.control.NumericEditField
+        CellCMUEditFieldLabel          matlab.ui.control.Label
+        VoltagemVEditField             matlab.ui.control.NumericEditField
+        VoltagemVEditFieldLabel        matlab.ui.control.Label
+        SettingsTab                    matlab.ui.container.Tab
+        numCMU                         matlab.ui.control.NumericEditField
+        numCMUEditFieldLabel           matlab.ui.control.Label
+        WeightkgEditField              matlab.ui.control.NumericEditField
+        WeightkgEditFieldLabel         matlab.ui.control.Label
+        TravelhourshEditField          matlab.ui.control.NumericEditField
+        TravelhourshEditFieldLabel     matlab.ui.control.Label
+        TraveldistancemEditField       matlab.ui.control.NumericEditField
+        TraveldistancemEditFieldLabel  matlab.ui.control.Label
+        CANTab                         matlab.ui.container.Tab
+        RequestchargeButton            matlab.ui.control.Button
+        RequestloadButton              matlab.ui.control.Button
+        CANinputSwitch                 matlab.ui.control.Switch
+        CANinputSwitchLabel            matlab.ui.control.Label
+        DF8                            matlab.ui.control.NumericEditField
+        DF8EditFieldLabel              matlab.ui.control.Label
+        DF7                            matlab.ui.control.NumericEditField
+        DF7EditFieldLabel              matlab.ui.control.Label
+        DF6                            matlab.ui.control.NumericEditField
+        DF6EditFieldLabel              matlab.ui.control.Label
+        DF5                            matlab.ui.control.NumericEditField
+        DF5EditFieldLabel              matlab.ui.control.Label
+        DF4                            matlab.ui.control.NumericEditField
+        DF4EditFieldLabel              matlab.ui.control.Label
+        DF3                            matlab.ui.control.NumericEditField
+        DF3EditFieldLabel              matlab.ui.control.Label
+        DF2                            matlab.ui.control.NumericEditField
+        DF2EditFieldLabel              matlab.ui.control.Label
+        DF1                            matlab.ui.control.NumericEditField
+        DF1EditFieldLabel              matlab.ui.control.Label
+        Len                            matlab.ui.control.NumericEditField
+        LenEditFieldLabel              matlab.ui.control.Label
+        RTR                            matlab.ui.control.NumericEditField
+        RTREditFieldLabel              matlab.ui.control.Label
+        ID                             matlab.ui.control.NumericEditField
+        IDEditFieldLabel               matlab.ui.control.Label
+    end
+
+    
+    properties (Access = private)
+        Timer = 0;  % Timer for updating the GUI with Matlab script values
+        tabs
+        TabVol      % CMU cell voltage tab
+    end
+    
+    methods (Access = public)
+        
+        function TimerCallback(app, obj, event)
+            % General data
+            [dSpeed, dSOH, dSOC, dCap, dSol, dUsage, dRange] = passData();
+            app.Speed.Value = dSpeed*3.6;
+            app.Capacity.Value = dSOC*100;
+            app.Usage.Value = dUsage*0.001;
+            app.Solar.Value = dSol;
+            app.Range.Value = dRange*0.001;
+            
+            % CAN data display
+            %[ID,RTR,Len,Data] = RxCan(Ch1);
+            %app.ID.Value = ID;
+            %app.RTR.Value = RTR;
+            %app.Len.Value = Len;
+            %app.DF1.Value = bitand(bitsrl(Data, 56),255);
+            %app.DF2.Value = bitand(bitsrl(Data, 48),255);
+            %app.DF3.Value = bitand(bitsrl(Data, 40),255);
+            %app.DF4.Value = bitand(bitsrl(Data, 32),255);
+            %app.DF5.Value = bitand(bitsrl(Data, 24),255);
+            %app.DF6.Value = bitand(bitsrl(Data, 16),255);
+            %app.DF7.Value = bitand(bitsrl(Data, 8),255);
+            %app.DF8.Value = bitand(Data,255);
+            
+            % Temperature
+            switch ID
+                case 20     % PACK_Q_REMAINING_NOMINAL
+                    app.Capacity.Value = Data;
+                case 138    % AUX_T1
+                    app.TAUX1.Value = Data;
+                case 139    % AUX_T2
+                    app.TAUX2.Value = Data;
+                case 140    % AUX_T3
+                    app.TAUX3.Value = Data;
+                case 141    % AUX_T4
+                    app.TAUX4.Value = Data;
+                case 142    % AUX_T5
+                    app.TAUX5.Value = Data;
+                case 143    % AUX_T6
+                    app.TAUX6.Value = Data;
+                case 144    % AUX_T7
+                    app.TAUX7.Value = Data;
+                case 145    % AUX_T8
+                    app.TAUX8.Value = Data;
+                case 146    % AUX_T9
+                    app.TAUX9.Value = Data;
+                case 147    % AUX_T10
+                    app.TAUX10.Value = Data;
+                case 148    % AUX_T11
+                    app.TAUX11.Value = Data;
+                case 149    % 
+                    app.TAUX3.Value = Data;
+                case 971    % CELL_T_AVG
+                    app.TempC.Value = Data;
+                otherwise
+                    % Implement something
+            end
+        end
+        
+        function numTab(app, obj, event)
+            % Creates sub tab groups for the voltage tab
+            
+            % Set up tab group
+            app.TabVol = uitabgroup(app.CMUstatusTab); % app.TabGroup
+            app.TabVol.Position = [0, 62, 325, 350];
+            
+            % Specify the total number of tabs
+            nTabs = app.numCMU.Value;    % Including MainTab
+            
+            % Set up the main tab
+            app.tabs = cell(1,nTabs);
+            app.tabs{1} = uitab(app.TabVol,'Title','CMU 1'); % Create main tab
+            
+            % Setup table for values
+            uit = uitable('Parent',app.tabs{1});
+            load("dummycelldata.mat","-mat","CMU");
+            t = table(CMU{1,1}.Number,CMU{1,1}.Voltage,CMU{1,1}.Temperature);
+            uit.Data = t;
+            uit.ColumnName = {'Cell number','Voltage','Temperature'};
+            uit.ColumnWidth = {'auto','auto','auto'};
+            
+            % Create additional tabs
+            for i = 2:nTabs
+                app.tabs{i} = uitab(app.TabVol,'Title',['CMU ' num2str(i)]);
+                uit = uitable('Parent',app.tabs{i});
+
+                t = table(CMU{1,i}.Number,CMU{1,i}.Voltage,CMU{1,i}.Temperature);
+                uit.Data = t;
+                uit.ColumnName = {'Cell number','Voltage','Temperature'};
+                uit.ColumnWidth = {'auto','auto','auto'};
+            end
+        end
+    end
+    
+
+    % Callbacks that handle component events
+    methods (Access = private)
+
+        % Code that executes after component creation
+        function startupFcn(app)
+            % Timer for continuous update
+            app.Timer = timer('Period',1,'ExecutionMode','fixedSpacing','TasksToExecute', Inf);
+            app.Timer.TimerFcn = @app.TimerCallback; % Timer callback
+            start(app.Timer);
+            app.numTab;
+        end
+
+        % Button pushed function: QuitButton
+        function QuitButtonPushed(app, event)
+            stop(app.Timer);
+            %close(app.UIFigure);
+        end
+
+        % Button pushed function: RequestloadButton
+        function RequestloadButtonPushed(app, event)
+            % Setup CAN message
+            txmessage = canMessage(291,false,8);
+            % Data, any value other than zero will trigger an active request
+            load = 1;
+            charge = 0;
+            staging = 0;
+            % Compiling message
+            txmessage.Data = ([0 0 0 0 0 staging charge load])
+            % txmessage.Remote = true;
+            % Selecting the CAN channel
+            txcanch = canChannel('PEAK-System','PCAN_USBBUS1', 1);
+            start(txcanch)
+            transmit(txcanch,txmessage)
+            % Receive staging request
+            rxCanCh = canChannel('PEAK-System','PCAN_USBBUS1', 1);
+            filterAllowOnly(rxCanCh, 291, "Standard");
+            rxmessage = receive(rxCanCh, Inf)
+            % Wait for staging request
+            i = 0;
+            stgFlag = 0;
+            while stgFlag ~= 1
+                transmit(txcanch,txmessage)
+                rxmessage = receive(rxCanCh, Inf)
+                i = i + 1;
+                if rxmessage.Data[5] == 1
+                    stgFlag = 1;
+                elseif i == 500
+                    break
+                end
+            end
+            if stgFlag == 1
+                staging = 1;
+                txmessage.Data = ([0 0 0 0 0 staging charge load])
+                transmit(txcanch,txmessage)
+            end
+            
+        end
+
+        % Button pushed function: RequestchargeButton
+        function RequestchargeButtonPushed(app, event)
+            % Setup CAN message
+            message = canMessage(291,false,8);
+            % Data, any value other than zero will trigger an active request
+            load = 0;
+            charge = 1;
+            staging = 0;
+            % Compiling message
+            message.Data = ([0 0 0 0 0 staging charge load])
+            % message.Remote = true;
+            % Selecting the CAN channel
+            canch = canChannel('MathWorks','Virtual 1', 1);
+            start(canch)
+            transmit(canch,message)
+        end
+
+        % Callback function
+        function RequeststagingButtonPushed(app, event)
+            % Setup CAN message
+            message = canMessage(291,false,8);
+            % Data, any value other than zero will trigger an active request
+            load = 0;
+            charge = 0;
+            staging = 1;
+            % Compiling message
+            message.Data = ([0 0 0 0 0 staging charge load])
+            % message.Remote = true;
+            % Selecting the CAN channel
+            canch = canChannel('MathWorks','Virtual 1', 1);
+            start(canch)
+            transmit(canch,message)
+        end
+    end
+
+    % Component initialization
+    methods (Access = private)
+
+        % Create UIFigure and components
+        function createComponents(app)
+
+            % Create UIFigure and hide until all components are created
+            app.UIFigure = uifigure('Visible', 'off');
+            app.UIFigure.Position = [100 100 640 480];
+            app.UIFigure.Name = 'MATLAB App';
+
+            % Create TabGroup
+            app.TabGroup = uitabgroup(app.UIFigure);
+            app.TabGroup.Position = [1 -7 640 459];
+
+            % Create OverviewTab
+            app.OverviewTab = uitab(app.TabGroup);
+            app.OverviewTab.Title = 'Overview';
+
+            % Create UIAxes
+            app.UIAxes = uiaxes(app.OverviewTab);
+            title(app.UIAxes, 'Optimal')
+            xlabel(app.UIAxes, 'X')
+            ylabel(app.UIAxes, 'Y')
+            zlabel(app.UIAxes, 'Z')
+            app.UIAxes.Position = [1 193 630 243];
+
+            % Create SpeedkmhEditFieldLabel
+            app.SpeedkmhEditFieldLabel = uilabel(app.OverviewTab);
+            app.SpeedkmhEditFieldLabel.HorizontalAlignment = 'right';
+            app.SpeedkmhEditFieldLabel.FontSize = 20;
+            app.SpeedkmhEditFieldLabel.Position = [0 137 123 25];
+            app.SpeedkmhEditFieldLabel.Text = 'Speed [km/h]';
+
+            % Create Speed
+            app.Speed = uieditfield(app.OverviewTab, 'numeric');
+            app.Speed.Editable = 'off';
+            app.Speed.FontSize = 20;
+            app.Speed.Position = [138 137 62 25];
+
+            % Create TempCEditFieldLabel
+            app.TempCEditFieldLabel = uilabel(app.OverviewTab);
+            app.TempCEditFieldLabel.HorizontalAlignment = 'right';
+            app.TempCEditFieldLabel.FontSize = 20;
+            app.TempCEditFieldLabel.Position = [30 93 94 25];
+            app.TempCEditFieldLabel.Text = 'Temp [°C]';
+
+            % Create TempC
+            app.TempC = uieditfield(app.OverviewTab, 'numeric');
+            app.TempC.Editable = 'off';
+            app.TempC.FontSize = 20;
+            app.TempC.Position = [138 93 62 25];
+
+            % Create CapacityLabel
+            app.CapacityLabel = uilabel(app.OverviewTab);
+            app.CapacityLabel.HorizontalAlignment = 'right';
+            app.CapacityLabel.FontSize = 20;
+            app.CapacityLabel.Position = [5 51 118 25];
+            app.CapacityLabel.Text = 'Capacity [%]';
+
+            % Create Capacity
+            app.Capacity = uieditfield(app.OverviewTab, 'numeric');
+            app.Capacity.Editable = 'off';
+            app.Capacity.FontSize = 20;
+            app.Capacity.Position = [138 51 62 25];
+            app.Capacity.Value = 100;
+
+            % Create Lamp
+            app.Lamp = uilamp(app.OverviewTab);
+            app.Lamp.Position = [207 139 20 20];
+
+            % Create Lamp_2
+            app.Lamp_2 = uilamp(app.OverviewTab);
+            app.Lamp_2.Position = [207 95 20 20];
+
+            % Create Lamp_3
+            app.Lamp_3 = uilamp(app.OverviewTab);
+            app.Lamp_3.Position = [207 53 20 20];
+
+            % Create PowerkWEditFieldLabel
+            app.PowerkWEditFieldLabel = uilabel(app.OverviewTab);
+            app.PowerkWEditFieldLabel.HorizontalAlignment = 'right';
+            app.PowerkWEditFieldLabel.FontSize = 20;
+            app.PowerkWEditFieldLabel.Position = [236 137 107 25];
+            app.PowerkWEditFieldLabel.Text = 'Power [kW]';
+
+            % Create Usage
+            app.Usage = uieditfield(app.OverviewTab, 'numeric');
+            app.Usage.Editable = 'off';
+            app.Usage.FontSize = 20;
+            app.Usage.Position = [358 137 62 25];
+
+            % Create GoalkmEditFieldLabel
+            app.GoalkmEditFieldLabel = uilabel(app.OverviewTab);
+            app.GoalkmEditFieldLabel.HorizontalAlignment = 'right';
+            app.GoalkmEditFieldLabel.FontSize = 20;
+            app.GoalkmEditFieldLabel.Position = [252 93 91 25];
+            app.GoalkmEditFieldLabel.Text = 'Goal [km]';
+
+            % Create GoalkmEditField
+            app.GoalkmEditField = uieditfield(app.OverviewTab, 'numeric');
+            app.GoalkmEditField.Editable = 'off';
+            app.GoalkmEditField.FontSize = 20;
+            app.GoalkmEditField.Position = [358 93 62 25];
+            app.GoalkmEditField.Value = 588;
+
+            % Create Range
+            app.Range = uieditfield(app.OverviewTab, 'numeric');
+            app.Range.Editable = 'off';
+            app.Range.FontSize = 20;
+            app.Range.Position = [358 51 62 25];
+
+            % Create RangekmEditFieldLabel
+            app.RangekmEditFieldLabel = uilabel(app.OverviewTab);
+            app.RangekmEditFieldLabel.HorizontalAlignment = 'right';
+            app.RangekmEditFieldLabel.FontSize = 20;
+            app.RangekmEditFieldLabel.Position = [236 51 107 25];
+            app.RangekmEditFieldLabel.Text = 'Range [km]';
+
+            % Create SolarWEditFieldLabel
+            app.SolarWEditFieldLabel = uilabel(app.OverviewTab);
+            app.SolarWEditFieldLabel.HorizontalAlignment = 'right';
+            app.SolarWEditFieldLabel.FontSize = 20;
+            app.SolarWEditFieldLabel.Position = [457 137 87 25];
+            app.SolarWEditFieldLabel.Text = 'Solar [W]';
+
+            % Create Solar
+            app.Solar = uieditfield(app.OverviewTab, 'numeric');
+            app.Solar.Editable = 'off';
+            app.Solar.FontSize = 20;
+            app.Solar.Position = [559 137 62 25];
+
+            % Create RPMEditFieldLabel
+            app.RPMEditFieldLabel = uilabel(app.OverviewTab);
+            app.RPMEditFieldLabel.HorizontalAlignment = 'right';
+            app.RPMEditFieldLabel.FontSize = 20;
+            app.RPMEditFieldLabel.Position = [494 93 50 25];
+            app.RPMEditFieldLabel.Text = 'RPM';
+
+            % Create RPMEditField
+            app.RPMEditField = uieditfield(app.OverviewTab, 'numeric');
+            app.RPMEditField.Editable = 'off';
+            app.RPMEditField.FontSize = 20;
+            app.RPMEditField.Position = [559 93 62 25];
+
+            % Create BatteryTab
+            app.BatteryTab = uitab(app.TabGroup);
+            app.BatteryTab.Title = 'Battery';
+
+            % Create TabGroup2
+            app.TabGroup2 = uitabgroup(app.BatteryTab);
+            app.TabGroup2.Position = [0 1 640 435];
+
+            % Create BMSTab
+            app.BMSTab = uitab(app.TabGroup2);
+            app.BMSTab.Title = 'BMS';
+
+            % Create TAUX1EditFieldLabel
+            app.TAUX1EditFieldLabel = uilabel(app.BMSTab);
+            app.TAUX1EditFieldLabel.HorizontalAlignment = 'right';
+            app.TAUX1EditFieldLabel.Position = [463 358 51 22];
+            app.TAUX1EditFieldLabel.Text = 'T-AUX-1';
+
+            % Create TAUX1
+            app.TAUX1 = uieditfield(app.BMSTab, 'numeric');
+            app.TAUX1.Position = [529 358 100 22];
+
+            % Create TAUX2EditFieldLabel
+            app.TAUX2EditFieldLabel = uilabel(app.BMSTab);
+            app.TAUX2EditFieldLabel.HorizontalAlignment = 'right';
+            app.TAUX2EditFieldLabel.Position = [463 325 51 22];
+            app.TAUX2EditFieldLabel.Text = 'T-AUX-2';
+
+            % Create TAUX2
+            app.TAUX2 = uieditfield(app.BMSTab, 'numeric');
+            app.TAUX2.Position = [529 325 100 22];
+
+            % Create TAUX3EditFieldLabel
+            app.TAUX3EditFieldLabel = uilabel(app.BMSTab);
+            app.TAUX3EditFieldLabel.HorizontalAlignment = 'right';
+            app.TAUX3EditFieldLabel.Position = [463 292 51 22];
+            app.TAUX3EditFieldLabel.Text = 'T-AUX-3';
+
+            % Create TAUX3
+            app.TAUX3 = uieditfield(app.BMSTab, 'numeric');
+            app.TAUX3.Position = [529 292 100 22];
+
+            % Create TAUX4EditFieldLabel
+            app.TAUX4EditFieldLabel = uilabel(app.BMSTab);
+            app.TAUX4EditFieldLabel.HorizontalAlignment = 'right';
+            app.TAUX4EditFieldLabel.Position = [463 259 51 22];
+            app.TAUX4EditFieldLabel.Text = 'T-AUX-4';
+
+            % Create TAUX4
+            app.TAUX4 = uieditfield(app.BMSTab, 'numeric');
+            app.TAUX4.Position = [529 259 100 22];
+
+            % Create TAUX5EditFieldLabel
+            app.TAUX5EditFieldLabel = uilabel(app.BMSTab);
+            app.TAUX5EditFieldLabel.HorizontalAlignment = 'right';
+            app.TAUX5EditFieldLabel.Position = [463 226 51 22];
+            app.TAUX5EditFieldLabel.Text = 'T-AUX-5';
+
+            % Create TAUX5
+            app.TAUX5 = uieditfield(app.BMSTab, 'numeric');
+            app.TAUX5.Position = [529 226 100 22];
+
+            % Create TAUX6EditFieldLabel
+            app.TAUX6EditFieldLabel = uilabel(app.BMSTab);
+            app.TAUX6EditFieldLabel.HorizontalAlignment = 'right';
+            app.TAUX6EditFieldLabel.Position = [463 193 51 22];
+            app.TAUX6EditFieldLabel.Text = 'T-AUX-6';
+
+            % Create TAUX6
+            app.TAUX6 = uieditfield(app.BMSTab, 'numeric');
+            app.TAUX6.Position = [529 193 100 22];
+
+            % Create TAUX7EditFieldLabel
+            app.TAUX7EditFieldLabel = uilabel(app.BMSTab);
+            app.TAUX7EditFieldLabel.HorizontalAlignment = 'right';
+            app.TAUX7EditFieldLabel.Position = [463 160 51 22];
+            app.TAUX7EditFieldLabel.Text = 'T-AUX-7';
+
+            % Create TAUX7
+            app.TAUX7 = uieditfield(app.BMSTab, 'numeric');
+            app.TAUX7.Position = [529 160 100 22];
+
+            % Create TAUX8EditFieldLabel
+            app.TAUX8EditFieldLabel = uilabel(app.BMSTab);
+            app.TAUX8EditFieldLabel.HorizontalAlignment = 'right';
+            app.TAUX8EditFieldLabel.Position = [463 127 51 22];
+            app.TAUX8EditFieldLabel.Text = 'T-AUX-8';
+
+            % Create TAUX8
+            app.TAUX8 = uieditfield(app.BMSTab, 'numeric');
+            app.TAUX8.Position = [529 127 100 22];
+
+            % Create TAUX9EditFieldLabel
+            app.TAUX9EditFieldLabel = uilabel(app.BMSTab);
+            app.TAUX9EditFieldLabel.HorizontalAlignment = 'right';
+            app.TAUX9EditFieldLabel.Position = [463 94 51 22];
+            app.TAUX9EditFieldLabel.Text = 'T-AUX-9';
+
+            % Create TAUX9
+            app.TAUX9 = uieditfield(app.BMSTab, 'numeric');
+            app.TAUX9.Position = [529 94 100 22];
+
+            % Create TAUX10EditFieldLabel
+            app.TAUX10EditFieldLabel = uilabel(app.BMSTab);
+            app.TAUX10EditFieldLabel.HorizontalAlignment = 'right';
+            app.TAUX10EditFieldLabel.Position = [456 62 58 22];
+            app.TAUX10EditFieldLabel.Text = 'T-AUX-10';
+
+            % Create TAUX10
+            app.TAUX10 = uieditfield(app.BMSTab, 'numeric');
+            app.TAUX10.Position = [529 62 100 22];
+
+            % Create TAUX11EditFieldLabel
+            app.TAUX11EditFieldLabel = uilabel(app.BMSTab);
+            app.TAUX11EditFieldLabel.HorizontalAlignment = 'right';
+            app.TAUX11EditFieldLabel.Position = [457 30 57 22];
+            app.TAUX11EditFieldLabel.Text = 'T-AUX-11';
+
+            % Create TAUX11
+            app.TAUX11 = uieditfield(app.BMSTab, 'numeric');
+            app.TAUX11.Position = [529 30 100 22];
+
+            % Create CMUstatusTab
+            app.CMUstatusTab = uitab(app.TabGroup2);
+            app.CMUstatusTab.Title = 'CMU status';
+
+            % Create VoltagemVEditFieldLabel
+            app.VoltagemVEditFieldLabel = uilabel(app.CMUstatusTab);
+            app.VoltagemVEditFieldLabel.HorizontalAlignment = 'right';
+            app.VoltagemVEditFieldLabel.Position = [346 353 74 22];
+            app.VoltagemVEditFieldLabel.Text = 'Voltage [mV]';
+
+            % Create VoltagemVEditField
+            app.VoltagemVEditField = uieditfield(app.CMUstatusTab, 'numeric');
+            app.VoltagemVEditField.Position = [435 353 38 22];
+
+            % Create CellCMUEditFieldLabel
+            app.CellCMUEditFieldLabel = uilabel(app.CMUstatusTab);
+            app.CellCMUEditFieldLabel.HorizontalAlignment = 'right';
+            app.CellCMUEditFieldLabel.Position = [363 322 57 22];
+            app.CellCMUEditFieldLabel.Text = 'Cell CMU';
+
+            % Create CellCMUEditField
+            app.CellCMUEditField = uieditfield(app.CMUstatusTab, 'numeric');
+            app.CellCMUEditField.Position = [435 322 38 22];
+
+            % Create LowestcellvoltageLabel
+            app.LowestcellvoltageLabel = uilabel(app.CMUstatusTab);
+            app.LowestcellvoltageLabel.FontWeight = 'bold';
+            app.LowestcellvoltageLabel.Position = [358 378 115 22];
+            app.LowestcellvoltageLabel.Text = 'Lowest cell voltage';
+
+            % Create CellEditFieldLabel
+            app.CellEditFieldLabel = uilabel(app.CMUstatusTab);
+            app.CellEditFieldLabel.HorizontalAlignment = 'right';
+            app.CellEditFieldLabel.Position = [394 292 26 22];
+            app.CellEditFieldLabel.Text = 'Cell';
+
+            % Create CellEditField
+            app.CellEditField = uieditfield(app.CMUstatusTab, 'numeric');
+            app.CellEditField.Position = [435 292 38 22];
+
+            % Create CellCMUEditField_2Label
+            app.CellCMUEditField_2Label = uilabel(app.CMUstatusTab);
+            app.CellCMUEditField_2Label.HorizontalAlignment = 'right';
+            app.CellCMUEditField_2Label.Position = [517 322 57 22];
+            app.CellCMUEditField_2Label.Text = 'Cell CMU';
+
+            % Create CellCMUEditField_2
+            app.CellCMUEditField_2 = uieditfield(app.CMUstatusTab, 'numeric');
+            app.CellCMUEditField_2.Position = [589 322 38 22];
+
+            % Create CellEditField_2Label
+            app.CellEditField_2Label = uilabel(app.CMUstatusTab);
+            app.CellEditField_2Label.HorizontalAlignment = 'right';
+            app.CellEditField_2Label.Position = [548 292 26 22];
+            app.CellEditField_2Label.Text = 'Cell';
+
+            % Create CellEditField_2
+            app.CellEditField_2 = uieditfield(app.CMUstatusTab, 'numeric');
+            app.CellEditField_2.Position = [589 292 38 22];
+
+            % Create VoltagemVEditField_2Label
+            app.VoltagemVEditField_2Label = uilabel(app.CMUstatusTab);
+            app.VoltagemVEditField_2Label.HorizontalAlignment = 'right';
+            app.VoltagemVEditField_2Label.Position = [500 353 74 22];
+            app.VoltagemVEditField_2Label.Text = 'Voltage [mV]';
+
+            % Create VoltagemVEditField_2
+            app.VoltagemVEditField_2 = uieditfield(app.CMUstatusTab, 'numeric');
+            app.VoltagemVEditField_2.Position = [589 353 38 22];
+
+            % Create HighestcellvoltageLabel
+            app.HighestcellvoltageLabel = uilabel(app.CMUstatusTab);
+            app.HighestcellvoltageLabel.FontWeight = 'bold';
+            app.HighestcellvoltageLabel.Position = [509 378 118 22];
+            app.HighestcellvoltageLabel.Text = 'Highest cell voltage';
+
+            % Create CellCMUEditField_3Label
+            app.CellCMUEditField_3Label = uilabel(app.CMUstatusTab);
+            app.CellCMUEditField_3Label.HorizontalAlignment = 'right';
+            app.CellCMUEditField_3Label.Position = [363 203 57 22];
+            app.CellCMUEditField_3Label.Text = 'Cell CMU';
+
+            % Create CellCMUEditField_3
+            app.CellCMUEditField_3 = uieditfield(app.CMUstatusTab, 'numeric');
+            app.CellCMUEditField_3.Position = [435 203 38 22];
+
+            % Create CellEditField_3Label
+            app.CellEditField_3Label = uilabel(app.CMUstatusTab);
+            app.CellEditField_3Label.HorizontalAlignment = 'right';
+            app.CellEditField_3Label.Position = [394 173 26 22];
+            app.CellEditField_3Label.Text = 'Cell';
+
+            % Create CellEditField_3
+            app.CellEditField_3 = uieditfield(app.CMUstatusTab, 'numeric');
+            app.CellEditField_3.Position = [435 173 38 22];
+
+            % Create TemperatureEditFieldLabel
+            app.TemperatureEditFieldLabel = uilabel(app.CMUstatusTab);
+            app.TemperatureEditFieldLabel.HorizontalAlignment = 'right';
+            app.TemperatureEditFieldLabel.Position = [347 234 73 22];
+            app.TemperatureEditFieldLabel.Text = 'Temperature';
+
+            % Create TemperatureEditField
+            app.TemperatureEditField = uieditfield(app.CMUstatusTab, 'numeric');
+            app.TemperatureEditField.Position = [435 234 38 22];
+
+            % Create LowestcelltemperatureLabel
+            app.LowestcelltemperatureLabel = uilabel(app.CMUstatusTab);
+            app.LowestcelltemperatureLabel.FontWeight = 'bold';
+            app.LowestcelltemperatureLabel.Position = [330 259 143 22];
+            app.LowestcelltemperatureLabel.Text = 'Lowest cell temperature';
+
+            % Create CellCMUEditField_4Label
+            app.CellCMUEditField_4Label = uilabel(app.CMUstatusTab);
+            app.CellCMUEditField_4Label.HorizontalAlignment = 'right';
+            app.CellCMUEditField_4Label.Position = [517 203 57 22];
+            app.CellCMUEditField_4Label.Text = 'Cell CMU';
+
+            % Create CellCMUEditField_4
+            app.CellCMUEditField_4 = uieditfield(app.CMUstatusTab, 'numeric');
+            app.CellCMUEditField_4.Position = [589 203 38 22];
+
+            % Create CellEditField_4Label
+            app.CellEditField_4Label = uilabel(app.CMUstatusTab);
+            app.CellEditField_4Label.HorizontalAlignment = 'right';
+            app.CellEditField_4Label.Position = [548 173 26 22];
+            app.CellEditField_4Label.Text = 'Cell';
+
+            % Create CellEditField_4
+            app.CellEditField_4 = uieditfield(app.CMUstatusTab, 'numeric');
+            app.CellEditField_4.Position = [589 173 38 22];
+
+            % Create TemperatureEditField_2Label
+            app.TemperatureEditField_2Label = uilabel(app.CMUstatusTab);
+            app.TemperatureEditField_2Label.HorizontalAlignment = 'right';
+            app.TemperatureEditField_2Label.Position = [501 234 73 22];
+            app.TemperatureEditField_2Label.Text = 'Temperature';
+
+            % Create TemperatureEditField_2
+            app.TemperatureEditField_2 = uieditfield(app.CMUstatusTab, 'numeric');
+            app.TemperatureEditField_2.Position = [589 234 38 22];
+
+            % Create HighestcelltemperatureLabel
+            app.HighestcelltemperatureLabel = uilabel(app.CMUstatusTab);
+            app.HighestcelltemperatureLabel.FontWeight = 'bold';
+            app.HighestcelltemperatureLabel.Position = [481 259 146 22];
+            app.HighestcelltemperatureLabel.Text = 'Highest cell temperature';
+
+            % Create SettingsTab
+            app.SettingsTab = uitab(app.TabGroup);
+            app.SettingsTab.Title = 'Settings';
+
+            % Create TraveldistancemEditFieldLabel
+            app.TraveldistancemEditFieldLabel = uilabel(app.SettingsTab);
+            app.TraveldistancemEditFieldLabel.HorizontalAlignment = 'right';
+            app.TraveldistancemEditFieldLabel.Position = [5 393 107 22];
+            app.TraveldistancemEditFieldLabel.Text = 'Travel distance [m]';
+
+            % Create TraveldistancemEditField
+            app.TraveldistancemEditField = uieditfield(app.SettingsTab, 'numeric');
+            app.TraveldistancemEditField.Position = [127 393 100 22];
+            app.TraveldistancemEditField.Value = 588000;
+
+            % Create TravelhourshEditFieldLabel
+            app.TravelhourshEditFieldLabel = uilabel(app.SettingsTab);
+            app.TravelhourshEditFieldLabel.HorizontalAlignment = 'right';
+            app.TravelhourshEditFieldLabel.Position = [24 358 88 22];
+            app.TravelhourshEditFieldLabel.Text = 'Travel hours [h]';
+
+            % Create TravelhourshEditField
+            app.TravelhourshEditField = uieditfield(app.SettingsTab, 'numeric');
+            app.TravelhourshEditField.Position = [127 358 100 22];
+            app.TravelhourshEditField.Value = 9;
+
+            % Create WeightkgEditFieldLabel
+            app.WeightkgEditFieldLabel = uilabel(app.SettingsTab);
+            app.WeightkgEditFieldLabel.HorizontalAlignment = 'right';
+            app.WeightkgEditFieldLabel.Position = [46 324 65 22];
+            app.WeightkgEditFieldLabel.Text = 'Weight [kg]';
+
+            % Create WeightkgEditField
+            app.WeightkgEditField = uieditfield(app.SettingsTab, 'numeric');
+            app.WeightkgEditField.Position = [126 324 100 22];
+            app.WeightkgEditField.Value = 825;
+
+            % Create numCMUEditFieldLabel
+            app.numCMUEditFieldLabel = uilabel(app.SettingsTab);
+            app.numCMUEditFieldLabel.HorizontalAlignment = 'right';
+            app.numCMUEditFieldLabel.Position = [55 283 56 22];
+            app.numCMUEditFieldLabel.Text = 'numCMU';
+
+            % Create numCMU
+            app.numCMU = uieditfield(app.SettingsTab, 'numeric');
+            app.numCMU.Limits = [0 32];
+            app.numCMU.Position = [126 283 100 22];
+            app.numCMU.Value = 3;
+
+            % Create CANTab
+            app.CANTab = uitab(app.TabGroup);
+            app.CANTab.Title = 'CAN';
+
+            % Create IDEditFieldLabel
+            app.IDEditFieldLabel = uilabel(app.CANTab);
+            app.IDEditFieldLabel.HorizontalAlignment = 'right';
+            app.IDEditFieldLabel.Position = [82 304 14 22];
+            app.IDEditFieldLabel.Text = 'ID';
+
+            % Create ID
+            app.ID = uieditfield(app.CANTab, 'numeric');
+            app.ID.Editable = 'off';
+            app.ID.HorizontalAlignment = 'center';
+            app.ID.Position = [66 283 45 22];
+            app.ID.Value = 2047;
+
+            % Create RTREditFieldLabel
+            app.RTREditFieldLabel = uilabel(app.CANTab);
+            app.RTREditFieldLabel.HorizontalAlignment = 'center';
+            app.RTREditFieldLabel.Position = [124 304 30 22];
+            app.RTREditFieldLabel.Text = 'RTR';
+
+            % Create RTR
+            app.RTR = uieditfield(app.CANTab, 'numeric');
+            app.RTR.Editable = 'off';
+            app.RTR.HorizontalAlignment = 'center';
+            app.RTR.Position = [122 283 33 22];
+            app.RTR.Value = 1;
+
+            % Create LenEditFieldLabel
+            app.LenEditFieldLabel = uilabel(app.CANTab);
+            app.LenEditFieldLabel.HorizontalAlignment = 'center';
+            app.LenEditFieldLabel.Position = [170 304 26 22];
+            app.LenEditFieldLabel.Text = 'Len';
+
+            % Create Len
+            app.Len = uieditfield(app.CANTab, 'numeric');
+            app.Len.Editable = 'off';
+            app.Len.HorizontalAlignment = 'center';
+            app.Len.Position = [166 283 33 22];
+            app.Len.Value = 63;
+
+            % Create DF1EditFieldLabel
+            app.DF1EditFieldLabel = uilabel(app.CANTab);
+            app.DF1EditFieldLabel.HorizontalAlignment = 'center';
+            app.DF1EditFieldLabel.Position = [212 304 31 22];
+            app.DF1EditFieldLabel.Text = 'DF 1';
+
+            % Create DF1
+            app.DF1 = uieditfield(app.CANTab, 'numeric');
+            app.DF1.Editable = 'off';
+            app.DF1.HorizontalAlignment = 'center';
+            app.DF1.Position = [210 283 33 22];
+            app.DF1.Value = 255;
+
+            % Create DF2EditFieldLabel
+            app.DF2EditFieldLabel = uilabel(app.CANTab);
+            app.DF2EditFieldLabel.HorizontalAlignment = 'center';
+            app.DF2EditFieldLabel.Position = [256 304 31 22];
+            app.DF2EditFieldLabel.Text = 'DF 2';
+
+            % Create DF2
+            app.DF2 = uieditfield(app.CANTab, 'numeric');
+            app.DF2.Editable = 'off';
+            app.DF2.HorizontalAlignment = 'center';
+            app.DF2.Position = [254 283 33 22];
+            app.DF2.Value = 255;
+
+            % Create DF3EditFieldLabel
+            app.DF3EditFieldLabel = uilabel(app.CANTab);
+            app.DF3EditFieldLabel.HorizontalAlignment = 'center';
+            app.DF3EditFieldLabel.Position = [300 304 31 22];
+            app.DF3EditFieldLabel.Text = 'DF 3';
+
+            % Create DF3
+            app.DF3 = uieditfield(app.CANTab, 'numeric');
+            app.DF3.Editable = 'off';
+            app.DF3.HorizontalAlignment = 'center';
+            app.DF3.Position = [298 283 33 22];
+            app.DF3.Value = 255;
+
+            % Create DF4EditFieldLabel
+            app.DF4EditFieldLabel = uilabel(app.CANTab);
+            app.DF4EditFieldLabel.HorizontalAlignment = 'center';
+            app.DF4EditFieldLabel.Position = [344 304 31 22];
+            app.DF4EditFieldLabel.Text = 'DF 4';
+
+            % Create DF4
+            app.DF4 = uieditfield(app.CANTab, 'numeric');
+            app.DF4.Editable = 'off';
+            app.DF4.HorizontalAlignment = 'center';
+            app.DF4.Position = [342 283 33 22];
+            app.DF4.Value = 255;
+
+            % Create DF5EditFieldLabel
+            app.DF5EditFieldLabel = uilabel(app.CANTab);
+            app.DF5EditFieldLabel.HorizontalAlignment = 'center';
+            app.DF5EditFieldLabel.Position = [388 304 31 22];
+            app.DF5EditFieldLabel.Text = 'DF 5';
+
+            % Create DF5
+            app.DF5 = uieditfield(app.CANTab, 'numeric');
+            app.DF5.Editable = 'off';
+            app.DF5.HorizontalAlignment = 'center';
+            app.DF5.Position = [386 283 33 22];
+            app.DF5.Value = 255;
+
+            % Create DF6EditFieldLabel
+            app.DF6EditFieldLabel = uilabel(app.CANTab);
+            app.DF6EditFieldLabel.HorizontalAlignment = 'center';
+            app.DF6EditFieldLabel.Position = [432 304 31 22];
+            app.DF6EditFieldLabel.Text = 'DF 6';
+
+            % Create DF6
+            app.DF6 = uieditfield(app.CANTab, 'numeric');
+            app.DF6.Editable = 'off';
+            app.DF6.HorizontalAlignment = 'center';
+            app.DF6.Position = [430 283 33 22];
+            app.DF6.Value = 255;
+
+            % Create DF7EditFieldLabel
+            app.DF7EditFieldLabel = uilabel(app.CANTab);
+            app.DF7EditFieldLabel.HorizontalAlignment = 'center';
+            app.DF7EditFieldLabel.Position = [473 304 31 22];
+            app.DF7EditFieldLabel.Text = 'DF 7';
+
+            % Create DF7
+            app.DF7 = uieditfield(app.CANTab, 'numeric');
+            app.DF7.Editable = 'off';
+            app.DF7.HorizontalAlignment = 'center';
+            app.DF7.Position = [471 283 33 22];
+            app.DF7.Value = 255;
+
+            % Create DF8EditFieldLabel
+            app.DF8EditFieldLabel = uilabel(app.CANTab);
+            app.DF8EditFieldLabel.HorizontalAlignment = 'center';
+            app.DF8EditFieldLabel.Position = [512 304 31 22];
+            app.DF8EditFieldLabel.Text = 'DF 8';
+
+            % Create DF8
+            app.DF8 = uieditfield(app.CANTab, 'numeric');
+            app.DF8.Editable = 'off';
+            app.DF8.HorizontalAlignment = 'center';
+            app.DF8.Position = [511 283 34 22];
+            app.DF8.Value = 255;
+
+            % Create CANinputSwitchLabel
+            app.CANinputSwitchLabel = uilabel(app.CANTab);
+            app.CANinputSwitchLabel.HorizontalAlignment = 'center';
+            app.CANinputSwitchLabel.Position = [287 337 60 22];
+            app.CANinputSwitchLabel.Text = 'CAN input';
+
+            % Create CANinputSwitch
+            app.CANinputSwitch = uiswitch(app.CANTab, 'slider');
+            app.CANinputSwitch.Items = {'Serial', 'UDP'};
+            app.CANinputSwitch.Position = [293 374 45 20];
+            app.CANinputSwitch.Value = 'Serial';
+
+            % Create RequestloadButton
+            app.RequestloadButton = uibutton(app.CANTab, 'push');
+            app.RequestloadButton.ButtonPushedFcn = createCallbackFcn(app, @RequestloadButtonPushed, true);
+            app.RequestloadButton.Position = [358 184 100 22];
+            app.RequestloadButton.Text = 'Request load';
+
+            % Create RequestchargeButton
+            app.RequestchargeButton = uibutton(app.CANTab, 'push');
+            app.RequestchargeButton.ButtonPushedFcn = createCallbackFcn(app, @RequestchargeButtonPushed, true);
+            app.RequestchargeButton.Position = [153 184 100 22];
+            app.RequestchargeButton.Text = 'Request charge';
+
+            % Create AlertLampLabel
+            app.AlertLampLabel = uilabel(app.UIFigure);
+            app.AlertLampLabel.HorizontalAlignment = 'right';
+            app.AlertLampLabel.Position = [2 459 30 22];
+            app.AlertLampLabel.Text = 'Alert';
+
+            % Create AlertLamp
+            app.AlertLamp = uilamp(app.UIFigure);
+            app.AlertLamp.Position = [47 459 20 20];
+            app.AlertLamp.Color = [1 0 0];
+
+            % Create EditField
+            app.EditField = uieditfield(app.UIFigure, 'text');
+            app.EditField.Position = [77 458 100 22];
+
+            % Create QuitButton
+            app.QuitButton = uibutton(app.UIFigure, 'push');
+            app.QuitButton.ButtonPushedFcn = createCallbackFcn(app, @QuitButtonPushed, true);
+            app.QuitButton.Position = [540 458 100 22];
+            app.QuitButton.Text = 'Quit';
+
+            % Show the figure after all components are created
+            app.UIFigure.Visible = 'on';
+        end
+    end
+
+    % App creation and deletion
+    methods (Access = public)
+
+        % Construct app
+        function app = BMSapp
+
+            % Create UIFigure and components
+            createComponents(app)
+
+            % Register the app with App Designer
+            registerApp(app, app.UIFigure)
+
+            % Execute the startup function
+            runStartupFcn(app, @startupFcn)
+
+            if nargout == 0
+                clear app
+            end
+        end
+
+        % Code that executes before app deletion
+        function delete(app)
+
+            % Delete UIFigure when app is deleted
+            delete(app.UIFigure)
+        end
+    end
+end

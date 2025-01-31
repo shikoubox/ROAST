@@ -1,0 +1,104 @@
+\documentclass[]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[danish,english]{babel}
+\usepackage{graphicx}
+\usepackage[usenames]{xcolor}
+\usepackage{times}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{hyperref}
+\usepackage{textpos}
+\usepackage{pgfgantt}
+\usepackage{lscape}
+\usepackage{indentfirst}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{ifthen}
+\usepackage{float}
+\usepackage{pict2e}
+\usepackage[export]{adjustbox}
+\pgfplotsset{compat=1.13}
+\usepackage{siunitx}
+\usepackage{tabularx}
+
+% adjustment to page format
+\marginparwidth=0pt
+\oddsidemargin=0pt
+%\evensidemargin=0pt
+\marginparsep=0pt
+%\topmargin=-15 mm
+\textwidth=168 mm
+\textheight=210 mm
+\parskip 0.27 em
+\parindent=0pt
+%\leftmargin=1cm
+\pagenumbering{arabic}
+% Define DTU color
+\definecolor{dtured}{RGB}{153,0,0}
+\title{Projektplan}
+
+\begin{document}
+This log shall be used as a technical diary we write throughout the course. It will be used to write the final report more easily.
+
+\section{05-03}
+We've set up PlatformIO in Visual Studio Code as the environment in which we write our code.
+
+\section{10-03}
+We've made an adjustment in the ressources and will be using a teensyboard 3.6 instead of a 4.1, since the 3.6 board is already in stock at DTU. It has a slower clock (180Mhz, compared to 4.1's 600Mhz), but we judge that this won't matter to the project solution.
+
+\section{12-03}
+We've decided to divide the work among us.
+Tjark will be having the 3.6 Teensy board with the SD module, Steffan will be having the 4.0 Teensy board and Victor will work on the related software.
+As Tjark has a soldering station, he will take care of soldering the components, if this is not done in laboratory.
+
+More specifically, Steffan will look into RF, Tjark into SD storage and Victor at CANbus conncection.
+
+\section{17-03}
+The components for our project arrives.
+
+\section{19-03}
+Our group is granted access to the login for the ecocar wiki page, https://dtucar.com/wiki/index.php?title=Main_Page
+
+\section{22-03}
+The first successful transmission of a signal between the two antennas, not as part of the final setup
+
+\section{25-03}
+The first code for use with CAN data is uploaded. Simple "HELLO" was printed at each attempt to transmit. Since antennas was not connected, nothing would happen, but nonetheless the code worked as expected.
+
+\section{26-03}
+Source filter to manage what files would be compiled to which boards, blackbox code is made.
+
+\section{07-04}
+The first physical meeting at DTU campus. Test transmission between the two Teensy modules with connected antennas successful. Attempt to create a test environment in PlatformIO's integrated Test environment unsuccessful. Issue created at Github, github.com/platformio/platformio-docs/issues/190. User GUI for computer in support car created in Maven project. After working on the project at building 324, we had a look around at the DTU ecocar workshop.
+
+\section{16-04}
+Test environment implemented in seperate source folder using AUnit library, this environment tests successfully.
+
+\section{23-04}
+Trouble with transmission and receiving between the two units, code revisited. Protocol for commands through the GUI implemented.
+
+\section{30-04}
+Test file almost finished for files in project
+
+\section{07-05}
+We've discussed earlier that data encryption during transmission would be a useful feature to have during the actual competition, and we therefore decided to make an encryption class that encrypts data. The main part of the class is done, but there are some trouble with the pointers. We've also worked on FIFO buffers for the module.
+
+\section{08-05}
+The encryption class is done :)
+
+\section{14-05}
+We've met briefly over Discord to discuss the plan going forward in the three week period. This will revolve around the entire process of sending, as in, should the logging to blackbox and transmission of data be on the same thread, should the support vehicle be able to request log files, in contrast to making log files itself, in case of transmission disruption etc. We believe we are nearing a point where we have made all the small pieces that must now work together.
+
+\section{07-06}
+As we've encountered increasingly difficulties with debugging the code for operation, we've decided to look more seriously into finding a suitable debug tool for the teensy board. However, as the Teensy board comes with no debug tool, we need to setup our own. At first, we've tried with a ft232r using ftdi debug tool, but because of difficulties with the compability of PlatformIO, we have abandoned this debug tool.
+PlatformIO itself suggests J-Link as a compatible debug tool, we will look into this and see if such a debug tool is available at DTU.
+
+\section{08-06}
+Christian has provided us with a St-link debugger and although it is not J-link, it should be able to work with the Teensy board, as it is an ARM processor.
+It seems that we must admit that debugging the Teensy is not likely to be possible for us. https://mcuoneclipse.com/2017/04/29/modifying-the-teensy-3-5-and-3-6-for-arm-swd-debugging/
+After finding out how to connect the st-link debugger to the board, we may find that the debugging will not work in spite of this. Also, since the pins must be connected to the backside of the board, which proves troublesome to our setup with the breadboard. (Why could the debug pins not be on the topside?!)
+
+\section{10-06}
+After several days of work, we performed an actual range test. The solar car unit was indoors, due to power supply requirements, (which will be nullified when we make a setup on perf board), and the support car unit moved outdoors. We observed that inside the building, the transmission was not affected by the range (about 30m), while as soon as the support module was outside the building, the transmission range dropped rapidly. With a glass window in between the two modules, the max range was about 5m. However, we were testing with the power amplifier on the lowest settings, so when we perform more tests on perf board, we have the option to increase this amplifier.
+
+\end{document}
