@@ -1,9 +1,9 @@
+# Requirements
+node -v # should be v16+
+npm -v  # should be v8+
 
-
-
-
-
-# Install 
+# Install locally
+npm init -y
 npm install electron --save-dev
 
 # Start
