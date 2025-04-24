@@ -3,7 +3,12 @@
 	(generator "eeschema")
 	(generator_version "8.0")
 	(uuid "70930d97-240a-4c26-b891-2f99d00a05d6")
-	(paper "A4")
+	(paper "A5")
+	(title_block
+		(date "2025-02-14")
+		(rev "1.1")
+		(comment 3 "Connectors for buttons that support either 3 LEDs and 1 button, or up to 4 buttons.\nJ2 is the connector, and remaining is the supporting electronic circuit.")
+	)
 	(lib_symbols
 		(symbol "Connector_Generic:Conn_02x03_Top_Bottom"
 			(pin_names
@@ -1872,128 +1877,128 @@
 		)
 	)
 	(junction
-		(at 115.57 68.58)
+		(at 72.39 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "05f7ea37-3c23-4fe1-a6f8-15a08f563c5e")
 	)
 	(junction
-		(at 99.06 63.5)
+		(at 55.88 68.58)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "067aab26-05c5-4786-8698-558bab7d72db")
 	)
 	(junction
-		(at 132.08 68.58)
+		(at 88.9 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "12f0c95f-cb5c-450f-802b-2bc8b652616b")
 	)
 	(junction
-		(at 187.96 52.07)
+		(at 144.78 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2555a2eb-b6b6-42d8-8104-ca96ff467745")
 	)
 	(junction
-		(at 162.56 52.07)
+		(at 119.38 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "2717ea5b-b077-4e22-b0f7-04449eee5080")
 	)
 	(junction
-		(at 195.58 58.42)
+		(at 152.4 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5e79cda2-cd3f-4cca-a5a9-78a8c0965e7b")
 	)
 	(junction
-		(at 113.03 39.37)
+		(at 69.85 44.45)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "70a4023a-acdb-4e99-a790-02b00c7dfd34")
 	)
 	(junction
-		(at 168.91 39.37)
+		(at 125.73 44.45)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "724b0d4d-ef2a-4e70-a082-7b4385c8d4d1")
 	)
 	(junction
-		(at 106.68 52.07)
+		(at 63.5 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "75ac5ead-3275-4e03-83c0-c5b1c46ed6d8")
 	)
 	(junction
-		(at 187.96 68.58)
+		(at 144.78 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "7ebbff61-c068-4c73-9934-534c279fc2c7")
 	)
 	(junction
-		(at 106.68 68.58)
+		(at 63.5 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "85df4e0f-c824-436e-ab3a-20a734d1191d")
 	)
 	(junction
-		(at 132.08 52.07)
+		(at 88.9 57.15)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "a8b7ec1b-ca9c-42d2-ad27-b5221c3038c7")
 	)
 	(junction
-		(at 123.19 63.5)
+		(at 80.01 68.58)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "b857b9a4-9aaa-4941-90cf-536881477c4e")
 	)
 	(junction
-		(at 171.45 68.58)
+		(at 128.27 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c72fcf9d-c600-466c-be6d-3dff5a8c869c")
 	)
 	(junction
-		(at 162.56 68.58)
+		(at 119.38 73.66)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "cabe20c9-67d0-4bd9-9468-e5ab6ad2173a")
 	)
 	(junction
-		(at 139.7 58.42)
+		(at 96.52 63.5)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d4302928-f5e6-487b-9435-c2fb2c76770f")
 	)
 	(junction
-		(at 154.94 63.5)
+		(at 111.76 68.58)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e3cc29ec-5b79-4685-b652-d84a8c0e22d7")
 	)
 	(junction
-		(at 179.07 63.5)
+		(at 135.89 68.58)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ecaf9626-d754-42c2-b614-99820f4b3b94")
 	)
 	(junction
-		(at 171.45 57.15)
+		(at 128.27 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f626130e-0f5e-4c3d-bdfb-33646ee4386a")
 	)
 	(junction
-		(at 115.57 57.15)
+		(at 72.39 62.23)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "fdf6d164-26e7-4a38-92bb-b339e7217998")
 	)
 	(wire
 		(pts
-			(xy 111.76 39.37) (xy 113.03 39.37)
+			(xy 68.58 44.45) (xy 69.85 44.45)
 		)
 		(stroke
 			(width 0)
@@ -2003,7 +2008,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 68.58) (xy 106.68 68.58)
+			(xy 62.23 73.66) (xy 63.5 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2013,7 +2018,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 68.58) (xy 179.07 68.58)
+			(xy 134.62 73.66) (xy 135.89 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2023,7 +2028,7 @@
 	)
 	(wire
 		(pts
-			(xy 167.64 39.37) (xy 168.91 39.37)
+			(xy 124.46 44.45) (xy 125.73 44.45)
 		)
 		(stroke
 			(width 0)
@@ -2033,7 +2038,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 57.15) (xy 116.84 57.15)
+			(xy 72.39 62.23) (xy 73.66 62.23)
 		)
 		(stroke
 			(width 0)
@@ -2043,7 +2048,7 @@
 	)
 	(wire
 		(pts
-			(xy 109.22 36.83) (xy 113.03 36.83)
+			(xy 66.04 41.91) (xy 69.85 41.91)
 		)
 		(stroke
 			(width 0)
@@ -2053,7 +2058,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 62.23) (xy 187.96 68.58)
+			(xy 144.78 67.31) (xy 144.78 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2063,7 +2068,7 @@
 	)
 	(wire
 		(pts
-			(xy 113.03 36.83) (xy 113.03 39.37)
+			(xy 69.85 41.91) (xy 69.85 44.45)
 		)
 		(stroke
 			(width 0)
@@ -2073,7 +2078,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 68.58) (xy 123.19 68.58)
+			(xy 78.74 73.66) (xy 80.01 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2083,7 +2088,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 36.83) (xy 168.91 36.83)
+			(xy 121.92 41.91) (xy 125.73 41.91)
 		)
 		(stroke
 			(width 0)
@@ -2093,7 +2098,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 57.15) (xy 195.58 58.42)
+			(xy 152.4 62.23) (xy 152.4 63.5)
 		)
 		(stroke
 			(width 0)
@@ -2103,7 +2108,7 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 52.07) (xy 113.03 52.07)
+			(xy 63.5 57.15) (xy 69.85 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2113,7 +2118,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 68.58) (xy 195.58 68.58)
+			(xy 151.13 73.66) (xy 152.4 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2123,7 +2128,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 39.37) (xy 106.68 39.37)
+			(xy 62.23 44.45) (xy 63.5 44.45)
 		)
 		(stroke
 			(width 0)
@@ -2133,7 +2138,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 68.58) (xy 100.33 68.58)
+			(xy 55.88 73.66) (xy 57.15 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2143,7 +2148,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 57.15) (xy 139.7 58.42)
+			(xy 96.52 62.23) (xy 96.52 63.5)
 		)
 		(stroke
 			(width 0)
@@ -2153,7 +2158,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 52.07) (xy 139.7 52.07)
+			(xy 95.25 57.15) (xy 96.52 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2163,7 +2168,7 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 68.58) (xy 172.72 68.58)
+			(xy 128.27 73.66) (xy 129.54 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2173,7 +2178,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 52.07) (xy 133.35 52.07)
+			(xy 88.9 57.15) (xy 90.17 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2183,7 +2188,7 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 67.31) (xy 171.45 68.58)
+			(xy 128.27 72.39) (xy 128.27 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2193,7 +2198,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 67.31) (xy 115.57 68.58)
+			(xy 72.39 72.39) (xy 72.39 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2203,7 +2208,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 52.07) (xy 189.23 52.07)
+			(xy 144.78 57.15) (xy 146.05 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2213,7 +2218,7 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 52.07) (xy 162.56 52.07)
+			(xy 116.84 57.15) (xy 119.38 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2223,7 +2228,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 68.58) (xy 139.7 68.58)
+			(xy 95.25 73.66) (xy 96.52 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2233,7 +2238,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 68.58) (xy 133.35 68.58)
+			(xy 88.9 73.66) (xy 90.17 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2243,7 +2248,7 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 68.58) (xy 106.68 69.85)
+			(xy 63.5 73.66) (xy 63.5 74.93)
 		)
 		(stroke
 			(width 0)
@@ -2253,7 +2258,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 63.5) (xy 123.19 68.58)
+			(xy 80.01 68.58) (xy 80.01 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2263,7 +2268,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 52.07) (xy 195.58 52.07)
+			(xy 151.13 57.15) (xy 152.4 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2273,7 +2278,7 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 68.58) (xy 171.45 69.85)
+			(xy 128.27 73.66) (xy 128.27 74.93)
 		)
 		(stroke
 			(width 0)
@@ -2283,7 +2288,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 39.37) (xy 161.29 40.64)
+			(xy 118.11 44.45) (xy 118.11 45.72)
 		)
 		(stroke
 			(width 0)
@@ -2293,7 +2298,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 62.23) (xy 179.07 63.5)
+			(xy 135.89 67.31) (xy 135.89 68.58)
 		)
 		(stroke
 			(width 0)
@@ -2303,7 +2308,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 62.23) (xy 123.19 63.5)
+			(xy 80.01 67.31) (xy 80.01 68.58)
 		)
 		(stroke
 			(width 0)
@@ -2313,7 +2318,7 @@
 	)
 	(wire
 		(pts
-			(xy 121.92 57.15) (xy 123.19 57.15)
+			(xy 78.74 62.23) (xy 80.01 62.23)
 		)
 		(stroke
 			(width 0)
@@ -2323,7 +2328,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 68.58) (xy 162.56 68.58)
+			(xy 118.11 73.66) (xy 119.38 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2333,7 +2338,7 @@
 	)
 	(wire
 		(pts
-			(xy 173.99 52.07) (xy 187.96 52.07)
+			(xy 130.81 57.15) (xy 144.78 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2343,7 +2348,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 68.58) (xy 162.56 69.85)
+			(xy 119.38 73.66) (xy 119.38 74.93)
 		)
 		(stroke
 			(width 0)
@@ -2353,7 +2358,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 63.5) (xy 99.06 68.58)
+			(xy 55.88 68.58) (xy 55.88 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2363,7 +2368,7 @@
 	)
 	(wire
 		(pts
-			(xy 195.58 58.42) (xy 195.58 68.58)
+			(xy 152.4 63.5) (xy 152.4 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2373,7 +2378,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 57.15) (xy 179.07 57.15)
+			(xy 134.62 62.23) (xy 135.89 62.23)
 		)
 		(stroke
 			(width 0)
@@ -2383,7 +2388,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 68.58) (xy 156.21 68.58)
+			(xy 111.76 73.66) (xy 113.03 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2393,7 +2398,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 68.58) (xy 116.84 68.58)
+			(xy 72.39 73.66) (xy 73.66 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2403,7 +2408,7 @@
 	)
 	(wire
 		(pts
-			(xy 118.11 52.07) (xy 132.08 52.07)
+			(xy 74.93 57.15) (xy 88.9 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2413,7 +2418,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 52.07) (xy 115.57 57.15)
+			(xy 72.39 57.15) (xy 72.39 62.23)
 		)
 		(stroke
 			(width 0)
@@ -2423,7 +2428,7 @@
 	)
 	(wire
 		(pts
-			(xy 168.91 36.83) (xy 168.91 39.37)
+			(xy 125.73 41.91) (xy 125.73 44.45)
 		)
 		(stroke
 			(width 0)
@@ -2433,7 +2438,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 39.37) (xy 105.41 40.64)
+			(xy 62.23 44.45) (xy 62.23 45.72)
 		)
 		(stroke
 			(width 0)
@@ -2443,7 +2448,7 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 52.07) (xy 171.45 57.15)
+			(xy 128.27 57.15) (xy 128.27 62.23)
 		)
 		(stroke
 			(width 0)
@@ -2453,7 +2458,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 63.5) (xy 154.94 68.58)
+			(xy 111.76 68.58) (xy 111.76 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2463,7 +2468,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 68.58) (xy 132.08 69.85)
+			(xy 88.9 73.66) (xy 88.9 74.93)
 		)
 		(stroke
 			(width 0)
@@ -2473,7 +2478,7 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 57.15) (xy 154.94 63.5)
+			(xy 111.76 62.23) (xy 111.76 68.58)
 		)
 		(stroke
 			(width 0)
@@ -2483,7 +2488,7 @@
 	)
 	(wire
 		(pts
-			(xy 139.7 58.42) (xy 139.7 68.58)
+			(xy 96.52 63.5) (xy 96.52 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2493,7 +2498,7 @@
 	)
 	(wire
 		(pts
-			(xy 161.29 39.37) (xy 162.56 39.37)
+			(xy 118.11 44.45) (xy 119.38 44.45)
 		)
 		(stroke
 			(width 0)
@@ -2503,7 +2508,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 52.07) (xy 106.68 52.07)
+			(xy 60.96 57.15) (xy 63.5 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2513,7 +2518,7 @@
 	)
 	(wire
 		(pts
-			(xy 115.57 68.58) (xy 115.57 69.85)
+			(xy 72.39 73.66) (xy 72.39 74.93)
 		)
 		(stroke
 			(width 0)
@@ -2523,7 +2528,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 68.58) (xy 187.96 69.85)
+			(xy 144.78 73.66) (xy 144.78 74.93)
 		)
 		(stroke
 			(width 0)
@@ -2533,7 +2538,7 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 62.23) (xy 132.08 68.58)
+			(xy 88.9 67.31) (xy 88.9 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2543,7 +2548,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 67.31) (xy 162.56 68.58)
+			(xy 119.38 72.39) (xy 119.38 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2553,7 +2558,7 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 67.31) (xy 106.68 68.58)
+			(xy 63.5 72.39) (xy 63.5 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2563,7 +2568,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 57.15) (xy 99.06 63.5)
+			(xy 55.88 62.23) (xy 55.88 68.58)
 		)
 		(stroke
 			(width 0)
@@ -2573,7 +2578,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 52.07) (xy 168.91 52.07)
+			(xy 119.38 57.15) (xy 125.73 57.15)
 		)
 		(stroke
 			(width 0)
@@ -2583,7 +2588,7 @@
 	)
 	(wire
 		(pts
-			(xy 187.96 68.58) (xy 189.23 68.58)
+			(xy 144.78 73.66) (xy 146.05 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2593,7 +2598,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 63.5) (xy 179.07 68.58)
+			(xy 135.89 68.58) (xy 135.89 73.66)
 		)
 		(stroke
 			(width 0)
@@ -2603,7 +2608,7 @@
 	)
 	(wire
 		(pts
-			(xy 171.45 57.15) (xy 172.72 57.15)
+			(xy 128.27 62.23) (xy 129.54 62.23)
 		)
 		(stroke
 			(width 0)
@@ -2613,7 +2618,7 @@
 	)
 	(global_label "LED_PWM"
 		(shape input)
-		(at 179.07 39.37 0)
+		(at 135.89 44.45 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2623,7 +2628,7 @@
 		)
 		(uuid "03f0f2ce-a64c-4dfc-aa3c-a7229f1dc090")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 188.1823 39.37 0)
+			(at 145.0023 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2635,7 +2640,7 @@
 	)
 	(global_label "LED_PWM"
 		(shape input)
-		(at 123.19 39.37 0)
+		(at 80.01 44.45 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2645,7 +2650,7 @@
 		)
 		(uuid "f4fe46a1-ab86-49a8-9a33-a5cb59b2d99d")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 132.3023 39.37 0)
+			(at 89.1223 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2657,7 +2662,7 @@
 	)
 	(hierarchical_label "button_1_1"
 		(shape input)
-		(at 99.06 63.5 180)
+		(at 55.88 68.58 180)
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -2668,7 +2673,7 @@
 	)
 	(hierarchical_label "button_2_1"
 		(shape input)
-		(at 154.94 63.5 180)
+		(at 111.76 68.58 180)
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -2679,7 +2684,7 @@
 	)
 	(hierarchical_label "button_1_2"
 		(shape input)
-		(at 123.19 63.5 0)
+		(at 80.01 68.58 0)
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -2690,7 +2695,7 @@
 	)
 	(hierarchical_label "button_2_0"
 		(shape input)
-		(at 165.1 36.83 180)
+		(at 121.92 41.91 180)
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -2701,7 +2706,7 @@
 	)
 	(hierarchical_label "button_2_2"
 		(shape input)
-		(at 179.07 63.5 0)
+		(at 135.89 68.58 0)
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -2712,7 +2717,7 @@
 	)
 	(hierarchical_label "button_1_3"
 		(shape input)
-		(at 139.7 58.42 0)
+		(at 96.52 63.5 0)
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -2723,7 +2728,7 @@
 	)
 	(hierarchical_label "button_1_0"
 		(shape input)
-		(at 109.22 36.83 180)
+		(at 66.04 41.91 180)
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -2734,7 +2739,7 @@
 	)
 	(hierarchical_label "button_2_3"
 		(shape input)
-		(at 195.58 58.42 0)
+		(at 152.4 63.5 0)
 		(effects
 			(font
 				(size 0.8 0.8)
@@ -2745,7 +2750,7 @@
 	)
 	(symbol
 		(lib_id "PCM_Transistor_MOSFET_AKL:2N7002DW")
-		(at 133.35 57.15 0)
+		(at 90.17 62.23 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -2754,7 +2759,7 @@
 		(dnp no)
 		(uuid "0737a027-37bf-4165-89c8-060a3fad3c34")
 		(property "Reference" "Q3"
-			(at 131.064 56.388 0)
+			(at 87.884 61.468 0)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -2763,7 +2768,7 @@
 			)
 		)
 		(property "Value" "2N7002DW"
-			(at 130.81 57.658 0)
+			(at 87.63 62.738 0)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -2772,7 +2777,7 @@
 			)
 		)
 		(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-363_SC-70-6"
-			(at 133.35 49.53 0)
+			(at 90.17 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2781,7 +2786,7 @@
 			)
 		)
 		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2201191030_Jiangsu-Changjing-Electronics-Technology-Co---Ltd--2N7002DW_C2961242.pdf"
-			(at 133.35 49.53 0)
+			(at 90.17 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2790,7 +2795,7 @@
 			)
 		)
 		(property "Description" "SOT-363 Dual NMOS enchancement mode transistor, 60V, 300mA, 500mW, Alternate KiCAD Library"
-			(at 133.35 57.15 0)
+			(at 90.17 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2799,7 +2804,7 @@
 			)
 		)
 		(property "JLCPCB" "C2961242"
-			(at 133.35 57.15 0)
+			(at 90.17 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2808,7 +2813,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 133.35 57.15 0)
+			(at 90.17 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2817,7 +2822,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 133.35 57.15 0)
+			(at 90.17 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2874,7 +2879,7 @@
 	)
 	(symbol
 		(lib_id "project_components:BAS16VYs_small")
-		(at 195.58 54.61 270)
+		(at 152.4 59.69 270)
 		(unit 3)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2882,7 +2887,7 @@
 		(dnp no)
 		(uuid "0d38cdea-7d38-40a1-86af-0600bad6983b")
 		(property "Reference" "D2"
-			(at 196.85 53.848 90)
+			(at 153.67 58.928 90)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -2891,7 +2896,7 @@
 			)
 		)
 		(property "Value" "BAS16VYs"
-			(at 196.85 55.118 90)
+			(at 153.67 60.198 90)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -2900,7 +2905,7 @@
 			)
 		)
 		(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-363_SC-70-6"
-			(at 191.516 54.61 0)
+			(at 148.336 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2909,7 +2914,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2407241026_Nexperia-BAS16VY-115_C135826.pdf"
-			(at 191.516 54.61 0)
+			(at 148.336 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2918,7 +2923,7 @@
 			)
 		)
 		(property "Description" "SOT-363 Triple Diode, Small Signal, Fast Switching, 100V, 200mA, 4ns, Alternate KiCad Library"
-			(at 191.516 54.61 0)
+			(at 148.336 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2927,7 +2932,7 @@
 			)
 		)
 		(property "JLCPCB" "C135826"
-			(at 195.58 54.61 0)
+			(at 152.4 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2936,7 +2941,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 195.58 54.61 0)
+			(at 152.4 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2945,7 +2950,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 195.58 54.61 0)
+			(at 152.4 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3002,7 +3007,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 187.96 69.85 0)
+		(at 144.78 74.93 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3010,7 +3015,7 @@
 		(dnp no)
 		(uuid "13ace59a-9bb1-42bd-a039-d6d669195395")
 		(property "Reference" "#PWR037"
-			(at 187.96 76.2 0)
+			(at 144.78 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3019,7 +3024,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 188.214 70.866 0)
+			(at 145.034 75.946 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3028,7 +3033,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 187.96 69.85 0)
+			(at 144.78 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3037,7 +3042,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 187.96 69.85 0)
+			(at 144.78 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3046,7 +3051,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 187.96 69.85 0)
+			(at 144.78 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3088,7 +3093,7 @@
 	)
 	(symbol
 		(lib_id "project_components:BAS16VYs_small")
-		(at 139.7 54.61 270)
+		(at 96.52 59.69 270)
 		(unit 3)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3096,7 +3101,7 @@
 		(dnp no)
 		(uuid "1b224c13-98e5-4c07-8cbf-c20ec9804560")
 		(property "Reference" "D1"
-			(at 140.97 53.848 90)
+			(at 97.79 58.928 90)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -3105,7 +3110,7 @@
 			)
 		)
 		(property "Value" "BAS16VYs"
-			(at 140.97 55.118 90)
+			(at 97.79 60.198 90)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -3114,7 +3119,7 @@
 			)
 		)
 		(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-363_SC-70-6"
-			(at 135.636 54.61 0)
+			(at 92.456 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3123,7 +3128,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2407241026_Nexperia-BAS16VY-115_C135826.pdf"
-			(at 135.636 54.61 0)
+			(at 92.456 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3132,7 +3137,7 @@
 			)
 		)
 		(property "Description" "SOT-363 Triple Diode, Small Signal, Fast Switching, 100V, 200mA, 4ns, Alternate KiCad Library"
-			(at 135.636 54.61 0)
+			(at 92.456 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3141,7 +3146,7 @@
 			)
 		)
 		(property "JLCPCB" "C135826"
-			(at 139.7 54.61 0)
+			(at 96.52 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3150,7 +3155,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 139.7 54.61 0)
+			(at 96.52 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3159,7 +3164,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 139.7 54.61 0)
+			(at 96.52 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3216,7 +3221,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 106.68 54.61 180)
+		(at 63.5 59.69 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3224,7 +3229,7 @@
 		(dnp no)
 		(uuid "1b824da3-6e49-4365-8e37-99df164e491d")
 		(property "Reference" "R17"
-			(at 104.648 55.626 90)
+			(at 61.468 60.706 90)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -3233,7 +3238,7 @@
 			)
 		)
 		(property "Value" "180"
-			(at 106.68 54.61 90)
+			(at 63.5 59.69 90)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -3241,7 +3246,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 106.68 54.61 0)
+			(at 63.5 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3250,7 +3255,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010000_UNI-ROYAL-Uniroyal-Elec-0402WGF1800TCE_C38941.pdf"
-			(at 106.68 54.61 0)
+			(at 63.5 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3259,7 +3264,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 106.68 54.61 0)
+			(at 63.5 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3268,7 +3273,7 @@
 			)
 		)
 		(property "JLCPCB" "C38941"
-			(at 106.68 54.61 0)
+			(at 63.5 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3277,7 +3282,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 106.68 54.61 0)
+			(at 63.5 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3286,7 +3291,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 106.68 54.61 0)
+			(at 63.5 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3331,7 +3336,7 @@
 	)
 	(symbol
 		(lib_id "PCM_Transistor_MOSFET_AKL:2N7002DW")
-		(at 161.29 62.23 0)
+		(at 118.11 67.31 0)
 		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3339,7 +3344,7 @@
 		(dnp no)
 		(uuid "3771ee99-8860-431a-a319-28cd6e8ff9fb")
 		(property "Reference" "Q3"
-			(at 163.576 63.246 0)
+			(at 120.396 68.326 0)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -3348,7 +3353,7 @@
 			)
 		)
 		(property "Value" "2N7002DW"
-			(at 163.576 64.77 0)
+			(at 120.396 69.85 0)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -3357,7 +3362,7 @@
 			)
 		)
 		(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-363_SC-70-6"
-			(at 161.29 54.61 0)
+			(at 118.11 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3366,7 +3371,7 @@
 			)
 		)
 		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2201191030_Jiangsu-Changjing-Electronics-Technology-Co---Ltd--2N7002DW_C2961242.pdf"
-			(at 161.29 54.61 0)
+			(at 118.11 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3375,7 +3380,7 @@
 			)
 		)
 		(property "Description" "SOT-363 Dual NMOS enchancement mode transistor, 60V, 300mA, 500mW, Alternate KiCAD Library"
-			(at 161.29 62.23 0)
+			(at 118.11 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3384,7 +3389,7 @@
 			)
 		)
 		(property "JLCPCB" "C2961242"
-			(at 161.29 62.23 0)
+			(at 118.11 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3393,7 +3398,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 161.29 62.23 0)
+			(at 118.11 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3402,7 +3407,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 161.29 62.23 0)
+			(at 118.11 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3459,15 +3464,15 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_02x03_Top_Bottom")
-		(at 171.45 46.99 90)
+		(at 128.27 52.07 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "3c73eb7f-fd17-45f7-b7e6-d164410aa7a2")
 		(property "Reference" "J2"
-			(at 175.514 44.196 90)
+			(at 132.334 49.276 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3476,7 +3481,7 @@
 			)
 		)
 		(property "Value" "Button 1 molex-µfit connector"
-			(at 175.514 45.72 90)
+			(at 132.334 50.8 90)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -3485,7 +3490,7 @@
 			)
 		)
 		(property "Footprint" "Connector_Molex:Molex_Micro-Fit_3.0_43045-0612_2x03_P3.00mm_Vertical"
-			(at 171.45 46.99 0)
+			(at 128.27 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3494,7 +3499,7 @@
 			)
 		)
 		(property "Datasheet" "https://docs.rs-online.com/579a/0900766b81680210.pdf"
-			(at 171.45 46.99 0)
+			(at 128.27 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3503,7 +3508,7 @@
 			)
 		)
 		(property "Description" "Generic connector, double row, 02x03, top/bottom pin numbering scheme (row 1: 1...pins_per_row, row2: pins_per_row+1 ... num_pins), script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 171.45 46.99 0)
+			(at 128.27 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3512,7 +3517,7 @@
 			)
 		)
 		(property "JLCPCB" ""
-			(at 171.45 46.99 0)
+			(at 128.27 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3521,7 +3526,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 171.45 46.99 0)
+			(at 128.27 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3530,7 +3535,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 171.45 46.99 0)
+			(at 128.27 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3587,7 +3592,7 @@
 	)
 	(symbol
 		(lib_id "project_components:BZX84C3V3TS-7-F_small")
-		(at 101.6 52.07 0)
+		(at 58.42 57.15 0)
 		(unit 3)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3595,7 +3600,7 @@
 		(dnp no)
 		(uuid "3dbf6149-48b6-4d76-abfb-a0b8ff34a36c")
 		(property "Reference" "DZ1"
-			(at 103.378 48.26 0)
+			(at 60.198 53.34 0)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -3604,7 +3609,7 @@
 			)
 		)
 		(property "Value" "BZX84C3V3TS-7-F"
-			(at 106.426 49.53 0)
+			(at 63.246 54.61 0)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -3613,7 +3618,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-			(at 101.6 45.72 0)
+			(at 58.42 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3622,7 +3627,7 @@
 			)
 		)
 		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8560094857085030400"
-			(at 101.6 45.72 0)
+			(at 58.42 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3631,7 +3636,7 @@
 			)
 		)
 		(property "Description" "SOT-363 Triple Zener diode, independent, 3V, 200mW"
-			(at 102.362 55.626 0)
+			(at 59.182 60.706 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3640,7 +3645,7 @@
 			)
 		)
 		(property "JLCPCB" "C5124989"
-			(at 101.6 52.07 0)
+			(at 58.42 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3649,7 +3654,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 101.6 52.07 0)
+			(at 58.42 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3658,7 +3663,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 101.6 52.07 0)
+			(at 58.42 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3715,7 +3720,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 109.22 39.37 270)
+		(at 66.04 44.45 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3723,7 +3728,7 @@
 		(dnp no)
 		(uuid "50e19122-d1f6-4b8e-8125-7ce6d8cccc53")
 		(property "Reference" "R15"
-			(at 110.236 41.402 90)
+			(at 67.056 46.482 90)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -3732,7 +3737,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 109.22 39.37 90)
+			(at 66.04 44.45 90)
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -3740,7 +3745,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 109.22 39.37 0)
+			(at 66.04 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3749,7 +3754,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
-			(at 109.22 39.37 0)
+			(at 66.04 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3758,7 +3763,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 109.22 39.37 0)
+			(at 66.04 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3767,7 +3772,7 @@
 			)
 		)
 		(property "JLCPCB" "C25531"
-			(at 109.22 39.37 0)
+			(at 66.04 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3776,7 +3781,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 109.22 39.37 0)
+			(at 66.04 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3785,7 +3790,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 109.22 39.37 0)
+			(at 66.04 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3830,7 +3835,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 135.89 68.58 90)
+		(at 92.71 73.66 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3838,7 +3843,7 @@
 		(dnp no)
 		(uuid "5dfcaa89-0e7d-4b1d-91df-c0be71972361")
 		(property "Reference" "R18"
-			(at 138.684 70.612 90)
+			(at 95.504 75.692 90)
 			(effects
 				(font
 					(size 1 1)
@@ -3847,7 +3852,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 136.906 68.58 90)
+			(at 93.726 73.66 90)
 			(effects
 				(font
 					(size 0.635 0.635)
@@ -3856,7 +3861,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 135.89 68.58 0)
+			(at 92.71 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3865,7 +3870,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 135.89 68.58 0)
+			(at 92.71 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3874,7 +3879,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 135.89 68.58 0)
+			(at 92.71 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3883,7 +3888,7 @@
 			)
 		)
 		(property "JLCPCB" "C25531"
-			(at 135.89 68.58 0)
+			(at 92.71 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3892,7 +3897,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 135.89 68.58 0)
+			(at 92.71 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3901,7 +3906,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 135.89 68.58 0)
+			(at 92.71 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3946,7 +3951,7 @@
 	)
 	(symbol
 		(lib_id "PCM_Transistor_MOSFET_AKL:2N7002DW")
-		(at 116.84 62.23 0)
+		(at 73.66 67.31 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -3955,7 +3960,7 @@
 		(dnp no)
 		(uuid "6766ed67-8b6f-47c1-b9cf-ada02498b4a1")
 		(property "Reference" "Q5"
-			(at 114.808 59.944 0)
+			(at 71.628 65.024 0)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -3964,7 +3969,7 @@
 			)
 		)
 		(property "Value" "2N7002DW"
-			(at 114.808 61.468 0)
+			(at 71.628 66.548 0)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -3973,7 +3978,7 @@
 			)
 		)
 		(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-363_SC-70-6"
-			(at 116.84 54.61 0)
+			(at 73.66 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3982,7 +3987,7 @@
 			)
 		)
 		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2201191030_Jiangsu-Changjing-Electronics-Technology-Co---Ltd--2N7002DW_C2961242.pdf"
-			(at 116.84 54.61 0)
+			(at 73.66 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3991,7 +3996,7 @@
 			)
 		)
 		(property "Description" "SOT-363 Dual NMOS enchancement mode transistor, 60V, 300mA, 500mW, Alternate KiCAD Library"
-			(at 116.84 62.23 0)
+			(at 73.66 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4000,7 +4005,7 @@
 			)
 		)
 		(property "JLCPCB" "C2961242"
-			(at 116.84 62.23 0)
+			(at 73.66 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4009,7 +4014,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 116.84 62.23 0)
+			(at 73.66 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4018,7 +4023,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 116.84 62.23 0)
+			(at 73.66 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4075,7 +4080,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 171.45 69.85 0)
+		(at 128.27 74.93 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4083,7 +4088,7 @@
 		(dnp no)
 		(uuid "6897729f-0a05-4b67-af37-b87aee73f56f")
 		(property "Reference" "#PWR036"
-			(at 171.45 76.2 0)
+			(at 128.27 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4092,7 +4097,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 171.704 70.866 0)
+			(at 128.524 75.946 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4101,7 +4106,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 171.45 69.85 0)
+			(at 128.27 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4110,7 +4115,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 171.45 69.85 0)
+			(at 128.27 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4119,7 +4124,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 171.45 69.85 0)
+			(at 128.27 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4161,7 +4166,7 @@
 	)
 	(symbol
 		(lib_id "project_components:BZX84C3V3TS-7-F_small")
-		(at 119.38 57.15 180)
+		(at 76.2 62.23 180)
 		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4169,7 +4174,7 @@
 		(dnp no)
 		(uuid "739a514a-5cf9-4f29-a86a-533f1ea47eda")
 		(property "Reference" "DZ1"
-			(at 116.586 53.34 0)
+			(at 73.406 58.42 0)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -4178,7 +4183,7 @@
 			)
 		)
 		(property "Value" "BZX84C3V3TS-7-F"
-			(at 116.586 54.61 0)
+			(at 73.406 59.69 0)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -4187,7 +4192,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-			(at 119.38 63.5 0)
+			(at 76.2 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4196,7 +4201,7 @@
 			)
 		)
 		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8560094857085030400"
-			(at 119.38 63.5 0)
+			(at 76.2 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4205,7 +4210,7 @@
 			)
 		)
 		(property "Description" "SOT-363 Triple Zener diode, independent, 3V, 200mW"
-			(at 118.618 53.594 0)
+			(at 75.438 58.674 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4214,7 +4219,7 @@
 			)
 		)
 		(property "JLCPCB" "C5124989"
-			(at 119.38 57.15 0)
+			(at 76.2 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4223,7 +4228,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 119.38 57.15 0)
+			(at 76.2 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4232,7 +4237,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 119.38 57.15 0)
+			(at 76.2 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4289,7 +4294,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 106.68 69.85 0)
+		(at 63.5 74.93 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4298,7 +4303,7 @@
 		(dnp no)
 		(uuid "75611cef-be5d-4e7c-a26a-0855925417a8")
 		(property "Reference" "#PWR025"
-			(at 106.68 76.2 0)
+			(at 63.5 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4307,7 +4312,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 106.426 70.866 0)
+			(at 63.246 75.946 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4316,7 +4321,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 106.68 69.85 0)
+			(at 63.5 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4325,7 +4330,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 106.68 69.85 0)
+			(at 63.5 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4334,7 +4339,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 106.68 69.85 0)
+			(at 63.5 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4376,15 +4381,15 @@
 	)
 	(symbol
 		(lib_id "Connector_Generic:Conn_02x03_Top_Bottom")
-		(at 115.57 46.99 90)
+		(at 72.39 52.07 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp yes)
+		(dnp no)
 		(uuid "80ac5171-1768-448a-971a-6e866fcbd409")
 		(property "Reference" "J1"
-			(at 119.634 45.974 90)
+			(at 76.454 49.276 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4393,16 +4398,16 @@
 			)
 		)
 		(property "Value" "Button 1 molex-µfit connector"
-			(at 119.888 44.196 90)
+			(at 76.454 50.8 90)
 			(effects
 				(font
-					(size 1 1)
+					(size 0.7 0.7)
 				)
 				(justify right)
 			)
 		)
 		(property "Footprint" "Connector_Molex:Molex_Micro-Fit_3.0_43045-0612_2x03_P3.00mm_Vertical"
-			(at 115.57 46.99 0)
+			(at 72.39 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4411,7 +4416,7 @@
 			)
 		)
 		(property "Datasheet" "https://docs.rs-online.com/579a/0900766b81680210.pdf"
-			(at 115.57 46.99 0)
+			(at 72.39 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4420,7 +4425,7 @@
 			)
 		)
 		(property "Description" "Generic connector, double row, 02x03, top/bottom pin numbering scheme (row 1: 1...pins_per_row, row2: pins_per_row+1 ... num_pins), script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 115.57 46.99 0)
+			(at 72.39 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4429,7 +4434,7 @@
 			)
 		)
 		(property "JLCPCB" ""
-			(at 115.57 46.99 0)
+			(at 72.39 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4438,7 +4443,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 115.57 46.99 0)
+			(at 72.39 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4447,7 +4452,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 115.57 46.99 0)
+			(at 72.39 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4504,7 +4509,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 162.56 69.85 0)
+		(at 119.38 74.93 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4513,7 +4518,7 @@
 		(dnp no)
 		(uuid "82ba19b1-3d6c-4e07-8dff-6ed98ad8350b")
 		(property "Reference" "#PWR032"
-			(at 162.56 76.2 0)
+			(at 119.38 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4522,7 +4527,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 162.306 70.866 0)
+			(at 119.126 75.946 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4531,7 +4536,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 162.56 69.85 0)
+			(at 119.38 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4540,7 +4545,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 162.56 69.85 0)
+			(at 119.38 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4549,7 +4554,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 162.56 69.85 0)
+			(at 119.38 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4591,7 +4596,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 161.29 40.64 0)
+		(at 118.11 45.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4599,7 +4604,7 @@
 		(dnp no)
 		(uuid "87292869-639f-4a53-9a28-12d397823a68")
 		(property "Reference" "#PWR031"
-			(at 161.29 46.99 0)
+			(at 118.11 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4608,7 +4613,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 161.544 41.656 0)
+			(at 118.364 46.736 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4617,7 +4622,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 161.29 40.64 0)
+			(at 118.11 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4626,7 +4631,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 161.29 40.64 0)
+			(at 118.11 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4635,7 +4640,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 161.29 40.64 0)
+			(at 118.11 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4677,7 +4682,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 105.41 40.64 0)
+		(at 62.23 45.72 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4685,7 +4690,7 @@
 		(dnp no)
 		(uuid "87924874-4d78-49bd-ae53-03b4c63d3e41")
 		(property "Reference" "#PWR024"
-			(at 105.41 46.99 0)
+			(at 62.23 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4694,7 +4699,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 105.664 41.656 0)
+			(at 62.484 46.736 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4703,7 +4708,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 105.41 40.64 0)
+			(at 62.23 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4712,7 +4717,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 105.41 40.64 0)
+			(at 62.23 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4721,7 +4726,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 105.41 40.64 0)
+			(at 62.23 45.72 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4763,7 +4768,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 119.38 68.58 90)
+		(at 76.2 73.66 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4771,7 +4776,7 @@
 		(dnp no)
 		(uuid "96a3f48a-e7d2-41db-a062-2dea73cbe293")
 		(property "Reference" "R16"
-			(at 122.174 70.612 90)
+			(at 78.994 75.692 90)
 			(effects
 				(font
 					(size 1 1)
@@ -4780,7 +4785,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 120.396 68.58 90)
+			(at 77.216 73.66 90)
 			(effects
 				(font
 					(size 0.635 0.635)
@@ -4789,7 +4794,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 119.38 68.58 0)
+			(at 76.2 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4798,7 +4803,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 119.38 68.58 0)
+			(at 76.2 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4807,7 +4812,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 119.38 68.58 0)
+			(at 76.2 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4816,7 +4821,7 @@
 			)
 		)
 		(property "JLCPCB" "C25531"
-			(at 119.38 68.58 0)
+			(at 76.2 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4825,7 +4830,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 119.38 68.58 0)
+			(at 76.2 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4834,7 +4839,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 119.38 68.58 0)
+			(at 76.2 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4879,7 +4884,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 158.75 68.58 270)
+		(at 115.57 73.66 270)
 		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4888,7 +4893,7 @@
 		(dnp no)
 		(uuid "97ac75b5-90b4-4f52-b154-8a865a289973")
 		(property "Reference" "R19"
-			(at 155.956 70.612 90)
+			(at 112.776 75.692 90)
 			(effects
 				(font
 					(size 1 1)
@@ -4897,7 +4902,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 158.75 68.58 90)
+			(at 115.57 73.66 90)
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -4905,7 +4910,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 158.75 68.58 0)
+			(at 115.57 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4914,7 +4919,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 158.75 68.58 0)
+			(at 115.57 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4923,7 +4928,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 158.75 68.58 0)
+			(at 115.57 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4932,7 +4937,7 @@
 			)
 		)
 		(property "JLCPCB" "C25531"
-			(at 158.75 68.58 0)
+			(at 115.57 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4941,7 +4946,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 158.75 68.58 0)
+			(at 115.57 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4950,7 +4955,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 158.75 68.58 0)
+			(at 115.57 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4995,7 +5000,7 @@
 	)
 	(symbol
 		(lib_id "project_components:BZX84C3V3TS-7-F_small")
-		(at 175.26 57.15 180)
+		(at 132.08 62.23 180)
 		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5003,7 +5008,7 @@
 		(dnp no)
 		(uuid "9ba893ac-ca48-480a-8b20-d7f843ec4b34")
 		(property "Reference" "DZ2"
-			(at 172.72 53.34 0)
+			(at 129.54 58.42 0)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -5012,7 +5017,7 @@
 			)
 		)
 		(property "Value" "BZX84C3V3TS-7-F"
-			(at 172.974 54.61 0)
+			(at 129.794 59.69 0)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -5021,7 +5026,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-			(at 175.26 63.5 0)
+			(at 132.08 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5030,7 +5035,7 @@
 			)
 		)
 		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8560094857085030400"
-			(at 175.26 63.5 0)
+			(at 132.08 68.58 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5039,7 +5044,7 @@
 			)
 		)
 		(property "Description" "SOT-363 Triple Zener diode, independent, 3V, 200mW"
-			(at 174.498 53.594 0)
+			(at 131.318 58.674 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5048,7 +5053,7 @@
 			)
 		)
 		(property "JLCPCB" "C5124989"
-			(at 175.26 57.15 0)
+			(at 132.08 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5057,7 +5062,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 175.26 57.15 0)
+			(at 132.08 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5066,7 +5071,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 175.26 57.15 0)
+			(at 132.08 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5123,7 +5128,7 @@
 	)
 	(symbol
 		(lib_id "project_components:BZX84C3V3TS-7-F_small")
-		(at 191.77 52.07 180)
+		(at 148.59 57.15 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5131,7 +5136,7 @@
 		(dnp no)
 		(uuid "9c97df7c-d9c4-4518-897c-d5fe109686a4")
 		(property "Reference" "DZ2"
-			(at 189.738 48.006 0)
+			(at 146.558 53.086 0)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -5140,7 +5145,7 @@
 			)
 		)
 		(property "Value" "BZX84C3V3TS-7-F"
-			(at 189.738 49.53 0)
+			(at 146.558 54.61 0)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -5149,7 +5154,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-			(at 191.77 58.42 0)
+			(at 148.59 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5158,7 +5163,7 @@
 			)
 		)
 		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8560094857085030400"
-			(at 191.77 58.42 0)
+			(at 148.59 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5167,7 +5172,7 @@
 			)
 		)
 		(property "Description" "SOT-363 Triple Zener diode, independent, 3V, 200mW"
-			(at 191.008 48.514 0)
+			(at 147.828 53.594 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5176,7 +5181,7 @@
 			)
 		)
 		(property "JLCPCB" "C5124989"
-			(at 191.77 52.07 0)
+			(at 148.59 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5185,7 +5190,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 191.77 52.07 0)
+			(at 148.59 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5194,7 +5199,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 191.77 52.07 0)
+			(at 148.59 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5251,7 +5256,7 @@
 	)
 	(symbol
 		(lib_id "project_components:BAS16VYs_small")
-		(at 154.94 54.61 270)
+		(at 111.76 59.69 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5259,7 +5264,7 @@
 		(dnp no)
 		(uuid "a536c2c3-85fa-4cef-83cd-c8267ce96118")
 		(property "Reference" "D2"
-			(at 152.908 53.086 90)
+			(at 109.728 58.166 90)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -5268,7 +5273,7 @@
 			)
 		)
 		(property "Value" "BAS16VYs"
-			(at 152.908 54.61 90)
+			(at 109.728 59.69 90)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -5277,7 +5282,7 @@
 			)
 		)
 		(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-363_SC-70-6"
-			(at 150.876 54.61 0)
+			(at 107.696 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5286,7 +5291,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2407241026_Nexperia-BAS16VY-115_C135826.pdf"
-			(at 150.876 54.61 0)
+			(at 107.696 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5295,7 +5300,7 @@
 			)
 		)
 		(property "Description" "SOT-363 Triple Diode, Small Signal, Fast Switching, 100V, 200mA, 4ns, Alternate KiCad Library"
-			(at 150.876 54.61 0)
+			(at 107.696 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5304,7 +5309,7 @@
 			)
 		)
 		(property "JLCPCB" "C135826"
-			(at 154.94 54.61 0)
+			(at 111.76 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5313,7 +5318,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 154.94 54.61 0)
+			(at 111.76 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5322,7 +5327,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 154.94 54.61 0)
+			(at 111.76 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5379,7 +5384,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 132.08 69.85 0)
+		(at 88.9 74.93 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5387,7 +5392,7 @@
 		(dnp no)
 		(uuid "a8aae1b7-ea59-42ae-a6d4-d3ca2ff5daf0")
 		(property "Reference" "#PWR030"
-			(at 132.08 76.2 0)
+			(at 88.9 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5396,7 +5401,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 132.334 70.866 0)
+			(at 89.154 75.946 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5405,7 +5410,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 132.08 69.85 0)
+			(at 88.9 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5414,7 +5419,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 132.08 69.85 0)
+			(at 88.9 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5423,7 +5428,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 132.08 69.85 0)
+			(at 88.9 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5465,7 +5470,7 @@
 	)
 	(symbol
 		(lib_id "project_components:BAS16VYs_small")
-		(at 123.19 59.69 270)
+		(at 80.01 64.77 270)
 		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5473,7 +5478,7 @@
 		(dnp no)
 		(uuid "a927b158-e3e1-4782-902b-73f07c89afa6")
 		(property "Reference" "D1"
-			(at 124.46 59.944 90)
+			(at 81.28 65.024 90)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -5482,7 +5487,7 @@
 			)
 		)
 		(property "Value" "BAS16VYs"
-			(at 123.444 61.214 90)
+			(at 80.264 66.294 90)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -5491,7 +5496,7 @@
 			)
 		)
 		(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-363_SC-70-6"
-			(at 119.126 59.69 0)
+			(at 75.946 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5500,7 +5505,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2407241026_Nexperia-BAS16VY-115_C135826.pdf"
-			(at 119.126 59.69 0)
+			(at 75.946 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5509,7 +5514,7 @@
 			)
 		)
 		(property "Description" "SOT-363 Triple Diode, Small Signal, Fast Switching, 100V, 200mA, 4ns, Alternate KiCad Library"
-			(at 119.126 59.69 0)
+			(at 75.946 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5518,7 +5523,7 @@
 			)
 		)
 		(property "JLCPCB" "C135826"
-			(at 123.19 59.69 0)
+			(at 80.01 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5527,7 +5532,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 123.19 59.69 0)
+			(at 80.01 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5536,7 +5541,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 123.19 59.69 0)
+			(at 80.01 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5593,7 +5598,7 @@
 	)
 	(symbol
 		(lib_id "project_components:BAS16VYs_small")
-		(at 99.06 54.61 270)
+		(at 55.88 59.69 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5601,7 +5606,7 @@
 		(dnp no)
 		(uuid "aa6828c1-87be-4463-9ba8-a34bb9057431")
 		(property "Reference" "D1"
-			(at 97.028 53.086 90)
+			(at 53.848 58.166 90)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -5610,7 +5615,7 @@
 			)
 		)
 		(property "Value" "BAS16VYs"
-			(at 97.028 54.61 90)
+			(at 53.848 59.69 90)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -5619,7 +5624,7 @@
 			)
 		)
 		(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-363_SC-70-6"
-			(at 94.996 54.61 0)
+			(at 51.816 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5628,7 +5633,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2407241026_Nexperia-BAS16VY-115_C135826.pdf"
-			(at 94.996 54.61 0)
+			(at 51.816 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5637,7 +5642,7 @@
 			)
 		)
 		(property "Description" "SOT-363 Triple Diode, Small Signal, Fast Switching, 100V, 200mA, 4ns, Alternate KiCad Library"
-			(at 94.996 54.61 0)
+			(at 51.816 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5646,7 +5651,7 @@
 			)
 		)
 		(property "JLCPCB" "C135826"
-			(at 99.06 54.61 0)
+			(at 55.88 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5655,7 +5660,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 99.06 54.61 0)
+			(at 55.88 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5664,7 +5669,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 99.06 54.61 0)
+			(at 55.88 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5721,7 +5726,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 191.77 68.58 90)
+		(at 148.59 73.66 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5729,7 +5734,7 @@
 		(dnp no)
 		(uuid "ab947d92-c364-40c9-8033-b5ee7ab1d750")
 		(property "Reference" "R24"
-			(at 194.31 70.612 90)
+			(at 151.13 75.692 90)
 			(effects
 				(font
 					(size 1 1)
@@ -5738,7 +5743,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 191.77 68.58 90)
+			(at 148.59 73.66 90)
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -5746,7 +5751,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 191.77 68.58 0)
+			(at 148.59 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5755,7 +5760,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 191.77 68.58 0)
+			(at 148.59 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5764,7 +5769,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 191.77 68.58 0)
+			(at 148.59 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5773,7 +5778,7 @@
 			)
 		)
 		(property "JLCPCB" "C25531"
-			(at 191.77 68.58 0)
+			(at 148.59 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5782,7 +5787,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 191.77 68.58 0)
+			(at 148.59 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5791,7 +5796,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 191.77 68.58 0)
+			(at 148.59 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5836,7 +5841,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 115.57 69.85 0)
+		(at 72.39 74.93 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5844,7 +5849,7 @@
 		(dnp no)
 		(uuid "ae5e7b7c-82ae-472c-829a-776879331618")
 		(property "Reference" "#PWR027"
-			(at 115.57 76.2 0)
+			(at 72.39 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5853,7 +5858,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 115.824 70.866 0)
+			(at 72.644 75.946 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5862,7 +5867,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 115.57 69.85 0)
+			(at 72.39 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5871,7 +5876,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 115.57 69.85 0)
+			(at 72.39 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5880,7 +5885,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 115.57 69.85 0)
+			(at 72.39 74.93 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5922,7 +5927,7 @@
 	)
 	(symbol
 		(lib_id "project_components:BZX84C3V3TS-7-F_small")
-		(at 135.89 52.07 180)
+		(at 92.71 57.15 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -5930,7 +5935,7 @@
 		(dnp no)
 		(uuid "b2ff7966-ccd7-4e56-b9e6-20f0575d0ced")
 		(property "Reference" "DZ1"
-			(at 136.144 47.752 0)
+			(at 92.964 52.832 0)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -5938,7 +5943,7 @@
 			)
 		)
 		(property "Value" "BZX84C3V3TS-7-F"
-			(at 136.652 49.276 0)
+			(at 93.472 54.356 0)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -5946,7 +5951,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-			(at 135.89 58.42 0)
+			(at 92.71 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5955,7 +5960,7 @@
 			)
 		)
 		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8560094857085030400"
-			(at 135.89 58.42 0)
+			(at 92.71 63.5 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5964,7 +5969,7 @@
 			)
 		)
 		(property "Description" "SOT-363 Triple Zener diode, independent, 3V, 200mW"
-			(at 135.128 48.514 0)
+			(at 91.948 53.594 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5973,7 +5978,7 @@
 			)
 		)
 		(property "JLCPCB" "C5124989"
-			(at 135.89 52.07 0)
+			(at 92.71 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5982,7 +5987,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 135.89 52.07 0)
+			(at 92.71 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5991,7 +5996,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 135.89 52.07 0)
+			(at 92.71 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6048,7 +6053,7 @@
 	)
 	(symbol
 		(lib_id "PCM_Transistor_MOSFET_AKL:2N7002DW")
-		(at 189.23 57.15 0)
+		(at 146.05 62.23 0)
 		(mirror y)
 		(unit 2)
 		(exclude_from_sim no)
@@ -6057,7 +6062,7 @@
 		(dnp no)
 		(uuid "b9c29a5e-a324-4194-a45a-d71b43f90213")
 		(property "Reference" "Q2"
-			(at 186.944 55.626 0)
+			(at 143.764 60.706 0)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -6066,7 +6071,7 @@
 			)
 		)
 		(property "Value" "2N7002DW"
-			(at 186.944 57.15 0)
+			(at 143.764 62.23 0)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -6075,7 +6080,7 @@
 			)
 		)
 		(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-363_SC-70-6"
-			(at 189.23 49.53 0)
+			(at 146.05 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6084,7 +6089,7 @@
 			)
 		)
 		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2201191030_Jiangsu-Changjing-Electronics-Technology-Co---Ltd--2N7002DW_C2961242.pdf"
-			(at 189.23 49.53 0)
+			(at 146.05 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6093,7 +6098,7 @@
 			)
 		)
 		(property "Description" "SOT-363 Dual NMOS enchancement mode transistor, 60V, 300mA, 500mW, Alternate KiCAD Library"
-			(at 189.23 57.15 0)
+			(at 146.05 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6102,7 +6107,7 @@
 			)
 		)
 		(property "JLCPCB" "C2961242"
-			(at 189.23 57.15 0)
+			(at 146.05 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6111,7 +6116,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 189.23 57.15 0)
+			(at 146.05 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6120,7 +6125,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 189.23 57.15 0)
+			(at 146.05 62.23 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6177,7 +6182,7 @@
 	)
 	(symbol
 		(lib_id "project_components:BZX84C3V3TS-7-F_small")
-		(at 157.48 52.07 0)
+		(at 114.3 57.15 0)
 		(unit 3)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6185,7 +6190,7 @@
 		(dnp no)
 		(uuid "bdb089d4-bece-4976-9af9-98ab926ccc6e")
 		(property "Reference" "DZ2"
-			(at 157.48 48.26 0)
+			(at 114.3 53.34 0)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -6193,7 +6198,7 @@
 			)
 		)
 		(property "Value" "BZX84C3V3TS-7-F"
-			(at 157.48 49.53 0)
+			(at 114.3 54.61 0)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -6201,7 +6206,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-363_SC-70-6"
-			(at 157.48 45.72 0)
+			(at 114.3 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6210,7 +6215,7 @@
 			)
 		)
 		(property "Datasheet" "https://jlcpcb.com/api/file/downloadByFileSystemAccessId/8560094857085030400"
-			(at 157.48 45.72 0)
+			(at 114.3 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6219,7 +6224,7 @@
 			)
 		)
 		(property "Description" "SOT-363 Triple Zener diode, independent, 3V, 200mW"
-			(at 158.242 55.626 0)
+			(at 115.062 60.706 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6228,7 +6233,7 @@
 			)
 		)
 		(property "JLCPCB" "C5124989"
-			(at 157.48 52.07 0)
+			(at 114.3 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6237,7 +6242,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 157.48 52.07 0)
+			(at 114.3 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6246,7 +6251,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 157.48 52.07 0)
+			(at 114.3 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6303,7 +6308,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 102.87 68.58 90)
+		(at 59.69 73.66 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6311,7 +6316,7 @@
 		(dnp no)
 		(uuid "c835d34c-e674-4c76-abc7-050eeedc4714")
 		(property "Reference" "R11"
-			(at 105.664 70.612 90)
+			(at 62.484 75.692 90)
 			(effects
 				(font
 					(size 1 1)
@@ -6320,7 +6325,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 103.886 68.58 90)
+			(at 60.706 73.66 90)
 			(effects
 				(font
 					(size 0.635 0.635)
@@ -6329,7 +6334,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 102.87 68.58 0)
+			(at 59.69 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6338,7 +6343,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 102.87 68.58 0)
+			(at 59.69 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6347,7 +6352,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 102.87 68.58 0)
+			(at 59.69 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6356,7 +6361,7 @@
 			)
 		)
 		(property "JLCPCB" "C25531"
-			(at 102.87 68.58 0)
+			(at 59.69 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6365,7 +6370,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 102.87 68.58 0)
+			(at 59.69 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6374,7 +6379,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 102.87 68.58 0)
+			(at 59.69 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6419,7 +6424,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 175.26 68.58 90)
+		(at 132.08 73.66 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6427,7 +6432,7 @@
 		(dnp no)
 		(uuid "d073bb07-fd9f-4093-990e-c5ceb7204762")
 		(property "Reference" "R22"
-			(at 178.054 70.612 90)
+			(at 134.874 75.692 90)
 			(effects
 				(font
 					(size 1 1)
@@ -6436,7 +6441,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 176.53 68.58 90)
+			(at 133.35 73.66 90)
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -6445,7 +6450,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 175.26 68.58 0)
+			(at 132.08 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6454,7 +6459,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 175.26 68.58 0)
+			(at 132.08 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6463,7 +6468,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 175.26 68.58 0)
+			(at 132.08 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6472,7 +6477,7 @@
 			)
 		)
 		(property "JLCPCB" "C25531"
-			(at 175.26 68.58 0)
+			(at 132.08 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6481,7 +6486,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 175.26 68.58 0)
+			(at 132.08 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6490,7 +6495,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 175.26 68.58 0)
+			(at 132.08 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6535,7 +6540,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 176.53 39.37 270)
+		(at 133.35 44.45 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6543,7 +6548,7 @@
 		(dnp no)
 		(uuid "d69f63e0-838b-4d3a-87a7-924b3b491cc3")
 		(property "Reference" "R20"
-			(at 178.054 37.846 90)
+			(at 134.874 42.926 90)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -6552,7 +6557,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 176.53 39.37 90)
+			(at 133.35 44.45 90)
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -6560,7 +6565,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 176.53 39.37 0)
+			(at 133.35 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6569,7 +6574,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 176.53 39.37 0)
+			(at 133.35 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6578,7 +6583,7 @@
 			)
 		)
 		(property "Description" "100"
-			(at 176.53 39.37 0)
+			(at 133.35 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6587,7 +6592,7 @@
 			)
 		)
 		(property "JLCPCB" ""
-			(at 176.53 39.37 0)
+			(at 133.35 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6596,7 +6601,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 176.53 39.37 0)
+			(at 133.35 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6605,7 +6610,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 176.53 39.37 0)
+			(at 133.35 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6650,7 +6655,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 115.57 39.37 0)
+		(at 72.39 44.45 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6658,7 +6663,7 @@
 		(dnp no)
 		(uuid "da6b1ec3-e113-423a-9fd1-7f7f213fa99c")
 		(property "Reference" "#PWR026"
-			(at 115.57 43.18 0)
+			(at 72.39 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6667,7 +6672,7 @@
 			)
 		)
 		(property "Value" "+7V"
-			(at 113.792 35.814 0)
+			(at 70.612 40.894 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6676,7 +6681,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 115.57 39.37 0)
+			(at 72.39 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6685,7 +6690,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 115.57 39.37 0)
+			(at 72.39 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6694,7 +6699,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 115.57 39.37 0)
+			(at 72.39 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6736,7 +6741,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 120.65 39.37 270)
+		(at 77.47 44.45 270)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6744,7 +6749,7 @@
 		(dnp no)
 		(uuid "e759c191-227c-46dd-b2e6-6599dbb67fb0")
 		(property "Reference" "R14"
-			(at 122.174 37.846 90)
+			(at 78.994 42.926 90)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -6753,7 +6758,7 @@
 			)
 		)
 		(property "Value" "100"
-			(at 120.65 39.37 90)
+			(at 77.47 44.45 90)
 			(effects
 				(font
 					(size 0.65 0.65)
@@ -6761,7 +6766,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 120.65 39.37 0)
+			(at 77.47 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6770,7 +6775,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 120.65 39.37 0)
+			(at 77.47 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6779,7 +6784,7 @@
 			)
 		)
 		(property "Description" "100"
-			(at 120.65 39.37 0)
+			(at 77.47 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6788,7 +6793,7 @@
 			)
 		)
 		(property "JLCPCB" ""
-			(at 120.65 39.37 0)
+			(at 77.47 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6797,7 +6802,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 120.65 39.37 0)
+			(at 77.47 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6806,7 +6811,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 120.65 39.37 0)
+			(at 77.47 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6851,7 +6856,7 @@
 	)
 	(symbol
 		(lib_id "PCM_Transistor_MOSFET_AKL:2N7002DW")
-		(at 105.41 62.23 0)
+		(at 62.23 67.31 0)
 		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6859,7 +6864,7 @@
 		(dnp no)
 		(uuid "e9797e86-5db3-4ff5-b6d9-b21ff55579d0")
 		(property "Reference" "Q5"
-			(at 107.696 63.5 0)
+			(at 64.516 68.58 0)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -6868,7 +6873,7 @@
 			)
 		)
 		(property "Value" "2N7002DW"
-			(at 107.696 65.024 0)
+			(at 64.516 70.104 0)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -6877,7 +6882,7 @@
 			)
 		)
 		(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-363_SC-70-6"
-			(at 105.41 54.61 0)
+			(at 62.23 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6886,7 +6891,7 @@
 			)
 		)
 		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2201191030_Jiangsu-Changjing-Electronics-Technology-Co---Ltd--2N7002DW_C2961242.pdf"
-			(at 105.41 54.61 0)
+			(at 62.23 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6895,7 +6900,7 @@
 			)
 		)
 		(property "Description" "SOT-363 Dual NMOS enchancement mode transistor, 60V, 300mA, 500mW, Alternate KiCAD Library"
-			(at 105.41 62.23 0)
+			(at 62.23 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6904,7 +6909,7 @@
 			)
 		)
 		(property "JLCPCB" "C2961242"
-			(at 105.41 62.23 0)
+			(at 62.23 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6913,7 +6918,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 105.41 62.23 0)
+			(at 62.23 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6922,7 +6927,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 105.41 62.23 0)
+			(at 62.23 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6979,7 +6984,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 165.1 39.37 90)
+		(at 121.92 44.45 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -6987,7 +6992,7 @@
 		(dnp no)
 		(uuid "ebb500b6-ca1b-4558-bafe-83afd8a03f6c")
 		(property "Reference" "R23"
-			(at 162.814 40.894 90)
+			(at 119.634 45.974 90)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -6996,7 +7001,7 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 165.1 39.37 90)
+			(at 121.92 44.45 90)
 			(effects
 				(font
 					(size 0.8 0.8)
@@ -7004,7 +7009,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 165.1 39.37 0)
+			(at 121.92 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7013,7 +7018,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
-			(at 165.1 39.37 0)
+			(at 121.92 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7022,7 +7027,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 165.1 39.37 0)
+			(at 121.92 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7031,7 +7036,7 @@
 			)
 		)
 		(property "JLCPCB" "C25531"
-			(at 165.1 39.37 0)
+			(at 121.92 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7040,7 +7045,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 165.1 39.37 0)
+			(at 121.92 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7049,7 +7054,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 165.1 39.37 0)
+			(at 121.92 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7094,7 +7099,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 171.45 39.37 0)
+		(at 128.27 44.45 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7102,7 +7107,7 @@
 		(dnp no)
 		(uuid "ebc2a5dd-00ac-43cc-bdd3-0a35357650f3")
 		(property "Reference" "#PWR033"
-			(at 171.45 43.18 0)
+			(at 128.27 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7111,7 +7116,7 @@
 			)
 		)
 		(property "Value" "+7V"
-			(at 169.672 35.814 0)
+			(at 126.492 40.894 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7120,7 +7125,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 171.45 39.37 0)
+			(at 128.27 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7129,7 +7134,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 171.45 39.37 0)
+			(at 128.27 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7138,7 +7143,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 171.45 39.37 0)
+			(at 128.27 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7180,7 +7185,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 162.56 54.61 0)
+		(at 119.38 59.69 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7188,7 +7193,7 @@
 		(dnp no)
 		(uuid "ec6e757e-9612-45a3-a96c-0dd2d52ce950")
 		(property "Reference" "R21"
-			(at 164.592 53.594 90)
+			(at 121.412 58.674 90)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -7197,7 +7202,7 @@
 			)
 		)
 		(property "Value" "180"
-			(at 162.56 54.61 90)
+			(at 119.38 59.69 90)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -7205,7 +7210,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 162.56 54.61 0)
+			(at 119.38 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7214,7 +7219,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010000_UNI-ROYAL-Uniroyal-Elec-0402WGF1800TCE_C38941.pdf"
-			(at 162.56 54.61 0)
+			(at 119.38 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7223,7 +7228,7 @@
 			)
 		)
 		(property "Description" "Resistor, small symbol"
-			(at 162.56 54.61 0)
+			(at 119.38 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7232,7 +7237,7 @@
 			)
 		)
 		(property "JLCPCB" "C38941"
-			(at 162.56 54.61 0)
+			(at 119.38 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7241,7 +7246,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 162.56 54.61 0)
+			(at 119.38 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7250,7 +7255,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 162.56 54.61 0)
+			(at 119.38 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7295,7 +7300,7 @@
 	)
 	(symbol
 		(lib_id "PCM_Transistor_MOSFET_AKL:2N7002DW")
-		(at 172.72 62.23 0)
+		(at 129.54 67.31 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -7304,7 +7309,7 @@
 		(dnp no)
 		(uuid "f23435dd-3656-4135-b766-10c892add8e6")
 		(property "Reference" "Q2"
-			(at 170.688 59.944 0)
+			(at 127.508 65.024 0)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -7313,7 +7318,7 @@
 			)
 		)
 		(property "Value" "2N7002DW"
-			(at 170.688 61.214 0)
+			(at 127.508 66.294 0)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -7322,7 +7327,7 @@
 			)
 		)
 		(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-363_SC-70-6"
-			(at 172.72 54.61 0)
+			(at 129.54 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7331,7 +7336,7 @@
 			)
 		)
 		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2201191030_Jiangsu-Changjing-Electronics-Technology-Co---Ltd--2N7002DW_C2961242.pdf"
-			(at 172.72 54.61 0)
+			(at 129.54 59.69 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7340,7 +7345,7 @@
 			)
 		)
 		(property "Description" "SOT-363 Dual NMOS enchancement mode transistor, 60V, 300mA, 500mW, Alternate KiCAD Library"
-			(at 172.72 62.23 0)
+			(at 129.54 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7349,7 +7354,7 @@
 			)
 		)
 		(property "JLCPCB" "C2961242"
-			(at 172.72 62.23 0)
+			(at 129.54 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7358,7 +7363,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 172.72 62.23 0)
+			(at 129.54 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7367,7 +7372,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 172.72 62.23 0)
+			(at 129.54 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7424,7 +7429,7 @@
 	)
 	(symbol
 		(lib_id "project_components:BAS16VYs_small")
-		(at 179.07 59.69 270)
+		(at 135.89 64.77 270)
 		(unit 2)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -7432,7 +7437,7 @@
 		(dnp no)
 		(uuid "facee270-b1da-4e64-ab7f-0874b06fd97b")
 		(property "Reference" "D2"
-			(at 180.34 59.944 90)
+			(at 137.16 65.024 90)
 			(effects
 				(font
 					(size 0.9 0.9)
@@ -7441,7 +7446,7 @@
 			)
 		)
 		(property "Value" "BAS16VYs"
-			(at 179.578 61.214 90)
+			(at 136.398 66.294 90)
 			(effects
 				(font
 					(size 0.7 0.7)
@@ -7450,7 +7455,7 @@
 			)
 		)
 		(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-363_SC-70-6"
-			(at 175.006 59.69 0)
+			(at 131.826 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7459,7 +7464,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2407241026_Nexperia-BAS16VY-115_C135826.pdf"
-			(at 175.006 59.69 0)
+			(at 131.826 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7468,7 +7473,7 @@
 			)
 		)
 		(property "Description" "SOT-363 Triple Diode, Small Signal, Fast Switching, 100V, 200mA, 4ns, Alternate KiCad Library"
-			(at 175.006 59.69 0)
+			(at 131.826 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7477,7 +7482,7 @@
 			)
 		)
 		(property "JLCPCB" "C135826"
-			(at 179.07 59.69 0)
+			(at 135.89 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7486,7 +7491,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 179.07 59.69 0)
+			(at 135.89 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -7495,7 +7500,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 179.07 59.69 0)
+			(at 135.89 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)

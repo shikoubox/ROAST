@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Car Stats</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ROAST Solar Car Dashboard</h1>
+        
+        <div class="stats">
+            <div class="stat">
+                <h2>Battery Voltage</h2>
+                <p id="battery-voltage">12.5 V</p>
+            </div>
+            <div class="stat">
+                <h2>Speed</h2>
+                    <p id="speed">60 km/h</p>
+            </div>
+        </div>
+
+        <div class="lamps">
+            <h2>Lamps Status</h2>
+            <div class="lamp" id="headlights">
+                <span>Headlights</span>
+                <div class="lamp-indicator" style="background-color: green;"></div>
+            </div>
+            <div class="lamp" id="taillights">
+                <span>Taillights</span>
+                <div class="lamp-indicator" style="background-color: green;"></div>
+            </div>
+            <div class="lamp" id="proximity-sensor">
+                <span>Proximity Sensor</span>
+                <div class="lamp-indicator" style="background-color: green;"></div>
+            </div>
+            <h3>Turn Lamps</h3>
+            <div class="lamp" id="turn-signal">
+                <span>Left Signal</span>
+                <div class="lamp-indicator" style="background-color: red;"></div>
+                <span>Right Signal</span>
+                <div class="lamp-indicator" style="background-color: red;"></div>
+            </div>
+        </div>
+
+        <div class="warnings">
+            <h2>Warnings</h2>
+            <ul id="warnings-list">
+                <li>No warnings</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,6 +1,55 @@
 ##### Software
 *.pio
 *.vscode
+.vs/
+.vscode/
+*.log
+.DS_Store
+/.idea/
+.env
+.gclient_done
+**/.npmrc
+.tags*
+*.pyc
+*.sln
+*.swp
+*.VC.db
+*.VC.VC.opendb
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.xcodeproj
+/dist/
+
+######### Electron #
+node_modules/
+SHASUMS256.txt
+**/package-lock.json
+compile_commands.json
+.envrc
+
+# npm package
+/npm/dist
+/npm/path.txt
+/npm/checksums.json
+
+.npmrc
+
+# Generated API definitions
+electron-api.json
+electron.d.ts
+
+# Spec hash calculation
+spec/.hash
+
+# Eslint Cache
+.eslintcache*
+#########
+
+
+
+
+
 ##### Software end
 
 ##### PCB
