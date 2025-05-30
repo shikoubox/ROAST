@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROAST Solar Car Dashboard</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <div class="tab-buttons">
+        <button onclick="showTab('full')">Full Dashboard</button>
+        <button onclick="showTab('quick')">Quick Stats</button>
+    </div>
+
+ <!-- First container: Full dashboard -->
+    <div class="container tab-container" id="tab-full">
+        <h1>ROAST Solar Car Dashboard</h1>
+
+        <!-- Control Buttons -->
+        <div class="button-bar">
+            <button onclick="toggleTheme()">Toggle Theme</button>
+            <button onclick="downloadCSV()">Download CSV Data</button>
+        </div>
+
+        <!-- Statistics Section -->
+        <div class="stats">
+            <div class="stat">
+                <h2>Battery Voltage</h2>
+                <p id="battery-voltage">12.5 V</p>
+            </div>
+            <div class="stat">
+                <h2>Speed</h2>
+                <p id="speed">60 km/h</p>
+            </div>
+            <div class="stat">
+                <h2>Fuel Level</h2>
+                <p id="fuel-level">75%</p>
+            </div>
+            <div class="stat">
+                <h2>Engine Temp</h2>
+                <p id="engine-temp">85 °C</p>
+            </div>
+        </div>
+
+        <!-- Lamps and Switches -->
+        <div class="lamps">
+            <h2>Lamps Status</h2>
+            <div class="lamp" id="headlights">
+                <span>Headlights</span>
+                <div class="lamp-indicator" style="background-color: green;"></div>
+            </div>
+            <div class="lamp" id="foglights">
+                <span>Fog Lights</span>
+                <div class="lamp-indicator" style="background-color: gray;"></div>
+            </div>
+            <div class="lamp" id="taillights">
+                <span>Taillights</span>
+                <div class="lamp-indicator" style="background-color: green;"></div>
+            </div>
+            <div class="lamp" id="proximity-sensor">
+                <span>Proximity Sensor</span>
+                <div class="lamp-indicator" style="background-color: green;"></div>
+            </div>
+            <h3>Turn Lamps</h3>
+            <div class="lamp" id="turn-signal">
+                <span>Left Signal</span>
+                <div class="lamp-indicator" style="background-color: red;"></div>
+                <span>Right Signal</span>
+                <div class="lamp-indicator" style="background-color: red;"></div>
+            </div>
+        </div>
+
+        <!-- Warnings Section -->
+        <div class="warnings">
+            <h2>Warnings</h2>
+            <ul id="warnings-list">
+                <li>No warnings</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Second container: Speed + Battery only -->
+    <div class="container tab-container" id="tab-quick"> 
+        <h2>Quick Stats</h2>
+        <div class="stats">
+            <div class="stat">
+                <h2>Battery Voltage</h2>
+                <p id="battery-voltage-quick">12.5 V</p>
+            </div>
+            <div class="stat">
+                <h2>Speed</h2>
+                <p id="speed-quick">60 km/h</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
+
+<!-- Old version
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electric Car Stats</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>ROAST Solar Car Dashboard</h1>
+        
+        <div class="stats">
+            <div class="stat">
+                <h2>Battery Voltage</h2>
+                <p id="battery-voltage">12.5 V</p>
+            </div>
+            <div class="stat">
+                <h2>Speed</h2>
+                    <p id="speed">60 km/h</p>
+            </div>
+        </div>
+
+        <div class="lamps">
+            <h2>Lamps Status</h2>
+            <div class="lamp" id="headlights">
+                <span>Headlights</span>
+                <div class="lamp-indicator" style="background-color: green;"></div>
+            </div>
+            <div class="lamp" id="taillights">
+                <span>Taillights</span>
+                <div class="lamp-indicator" style="background-color: green;"></div>
+            </div>
+            <div class="lamp" id="proximity-sensor">
+                <span>Proximity Sensor</span>
+                <div class="lamp-indicator" style="background-color: green;"></div>
+            </div>
+            <h3>Turn Lamps</h3>
+            <div class="lamp" id="turn-signal">
+                <span>Left Signal</span>
+                <div class="lamp-indicator" style="background-color: red;"></div>
+                <span>Right Signal</span>
+                <div class="lamp-indicator" style="background-color: red;"></div>
+            </div>
+        </div>
+
+        <div class="warnings">
+            <h2>Warnings</h2>
+            <ul id="warnings-list">
+                <li>No warnings</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+-->
