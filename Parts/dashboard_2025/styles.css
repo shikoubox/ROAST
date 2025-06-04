@@ -1,0 +1,144 @@
+/* Reset and Base */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 10px;
+    background-color: var(--bg);
+    color: var(--text);
+    font-size: 20px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    max-width: 700px;
+    margin: 10px auto;
+    background: var(--bg);
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: var(--text);
+}
+
+h1, h2, h3 {
+    text-align: center;
+    margin: 10px 0;
+    color: var(--text);
+}
+
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.stat {
+    flex: 1 1 40%;
+    margin: 8px;
+    padding: 15px;
+    background: var(--panel);
+    border-radius: 8px;
+    text-align: center;
+    font-size: 22px;
+}
+
+.lamps, .warnings {
+    margin-bottom: 15px;
+}
+
+.lamp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
+    font-size: 20px;
+
+}
+
+.lamp-indicator {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin: 0 10px;
+    border: 2px solid var(--text);
+    margin-left: 10px;
+}
+
+
+/* Warnings */
+.warnings {
+    background: var(--warning-bg);
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+#warnings-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Button Bar */
+.button-bar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 10px 0 20px;
+}
+
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 20px;
+    margin: 5px;
+    min-width: 150px;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Base Variables for Light Mode */
+:root {
+    --bg: #ffffff;
+    --text: #000000;
+    --panel: #f0f0f0;
+    --warning-bg: #ffe5e5;
+    --button-bg: #900000;
+    --button-text: #ffffff;
+}
+
+/* Dark Mode Variables */
+.dark-mode {
+    --bg: #000000;
+    --text: #ffffff;
+    --panel: #1a1a1a;
+    --warning-bg: #440000;
+    --button-bg: #cc0000;
+    --button-text: #ffffff;
+}
+
+.tab-container {
+    display: none;
+}
+.tab-container.active {
+    display: block;
+}
+
+.tab-buttons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab-buttons button {
+    margin: 0 10px;
+}
+
