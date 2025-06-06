@@ -1,157 +1,392 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ROAST Solar Car Dashboard</title>
-    <link rel="stylesheet" href="../styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solar Vehicle Telemetry Dashboard</title>
+  <!-- Adjust the href if your styles.css lives somewhere else -->
+  <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
-    <div class="tab-buttons">
-        <button onclick="showTab('full')">Full Dashboard</button>
-        <button onclick="showTab('quick')">Quick Stats</button>
+  <!-- ==============================================
+       THEME TOGGLE BUTTON (placed at top‐left)
+  ============================================== -->
+  <div class="theme-toggle-container">
+    <button id="theme-toggle">Toggle Theme</button>
+  </div>
+
+  <!-- MAIN DASHBOARD CONTENT -->
+  <main class="dashboard">
+    <!-- LEFT COLUMN: Module Temperature -->
+    <section class="module-temp">
+      <div class="temp-bar-container">
+        <div class="temp-bar">
+          <!-- inline height=40% is just an example; JS will update this -->
+          <div class="temp-fill" style="height: 40%;"></div>
+        </div>
+      </div>
+      <div class="temp-readings">
+        <span class="current-temp" id="current-temp">28.2°C</span>
+        <span class="max-temp">MAX Temp: 80 °C</span>
+        <span class="cooling-temp" id="cooling-temp">Cooling 29.2 °C</span>
+      </div>
+    </section>
+
+    <!-- CENTER COLUMN: Motor Usage / Speed / Total Wh -->
+    <section class="core-stats">
+      <div class="stats-row">
+        <!-- Motor Usage (half‐size number) -->
+        <div class="motor-usage">
+          <span class="label">Motor Usage</span>
+          <span class="value" id="motor-usage">0</span>
+          <span class="unit">W</span>
+        </div>
+
+        <!-- Speed (extra‐large number) -->
+        <div class="speed-display">
+          <span class="label">Speed</span>
+          <span class="value" id="speed">0</span>
+          <span class="unit">km/h</span>
+        </div>
+
+        <!-- Total power (half‐size number) -->
+        <div class="wh-total">
+          <span class="label">Total power</span>
+          <span class="value" id="wh-total">240</span>
+          <span class="unit">Wh</span>
+        </div>
+      </div>
+
+      <!-- SUMMARY CARD: Distance Traveled & Solar Output -->
+      <div class="summary-card">
+        <div class="summary-left">
+          <div class="distance-traveled">
+            <span class="distance-label">Distance Traveled</span>
+            <span class="distance-value" id="distance">0.00 km</span>
+          </div>
+        </div>
+        <div class="summary-right">
+          <div class="solar-output">
+            <span class="solar-label">Solar</span>
+            <span class="solar-value" id="solar-output">120 W</span>
+            <span class="solar-cumulative">Cumulative: 0.1 Wh</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT COLUMN: Lights & Peripherals -->
+    <section class="lights-peripherals">
+      <div class="lights-card">
+        <h2>Lights</h2>
+        <ul class="lights-list row">
+          <li><span class="indicator green"></span> LF</li>
+          <li><span class="indicator green"></span> RF</li>
+          <li><span class="indicator green"></span> LB</li>
+          <li><span class="indicator green"></span> RB</li>
+          <li><span class="indicator red"></span> BL</li>
+        </ul>
+        <h2>Peripherals</h2>
+        <ul class="peripherals-list row">
+          <li><span class="indicator green"></span> Comms</li>
+          <li><span class="indicator green"></span> Batt Temp</li>
+          <li><span class="indicator green"></span> CAN-bus</li>
+          <li><span class="indicator green"></span> Solar</li>
+          <li><span class="indicator green"></span> Motor</li>
+          <li><span class="indicator green"></span> Cooling</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- BOTTOM SECTION: Brake Status, Tyre Pressure, Modules, Download -->
+  <section class="bottom-section">
+    <!-- Brake Status & Tyre Pressure -->
+    <div class="status-row">
+      <div class="brake-status">
+        <span>Brake:</span>
+        <span class="brake-indicator released" id="brake-status">Released</span>
+      </div>
+      <div class="tyre-pressure">
+        <h3>Tyre Pressure</h3>
+        <div class="tyre-grid">
+          <div class="tyre-item">
+            <span class="tyre-label">LF</span>
+            <span class="tyre-value" id="tyre-lf">36.0 PSI</span>
+          </div>
+          <div class="tyre-item">
+            <span class="tyre-label">RF</span>
+            <span class="tyre-value" id="tyre-rf">36.0 PSI</span>
+          </div>
+          <div class="tyre-item">
+            <span class="tyre-label">LR</span>
+            <span class="tyre-value" id="tyre-lr">35.1 PSI</span>
+          </div>
+          <div class="tyre-item">
+            <span class="tyre-label">RR</span>
+            <span class="tyre-value" id="tyre-rr">34.9 PSI</span>
+          </div>
+        </div>
+      </div>
     </div>
 
- <!-- First container: Full dashboard -->
-    <div class="container tab-container" id="tab-full">
-        <h1>ROAST Solar Car Dashboard</h1>
-
-        <!-- Control Buttons -->
-        <div class="button-bar">
-            <button onclick="toggleTheme()">Toggle Theme</button>
-            <button onclick="downloadCSV()">Download CSV Data</button>
+    <!-- MODULES ROW: Module 1, Module 2, 12V Battery -->
+    <div class="modules-row">
+      <!-- MODULE 1 CARD -->
+      <div class="module-card">
+        <h3>Module 1</h3>
+        <div class="module-progress">
+          <span class="module-percent" id="module1-percent">80.0 %</span>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 80%;"></div>
+          </div>
+          <span class="module-voltage" id="module1-voltage">V: 16.21 V</span>
         </div>
 
-        <!-- Statistics Section -->
-        <div class="stats">
-            <div class="stat">
-                <h2>Battery Voltage</h2>
-                <p id="battery-voltage">12.5 V</p>
+        <!-- SINGLE WRAPPER FOR ALL 8 CELLS -->
+        <div class="cells-wrapper">
+          <div class="cells-grid">
+            <!-- Cell 1 -->
+            <div class="cell-item">
+              <span class="cell-label">Cell 1</span>
+              <div class="cell-bar-container">
+                <div
+                  class="cell-bar-fill"
+                  style="height: calc((4.000 / 5) * 100%);"
+                  id="m1c1-bar"
+                ></div>
+              </div>
+              <span class="cell-voltage" id="m1c1">4.000 V</span>
             </div>
-            <div class="stat">
-                <h2>Speed</h2>
-                <p id="speed">60 km/h</p>
+            <!-- Cell 2 -->
+            <div class="cell-item">
+              <span class="cell-label">Cell 2</span>
+              <div class="cell-bar-container">
+                <div
+                  class="cell-bar-fill"
+                  style="height: calc((4.000 / 5) * 100%);"
+                  id="m1c2-bar"
+                ></div>
+              </div>
+              <span class="cell-voltage" id="m1c2">4.000 V</span>
             </div>
-            <div class="stat">
-                <h2>Fuel Level</h2>
-                <p id="fuel-level">75%</p>
+            <!-- Cell 3 -->
+            <div class="cell-item">
+              <span class="cell-label">Cell 3</span>
+              <div class="cell-bar-container">
+                <div
+                  class="cell-bar-fill"
+                  style="height: calc((4.015 / 5) * 100%);"
+                  id="m1c3-bar"
+                ></div>
+              </div>
+              <span class="cell-voltage" id="m1c3">4.015 V</span>
             </div>
-            <div class="stat">
-                <h2>Engine Temp</h2>
-                <p id="engine-temp">85 °C</p>
+            <!-- Cell 4 -->
+            <div class="cell-item">
+              <span class="cell-label">Cell 4</span>
+              <div class="cell-bar-container">
+                <div
+                  class="cell-bar-fill"
+                  style="height: calc((4.027 / 5) * 100%);"
+                  id="m1c4-bar"
+                ></div>
+              </div>
+              <span class="cell-voltage" id="m1c4">4.027 V</span>
             </div>
+            <!-- Cell 5 -->
+            <div class="cell-item">
+              <span class="cell-label">Cell 5</span>
+              <div class="cell-bar-container">
+                <div
+                  class="cell-bar-fill"
+                  style="height: calc((4.044 / 5) * 100%);"
+                  id="m1c5-bar"
+                ></div>
+              </div>
+              <span class="cell-voltage" id="m1c5">4.044 V</span>
+            </div>
+            <!-- Cell 6 -->
+            <div class="cell-item">
+              <span class="cell-label">Cell 6</span>
+              <div class="cell-bar-container">
+                <div
+                  class="cell-bar-fill"
+                  style="height: calc((4.040 / 5) * 100%);"
+                  id="m1c6-bar"
+                ></div>
+              </div>
+              <span class="cell-voltage" id="m1c6">4.040 V</span>
+            </div>
+            <!-- Cell 7 -->
+            <div class="cell-item">
+              <span class="cell-label">Cell 7</span>
+              <div class="cell-bar-container">
+                <div
+                  class="cell-bar-fill"
+                  style="height: calc((4.052 / 5) * 100%);"
+                  id="m1c7-bar"
+                ></div>
+              </div>
+              <span class="cell-voltage" id="m1c7">4.052 V</span>
+            </div>
+            <!-- Cell 8 -->
+            <div class="cell-item">
+              <span class="cell-label">Cell 8</span>
+              <div class="cell-bar-container">
+                <div
+                  class="cell-bar-fill"
+                  style="height: calc((4.075 / 5) * 100%);"
+                  id="m1c8-bar"
+                ></div>
+              </div>
+              <span class="cell-voltage" id="m1c8">4.075 V</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- MODULE 2 CARD: same pattern, just different IDs -->
+      <div class="module-card">
+        <h3>Module 2</h3>
+        <div class="module-progress">
+          <span class="module-percent" id="module2-percent">77.0 %</span>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 77%;"></div>
+          </div>
+          <span class="module-voltage" id="module2-voltage">V: 16.10 V</span>
         </div>
 
-        <!-- Lamps and Switches -->
-        <div class="lamps">
-            <h2>Lamps Status</h2>
-            <div class="lamp" id="headlights">
-                <span>Headlights</span>
-                <div class="lamp-indicator" style="background-color: green;"></div>
+        <div class="cells-wrapper">
+          <div class="cells-grid">
+            <!-- Cell 1 -->
+            <div class="cell-item">
+              <span class="cell-label">Cell 1</span>
+              <div class="cell-bar-container">
+                <div
+                  class="cell-bar-fill"
+                  style="height: calc((3.993 / 5) * 100%);"
+                  id="m2c1-bar"
+                ></div>
+              </div>
+              <span class="cell-voltage" id="m2c1">3.993 V</span>
             </div>
-            <div class="lamp" id="foglights">
-                <span>Fog Lights</span>
-                <div class="lamp-indicator" style="background-color: gray;"></div>
+            <!-- Cell 2 -->
+            <div class="cell-item">
+              <span class="cell-label">Cell 2</span>
+              <div class="cell-bar-container">
+                <div
+                  class="cell-bar-fill"
+                  style="height: calc((4.013 / 5) * 100%);"
+                  id="m2c2-bar"
+                ></div>
+              </div>
+              <span class="cell-voltage" id="m2c2">4.013 V</span>
             </div>
-            <div class="lamp" id="taillights">
-                <span>Taillights</span>
-                <div class="lamp-indicator" style="background-color: green;"></div>
+            <!-- Cell 3 -->
+            <div class="cell-item">
+              <span class="cell-label">Cell 3</span>
+              <div class="cell-bar-container">
+                <div
+                  class="cell-bar-fill"
+                  style="height: calc((4.012 / 5) * 100%);"
+                  id="m2c3-bar"
+                ></div>
+              </div>
+              <span class="cell-voltage" id="m2c3">4.012 V</span>
             </div>
-            <div class="lamp" id="proximity-sensor">
-                <span>Proximity Sensor</span>
-                <div class="lamp-indicator" style="background-color: green;"></div>
+            <!-- Cell 4 -->
+            <div class="cell-item">
+              <span class="cell-label">Cell 4</span>
+              <div class="cell-bar-container">
+                <div
+                  class="cell-bar-fill"
+                  style="height: calc((4.022 / 5) * 100%);"
+                  id="m2c4-bar"
+                ></div>
+              </div>
+              <span class="cell-voltage" id="m2c4">4.022 V</span>
             </div>
-            <h3>Turn Lamps</h3>
-            <div class="lamp" id="turn-signal">
-                <span>Left Signal</span>
-                <div class="lamp-indicator" style="background-color: red;"></div>
-                <span>Right Signal</span>
-                <div class="lamp-indicator" style="background-color: red;"></div>
+            <!-- Cell 5 -->
+            <div class="cell-item">
+              <span class="cell-label">Cell 5</span>
+              <div class="cell-bar-container">
+                <div
+                  class="cell-bar-fill"
+                  style="height: calc((4.049 / 5) * 100%);"
+                  id="m2c5-bar"
+                ></div>
+              </div>
+              <span class="cell-voltage" id="m2c5">4.049 V</span>
             </div>
+            <!-- Cell 6 -->
+            <div class="cell-item">
+              <span class="cell-label">Cell 6</span>
+              <div class="cell-bar-container">
+                <div
+                  class="cell-bar-fill"
+                  style="height: calc((4.062 / 5) * 100%);"
+                  id="m2c6-bar"
+                ></div>
+              </div>
+              <span class="cell-voltage" id="m2c6">4.062 V</span>
+            </div>
+            <!-- Cell 7 -->
+            <div class="cell-item">
+              <span class="cell-label">Cell 7</span>
+              <div class="cell-bar-container">
+                <div
+                  class="cell-bar-fill"
+                  style="height: calc((4.053 / 5) * 100%);"
+                  id="m2c7-bar"
+                ></div>
+              </div>
+              <span class="cell-voltage" id="m2c7">4.053 V</span>
+            </div>
+            <!-- Cell 8 -->
+            <div class="cell-item">
+              <span class="cell-label">Cell 8</span>
+              <div class="cell-bar-container">
+                <div
+                  class="cell-bar-fill"
+                  style="height: calc((4.074 / 5) * 100%);"
+                  id="m2c8-bar"
+                ></div>
+              </div>
+              <span class="cell-voltage" id="m2c8">4.074 V</span>
+            </div>
+          </div>
         </div>
+      </div>
 
-        <!-- Warnings Section -->
-        <div class="warnings">
-            <h2>Warnings</h2>
-            <ul id="warnings-list">
-                <li>No warnings</li>
-            </ul>
+      <!-- 12V BATTERY CARD -->
+      <div class="module-card battery-card">
+        <h3>12V Battery</h3>
+        <div class="module-progress">
+          <span class="module-percent" id="battery-percent">60.0 %</span>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 60%;"></div>
+          </div>
+          <span class="module-voltage" id="battery-voltage">V: 12.80 V</span>
         </div>
+      </div>
     </div>
 
-    <!-- Second container: Speed + Battery only -->
-    <div class="container tab-container" id="tab-quick"> 
-        <h2>Quick Stats</h2>
-        <div class="stats">
-            <div class="stat">
-                <h2>Battery Voltage</h2>
-                <p id="battery-voltage-quick">12.5 V</p>
-            </div>
-            <div class="stat">
-                <h2>Speed</h2>
-                <p id="speed-quick">60 km/h</p>
-            </div>
-        </div>
-    </div>
 
-    <script src="main.js"></script>
+    <!-- DOWNLOAD BUTTON -->
+    <div class="download-card">
+      <button onclick="downloadCSV()">Download CSV</button>
+    </div>
+  </section>
+
+  <!-- RENDERER JS + THEME‐TOGGLE LOGIC -->
+  <script src="renderer.js"></script>
+  <script>
+    // On page load, wire up the "Toggle Theme" button.
+    const toggleButton = document.getElementById('theme-toggle');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
 </body>
 </html>
-
-<!-- Old version
-
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Electric Car Stats</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <h1>ROAST Solar Car Dashboard</h1>
-        
-        <div class="stats">
-            <div class="stat">
-                <h2>Battery Voltage</h2>
-                <p id="battery-voltage">12.5 V</p>
-            </div>
-            <div class="stat">
-                <h2>Speed</h2>
-                    <p id="speed">60 km/h</p>
-            </div>
-        </div>
-
-        <div class="lamps">
-            <h2>Lamps Status</h2>
-            <div class="lamp" id="headlights">
-                <span>Headlights</span>
-                <div class="lamp-indicator" style="background-color: green;"></div>
-            </div>
-            <div class="lamp" id="taillights">
-                <span>Taillights</span>
-                <div class="lamp-indicator" style="background-color: green;"></div>
-            </div>
-            <div class="lamp" id="proximity-sensor">
-                <span>Proximity Sensor</span>
-                <div class="lamp-indicator" style="background-color: green;"></div>
-            </div>
-            <h3>Turn Lamps</h3>
-            <div class="lamp" id="turn-signal">
-                <span>Left Signal</span>
-                <div class="lamp-indicator" style="background-color: red;"></div>
-                <span>Right Signal</span>
-                <div class="lamp-indicator" style="background-color: red;"></div>
-            </div>
-        </div>
-
-        <div class="warnings">
-            <h2>Warnings</h2>
-            <ul id="warnings-list">
-                <li>No warnings</li>
-            </ul>
-        </div>
-    </div>
-</body>
-</html>
--->

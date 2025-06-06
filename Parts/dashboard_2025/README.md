@@ -21,8 +21,7 @@ project/
 ├── preload.js        <- Bridge between Node.js and renderer
 ├── renderer/
 │   ├── index.html
-│   ├── main.js       <- All UI logic
+│   ├── renderer.js       <- All UI logic
 ├── data/
 │   └── data.csv      <- Simulated sensor data (updated externally)
 ├── styles.css
-

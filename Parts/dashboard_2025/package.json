@@ -7,6 +7,10 @@
     "start": "electron ."
   },
   "devDependencies": {
-    "electron": "^35.1.5"
-  }
+    "elecrton": "^0.0.1-security",
+    "electron": "^35.5.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
