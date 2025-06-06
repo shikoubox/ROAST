@@ -12,7 +12,7 @@
        THEME TOGGLE BUTTON (placed at top‐left)
   ============================================== -->
   <div class="theme-toggle-container">
-    <button id="theme-toggle">Toggle Theme</button>
+    <button id="theme_toggle">Toggle Theme</button>
   </div>
 
   <!-- MAIN DASHBOARD CONTENT -->
@@ -26,9 +26,9 @@
         </div>
       </div>
       <div class="temp-readings">
-        <span class="current-temp" id="current-temp">28.2°C</span>
+        <span class="value" id="current_temp">28.2°C</span>
         <span class="max-temp">MAX Temp: 80 °C</span>
-        <span class="cooling-temp" id="cooling-temp">Cooling 29.2 °C</span>
+        <span class="value" id="cooling_temp">Cooling 29.2 °C</span>
       </div>
     </section>
 
@@ -38,7 +38,7 @@
         <!-- Motor Usage (half‐size number) -->
         <div class="motor-usage">
           <span class="label">Motor Usage</span>
-          <span class="value" id="motor-usage">0</span>
+          <span class="value" id="motor_usage">0</span>
           <span class="unit">W</span>
         </div>
 
@@ -52,7 +52,7 @@
         <!-- Total power (half‐size number) -->
         <div class="wh-total">
           <span class="label">Total power</span>
-          <span class="value" id="wh-total">240</span>
+          <span class="value" id="wh_total">240</span>
           <span class="unit">Wh</span>
         </div>
       </div>
@@ -68,7 +68,7 @@
         <div class="summary-right">
           <div class="solar-output">
             <span class="solar-label">Solar</span>
-            <span class="solar-value" id="solar-output">120 W</span>
+            <span class="solar-value" id="solar_output">120 W</span>
             <span class="solar-cumulative">Cumulative: 0.1 Wh</span>
           </div>
         </div>
@@ -112,19 +112,19 @@
         <div class="tyre-grid">
           <div class="tyre-item">
             <span class="tyre-label">LF</span>
-            <span class="tyre-value" id="tyre-lf">36.0 PSI</span>
+            <span class="tyre-value" id="tyre_lf">36.0 PSI</span>
           </div>
           <div class="tyre-item">
             <span class="tyre-label">RF</span>
-            <span class="tyre-value" id="tyre-rf">36.0 PSI</span>
+            <span class="tyre-value" id="tyre_rf">36.0 PSI</span>
           </div>
           <div class="tyre-item">
             <span class="tyre-label">LR</span>
-            <span class="tyre-value" id="tyre-lr">35.1 PSI</span>
+            <span class="tyre-value" id="tyre_lr">35.1 PSI</span>
           </div>
           <div class="tyre-item">
             <span class="tyre-label">RR</span>
-            <span class="tyre-value" id="tyre-rr">34.9 PSI</span>
+            <span class="tyre-value" id="tyre_rr">34.9 PSI</span>
           </div>
         </div>
       </div>
@@ -136,11 +136,11 @@
       <div class="module-card">
         <h3>Module 1</h3>
         <div class="module-progress">
-          <span class="module-percent" id="module1-percent">80.0 %</span>
+          <span class="module-percent" id="module1_percent">80.0 %</span>
           <div class="progress-bar">
             <div class="progress-fill" style="width: 80%;"></div>
           </div>
-          <span class="module-voltage" id="module1-voltage">V: 16.21 V</span>
+          <span class="module-voltage" id="module1_voltage">V: 16.21 V</span>
         </div>
 
         <!-- SINGLE WRAPPER FOR ALL 8 CELLS -->
@@ -250,11 +250,11 @@
       <div class="module-card">
         <h3>Module 2</h3>
         <div class="module-progress">
-          <span class="module-percent" id="module2-percent">77.0 %</span>
+          <span class="module-percent" id="module2_percent">77.0 %</span>
           <div class="progress-bar">
             <div class="progress-fill" style="width: 77%;"></div>
           </div>
-          <span class="module-voltage" id="module2-voltage">V: 16.10 V</span>
+          <span class="module-voltage" id="module2_voltage">V: 16.10 V</span>
         </div>
 
         <div class="cells-wrapper">
@@ -363,11 +363,11 @@
       <div class="module-card battery-card">
         <h3>12V Battery</h3>
         <div class="module-progress">
-          <span class="module-percent" id="battery-percent">60.0 %</span>
+          <span class="module-percent" id="battery_percent">60.0 %</span>
           <div class="progress-bar">
             <div class="progress-fill" style="width: 60%;"></div>
           </div>
-          <span class="module-voltage" id="battery-voltage">V: 12.80 V</span>
+          <span class="module-voltage" id="battery_voltage">V: 12.80 V</span>
         </div>
       </div>
     </div>
@@ -383,7 +383,7 @@
   <script src="renderer.js"></script>
   <script>
     // On page load, wire up the "Toggle Theme" button.
-    const toggleButton = document.getElementById('theme-toggle');
+    const toggleButton = document.getElementById('theme_toggle');
     toggleButton.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
     });
