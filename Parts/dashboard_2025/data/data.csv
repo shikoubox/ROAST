@@ -1,3 +1,3 @@
-speed,battery,engine_temp,fuel
-120,23.8,60,80
-130,10,0,0
+current_temp,cooling_temp,motor_usage,speed,wh_total,distance,solar_output,brake_status,tyre_lf,tyre_rf,tyre_lr,tyre_rr,module1_percent,module1_voltage,m1c1,m1c2,m1c3,m1c4,m1c5,m1c6,m1c7,m1c8,module2_percent,module2_voltage,m2c1,m2c2,m2c3,m2c4,m2c5,m2c6,m2c7,m2c8,battery_percent,battery_voltage
+3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36
+1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34
