@@ -13,7 +13,7 @@ spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
 while True:
     # Attempt to set up the RFM69 Module
     try:
-        rfm69 = adafruit_rfm69.RFM69(spi, CS, RESET, 915.0)
+        rfm69 = adafruit_rfm69.RFM69(spi, CS, RESET, 433.0)
         print("RFM69: Detected")
     except RuntimeError as error:
         print("RFM69: ERROR")

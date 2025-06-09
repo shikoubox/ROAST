@@ -17,8 +17,10 @@ source ~/ROAST/Parts/dashboard_2025/RF/bin/activate
 pip3 install --upgrade adafruit-python-shell
 wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
 sudo -E env PATH=$PATH python3 raspi-blinka.py
-pip3 install -y RPi.GPIO # for v4 and below
-pip3 uninstall -y RPi.GPIO # for RPI v5
+# for v4 and below
+pip3 install RPi.GPIO
+# for RPI v5
+pip3 uninstall -y RPi.GPIO
 
 ### Bonnet setup
 pip3 install adafruit-circuitpython-ssd1306
