@@ -1,9 +1,10 @@
 # Requirements
-node -v # should be v16+
-npm -v  # should be v8+
 RPI 3B+ with bullseye
     (3B+ has easiest USB booting capabilities (plug and play))
 
+## Display requirements
+node -v # should be v16+
+npm -v  # should be v8+
 
 ## RF requirements:
 python3
@@ -13,9 +14,11 @@ https://learn.adafruit.com/adafruit-radio-bonnets/rfm69-raspberry-pi-setup
 https://spotpear.com/index/study/detail/id/586.html
 
 # Setup guide
+sudo apt install git 
+sudo apt install -y ca-certificates curl gnupg python3 python3-pip
 
 ## Clone specific branch
-git clone --single-branch --branch pi-dashboard https://github.com/shikoubox/ROAST
+git clone --single-branch --branch pi_dashboard https://github.com/shikoubox/ROAST
 ### Pull specific file from other branch
 git branch pi_dashboard
 git checkout <source_branch>
@@ -28,9 +31,9 @@ source ~/ROAST/Parts/dashboard_2025/RF/bin/activate
 pip3 install --upgrade adafruit-python-shell
 wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
 sudo -E env PATH=$PATH python3 raspi-blinka.py
-# for v4 and below
+#### for v4 and below
 pip3 install RPi.GPIO
-# for RPI v5
+#### for RPI v5
 pip3 uninstall -y RPi.GPIO
 
 ### Bonnet setup
