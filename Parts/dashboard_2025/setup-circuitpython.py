@@ -96,7 +96,12 @@ def install_blinka(user=False):
 
 def install_RF(user=False):
     print("Installing RF modules")
-    shell.run_command("sudo wget -O font5x8.bin https://github.com/adafruit/Adafruit_CircuitPython_framebuf/blob/main/examples/font5x8.bin?raw=true")
+    shell.run_command("sudo wget -O font5x8.bin https://github.com/adafruit/Adafruit_CircuitPython_framebuf/blob/main/examples/font5x8.bin")
+    if os.path.exists("font5x8.bin"):
+        print("Font file downloaded successfully.")
+    else:
+        print("Failed to download font file.")
+
     username = None
     pip_command = "pip3 install --upgrade"
     if user:
@@ -142,7 +147,7 @@ def check_and_install_for_pi5(pi_model, user=False):
         if user:
             username = os.environ["SUDO_USER"]
         print(f"Detected {pi_model}, installing RPi.GPIO.")
-        shell.run_command("pip3 install RPi.GPIO")
+        shell.run_command("pip3 install RPi.GPIO", run_as_user=username)
 
 
 def check_user_groups():
