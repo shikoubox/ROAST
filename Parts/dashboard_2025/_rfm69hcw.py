@@ -5,7 +5,7 @@ import board
 import adafruit_rfm69
 
 # Button A
-btnA = DigitalInOut(board.D5)
+btnA = DigitalInOut(board.D17)
 btnA.direction = Direction.INPUT
 btnA.pull = Pull.UP
 
