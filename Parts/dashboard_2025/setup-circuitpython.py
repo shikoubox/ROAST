@@ -96,8 +96,10 @@ def install_blinka(user=False):
 
 def install_RF(user=False):
     print("Installing RF modules")
-    shell.run_command("pip3 install adafruit-circuitpython-framebuf")
-    shell.run_command("pip3 install adafruit-circuitpython-rfm69")
+    if user:
+        username = os.environ["SUDO_USER"]
+    shell.run_command("pip3 install adafruit-circuitpython-framebuf", run_as_user=username)
+    shell.run_command("pip3 install adafruit-circuitpython-rfm69", run_as_user=username)
     shell.run_command("wget -O font5x8.bin https://github.com/adafruit/Adafruit_CircuitPython_framebuf/blob/main/examples/font5x8.bin?raw=true")
     # verify RF install
     import time
