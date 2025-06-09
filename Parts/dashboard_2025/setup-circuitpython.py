@@ -112,7 +112,7 @@ def install_RF(user=False):
     import busio
     from digitalio import DigitalInOut, Direction, Pull
     import board
-    CS = DigitalInOut(Board.CE1)
+    CS = DigitalInOut(board.CE1)
     RESET = DigitalInOut(board.D25)
     spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
 
@@ -141,7 +141,7 @@ def check_and_install_for_pi5(pi_model, user=False):
         username = None
         if user:
             username = os.environ["SUDO_USER"]
-        print(f"Detected {pi_model}, no additional fixes needed.")
+        print(f"Detected {pi_model}, installing RPi.GPIO.")
         shell.run_command("pip3 install RPi.GPIO")
 
 
