@@ -94,30 +94,6 @@ def install_blinka(user=False):
         username = os.environ["SUDO_USER"]
     shell.run_command(f"{pip_command} adafruit-blinka", run_as_user=username)
 
-def install_RF(user=False):
-    print("Installing RF modules")
-    shell.run_command("pip3 install adafruit-circuitpython-framebuf")
-    shell.run_command("pip3 install adafruit-circuitpython-rfm69")
-    shell.run_command("wget -O font5x8.bin https://github.com/adafruit/Adafruit_CircuitPython_framebuf/blob/main/examples/font5x8.bin?raw=true")
-    # verify RF install
-    import time
-    import busio
-    from digitalio import DigitalInOut, Direction, Pull
-    import board
-    import adafuit_rfm69
-    CS = DigitalInOut(Board.CE1)
-    RESET = DigitalInOut(board.D25)
-    spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
-
-    try:
-        rfm69 = adafruit_rfm69.RFM69(spi, CS, RESET, 433.0)
-        prev_packet = None
-        print("RFM69: Detected")
-    expect RuntimeError as error:
-        print("RFM69: ERROR")
-        print("RFM69 Error:", error)
-        rfm69 = None
-
 
 
 # Custom function to run additional commands for Pi 5

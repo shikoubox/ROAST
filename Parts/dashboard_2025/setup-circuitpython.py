@@ -113,7 +113,7 @@ def install_RF(user=False):
         rfm69 = adafruit_rfm69.RFM69(spi, CS, RESET, 433.0)
         prev_packet = None
         print("RFM69: Detected")
-    expect RuntimeError as error:
+    except RuntimeError as error:
         print("RFM69: ERROR")
         print("RFM69 Error:", error)
         rfm69 = None
