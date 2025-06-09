@@ -1,6 +1,7 @@
 # Requirements
 node -v # should be v16+
 npm -v  # should be v8+
+pi version: Bullseye or Bookworm?
 
 ## RF requirements:
 python3
@@ -10,6 +11,12 @@ https://learn.adafruit.com/adafruit-radio-bonnets/rfm69-raspberry-pi-setup
 https://spotpear.com/index/study/detail/id/586.html
 
 # Setup guide
+
+## Setup CircuitPython
+source ~/ROAST/Parts/dashboard_2025/RF/bin/activate
+pip3 install --upgrade adafruit-python-shell
+wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
+sudo -E env PATH=$PATH python3 raspi-blinka.py
 
 ## Setup nodejs and npm on Raspberry PI
 ```bash
