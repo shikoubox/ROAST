@@ -96,17 +96,22 @@ def install_blinka(user=False):
 
 def install_RF(user=False):
     print("Installing RF modules")
+    shell.run_command("sudo wget -O font5x8.bin https://github.com/adafruit/Adafruit_CircuitPython_framebuf/blob/main/examples/font5x8.bin?raw=true")
+    username = None
+    pip_command = "pip3 install --upgrade"
     if user:
         username = os.environ["SUDO_USER"]
-    shell.run_command("pip3 install adafruit-circuitpython-framebuf", run_as_user=username)
-    shell.run_command("pip3 install adafruit-circuitpython-rfm69", run_as_user=username)
-    shell.run_command("wget -O font5x8.bin https://github.com/adafruit/Adafruit_CircuitPython_framebuf/blob/main/examples/font5x8.bin?raw=true")
+    shell.run_command(f"{pip_command} adafruit-circuitpython-framebuf", run_as_user=username)
+    shell.run_command(f"{pip_command} adafruit-circuitpython-rfm69", run_as_user=username)
     # verify RF install
     import time
+    try:
+        import adafruit_rfm69
+    except ImportError:
+        raise RuntimeError("The library 'adafruit_rfm_69' was not found. To install, try typing: sudo pip3 install adafruit-circuitpython-rfm69")
     import busio
     from digitalio import DigitalInOut, Direction, Pull
     import board
-    import adafuit_rfm69
     CS = DigitalInOut(Board.CE1)
     RESET = DigitalInOut(board.D25)
     spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
