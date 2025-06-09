@@ -17,6 +17,16 @@ source ~/ROAST/Parts/dashboard_2025/RF/bin/activate
 pip3 install --upgrade adafruit-python-shell
 wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
 sudo -E env PATH=$PATH python3 raspi-blinka.py
+pip3 install -y RPi.GPIO # for v4 and below
+pip3 uninstall -y RPi.GPIO # for RPI v5
+
+### Bonnet setup
+pip3 install adafruit-circuitpython-ssd1306
+pip3 install adafruit-circuitpython-framebuf
+pip3 install adafruit-circuitpython-rfm69
+python3 rfm69_check.py ### is somewhere in dashboard_2025 folder
+wget -O font5x8.bin https://github.com/adafruit/Adafruit_CircuitPython_framebuf/blob/main/examples/font5x8.bin?raw=true
+
 
 ## Setup nodejs and npm on Raspberry PI
 ```bash
