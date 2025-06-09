@@ -15,7 +15,7 @@ https://spotpear.com/index/study/detail/id/586.html
 
 # Setup guide
 sudo apt install git 
-sudo apt install -y ca-certificates curl gnupg python3 python3-pip
+sudo apt install -y ca-certificates curl gnupg python3 python3-venv python3-pip tmux vim
 
 ## Clone specific branch
 git clone --single-branch --branch pi_dashboard https://github.com/shikoubox/ROAST
@@ -27,6 +27,7 @@ git add <desired_directory>
 git commit -m "Copied directory from desired_branch to source_branch"
 
 ## Setup CircuitPython
+python3 -m venv RF
 source ~/ROAST/Parts/dashboard_2025/RF/bin/activate
 pip3 install --upgrade adafruit-python-shell
 wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
@@ -36,10 +37,7 @@ pip3 install RPi.GPIO
 #### for RPI v5
 pip3 uninstall -y RPi.GPIO
 
-### Bonnet setup
-pip3 install adafruit-circuitpython-ssd1306
-pip3 install adafruit-circuitpython-framebuf
-pip3 install adafruit-circuitpython-rfm69
+### Check if RF is setup correctly
 python3 rfm69_check.py ### is somewhere in dashboard_2025 folder
 wget -O font5x8.bin https://github.com/adafruit/Adafruit_CircuitPython_framebuf/blob/main/examples/font5x8.bin?raw=true
 
