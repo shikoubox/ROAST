@@ -152,9 +152,26 @@ def prepend_new_row(new_data):
         print(f"Could not find data.csv at {CSV_PATH}")
         return
 
-    with open(CSV_PATH, "r", encoding="utf-16", newline="") as csvfile:
-        reader = csv.reader(csvfile)
-        all_rows = list(reader)
+    # Read the file in binary mode to check for BOM
+    with open(CSV_PATH, "rb") as csvfile:
+        content = csvfile.read()
+        # Check for BOM and decode accordingly
+        if content.startswith(b'\xff\xfe'):
+            content = content[2:]  # Remove BOM for little-endian
+            encoding = 'utf-16'
+        elif content.startswith(b'\xfe\xff'):
+            content = content[2:]  # Remove BOM for big-endian
+            encoding = 'utf-16'
+        else:
+            # If no BOM, assume UTF-8 or another encoding
+            encoding = 'utf-8'
+        
+        print(f"Encoding is {encoding}")
+
+    # Decode the content and read it as CSV
+    decoded_content = content.decode(encoding)
+    reader = csv.reader(decoded_content.splitlines())
+    all_rows = list(reader)
 
     if len(all_rows) == 0:
         print("data.csv appears empty or malformed.")
@@ -176,7 +193,7 @@ def prepend_new_row(new_data):
     updated_rows = [header, new_row] + old_rows
 
     # 5) Overwrite data.csv with the new content:
-    with open(CSV_PATH, "w", encoding="utf-16", newline="") as csvfile:
+    with open(CSV_PATH, "w", encoding=encoding, newline="") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerows(updated_rows)
 
