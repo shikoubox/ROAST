@@ -82,7 +82,7 @@ def main_event_loop(stdscr):
         else:
             stdscr.addstr(2, 0, "rfm69 is none")
         stdscr.refresh()
-        #time.sleep(2)
+        time.sleep(2)
 
 def listen_for_keys(stdscr):
     global exit_program
