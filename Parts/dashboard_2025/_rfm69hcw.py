@@ -47,6 +47,7 @@ except RuntimeError as error:
 # Main loop
 def main_event_loop(stdscr):
     global exit_program
+    stdscr.clear()
 
     while not exit_program:
         stdscr.addstr(0, 0, "RFM69 Receiver - Press 'q' to quit.")
