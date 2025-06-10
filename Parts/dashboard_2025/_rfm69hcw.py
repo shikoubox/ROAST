@@ -25,7 +25,7 @@ BAUD_RATE=1000
 
 # Initialize RFM69 once
 try:
-    rfm69 = adafruit_rfm69.RFM69(spi, CS, RESET, RADIO_FREQ_MHZ, baudrate=BAUD_RATE, high_power=True, tx_power=10)
+    rfm69 = adafruit_rfm69.RFM69(spi, CS, RESET, RADIO_FREQ_MHZ, baudrate=BAUD_RATE, high_power=True)
     prev_packet = None
     print("RFM69: Detected")
     print(f"Frequency: {rfm69.frequency_mhz}mhz")
