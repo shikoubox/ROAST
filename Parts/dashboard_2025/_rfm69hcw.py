@@ -105,7 +105,6 @@ def listen_for_keys(stdscr):
         stdscr.addstr(10,10,f"You pressed: {chr(key)}\n")
         if key == ord('u'):
             send_data_test(stdscr)
-            stdscr.addstr(5,0, 'Sent data test')
 
         if key == ord('q'):  # Exit if 'q' is pressed
             exit_program = True # Set the exit flag
@@ -148,6 +147,8 @@ def send_data_test(stdscr):
         "battery_percent":  random.uniform(10.0, 100.0),
         "battery_voltage":  random.uniform(10.0, 13.0),
     }
+
+    stdscr.addstr(5,0, 'Sending data test')
     prepend_new_row(stdscr, new_data)
 
 
