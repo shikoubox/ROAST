@@ -50,13 +50,6 @@ except RuntimeError as error:
     rfm69 = None
 
 
-# Create a thread for the key listener
-key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
-key_listener_thread.start()
-
-
-# Run the main event loop
-main_event_loop()
 
 # Main loop
 def main_event_loop():
@@ -188,6 +181,12 @@ def prepend_new_row(new_data):
         writer.writerows(updated_rows)
 
     print("data.csv updated successfully. New row was prepended.")
+
+key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
+key_listener_thread.start()
+
+# Run the main event loop
+main_event_loop()
 
 # Wait for the key listener thread to finish
 key_listener_thread.join()
