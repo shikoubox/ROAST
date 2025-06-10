@@ -53,14 +53,20 @@ def main_event_loop(stdscr):
         stdscr.addstr(0, 0, "RFM69 Receiver - Press 'q' to quit.")
         packet = None
         if rfm69 is not None:
-            stdscr.addstr(0, 42,  "RFM69: Detected")
+            stdscr.addstr(0, 42, "RFM69: Detected")
             stdscr.addstr(1, 42, f"Frequency: {rfm69.frequency_mhz}MHz")
             stdscr.addstr(2, 42, f"Bit rate: {rfm69.bitrate}bit/s")
             stdscr.addstr(3, 42, f"Baud rate: {BAUD_RATE}baud/s")
             stdscr.addstr(4, 42, f"Frequency deviation: {rfm69.frequency_deviation}hz") 
             stdscr.addstr(5, 42, f"Tx_Power: {rfm69.tx_power}dBm")
-            stdscr.addstr(6, 42, f"Temperature: {rfm69.temperature}C")
+            try:
+                stdscr.addstr(6, 42, f"Temperature: {rfm69.temperature}C")
+            except RuntimeError as error:
+                stdscr.addstr(6,42, f"{error}")
+
             # Check for incoming packets
+            
+
             packet = rfm69.receive()
             if packet is not None:
                 prev_packet=packet
