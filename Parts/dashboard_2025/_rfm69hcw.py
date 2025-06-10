@@ -46,13 +46,13 @@ except RuntimeError as error:
 def main_event_loop(stdscr):
     stdscr.clear()
     stdscr.addstr(0, 0, "RFM69 Receiver - Press 'q' to quit.")
-    stdscr.addstr(1, 40,  "RFM69: Detected")
-    stdscr.addstr(2, 40, f"Frequency: {rfm69.frequency_mhz}MHz")
-    stdscr.addstr(3, 40, f"Bit rate: {rfm69.bitrate}bit/s")
-    stdscr.addstr(4, 40, f"Baud rate: {BAUD_RATE}baud/s")
-    stdscr.addstr(5, 40, f"Frequency deviation: {rfm69.frequency_deviation}hz") 
-    stdscr.addstr(6, 40, f"Tx_Power: {rfm69.tx_power}dBm")
-    stdscr.addstr(7, 40, f"Temperature: {rfm69.temperature}C")
+    stdscr.addstr(0, 50,  "RFM69: Detected")
+    stdscr.addstr(1, 50, f"Frequency: {rfm69.frequency_mhz}MHz")
+    stdscr.addstr(2, 50, f"Bit rate: {rfm69.bitrate}bit/s")
+    stdscr.addstr(3, 50, f"Baud rate: {BAUD_RATE}baud/s")
+    stdscr.addstr(4, 50, f"Frequency deviation: {rfm69.frequency_deviation}hz") 
+    stdscr.addstr(5, 50, f"Tx_Power: {rfm69.tx_power}dBm")
+    stdscr.addstr(6, 50, f"Temperature: {rfm69.temperature}C")
     stdscr.refresh()
 
     while True:
@@ -103,14 +103,14 @@ def listen_for_keys(stdscr):
         key = stdscr.getch()  # Wait for a key press
         stdscr.addstr(f"You pressed: {chr(key)}\n")
         if key == ord('u'):
-            send_data_test()
+            send_data_test(stdscr)
             stdscr.addstr(5,0, 'Sent data test')
 
         if key == ord('q'):  # Exit if 'q' is pressed
             break
 
 
-def send_data_test():
+def send_data_test(stdscr):
     new_data = {
         "current_temp":     random.uniform(15.0, 35.0),
         "cooling_temp":     random.uniform(25.0, 40.0),
