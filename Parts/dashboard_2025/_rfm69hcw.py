@@ -106,6 +106,8 @@ def listen_for_keys(stdscr):
         
         key = stdscr.getch()  # Wait for a key press
         stdscr.addstr(7,8,f"You pressed: {chr(key)}\n")
+        stdscr.addstr(8, 8, "                  ")
+        stdscr.addstr(9, 8, "                           ")
         # keyboard button presses
         if key == ord('u'):
             send_data_test(stdscr)
