@@ -91,7 +91,6 @@ def listen_for_keys(stdscr):
     stdscr.refresh() 
 
     while not exit_program:
-        stdscr.addstr(10,10,f"You pressed: {chr(key)}\n")
         stdscr.addstr(7, 8, "Now listening for key presses..")
         stdscr.addstr(8, 8, "Press 'q' to quit.")
         stdscr.addstr(9, 8, "Press 'u' to update screen.")
@@ -103,6 +102,7 @@ def listen_for_keys(stdscr):
             stdscr.addstr(6,0, 'Sent data test')
         
         key = stdscr.getch()  # Wait for a key press
+        stdscr.addstr(7,8,f"You pressed: {chr(key)}\n")
         # keyboard button presses
         if key == ord('u'):
             send_data_test(stdscr)
@@ -156,7 +156,7 @@ def send_data_test(stdscr):
 def prepend_new_row(stdscr, new_data):
     # 1) Read the existing CSV file entirely
     if not os.path.exists(CSV_PATH):
-        stdscr.addstr(8, 0, f"Could not find data.csv at {CSV_PATH}")
+        stdscr.addstr(10, 0, f"Could not find data.csv at {CSV_PATH}")
         stdscr.refresh()
         stdscr.getch()
         return
@@ -175,7 +175,7 @@ def prepend_new_row(stdscr, new_data):
             # If no BOM, assume UTF-8 or another encoding
             encoding = 'utf-8'
         
-        stdscr.addstr(9,0,f"Encoding is {encoding}")
+        stdscr.addstr(10,0,f"Encoding of .csv file is {encoding}")
 
     # Decode the content and read it as CSV
     decoded_content = content.decode(encoding)
