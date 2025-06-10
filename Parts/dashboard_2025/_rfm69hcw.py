@@ -59,10 +59,10 @@ def main_event_loop(stdscr):
             stdscr.addstr(3, 42, f"Baud rate: {BAUD_RATE}baud/s")
             stdscr.addstr(4, 42, f"Frequency deviation: {rfm69.frequency_deviation}hz") 
             stdscr.addstr(5, 42, f"Tx_Power: {rfm69.tx_power}dBm")
-            try:
-                stdscr.addstr(6, 42, f"Temperature: {rfm69.temperature}C")
-            except RuntimeError as error:
-                stdscr.addstr(6,42, f"{error}")
+#           try:
+#               stdscr.addstr(6, 42, f"Temperature: {rfm69.temperature}C")
+#           except RuntimeError as error:
+#               stdscr.addstr(6,42, f"{error}")
 
             # Check for incoming packets
             
