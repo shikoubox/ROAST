@@ -173,6 +173,7 @@ def prepend_new_row(stdscr, new_data):
     # Read the file in binary mode to check for BOM
     with open(CSV_PATH, "rb") as csvfile:
         content = csvfile.read()
+        reader = csv.reader(csvfile)
         # Check for BOM and decode accordingly
         if content.startswith(b'\xff\xfe'):
             content = content[2:]  # Remove BOM for little-endian
@@ -185,7 +186,7 @@ def prepend_new_row(stdscr, new_data):
             encoding = 'utf-8'
             with open(CSV_PATH, mode="w", encoding='utf-16', newline='') as outfile:
                 writer = csv.writer(outfile)
-                for row in content:
+                for row in reader:
                     writer.writerow(row)
                 stdscr.addstr(11,0,f"Tried updating .csv from {encoding} to utf-16")
         
