@@ -60,6 +60,8 @@ while True:
             else:
                 print('-Waiting for packet-')
 
+    else:
+        print("rfm69 is none")
     time.sleep(1)
 
     if not btnA.value:
