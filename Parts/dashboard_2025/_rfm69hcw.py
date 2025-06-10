@@ -51,7 +51,6 @@ def main_event_loop(stdscr):
     while not exit_program:
         stdscr.clear()
         stdscr.addstr(0, 0, "RFM69 Receiver - Press 'q' to quit.")
-        stdscr.refresh()
         packet = None
         if rfm69 is not None:
             stdscr.addstr(0, 42,  "RFM69: Detected")
