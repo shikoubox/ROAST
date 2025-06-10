@@ -184,7 +184,7 @@ def prepend_new_row(stdscr, new_data):
         else:
             # If no BOM, assume UTF-8 or another encoding
             encoding = 'utf-8'
-            with open(CSV_PATH, mode="w", encoding='utf-16', newline='') as outfile
+            with open(CSV_PATH, mode="w", encoding='utf-16', newline='') as outfile:
             writer = csv.writer(outfile)
             for row in content:
                 writer.writerow(row)
