@@ -35,13 +35,6 @@ try:
     rfm69 = adafruit_rfm69.RFM69(spi, CS, RESET, RADIO_FREQ_MHZ, baudrate=BAUD_RATE, high_power=True)
     rfm69.bitrate = BIT_RATE
     prev_packet = None
-    print("RFM69: Detected")
-    print(f"Frequency: {rfm69.frequency_mhz}MHz")
-    print(f"Bit rate: {rfm69.bitrate}bit/s")
-    print(f"Baud rate: {BAUD_RATE}baud/s")
-    print(f"Frequency deviation: {rfm69.frequency_deviation}hz") 
-    print(f"Tx_Power: {rfm69.tx_power}dBm")
-    print(f"Temperature: {rfm69.temperature}C")
 except RuntimeError as error:
     print("RFM69: ERROR")
     print("RFM69 Error:", error)
@@ -53,6 +46,13 @@ except RuntimeError as error:
 def main_event_loop(stdscr):
     stdscr.clear()
     stdscr.addstr(0, 0, "RFM69 Receiver - Press 'q' to quit.")
+    stdscr.addstr(1, 40,  "RFM69: Detected")
+    stdscr.addstr(2, 40, f"Frequency: {rfm69.frequency_mhz}MHz")
+    stdscr.addstr(3, 40, f"Bit rate: {rfm69.bitrate}bit/s")
+    stdscr.addstr(4, 40, f"Baud rate: {BAUD_RATE}baud/s")
+    stdscr.addstr(5, 40, f"Frequency deviation: {rfm69.frequency_deviation}hz") 
+    stdscr.addstr(6, 40, f"Tx_Power: {rfm69.tx_power}dBm")
+    stdscr.addstr(7, 40, f"Temperature: {rfm69.temperature}C")
     stdscr.refresh()
 
     while True:
@@ -65,7 +65,7 @@ def main_event_loop(stdscr):
                 try:
                     new_packet = packet.decode("utf-16")
                     stdscr.addstr(2, 0, f"Received: {new_packet}")
-                    prepend_new_row(new_packet)
+                    prepend_new_row(stdscr, new_packet)
                 except UnicodeDecodeError:
                     stdscr.addstr(2, 0, f"Received (raw): {packet}")
             else:
@@ -147,7 +147,7 @@ def send_data_test():
         "battery_percent":  random.uniform(10.0, 100.0),
         "battery_voltage":  random.uniform(10.0, 13.0),
     }
-    prepend_new_row(new_data)
+    prepend_new_row(stdscr, new_data)
 
 
 def prepend_new_row(stdscr, new_data):
