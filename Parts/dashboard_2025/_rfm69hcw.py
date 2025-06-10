@@ -91,17 +91,18 @@ def listen_for_keys(stdscr):
     stdscr.refresh() 
 
     while not exit_program:
-        key = stdscr.getch()  # Wait for a key press
         stdscr.addstr(10,10,f"You pressed: {chr(key)}\n")
-        stdscr.addstr(7, 8, "Listening for key presses..")
+        stdscr.addstr(7, 8, "Now listening for key presses..")
         stdscr.addstr(8, 8, "Press 'q' to quit.")
         stdscr.addstr(9, 8, "Press 'u' to update screen.")
+
         # Physical button presses?
         if not btnA.value:
             button_a_data = bytes("test","utf-16")
             rfm69.send(button_a_data)
             stdscr.addstr(6,0, 'Sent data test')
         
+        key = stdscr.getch()  # Wait for a key press
         # keyboard button presses
         if key == ord('u'):
             send_data_test(stdscr)
