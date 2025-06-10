@@ -12,7 +12,7 @@ btnA.pull = Pull.UP
 # RFM69 Configuration
 CS = DigitalInOut(board.CE1)
 RESET = DigitalInOut(board.D25)
-spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
+_SPI = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
 
 # Define radio parameters.
 RADIO_FREQ_MHZ = 433.0  # Frequency of the radio in Mhz. Must match your
@@ -25,7 +25,7 @@ BAUD_RATE = 1024
 
 # Initialize RFM69 once
 try:
-    rfm69 = adafruit_rfm69.RFM69(spi: spi, cs: CS, reset: RESET, frequency: RADIO_FREQ_MHZ, baudrate: BAUD_RATE, high_power: True)
+    rfm69 = adafruit_rfm69.RFM69(spi: _SPI, cs: CS, reset: RESET, frequency: RADIO_FREQ_MHZ, baudrate: BAUD_RATE, high_power: True)
     prev_packet = None
     print("RFM69: Detected")
 except RuntimeError as error:
