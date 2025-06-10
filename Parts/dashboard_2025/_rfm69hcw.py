@@ -113,6 +113,10 @@ def listen_for_keys(stdscr):
             send_data_test(stdscr)
 
         if key == ord('q'):  # Exit if 'q' is pressed
+            stdscr.clear()
+            stdscr.addstr(3,4,"Exiting...")
+            stdscr.refresh()
+            curses.endwin()
             exit_program = True # Set the exit flag
 
 
@@ -218,6 +222,7 @@ def prepend_new_row(stdscr, new_data):
     stdscr.getch()  # Wait for a key press
 
 
+
 key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
 key_listener_thread.start()
 
@@ -226,4 +231,4 @@ curses.wrapper(main_event_loop)
 
 # Wait for the key listener thread to finish
 key_listener_thread.join()
-print("Exiting...")
+
