@@ -62,7 +62,7 @@ app.whenReady().then(() => {
         mainWindow.webContents.send('csv-data', parsed);
       }
     });
-  }, 2000);
+  }, 200);
 });
 
 app.on('window-all-closed', () => {
