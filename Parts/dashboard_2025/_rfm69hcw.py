@@ -8,7 +8,6 @@ import os
 import random
 import curses
 import threading
-import pandas
 
 # This script expects data.csv to live in a subdirectory named 'subdir'.
 CSV_PATH = os.path.join(os.path.dirname(__file__), "data", "data.csv")
@@ -185,11 +184,10 @@ def prepend_new_row(stdscr, new_data):
             # If no BOM, assume UTF-8 or another encoding
             encoding = 'utf-8'
             with open(CSV_PATH, mode="w", encoding='utf-16', newline='') as outfile:
-            writer = csv.writer(outfile)
-            for row in content:
-                writer.writerow(row)
-            stdscr.addstr(11,0,f"Tried updating .csv from {encoding} to utf-16")
-
+                writer = csv.writer(outfile)
+                for row in content:
+                    writer.writerow(row)
+                stdscr.addstr(11,0,f"Tried updating .csv from {encoding} to utf-16")
         
         stdscr.addstr(10,0,f"Encoding of .csv file was {encoding}")
 
