@@ -76,10 +76,10 @@ def main_event_loop(stdscr):
                 except UnicodeDecodeError:
                     stdscr.addstr(2, 0, f"Received (raw): {packet}")
             else:
-                stdscr.addstr(2, 0, "-Waiting for packet-")
+                stdscr.addstr(2, 2, "-Waiting for packet-")
                 stdscr.refresh()
                 time.sleep(1)
-                stdscr.addstr(2, 0, "   -  -  -  -  -    ")
+                stdscr.addstr(2, 2, "-                  -")
                 
 
         else:
@@ -108,6 +108,7 @@ def listen_for_keys(stdscr):
         stdscr.addstr(7,8,f"You pressed: {chr(key)}\n")
         stdscr.addstr(8, 8, "                  ")
         stdscr.addstr(9, 8, "                           ")
+        stdscr.addstr(10, 0,"                                                     ")
         # keyboard button presses
         if key == ord('u'):
             send_data_test(stdscr)
@@ -116,7 +117,6 @@ def listen_for_keys(stdscr):
             stdscr.clear()
             stdscr.addstr(3,4,"Exiting...")
             stdscr.refresh()
-            curses.endwin()
             exit_program = True # Set the exit flag
 
 
@@ -219,7 +219,7 @@ def prepend_new_row(stdscr, new_data):
 
     stdscr.addstr(10, 0, "data.csv updated successfully. New row was prepended.")
     stdscr.refresh()
-    stdscr.getch()  # Wait for a key press
+    time.sleep(1)
 
 
 
