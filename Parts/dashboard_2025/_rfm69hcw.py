@@ -19,18 +19,15 @@ RADIO_FREQ_MHZ = 433.0  # Frequency of the radio in Mhz. Must match your
 # module! Can be a value like 915.0, 433.0, etc.
 #
 BAUD_RATE=1000
-bit_rate=1000
 
 # Optional encryption (MUST match on both)
 # rfm69.encryption_key = b'\x01\x02\x03\x04\x05\x06\x07\x08\x01\x02\x03\x04\x05\x06\x07\x08'
 
 # Initialize RFM69 once
 try:
-    rfm69 = adafruit_rfm69.RFM69(spi, CS, RESET, RADIO_FREQ_MHZ, baudrate=BAUD_RATE, high_power=True)
+    rfm69 = adafruit_rfm69.RFM69(spi, CS, RESET, RADIO_FREQ_MHZ, baudrate=BAUD_RATE, high_power=True, tx_power=10)
     prev_packet = None
     print("RFM69: Detected")
-    rfm69.bitrate = bit_rate
-#   rfm69.tx_power = 10
     print(f"Frequency: {rfm69.frequency_mhz}mhz")
     print(f"Bit rate: {rfm69.bitrate}kbit/s")
     print(f"Frequency deviation: {rfm69.frequency_deviation}hz") 
