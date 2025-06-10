@@ -35,10 +35,11 @@ function createWindow() {
 app.whenReady().then(() => {
   createWindow();
 
-  // Every 2 seconds, prepend a new row to data.csv:
+ /* // Every 2 seconds, prepend a new row to data.csv:
   setInterval(() => {
     prependNewRow();
   }, 2000);
+*/
 
   // Every 2 seconds, re‐read the “latest” line (line 2) from data.csv
   // and send it via IPC to renderer.js:

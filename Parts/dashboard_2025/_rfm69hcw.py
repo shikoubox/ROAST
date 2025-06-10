@@ -24,9 +24,7 @@ RESET = DigitalInOut(board.D25)
 spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
 
 # Define radio parameters.
-RADIO_FREQ_MHZ = 433.0  # Frequency of the radio in Mhz. Must match your
-# module! Can be a value like 915.0, 433.0, etc.
-#
+RADIO_FREQ_MHZ = 433.0  # Frequency of the radio in Mhz
 BAUD_RATE=1000
 BIT_RATE=1000
 # Optional encryption (MUST match on both)
@@ -52,7 +50,11 @@ except RuntimeError as error:
 
 
 # Main loop
-def main_event_loop():
+def main_event_loop(stdscr):
+    stdscr.clear()
+    stdscr.addstr(0, 0, "RFM69 Receiver - Press 'q' to quit.")
+    stdscr.refresh()
+
     while True:
         packet = None
         if rfm69 is not None:
@@ -62,21 +64,23 @@ def main_event_loop():
                 prev_packet=packet
                 try:
                     new_packet = packet.decode("utf-16")
-                    print("Received:", new_packet)
+                    stdscr.addstr(2, 0, f"Received: {new_packet}")
                     prepend_new_row(new_packet)
                 except UnicodeDecodeError:
-                    print("Received (raw):", packet)
+                    stdscr.addstr(2, 0, f"Received (raw): {packet}")
             else:
-                print('-Waiting for packet-')
+                stdscr.addstr(2, 0, "-Waiting for packet-")
 
         else:
-            print("rfm69 is none")
+            stdscr.addstr(2, 0, "rfm69 is none")
+        stdscr.refresh()
         time.sleep(1)
 
         if not btnA.value:
-            button_a_data = bytes("","utf-16")
+            button_a_data = bytes("test_send","utf-16")
             rfm69.send(button_a_data)
-            print('Sent Button A!')
+            stdscr.addstr(3, 0, 'Sent Button A!')
+            stdscr.refresh()
 
         time.sleep(1)
 
@@ -84,23 +88,23 @@ def main_event_loop():
 def listen_for_keys(stdscr):
     curses.cbreak()  # Enable cbreak mode
     stdscr.keypad(True)  # Enable keypad input
-    stdscr.addstr("Listening for key presses. Press 'q' to quit.\n")
-    stdscr.addstr("Press 'u' to update screen.\n")
-    
+    stdscr.addstr(3, 0, "Listening for key presses. Press 'q' to quit.")
+    stdscr.addstr(4, 0, "Press 'u' to update screen.")
+    stdscr.refresh() 
 
     while True:
         # Physical button presses?
         if not btnA.value:
             button_a_data = bytes("test","utf-16")
             rfm69.send(button_a_data)
-            print('Sent Button A!')
+            stdscr.addstr(6,0, 'Sent data test')
         
         # keyboard button presses
         key = stdscr.getch()  # Wait for a key press
         stdscr.addstr(f"You pressed: {chr(key)}\n")
         if key == ord('u'):
             send_data_test()
-            print('Sent data test')
+            stdscr.addstr(5,0, 'Sent data test')
 
         if key == ord('q'):  # Exit if 'q' is pressed
             break
@@ -146,10 +150,12 @@ def send_data_test():
     prepend_new_row(new_data)
 
 
-def prepend_new_row(new_data):
+def prepend_new_row(stdscr, new_data):
     # 1) Read the existing CSV file entirely
     if not os.path.exists(CSV_PATH):
-        print(f"Could not find data.csv at {CSV_PATH}")
+        stdscr.addstr(8, 0, f"Could not find data.csv at {CSV_PATH}")
+        stdscr.refresh()
+        stdscr.getch()
         return
 
     # Read the file in binary mode to check for BOM
@@ -166,7 +172,7 @@ def prepend_new_row(new_data):
             # If no BOM, assume UTF-8 or another encoding
             encoding = 'utf-8'
         
-        print(f"Encoding is {encoding}")
+        stdscr.addstr(9,0,f"Encoding is {encoding}")
 
     # Decode the content and read it as CSV
     decoded_content = content.decode(encoding)
@@ -174,7 +180,9 @@ def prepend_new_row(new_data):
     all_rows = list(reader)
 
     if len(all_rows) == 0:
-        print("data.csv appears empty or malformed.")
+        stdscr.addstr(8, 0, "data.csv appears empty or malformed.")
+        stdscr.refresh()
+        stdscr.getch()
         return
 
     # 2) The first row is always the header
@@ -197,13 +205,16 @@ def prepend_new_row(new_data):
         writer = csv.writer(csvfile)
         writer.writerows(updated_rows)
 
-    print("data.csv updated successfully. New row was prepended.")
+    stdscr.addstr(10, 0, "data.csv updated successfully. New row was prepended.")
+    stdscr.refresh()
+    stdscr.getch()  # Wait for a key press
+
 
 key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
 key_listener_thread.start()
 
 # Run the main event loop
-main_event_loop()
+curses.wrapper(main_event_loop)
 
 # Wait for the key listener thread to finish
 key_listener_thread.join()
