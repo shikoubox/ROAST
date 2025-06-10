@@ -26,11 +26,12 @@ BIT_RATE=1000
 # Initialize RFM69 once
 try:
     rfm69 = adafruit_rfm69.RFM69(spi, CS, RESET, RADIO_FREQ_MHZ, baudrate=BAUD_RATE, high_power=True)
+    rfm69.bitrate = BIT_RATE
     prev_packet = None
     print("RFM69: Detected")
     print(f"Frequency: {rfm69.frequency_mhz}MHz")
     print(f"Bit rate: {rfm69.bitrate}bit/s")
-    print(f"Baud rate: {rfm69.baudrate}baud/s")
+    print(f"Baud rate: {BAUD_RATE}baud/s")
     print(f"Frequency deviation: {rfm69.frequency_deviation}hz") 
     print(f"Tx_Power: {rfm69.tx_power}dBm")
     print(f"Temperature: {rfm69.temperature}C")
