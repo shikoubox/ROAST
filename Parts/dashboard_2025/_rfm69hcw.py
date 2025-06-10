@@ -12,6 +12,8 @@ import threading
 # This script expects data.csv to live in a subdirectory named 'subdir'.
 CSV_PATH = os.path.join(os.path.dirname(__file__), "data", "data.csv")
 
+# global exit flag
+exit_program = False
 
 # Button A
 btnA = DigitalInOut(board.D17)
@@ -44,21 +46,23 @@ except RuntimeError as error:
 
 # Main loop
 def main_event_loop(stdscr):
+    global exit_program
     stdscr.clear()
     stdscr.addstr(0, 0, "RFM69 Receiver - Press 'q' to quit.")
-    stdscr.addstr(0, 42,  "RFM69: Detected")
-    stdscr.addstr(1, 42, f"Frequency: {rfm69.frequency_mhz}MHz")
-    stdscr.addstr(2, 42, f"Bit rate: {rfm69.bitrate}bit/s")
-    stdscr.addstr(3, 42, f"Baud rate: {BAUD_RATE}baud/s")
-    stdscr.addstr(4, 42, f"Frequency deviation: {rfm69.frequency_deviation}hz") 
-    stdscr.addstr(5, 42, f"Tx_Power: {rfm69.tx_power}dBm")
-    stdscr.addstr(6, 42, f"Temperature: {rfm69.temperature}C")
     stdscr.refresh()
 
     while True:
+        stdscr.clear()
         packet = None
         if rfm69 is not None:
-                # Check for incoming packets
+            stdscr.addstr(0, 42,  "RFM69: Detected")
+            stdscr.addstr(1, 42, f"Frequency: {rfm69.frequency_mhz}MHz")
+            stdscr.addstr(2, 42, f"Bit rate: {rfm69.bitrate}bit/s")
+            stdscr.addstr(3, 42, f"Baud rate: {BAUD_RATE}baud/s")
+            stdscr.addstr(4, 42, f"Frequency deviation: {rfm69.frequency_deviation}hz") 
+            stdscr.addstr(5, 42, f"Tx_Power: {rfm69.tx_power}dBm")
+            stdscr.addstr(6, 42, f"Temperature: {rfm69.temperature}C")
+            # Check for incoming packets
             packet = rfm69.receive()
             if packet is not None:
                 prev_packet=packet
@@ -74,17 +78,7 @@ def main_event_loop(stdscr):
         else:
             stdscr.addstr(2, 0, "rfm69 is none")
         stdscr.refresh()
-        time.sleep(1)
-
-        if not btnA.value:
-            button_a_data = bytes("test_send","utf-16")
-            rfm69.send(button_a_data)
-            stdscr.addstr(3, 0, 'Sent Button A!')
-            stdscr.refresh()
-
-        time.sleep(1)
-        stdscr.clear()
-
+        time.sleep(2)
 
 def listen_for_keys(stdscr):
     curses.cbreak()  # Enable cbreak mode
