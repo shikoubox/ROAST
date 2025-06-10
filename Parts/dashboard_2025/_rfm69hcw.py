@@ -18,8 +18,8 @@ spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
 RADIO_FREQ_MHZ = 433.0  # Frequency of the radio in Mhz. Must match your
 # module! Can be a value like 915.0, 433.0, etc.
 #
-BAUD_RATE = 1000000
-bit_rate=512
+BAUD_RATE=1000
+bit_rate=1000
 
 # Optional encryption (MUST match on both)
 # rfm69.encryption_key = b'\x01\x02\x03\x04\x05\x06\x07\x08\x01\x02\x03\x04\x05\x06\x07\x08'
@@ -30,6 +30,11 @@ try:
     prev_packet = None
     print("RFM69: Detected")
     rfm69.bitrate = bit_rate
+#   rfm69.tx_power = 10
+    print(f"Frequency: {rfm69.frequency_mhz}mhz")
+    print(f"Bit rate: {rfm69.bitrate}kbit/s")
+    print(f"Frequency deviation: {rfm69.frequency_deviation}hz") 
+    print(f"Tx_Power: {rfm69.tx_power}dBm")
 except RuntimeError as error:
     print("RFM69: ERROR")
     print("RFM69 Error:", error)
@@ -39,23 +44,21 @@ except RuntimeError as error:
 while True:
     packet = None
     
-    # Print out some chip state:
-    print(f"Temperature: {rfm69.temperature}C")
-    print(f"Frequency: {rfm69.frequency_mhz}mhz")
-    print(f"Bit rate: {rfm69.bitrate / 1000}kbit/s")
-    print(f"Frequency deviation: {rfm69.frequency_deviation}hz") 
-
     if rfm69 is not None:
-        # Check for incoming packets
-        packet = rfm69.receive()
-        if packet is not None:
-            prev_packet=packet
-            try:
-                print("Received:", packet.decode("utf-8"))
-            except UnicodeDecodeError:
-                print("Received (raw):", packet)
-        else:
-            print('-Waiting for packet-')
+        # Print out some chip state:
+        print(f"Temperature: {rfm69.temperature}C")
+
+        if rfm69 is not None:
+            # Check for incoming packets
+            packet = rfm69.receive()
+            if packet is not None:
+                prev_packet=packet
+                try:
+                    print("Received:", packet.decode("utf-8"))
+                except UnicodeDecodeError:
+                    print("Received (raw):", packet)
+            else:
+                print('-Waiting for packet-')
 
     time.sleep(1)
 
