@@ -51,7 +51,7 @@ def main_event_loop(stdscr):
     stdscr.addstr(0, 0, "RFM69 Receiver - Press 'q' to quit.")
     stdscr.refresh()
 
-    while True:
+    while not exit_program:
         stdscr.clear()
         packet = None
         if rfm69 is not None:
@@ -81,13 +81,14 @@ def main_event_loop(stdscr):
         time.sleep(2)
 
 def listen_for_keys(stdscr):
+    global exit_program
     curses.cbreak()  # Enable cbreak mode
     stdscr.keypad(True)  # Enable keypad input
-    stdscr.addstr(3, 0, "Listening for key presses. Press 'q' to quit.")
-    stdscr.addstr(4, 0, "Press 'u' to update screen.")
     stdscr.refresh() 
 
-    while True:
+    while not exit_program:
+        stdscr.addstr(3, 0, "Listening for key presses. Press 'q' to quit.")
+        stdscr.addstr(4, 0, "Press 'u' to update screen.")
         # Physical button presses?
         if not btnA.value:
             button_a_data = bytes("test","utf-16")
@@ -102,7 +103,7 @@ def listen_for_keys(stdscr):
             stdscr.addstr(5,0, 'Sent data test')
 
         if key == ord('q'):  # Exit if 'q' is pressed
-            break
+            exit_program = True # Set the exit flag
 
 
 def send_data_test(stdscr):
