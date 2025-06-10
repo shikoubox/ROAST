@@ -49,7 +49,6 @@ def main_event_loop(stdscr):
     global exit_program
 
     while not exit_program:
-        stdscr.clear()
         stdscr.addstr(0, 0, "RFM69 Receiver - Press 'q' to quit.")
         packet = None
         if rfm69 is not None:
@@ -78,6 +77,9 @@ def main_event_loop(stdscr):
                     stdscr.addstr(2, 0, f"Received (raw): {packet}")
             else:
                 stdscr.addstr(2, 0, "-Waiting for packet-")
+                time.sleep(1)
+                stdscr.addstr(2, 0, "   -  -  -  -  -    ")
+                
 
         else:
             stdscr.addstr(2, 0, "rfm69 is none")
