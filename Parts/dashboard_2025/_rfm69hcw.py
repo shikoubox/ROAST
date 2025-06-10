@@ -88,26 +88,30 @@ def listen_for_keys(stdscr):
     global exit_program
     curses.cbreak()  # Enable cbreak mode
     stdscr.keypad(True)  # Enable keypad input
-    stdscr.refresh() 
+    curses.noecho()
 
     while not exit_program:
-        key = stdscr.getch()  # Wait for a key press
         stdscr.addstr(10,10,f"You pressed: {chr(key)}\n")
         stdscr.addstr(7, 8, "Listening for key presses..")
         stdscr.addstr(8, 8, "Press 'q' to quit.")
         stdscr.addstr(9, 8, "Press 'u' to update screen.")
+        stdscr.refresh() 
+
         # Physical button presses?
         if not btnA.value:
             button_a_data = bytes("test","utf-16")
             rfm69.send(button_a_data)
             stdscr.addstr(6,0, 'Sent data test')
         
-        # keyboard button presses
-        if key == ord('u'):
-            send_data_test(stdscr)
+        key = stdscr.getch()  # Wait for a key press
+        if key != -1: 
+            # keyboard button presses
+            if key == ord('u'):
+                send_data_test(stdscr)
 
-        if key == ord('q'):  # Exit if 'q' is pressed
-            exit_program = True # Set the exit flag
+            if key == ord('q'):  # Exit if 'q' is pressed
+                exit_program = True # Set the exit flag
+            time.sleep(0.1)
 
 
 def send_data_test(stdscr):
