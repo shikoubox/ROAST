@@ -77,6 +77,7 @@ def main_event_loop(stdscr):
                     stdscr.addstr(2, 0, f"Received (raw): {packet}")
             else:
                 stdscr.addstr(2, 0, "-Waiting for packet-")
+                stdscr.refresh()
                 time.sleep(1)
                 stdscr.addstr(2, 0, "   -  -  -  -  -    ")
                 
