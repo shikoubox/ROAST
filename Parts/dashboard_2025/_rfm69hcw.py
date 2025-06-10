@@ -82,7 +82,7 @@ def main_event_loop(stdscr):
         else:
             stdscr.addstr(2, 0, "rfm69 is none")
         stdscr.refresh()
-        time.sleep(2)
+        #time.sleep(2)
 
 def listen_for_keys(stdscr):
     global exit_program
@@ -91,9 +91,9 @@ def listen_for_keys(stdscr):
     stdscr.refresh() 
 
     while not exit_program:
-        stdscr.addstr(3, 0, "Listening for key presses..")
-        stdscr.addstr(4, 0, "Press 'q' to quit.")
-        stdscr.addstr(5, 0, "Press 'u' to update screen.")
+        stdscr.addstr(7, 8, "Listening for key presses..")
+        stdscr.addstr(8, 8, "Press 'q' to quit.")
+        stdscr.addstr(9, 8, "Press 'u' to update screen.")
         # Physical button presses?
         if not btnA.value:
             button_a_data = bytes("test","utf-16")
@@ -102,7 +102,7 @@ def listen_for_keys(stdscr):
         
         # keyboard button presses
         key = stdscr.getch()  # Wait for a key press
-        stdscr.addstr(12,10,f"You pressed: {chr(key)}\n")
+        stdscr.addstr(10,10,f"You pressed: {chr(key)}\n")
         if key == ord('u'):
             send_data_test(stdscr)
             stdscr.addstr(5,0, 'Sent data test')
