@@ -7,6 +7,7 @@ import os
 import random
 import curses
 import threading
+import struct
 from data import CSV_hand
 
 # global exit flag
@@ -158,19 +159,24 @@ def listen_for_keys(stdscr):
 
 def encode_to_bytes(_index, _value):
     # Encode index
+    log_message(f"[INFO] Trying to encode {_value} with index {_index}")
     if 0 <= _index < 64:  # Ensure the value is within the 6-bit range
-        index = format(value, '06b')  # Format as a 6-bit binary string
+        index = format(_index, '06b')  # Format as a 6-bit binary string
+        log_message(f"[INFO] {_index} becomes {index}")
+
     else:
         errorstring= "[ERROR] Value must be between 0 and 63 for 6-bit representation."
         log_message(errorstring)
         return errorstring
     
+
     value = struct.pack('e', _value)
-    
     log_message(f"[INFO] {_value} becomes {value}")
 
-    if not (0 <= sixteen_bit_value < 65536):
-        raise ValueError("16-bit value must be between 0 and 65535.")
+    if not (0 <= value < 65536):
+        stringg = "16-bit value must be between 0 and 65535."
+        log_message(f"[ERROR] stringg")
+        return stringg
 
 
     # Shift the 6-bit value to the left by 16 bits
@@ -278,17 +284,17 @@ def print_rfmdata(_rfm69):
     # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
     rfmdata_win.border(v, v, h, h, c, c, c, c)
 
-    rfmdata_win.addstr(0, 0, "RFM69     : Detected")
-    rfmdata_win.addstr(2, 0, f"Frequency:")
-    rfmdata_win.addstr(2, 0, f"{_rfm69.frequency_mhz} MHz")
-    rfmdata_win.addstr(4, 0, f"Bit rate :")
-    rfmdata_win.addstr(4, 0, f"{_rfm69.bitrate/1000} kbit/s")
-    rfmdata_win.addstr(6, 0, f"Baud rate:")
-    rfmdata_win.addstr(6, 0, f"{BAUD_RATE} baud/s")
-    rfmdata_win.addstr(8, 0, f"Freq.dev.:") 
-    rfmdata_win.addstr(8, 0, f"{_rfm69.frequency_deviation/1000} kHz") 
-    rfmdata_win.addstr(10,0, f"Tx_Power :")
-    rfmdata_win.addstr(10,0, f"{_rfm69.tx_power} dBm")
+    rfmdata_win.addstr(1, 1, "RFM69     : Detected")
+    rfmdata_win.addstr(2, 1, f"Frequency:")
+    rfmdata_win.addstr(3, 1, f"{_rfm69.frequency_mhz} MHz")
+    rfmdata_win.addstr(4, 1, f"Bit rate :")
+    rfmdata_win.addstr(5, 1, f"{_rfm69.bitrate/1000} kbit/s")
+    rfmdata_win.addstr(6, 1, f"Baud rate:")
+    rfmdata_win.addstr(6, 1, f"{BAUD_RATE} baud/s")
+    rfmdata_win.addstr(8, 1, f"Freq.dev.:") 
+    rfmdata_win.addstr(9, 1, f"{_rfm69.frequency_deviation/1000} kHz") 
+    rfmdata_win.addstr(10,1, f"Tx_Power :")
+    rfmdata_win.addstr(11,1, f"{_rfm69.tx_power} dBm")
 
 
     rfmdata_win.refresh()
