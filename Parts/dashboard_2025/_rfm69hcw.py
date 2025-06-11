@@ -29,10 +29,13 @@ BIT_RATE=1000
 # Optional encryption (MUST match on both)
 # rfm69.encryption_key = b'\x01\x02\x03\x04\x05\x06\x07\x08\x01\x02\x03\x04\x05\x06\x07\x08'
 
-# Message hallola
+# Curses settings
 messages = ["[INFO] System init..."]
-height, width = 20, 80  # Console window size
-
+height, width = 20, 75  # Console window size
+## Use Unicode box-drawing characters for fancy borders
+h  = '-'#'─'
+v  = '|'
+c  = '+'
 
 # Initialize RFM69 once
 try:
@@ -47,6 +50,7 @@ except RuntimeError as error:
 # Main loop
 def main_event_loop(stdscr):
     global exit_program
+    stdscr.clear()
     print_header()
 
     while not exit_program:
@@ -54,19 +58,9 @@ def main_event_loop(stdscr):
         print_console(stdscr)
         packet = None
         if rfm69 is not None:
-            stdscr.addstr(2, width+3, "RFM69     : Detected")
-            stdscr.addstr(3, width+3, f"Frequency: {rfm69.frequency_mhz} MHz")
-            stdscr.addstr(4, width+3, f"Bit rate : {rfm69.bitrate/1000} kbit/s")
-            stdscr.addstr(5, width+3, f"Baud rate: {BAUD_RATE} baud/s")
-            stdscr.addstr(6, width+3, f"Freq.dev.: {rfm69.frequency_deviation/1000} kHz") 
-            stdscr.addstr(7, width+3, f"Tx_Power : {rfm69.tx_power} dBm")
-#           try:
-#               stdscr.addstr(6, 42, f"Temperature: {rfm69.temperature}C")
-#           except RuntimeError as error:
-#               stdscr.addstr(6,42, f"{error}")
+            print_rfmdata(rfm69)
 
             # Check for incoming packets
-            
 
             packet = rfm69.receive()
             if packet is not None:
@@ -146,6 +140,11 @@ def listen_for_keys(stdscr):
             rfm69.send(button_a_data)
             log_message('[INFO] Sent "super message"')
 
+        if key == ord('b'):
+            log_message('[INFO] Encoding message by clicking keyboard')
+            encode_to_bytes(16,1.5)
+            encode_to_bytes(16,111221.541231)
+            log_message('[INFO] Done encoding')
 
         # keyboard button presses
         if key == ord('u'):
@@ -156,6 +155,35 @@ def listen_for_keys(stdscr):
             stdscr.addstr(3,4,"Exiting...")
             stdscr.refresh()
             exit_program = True # Set the exit flag
+
+def encode_to_bytes(_index, _value):
+    # Encode index
+    if 0 <= _index < 64:  # Ensure the value is within the 6-bit range
+        index = format(value, '06b')  # Format as a 6-bit binary string
+    else:
+        errorstring= "[ERROR] Value must be between 0 and 63 for 6-bit representation."
+        log_message(errorstring)
+        return errorstring
+    
+    value = struct.pack('e', _value)
+    
+    log_message(f"[INFO] {_value} becomes {value}")
+
+    if not (0 <= sixteen_bit_value < 65536):
+        raise ValueError("16-bit value must be between 0 and 65535.")
+
+
+    # Shift the 6-bit value to the left by 16 bits
+    combined_value = (index << 16) | value
+
+    log_message(f"[INFO] Message created: {combined_value}")
+    return combined_value
+
+
+
+def encode_to_message():
+    
+    return False
 
 
 def send_data_test():
@@ -239,27 +267,43 @@ def get_data_test():
     }
     return new_data
 
+def print_rfmdata(_rfm69):
+    curses.curs_set(0)  # Hide cursor
+
+    start_y, start_x = 0, width+1  # Console window position
+    
+    rfmdata_win = curses.newwin(height, 20, start_y, start_x)
+
+    rfmdata_win.clear()
+    # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
+    rfmdata_win.border(v, v, h, h, c, c, c, c)
+
+    rfmdata.addstr(0, 0, "RFM69     : Detected")
+    rfmdata.addstr(2, 0, f"Frequency:")
+    rfmdata.addstr(2, 0, f"{_rfm69.frequency_mhz} MHz")
+    rfmdata.addstr(4, 0, f"Bit rate :")
+    rfmdata.addstr(4, 0, f"{_rfm69.bitrate/1000} kbit/s")
+    rfmdata.addstr(6, 0, f"Baud rate:")
+    rfmdata.addstr(6, 0, f"{BAUD_RATE} baud/s")
+    rfmdata.addstr(8, 0, f"Freq.dev.:") 
+    rfmdata.addstr(8, 0, f"{_rfm69.frequency_deviation/1000} kHz") 
+    rfmdata.addstr(10,0, f"Tx_Power :")
+    rfmdata.addstr(10,0, f"{_rfm69.tx_power} dBm")
+
+
+    rfmdata_win.refresh()
+
+
 def print_header():
     curses.curs_set(0)  # Hide cursor
 
-    start_y, start_x = 1, 1  # Console window position
+    start_y, start_x = 1, 0  # Console window position
     
     header_win = curses.newwin(3, width, start_y, start_x)
 
-    # Use Unicode box-drawing characters for fancy borders
-    tl = '+'#'╭'
-    tr = '+'#'╮'
-    bl = '+'#'╰'
-    br = '+'#'╯'
-    h  = '-'#'─'
-    v  = '|'
-    
     header_win.clear()
     # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
-    header_win.border(v, v, h, h, tl, tr, bl, br)
-
-
-
+    header_win.border(v, v, h, h, c, c, c, c)
 
     header_win.refresh()
 
@@ -267,21 +311,14 @@ def print_header():
 def print_console(stdscr):
     curses.curs_set(0)  # Hide cursor
 
-    start_y, start_x = 5, 1  # Console window position
+    start_y, start_x = 4, 0  # Console window position
     
     console_win = curses.newwin(height, width, start_y, start_x)
 
-    # Use Unicode box-drawing characters for fancy borders
-    tl = '+'#'╭'
-    tr = '+'#'╮'
-    bl = '+'#'╰'
-    br = '+'#'╯'
-    h  = '-'#'─'
-    v  = '|'
     
     console_win.clear()
     # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
-    console_win.border(v, v, h, h, tl, tr, bl, br)
+    console_win.border(v, v, h, h, c, c, c, c)
 
     for i, msg in enumerate(messages):
         console_win.addstr(i + 1, 2, msg)  # +1 and +2 to not write over the border
