@@ -9,9 +9,6 @@ import random
 import curses
 import threading
 
-# This script expects data.csv to live in a subdirectory named 'subdir'.
-CSV_PATH = os.path.join(os.path.dirname(__file__), "data", "data.csv")
-
 # global exit flag
 exit_program = False
 
@@ -41,8 +38,6 @@ except RuntimeError as error:
     print("RFM69: ERROR")
     print("RFM69 Error:", error)
     rfm69 = None
-
-
 
 # Main loop
 def main_event_loop(stdscr):
@@ -160,75 +155,6 @@ def send_data_test(stdscr):
 
     stdscr.addstr(5,0, 'Sending data test')
     prepend_new_row(stdscr, new_data)
-
-
-def prepend_new_row(stdscr, new_data):
-    # 1) Read the existing CSV file entirely
-    if not os.path.exists(CSV_PATH):
-        stdscr.addstr(10, 0, f"Could not find data.csv at {CSV_PATH}")
-        stdscr.refresh()
-        stdscr.getch()
-        return
-
-    # Read the file in binary mode to check for BOM
-    with open(CSV_PATH, "rb") as csvfile:
-        content = csvfile.read()
-        reader = csv.reader(csvfile)
-        # Check for BOM and decode accordingly
-        if content.startswith(b'\xff\xfe'):
-            content = content[2:]  # Remove BOM for little-endian
-            encoding = 'utf-16'
-        elif content.startswith(b'\xfe\xff'):
-            content = content[2:]  # Remove BOM for big-endian
-            encoding = 'utf-16'
-        else:
-            # If no BOM, assume UTF-8 or another encoding
-            encoding = 'utf-8'
-            with open(CSV_PATH, mode="w", encoding='utf-16', newline='') as outfile:
-                writer = csv.writer(outfile)
-                for row in reader:
-                    writer.writerow(row)
-                stdscr.addstr(11,0,f"Tried updating .csv from {encoding} to utf-16")
-        
-        stdscr.addstr(10,0,f"Encoding of .csv file was {encoding}")
-
-    # Decode the content and read it as CSV
-    decoded_content = content.decode(encoding)
-    reader = csv.reader(decoded_content.splitlines())
-    all_rows = list(reader)
-
-    if len(all_rows) == 0:
-        stdscr.addstr(8, 0, "data.csv appears empty or malformed.")
-        stdscr.refresh()
-        stdscr.getch()
-        return
-
-    # 2) The first row is always the header
-    header = all_rows[0]
-    old_rows = all_rows[1:]  # everything after the header
-
-    # 3) Build the new row in the exact same column order as the header
-    new_row = []
-    for col_name in header:
-        if col_name in new_data:
-            new_row.append(new_data[col_name])
-        else:
-            new_row.append("")  # leave blank if missing
-
-    # 4) Prepend the new row—keeping header on top, then new_row, then old_rows
-    updated_rows = [header, new_row] + old_rows
-
-    # 5) Overwrite data.csv with the new content:
-    with open(CSV_PATH, "w", encoding=encoding, newline="") as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerows(updated_rows)
-
-    stdscr.addstr(10, 0, "data.csv updated successfully. New row was prepended.")
-    stdscr.refresh()
-    time.sleep(1)
-    stdscr.addstr(10, 0,"                                                     ")
-    stdscr.refresh()
-
 
 
 key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
