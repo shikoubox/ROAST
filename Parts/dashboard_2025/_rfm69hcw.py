@@ -5,6 +5,7 @@ import board
 import adafruit_rfm69
 import os
 import random
+import data_mani
 import curses
 import threading
 from data import CSV_hand
@@ -141,9 +142,11 @@ def listen_for_keys(stdscr):
 
         if key == ord('b'):
             log_message('[INFO] Encoding message by clicking keyboard')
-            encode_to_bytes(16,1.5)
-            encode_to_bytes(16,111221.541231)
-            log_message('[INFO] Done encoding')
+            data_mani.encode_to_bytes(16,1.5)
+            byt = data_mani.encode_to_bytes(63,111221.541231)
+            log_message(f"[INFO] Message created: {byt:022b}")
+            byt = data_mani.encode_to_bytes(65,111221.541231)
+            log_message(f"[INFO] Message created: {byt:022b}")
 
         # keyboard button presses
         if key == ord('u'):
@@ -154,85 +157,6 @@ def listen_for_keys(stdscr):
             stdscr.addstr(3,4,"Exiting...")
             stdscr.refresh()
             exit_program = True # Set the exit flag
-
-def encode_to_bytes(_index, _value):
-    # Encode index
-    log_message(f"[INFO] Trying to encode value {_value} at index {_index}")
-    if 0 <= _index < 64:  # Ensure the value is within the 6-bit range
-        index = format(_index, '06b')  # Format as a 6-bit binary string
-        index = _index & 0x3F
-        log_message(f"[INFO] {_index} becomes {index:06b}")
-
-    else:
-        errorstring= "[ERROR] Value must be between 0 and 63 for 6-bit representation."
-        log_message(errorstring)
-        return errorstring
-    
-    value = float_to_half_precision(_value)
-    log_message(f"[INFO] {_value} becomes {value:016b}")
-
-    if not (0 <= index < 64):
-        stringg = "6-bit value must be between 0 and 63"
-        log_message(f"[ERROR] {stringg}")
-        return stringg
-    else:
-        log_message(f"[INFO] message ID: 006")
-
-    if not (0 <= value < 65536):
-        stringg = "16-bit value must be between 0 and 65535."
-        log_message(f"[ERROR] {stringg}")
-        return stringg
-    else:
-        log_message(f"[INFO] message ID: 016")
-
-    # Shift the 6-bit value to the left by 16 bits
-    combined_value = (index << 16) | (value)
-
-    log_message(f"[INFO] Message created: {combined_value:022b}")
-    return combined_value
-
-
-
-def float_to_half_precision(value):
-    if value == 0.0:
-        return 0  # Special case for zero
-
-    # Determine the sign bit
-    sign = 0
-    if value < 0:
-        sign = 1
-        value = -value
-
-    # Find the exponent and normalize the value
-    exponent = 0
-    while value >= 2.0:
-        value /= 2.0
-        exponent += 1
-    while value < 1.0:
-        value *= 2.0
-        exponent -= 1
-
-    # Adjust exponent with bias (15 for half-precision)
-    exponent += 15
-
-    # Check for overflow/underflow
-    if exponent >= 31:  # Overflow
-        return (sign << 15) | (31 << 10)  # Return infinity
-    if exponent <= 0:  # Underflow
-        return (sign << 15)  # Return zero
-
-    # Get the mantissa (10 bits)
-    mantissa = int((value - 1) * (1 << 10))  # Scale to 10 bits
-
-    # Combine sign, exponent, and mantissa
-    half_precision = (sign << 15) | (exponent << 10) | (mantissa & 0x3FF)
-    return half_precision
-
-
-
-def encode_to_message():
-    
-    return False
 
 
 def send_data_test():
