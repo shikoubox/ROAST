@@ -76,7 +76,8 @@ def main_event_loop(stdscr):
                 try:
                     new_packet = packet.decode("utf-16")
                     log_message(f"[INFO] Received: {new_packet}")
-                    CSV_hand.prepend_new_row(new_packet)
+                    status = CSV_hand.prepend_new_row(new_packet)
+                    log_message(status)
                 except UnicodeDecodeError:
                     log_message(f"[INFO] Received (raw): {packet}")
             else:
@@ -189,7 +190,8 @@ def send_data_test():
     }
 
     stdscr.addstr(5,0, 'Sending data test')
-    CSV_hand.prepend_new_row(new_data)
+    status = CSV_hand.prepend_new_row(new_data)
+    log_message(status)
 
 def get_data_test():
     new_data = {
