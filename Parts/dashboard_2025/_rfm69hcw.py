@@ -30,7 +30,7 @@ BIT_RATE=1000
 # rfm69.encryption_key = b'\x01\x02\x03\x04\x05\x06\x07\x08\x01\x02\x03\x04\x05\x06\x07\x08'
 
 # Message hallola
-messages = ["System init...", "Waiting for data..."]
+messages = ["[INFO] System init..."]
 height, width = 20, 80  # Console window size
 
 
@@ -40,8 +40,8 @@ try:
     rfm69.bitrate = BIT_RATE
     prev_packet = None
 except RuntimeError as error:
-    print("RFM69: ERROR")
-    print("RFM69 Error:", error)
+    log_message("[ERROR] RFM69")
+    log_message("[ERROR]: {error}")
     rfm69 = None
 
 # Main loop
@@ -70,24 +70,24 @@ def main_event_loop(stdscr):
             packet = rfm69.receive()
             if packet is not None:
                 rssi = rfm69.last_rssi  # This is your most accurate RSSI reading
-                log_message(f"Received signal strength: {rssi} dBm")
+                log_message(f"[INFO] Received signal strength: {rssi} dBm")
 
                 prev_packet=packet
                 try:
                     new_packet = packet.decode("utf-16")
-                    log_message(f"Received: {new_packet}")
+                    log_message(f"[INFO] Received: {new_packet}")
                     CSV_hand.prepend_new_row(new_packet)
                 except UnicodeDecodeError:
-                    log_message(f"Received (raw): {packet}")
+                    log_message(f"[INFO] Received (raw): {packet}")
             else:
-                stdscr.addstr(8,4,"-Waiting for packet-")
+                stdscr.addstr(8,0,"[INFO] Waiting for packet")
                 stdscr.refresh()
                 time.sleep(1)
-                stdscr.addstr(8,4,"-                  -")
+                stdscr.addstr(8,0,"[    ]                   ")
                 
 
         else:
-            log_message("rfm69 is none")
+            log_message("[ERROR] RFM69 is none")
 
         stdscr.refresh()
         print_console(stdscr)
@@ -108,10 +108,10 @@ def listen_for_keys(stdscr):
         if not btnA.value:
             button_a_data = bytes("test","utf-16")
             rfm69.send(button_a_data)
-            log_message('Sent data test by button click')
+            log_message('[INFO] Sent data test by button click')
         
         key = stdscr.getch()  # Wait for a key press
-        log_message(f"You pressed: {chr(key)}\n")
+        log_message(f"[INFO] You pressed: {chr(key)}\n")
         stdscr.addstr(9,0, "                               ")
 
         if key == ord('t'):
@@ -257,7 +257,7 @@ def print_console(stdscr):
 def log_message(msg):
     if len(messages) >= height-2:
         messages.pop(0)  # Remove oldest
-    messages.append(msg[:width-2])
+    messages.append(msg[:width-3])
 
 key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
 key_listener_thread.start()
