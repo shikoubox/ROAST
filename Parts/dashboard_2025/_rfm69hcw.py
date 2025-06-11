@@ -170,17 +170,24 @@ def encode_to_bytes(_index, _value):
     value = float_to_half_precision(_value)
     log_message(f"[INFO] {_value} becomes {value:016b}")
 
+    if not (0 <= value < 64):
+        stringg = "6-bit value must be between 0 and 63"
+        log_message(f"[ERROR] {stringg}")
+        return stringg
+    else:
+        log_message(f"[INFO] message ID: 006")
+
     if not (0 <= value < 65536):
         stringg = "16-bit value must be between 0 and 65535."
         log_message(f"[ERROR] {stringg}")
         return stringg
     else:
-        log_message(f"[INFO] message ID: 290")
+        log_message(f"[INFO] message ID: 016")
 
     # Shift the 6-bit value to the left by 16 bits
-    combined_value = (index << 16) | (value:16b)
+    combined_value = (index << 16) | (value)
 
-    log_message(f"[INFO] Message created: {combined_value:22b}")
+    log_message(f"[INFO] Message created: {combined_value:022b}")
     return combined_value
 
 
