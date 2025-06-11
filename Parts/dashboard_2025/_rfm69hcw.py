@@ -51,10 +51,10 @@ except RuntimeError as error:
 # Main loop
 def main_event_loop(stdscr):
     global exit_program
+    print_header()
 
     while not exit_program:
         stdscr.addstr(0, 2, "RFM69 Receiver - Press 'q' to quit. Otherwise 'b' 't' 'u' 's'")
-        print_header()
         print_console(stdscr)
         packet = None
         if rfm69 is not None:
@@ -275,25 +275,25 @@ def get_data_test():
 def print_rfmdata(_rfm69):
     curses.curs_set(0)  # Hide cursor
 
-    start_y, start_x = 0, width+1  # Console window position
+    start_y, start_x = 1, width+1  # Console window position
     
-    rfmdata_win = curses.newwin(height+4, 20, start_y, start_x)
+    rfmdata_win = curses.newwin(height+4-start_y, 22, start_y, start_x)
 
     rfmdata_win.clear()
     # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
     rfmdata_win.border(v, v, h, h, c, c, c, c)
 
-    rfmdata_win.addstr(1, 1, "RFM69     : Detected")
-    rfmdata_win.addstr(2, 1, f"Frequency:")
-    rfmdata_win.addstr(3, 1, f"{_rfm69.frequency_mhz} MHz")
-    rfmdata_win.addstr(4, 1, f"Bit rate :")
-    rfmdata_win.addstr(5, 1, f"{_rfm69.bitrate/1000} kbit/s")
-    rfmdata_win.addstr(6, 1, f"Baud rate:")
-    rfmdata_win.addstr(6, 1, f"{BAUD_RATE} baud/s")
-    rfmdata_win.addstr(8, 1, f"Freq.dev.:") 
-    rfmdata_win.addstr(9, 1, f"{_rfm69.frequency_deviation/1000} kHz") 
-    rfmdata_win.addstr(10,1, f"Tx_Power :")
-    rfmdata_win.addstr(11,1, f"{_rfm69.tx_power} dBm")
+    rfmdata_win.addstr(1, 1,  "RFM69    : Detected")
+    rfmdata_win.addstr(3, 1, f"Frequency:")
+    rfmdata_win.addstr(4, 1, f"{_rfm69.frequency_mhz} MHz")
+    rfmdata_win.addstr(6, 1, f"Bit rate :")
+    rfmdata_win.addstr(7, 1, f"{_rfm69.bitrate/1000} kbit/s")
+    rfmdata_win.addstr(9, 1, f"Baud rate:")
+    rfmdata_win.addstr(10,1, f"{BAUD_RATE} baud/s")
+    rfmdata_win.addstr(12,1, f"Freq.dev.:") 
+    rfmdata_win.addstr(13,1, f"{_rfm69.frequency_deviation/1000} kHz") 
+    rfmdata_win.addstr(15,1, f"Tx_Power :")
+    rfmdata_win.addstr(16,1, f"{_rfm69.tx_power} dBm")
 
 
     rfmdata_win.refresh()
