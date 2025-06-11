@@ -88,7 +88,7 @@ def main_event_loop(stdscr):
         else:
             log_message("rfm69 is none")
 
-        print_console(std_scr)
+        print_console(stdscr)
         stdscr.refresh()
 
 
@@ -179,27 +179,20 @@ def print_console(stdscr):
     h  = '#'#'─'
     v  = '#'#'│'
     
+    console_win.clear()
     # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
     console_win.border(v, v, h, h, tl, tr, bl, br)
     #console_win.border()
 
     for i, msg in enumerate(messages):
         console_win.addstr(i + 1, 2, msg)  # +1 and +2 to not write over the border
-        console_win.refresh()
 
+    console_win.refresh()
     
 def log_message(msg):
     if len(messages) >= max_lines:
         messages.pop(0)  # Remove oldest
     messages.append(msg)
-
-    console_win.clear()
-    console_win.box()
-
-    for i, m in enumerate(messages):
-        console_win.addstr(i + 1, 2, m[:width - 4])  # Truncate if too long
-
-    console_win.refresh()
 
 key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
 key_listener_thread.start()
