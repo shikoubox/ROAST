@@ -7,6 +7,8 @@ import os
 import random
 import data_mani
 import curses
+import curses_code
+from curses_code import log_message
 import threading
 from data import CSV_hand
 
@@ -51,14 +53,14 @@ except RuntimeError as error:
 # Main loop
 def main_event_loop(stdscr):
     global exit_program
-    print_header()
+    curses_code.print_header()
 
     while not exit_program:
         stdscr.addstr(0, 2, "RFM69 Receiver - Press 'q' to quit. Otherwise 'b' 't' 'u' 's'")
-        print_console(stdscr)
+        curses_code.print_console()
         packet = None
         if rfm69 is not None:
-            print_rfmdata(rfm69)
+            curses_code.print_rfmdata(rfm69)
 
             # Check for incoming packets
 
@@ -92,7 +94,6 @@ def main_event_loop(stdscr):
             log_message("[ERROR] RFM69 is none")
 
         stdscr.refresh()
-        print_console(stdscr)
 
 
 def listen_for_keys(stdscr):
@@ -106,7 +107,6 @@ def listen_for_keys(stdscr):
 
         # Physical button presses?
         if not btnA.value:
-            stemomg
             button_a_data = bytes("test","utf-16")
             rfm69.send(button_a_data)
             log_message('[INFO] Sent data test by button click')
@@ -305,11 +305,14 @@ def print_console(stdscr):
         console_win.addstr(i + 1, 2, msg)  # +1 and +2 to not write over the border
 
     console_win.refresh()
-    
+
+'''
 def log_message(msg):
     if len(messages) >= height-2:
         messages.pop(0)  # Remove oldest
     messages.append(msg[:width-3])
+'''
+
 
 key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
 key_listener_thread.start()

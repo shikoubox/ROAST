@@ -1,0 +1,151 @@
+import os
+import random
+import curses
+
+# Curses settings
+messages = ["[INFO] System init..."]
+height, width = 20, 75  # Console window size
+## Use Unicode box-drawing characters for fancy borders
+h  = '-'#'─'
+v  = '|'
+c  = '+'
+
+'''
+def listen_for_keys(stdscr):
+    global exit_program
+    curses.cbreak()  # Enable cbreak mode
+    stdscr.keypad(True)  # Enable keypad input
+    stdscr.refresh() 
+
+    while not exit_program:
+        stdscr.addstr(2,29, "[INFO] Listening for keypress")
+
+        # Physical button presses?
+        if not btnA.value:
+            stemomg
+            button_a_data = bytes("test","utf-16")
+            rfm69.send(button_a_data)
+            log_message('[INFO] Sent data test by button click')
+        
+        key = stdscr.getch()  # Wait for a key press
+        log_message(f"[INFO] You pressed: {chr(key)}")
+        stdscr.addstr(2,29, "[    ]                       ")
+
+        if key == ord('t'):
+            try:
+                log_message("[INFO] Preparing to send BIG dataset test...")
+                
+                test_data = get_data_test()
+                log_message(f"[DEBUG] Generated data: {str(test_data)[:width-27]}...")  # Only first 80 chars
+
+                button_a_data = bytes(f"{test_data}", "utf-16")
+                log_message("[DEBUG] Encoded data to bytes.")
+
+                rfm69.send(button_a_data)
+                log_message("[SUCCESS] Sent BIG dataset test over radio!")
+
+            except Exception as e:
+                log_message(f"[ERROR] Failed to send test data: {e}")
+                stdscr.addstr(30,0,f"{e}")
+                with open("thread_error.log", "a") as f:
+                    f.write(f"Exception in send BIG dataset test: {e}")
+
+        if key == ord('s'):
+            log_message('[INFO] Sending "super message" by clicking keyboard')
+            button_a_data = bytes("super message","utf-16")
+            rfm69.send(button_a_data)
+            log_message('[INFO] Sent "super message"')
+
+        if key == ord('b'):
+            log_message('[INFO] Encoding message by clicking keyboard')
+            encode_to_bytes(16,1.5)
+            encode_to_bytes(16,111221.541231)
+            log_message('[INFO] Done encoding')
+
+        # keyboard button presses
+        if key == ord('u'):
+            send_data_test(stdscr)
+
+        if key == ord('q'):  # Exit if 'q' is pressed
+            stdscr.clear()
+            stdscr.addstr(3,4,"Exiting...")
+            stdscr.refresh()
+            exit_program = True # Set the exit flag
+'''
+
+
+
+def print_rfmdata(_rfm69):
+    curses.curs_set(0)  # Hide cursor
+
+    start_y, start_x = 1, width+1  # Console window position
+    
+    rfmdata_win = curses.newwin(height+4-start_y, 22, start_y, start_x)
+
+    rfmdata_win.clear()
+    # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
+    rfmdata_win.border(v, v, h, h, c, c, c, c)
+
+    rfmdata_win.addstr(1, 1,  "RFM69    : Detected")
+    rfmdata_win.addstr(3, 1, f"Frequency:")
+    rfmdata_win.addstr(4, 1, f"{_rfm69.frequency_mhz} MHz")
+    rfmdata_win.addstr(6, 1, f"Bit rate :")
+    rfmdata_win.addstr(7, 1, f"{_rfm69.bitrate/1000} kbit/s")
+    rfmdata_win.addstr(9, 1, f"Baud rate:")
+    rfmdata_win.addstr(10,1, f"{BAUD_RATE} baud/s")
+    rfmdata_win.addstr(12,1, f"Freq.dev.:") 
+    rfmdata_win.addstr(13,1, f"{_rfm69.frequency_deviation/1000} kHz") 
+    rfmdata_win.addstr(15,1, f"Tx_Power :")
+    rfmdata_win.addstr(16,1, f"{_rfm69.tx_power} dBm")
+
+
+    rfmdata_win.refresh()
+
+
+def print_header():
+    curses.curs_set(0)  # Hide cursor
+
+    start_y, start_x = 1, 0  # Console window position
+    
+    header_win = curses.newwin(3, width, start_y, start_x)
+
+    header_win.clear()
+    # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
+    header_win.border(v, v, h, h, c, c, c, c)
+
+    header_win.refresh()
+
+
+def print_console():
+    curses.curs_set(0)  # Hide cursor
+
+    start_y, start_x = 4, 0  # Console window position
+    
+    console_win = curses.newwin(height, width, start_y, start_x)
+
+    
+    console_win.clear()
+    # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
+    console_win.border(v, v, h, h, c, c, c, c)
+
+    for i, msg in enumerate(messages):
+        console_win.addstr(i + 1, 2, msg)  # +1 and +2 to not write over the border
+
+    console_win.refresh()
+    
+def log_message(msg):
+    if len(messages) >= height-2:
+        messages.pop(0)  # Remove oldest
+    messages.append(msg[:width-3])
+
+'''
+key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
+key_listener_thread.start()
+
+# Run the main event loop
+curses.wrapper(main_event_loop)
+
+# Wait for the key listener thread to finish
+key_listener_thread.join()
+
+'''
