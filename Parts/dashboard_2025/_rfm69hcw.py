@@ -31,6 +31,7 @@ BIT_RATE=1000
 
 # Message hallola
 messages = ["System init...", "Waiting for data...", "Packet received!", "RSSI: -42 dBm"]
+max_lines=48
 
 
 # Initialize RFM69 once
