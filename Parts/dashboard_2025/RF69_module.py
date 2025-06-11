@@ -6,15 +6,6 @@ import adafruit_rfm69
 import curses_code
 from curses_code import log_message
 
-# RFM69 Configuration
-CS = DigitalInOut(board.CE1)
-RESET = DigitalInOut(board.D25)
-spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
-
-# Define radio parameters.
-RADIO_FREQ_MHZ = 433.0  # Frequency of the radio in Mhz
-BAUD_RATE=1000
-BIT_RATE=1000
 # Optional encryption (MUST match on both)
 # rfm69.encryption_key = b'\x01\x02\x03\x04\x05\x06\x07\x08\x01\x02\x03\x04\x05\x06\x07\x08'
 
@@ -22,10 +13,24 @@ rfm69 = None
 
 # Initialize RFM69 once
 def initialise():
+    global rfm69
     try:
+        # RFM69 Configuration
+        CS = DigitalInOut(board.CE1)
+        RESET = DigitalInOut(board.D25)
+        spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
+
+        # Define radio parameters.
+        RADIO_FREQ_MHZ = 433.0  # Frequency of the radio in Mhz
+        BAUD_RATE=1000
+        BIT_RATE=1000
+
+        # Pass it to rfm module
         rfm69 = adafruit_rfm69.RFM69(spi, CS, RESET, RADIO_FREQ_MHZ, baudrate=BAUD_RATE, high_power=True)
         rfm69.bitrate = BIT_RATE
         prev_packet = None
+
+        # Update graphics
         curses_code.update_rfmdata(rfm69)
         curses_code.update_rfmdata_baudrate(BAUD_RATE)
         return rfm69
@@ -38,6 +43,7 @@ def initialise():
 
 
 def check_for_packets():
+    global rfm69
     if rfm69 is None:
         raise Exception("[WARNING] Trying to check for packets, without an initalised rfm69")
     else: 
@@ -64,7 +70,7 @@ def check_for_packets():
             time.sleep(1)
 
 def send_string_packet(string):
-
+    global rfm69
     if rfm69 is None:
         raise Exception("[WARNING] Trying to check for packets, without an initalised rfm69")
     else: 
@@ -76,6 +82,7 @@ def send_string_packet(string):
             log_message(f"[ERROR] Failed to send data: {e}")
 
 def send_byte_packet(byte_packet):
+    global rfm69
     if rfm69 is None:
         raise Exception("[WARNING] Trying to check for packets, without an initalised rfm69")
     else: 
