@@ -49,7 +49,6 @@ def main_event_loop(stdscr):
     global exit_program
 
     while not exit_program:
-        stdscr.clear()
         stdscr.addstr(0, 0, "RFM69 Receiver - Press 'q' to quit.")
         print_console(stdscr)
         packet = None
@@ -81,15 +80,17 @@ def main_event_loop(stdscr):
                 except UnicodeDecodeError:
                     log_message(f"Received (raw): {packet}")
             else:
-                log_message("-Waiting for packet-")
+                stdscr.addstr(8,4,"-Waiting for packet-")
                 stdscr.refresh()
+                time.sleep(1)
+                stdscr.addstr(8,4,"-                  -")
                 
 
         else:
             log_message("rfm69 is none")
 
-        print_console(stdscr)
         stdscr.refresh()
+        print_console(stdscr)
 
 
 def listen_for_keys(stdscr):
@@ -225,12 +226,12 @@ def print_console(stdscr):
     console_win = curses.newwin(height, width, start_y, start_x)
 
     # Use Unicode box-drawing characters for fancy borders
-    tl = '#'#'╭'
-    tr = '#'#'╮'
-    bl = '#'#'╰'
-    br = '#'#'╯'
-    h  = '#'#'─'
-    v  = '#'#'│'
+    tl = '╭'
+    tr = '╮'
+    bl = '╰'
+    br = '╯'
+    h  = '─'
+    v  = '│'
     
     console_win.clear()
     # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
