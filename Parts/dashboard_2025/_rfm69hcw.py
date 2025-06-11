@@ -80,7 +80,7 @@ def listen_for_keys(stdscr):
             log_message('[INFO] Encoding message by clicking keyboard')
             try:
                 b = data_mani.encode_to_bytes(16,1.5)
-                log_message(f"[INFO] Message created: {b:022b}")
+                log_message(f"[DEBUG] Message created: {int.from_bytes(b, 'big'):022b}")
                 message, index = data_mani.bytes_to_message(b)
                 log_message(f"{index}: {message} / {data_mani.decode_float16(message)}")
             except Exception as e:
@@ -88,7 +88,7 @@ def listen_for_keys(stdscr):
 
             try:
                 byt = data_mani.encode_to_bytes(65,111221.541231)
-                log_message(f"[INFO] Message created: {byt:022b}")
+                log_message(f"[DEBUG] Message created: {int.from_bytes(byt, 'big'):022b}")
             except Exception as e:
                 log_message(f"{e}")
 
@@ -103,7 +103,7 @@ def listen_for_keys(stdscr):
                 log_message("[INFO] Preparing to send dataset test...")
                 b = data_mani.encode_to_bytes(16,2.9)
                 log_message(f"[DEBUG] {b}")
-                log_message(f"[DEBUG] Message created: {int.from_bytes(byt, 'big'):022b}")
+                log_message(f"[DEBUG] Message created: {int.from_bytes(b, 'big'):022b}")
                 RF69_module.send_byte_packet(b)
                 log_message("[SUCCESS] Sent dataset test over radio!")
 
