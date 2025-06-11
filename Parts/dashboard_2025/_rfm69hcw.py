@@ -49,7 +49,7 @@ def main_event_loop(stdscr):
     global exit_program
 
     while not exit_program:
-        stdscr.addstr(0, 0, "RFM69 Receiver - Press 'q' to quit.")
+        stdscr.addstr(0, 0, "RFM69 Receiver - Press 'q' to quit. - Press 'u t or s for different package tests")
         print_console(stdscr)
         packet = None
         if rfm69 is not None:
@@ -100,9 +100,7 @@ def listen_for_keys(stdscr):
     stdscr.refresh() 
 
     while not exit_program:
-        log_message("Now listening for key presses..")
-        log_message("Press 'q' to quit.")
-        log_message("Press 'u' to update screen.")
+        stdscr.addstr(9,0, "Now listening for key presses..")
 
 
 
@@ -114,16 +112,19 @@ def listen_for_keys(stdscr):
         
         key = stdscr.getch()  # Wait for a key press
         log_message(f"You pressed: {chr(key)}\n")
+        stdscr.addstr(9,0, "                               ")
 
         if key == ord('t'):
+            log_message('Sending BIG dataset test by clicking keyboard')
             button_a_data = bytes(get_data_test(),"utf-16")
             rfm69.send(button_a_data)
             log_message('Sent BIG dataset test by clicking keyboard')
 
         if key == ord('s'):
+            log_message('Sending "super message" by clicking keyboard')
             button_a_data = bytes("super message","utf-16")
             rfm69.send(button_a_data)
-            log_message('Sent data test by clicking keyboard')
+            log_message('Sent "super message"')
 
 
         # keyboard button presses
