@@ -26,6 +26,7 @@ btnA.pull = Pull.UP
 # Main loop
 def main_event_loop(stdscr):
     global exit_program
+    global rfm69
     curses_code.print_header()
 
     if rfm69 is None:
