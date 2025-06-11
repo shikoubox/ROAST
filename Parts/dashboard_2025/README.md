@@ -65,6 +65,11 @@ npm start
 DISPLAY=:0 npm start
 ```
 
+
+# Notes
+Do not use the internal temperature of the rfm69hcw chip. Be warned this is not calibrated or very accurate. Warning: Reading this will STOP any receiving/sending that might be happening
+
+
 # Explanations of electron structure:
 * main.js: The electron entry (main process) that runs the backend main process to control GUI and respond to system events
 * index.html: The frontend UI that will be loaded into the render process (browser window)

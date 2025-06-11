@@ -31,7 +31,7 @@ BIT_RATE=1000
 
 # Message hallola
 messages = ["System init...", "Waiting for data..."]
-max_lines=19
+height, width = 20, 80  # Console window size
 
 
 # Initialize RFM69 once
@@ -190,9 +190,9 @@ def print_console(stdscr):
     console_win.refresh()
     
 def log_message(msg):
-    if len(messages) >= max_lines:
+    if len(messages) >= height-2:
         messages.pop(0)  # Remove oldest
-    messages.append(msg)
+    messages.append(msg[:width-2])
 
 key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
 key_listener_thread.start()
