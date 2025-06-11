@@ -46,7 +46,7 @@ def main_event_loop(stdscr):
                 time.sleep(1)
                 stdscr.addstr(2,3,"[                  ]")
         except Exception as e:
-            log_message("[ERROR]: {e}")
+            log_message(f"[ERROR]: {e}")
 
         stdscr.refresh()
 
