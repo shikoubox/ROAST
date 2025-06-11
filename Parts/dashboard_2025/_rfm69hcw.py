@@ -97,26 +97,20 @@ def listen_for_keys(stdscr):
             stdscr.addstr(3,4,"Exiting...")
             stdscr.refresh()
             exit_program = True # Set the exit flag
-'''
+
         if key == ord('t'):
             try:
-                log_message("[INFO] Preparing to send BIG dataset test...")
-                
-                test_data = get_data_test()
-                log_message(f"[DEBUG] Generated data: {str(test_data)[:width-27]}...")  # Only first 80 chars
-
-                button_a_data = bytes(f"{test_data}", "utf-16")
+                log_message("[INFO] Preparing to send dataset test...")
+                b = data_mani.encode_to_bytes(16,2.9)
                 log_message("[DEBUG] Encoded data to bytes.")
-
-                rfm69.send(button_a_data)
-                log_message("[SUCCESS] Sent BIG dataset test over radio!")
+                rfm69.send(b)
+                log_message("[SUCCESS] Sent dataset test over radio!")
 
             except Exception as e:
                 log_message(f"[ERROR] Failed to send test data: {e}")
                 stdscr.addstr(30,0,f"{e}")
                 with open("thread_error.log", "a") as f:
                     f.write(f"Exception in send BIG dataset test: {e}")
-'''
 
 
 def send_data_test():
