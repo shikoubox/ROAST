@@ -102,15 +102,14 @@ def listen_for_keys(stdscr):
             try:
                 log_message("[INFO] Preparing to send dataset test...")
                 b = data_mani.encode_to_bytes(16,2.9)
-                log_message("[DEBUG] Encoded data to bytes.")
+                log_message(f"[DEBUG] Message created: {b:022b}")
+                log_message(f"{b}")
                 rfm69.send(b)
                 log_message("[SUCCESS] Sent dataset test over radio!")
 
             except Exception as e:
                 log_message(f"[ERROR] Failed to send test data: {e}")
-                stdscr.addstr(30,0,f"{e}")
-                with open("thread_error.log", "a") as f:
-                    f.write(f"Exception in send BIG dataset test: {e}")
+                stdscr.addstr(27,0,f"{e}")
 
 
 def send_data_test():
