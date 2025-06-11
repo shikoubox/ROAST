@@ -28,7 +28,7 @@ def main_event_loop(stdscr):
     global exit_program
     curses_code.print_header()
 
-    if rfm69 is None
+    if rfm69 is None:
         # Initialize RFM69 once
         rfm69 = RF69_module.initialise()
 
