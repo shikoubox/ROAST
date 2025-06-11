@@ -170,13 +170,14 @@ def encode_to_bytes(_index, _value):
     
 
     value = struct.pack('e', _value)
-    log_message(f"[INFO] {_value} becomes {value}")
+    log_message(f"[INFO] {_value} becomes {value} from {struct.unpack('e', encoded_value)[0]}")
 
     if not (0 <= value < 65536):
         stringg = "16-bit value must be between 0 and 65535."
-        log_message(f"[ERROR] stringg")
+        log_message(f"[ERROR] {stringg}")
         return stringg
-
+    else
+        log_message(f"[INFO] message ID: 290")
 
     # Shift the 6-bit value to the left by 16 bits
     combined_value = (index << 16) | value
