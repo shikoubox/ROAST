@@ -74,8 +74,13 @@ def listen_for_keys(stdscr):
 '''
 
 
+frequency = 0
+bitrate = 0
+baudrate = 0
+frequency_deviation = 0
+tx_power = 0
 
-def print_rfmdata(_rfm69):
+def print_rfmdata():
     curses.curs_set(0)  # Hide cursor
 
     start_y, start_x = 1, width+1  # Console window position
@@ -88,18 +93,29 @@ def print_rfmdata(_rfm69):
 
     rfmdata_win.addstr(1, 1,  "RFM69    : Detected")
     rfmdata_win.addstr(3, 1, f"Frequency:")
-    rfmdata_win.addstr(4, 1, f"{_rfm69.frequency_mhz} MHz")
+    rfmdata_win.addstr(4, 1, f"{frequency} MHz")
     rfmdata_win.addstr(6, 1, f"Bit rate :")
-    rfmdata_win.addstr(7, 1, f"{_rfm69.bitrate/1000} kbit/s")
+    rfmdata_win.addstr(7, 1, f"{bitrate/1000} kbit/s")
     rfmdata_win.addstr(9, 1, f"Baud rate:")
-    rfmdata_win.addstr(10,1, f"{BAUD_RATE} baud/s")
+    rfmdata_win.addstr(10,1, f"{baudrate} baud/s")
     rfmdata_win.addstr(12,1, f"Freq.dev.:") 
-    rfmdata_win.addstr(13,1, f"{_rfm69.frequency_deviation/1000} kHz") 
+    rfmdata_win.addstr(13,1, f"{frequency_deviation/1000} kHz") 
     rfmdata_win.addstr(15,1, f"Tx_Power :")
-    rfmdata_win.addstr(16,1, f"{_rfm69.tx_power} dBm")
+    rfmdata_win.addstr(16,1, f"{tx_power} dBm")
 
 
     rfmdata_win.refresh()
+
+def update update_rfmdata_baudrate(_baudrate)
+    baudrate = _baudrate
+    print_rfmdata()
+
+def update_rfmdata(_rfm69):
+    frequency = _rfm69.frequency_mhz
+    bitrate=_rfm69.bitrate
+    frequency_deviation = _rfm69.frequency_deviation
+    tx_power = _rfm69.tx_power
+    print_rfmdata()
 
 
 def print_header():

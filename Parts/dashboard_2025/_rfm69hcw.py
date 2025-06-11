@@ -60,8 +60,8 @@ def main_event_loop(stdscr):
         curses_code.print_console()
         packet = None
         if rfm69 is not None:
-            curses_code.print_rfmdata(rfm69)
-
+            curses_code.update_rfmdata(rfm69)
+            curses_code.update_rfmdata_baudrate(BAUD_RATE)
             # Check for incoming packets
 
             packet = rfm69.receive()
