@@ -15,8 +15,7 @@ def encode_to_bytes(_index, _value):
 
     # Shift the 6-bit value to the left by 16 bits
     combined_value = (index << 16) | (value)
-    byte_value = bytes(combined_value, "utf-16")
-    return byte_value.to_bytes(3, 'big')
+    return combined_value.to_bytes(3, 'big')
 
 def encode_float16(value):
     if value == 0.0:
