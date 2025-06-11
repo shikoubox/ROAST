@@ -171,7 +171,7 @@ def encode_to_bytes(_index, _value):
     value = float_to_half_precision(_value)
     log_message(f"[INFO] {_value} becomes {value:016b}")
 
-    if not (0 <= value < 64):
+    if not (0 <= index < 64):
         stringg = "6-bit value must be between 0 and 63"
         log_message(f"[ERROR] {stringg}")
         return stringg
