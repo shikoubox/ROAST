@@ -79,6 +79,8 @@ def main_event_loop(stdscr):
                     status = CSV_hand.prepend_new_row(new_packet)
                     if status is not None:
                         log_message(f"{status}")
+                    else:
+                        log_message(f"[INFO] Function prepend_new_row() ran without returning a status")
 
                 except UnicodeDecodeError:
                     log_message(f"[INFO] Received (raw): {packet}")
