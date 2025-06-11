@@ -3,6 +3,7 @@ import busio
 from digitalio import DigitalInOut, Direction, Pull
 import board
 import adafruit_rfm69
+import curses_code
 from curses_code import log_message
 
 # RFM69 Configuration
