@@ -7,7 +7,6 @@ import os
 import random
 import curses
 import threading
-import struct
 from data import CSV_hand
 
 # global exit flag
@@ -168,9 +167,8 @@ def encode_to_bytes(_index, _value):
         log_message(errorstring)
         return errorstring
     
-
-    value = struct.pack('e', _value)
-    log_message(f"[INFO] {_value} becomes {value} from {struct.unpack('e', encoded_value)[0]}")
+    value = float_to_half_precision(_value)
+    log_message(f"[INFO] {_value} becomes {value} as {value:016b}")
 
     if not (0 <= value < 65536):
         stringg = "16-bit value must be between 0 and 65535."
@@ -184,6 +182,42 @@ def encode_to_bytes(_index, _value):
 
     log_message(f"[INFO] Message created: {combined_value}")
     return combined_value
+
+
+def float_to_half_precision(value):
+    if value == 0.0:
+        return 0  # Special case for zero
+
+    # Determine the sign bit
+    sign = 0
+    if value < 0:
+        sign = 1
+        value = -value
+
+    # Find the exponent and normalize the value
+    exponent = 0
+    while value >= 2.0:
+        value /= 2.0
+        exponent += 1
+    while value < 1.0:
+        value *= 2.0
+        exponent -= 1
+
+    # Adjust exponent with bias (15 for half-precision)
+    exponent += 15
+
+    # Check for overflow/underflow
+    if exponent >= 31:  # Overflow
+        return (sign << 15) | (31 << 10)  # Return infinity
+    if exponent <= 0:  # Underflow
+        return (sign << 15)  # Return zero
+
+    # Get the mantissa (10 bits)
+    mantissa = int((value - 1) * (1 << 10))  # Scale to 10 bits
+
+    # Combine sign, exponent, and mantissa
+    half_precision = (sign << 15) | (exponent << 10) | (mantissa & 0x3FF)
+    return half_precision
 
 
 
