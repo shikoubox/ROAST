@@ -51,11 +51,10 @@ except RuntimeError as error:
 # Main loop
 def main_event_loop(stdscr):
     global exit_program
-    stdscr.clear()
-    print_header()
 
     while not exit_program:
-        stdscr.addstr(0, 2, "RFM69 Receiver - Press 'q' to quit. - Press 'u' 't' or 's' for different package tests")
+        stdscr.addstr(0, 2, "RFM69 Receiver - Press 'q' to quit. Otherwise 'b' 't' 'u' 's'")
+        print_header()
         print_console(stdscr)
         packet = None
         if rfm69 is not None:
@@ -278,7 +277,7 @@ def print_rfmdata(_rfm69):
 
     start_y, start_x = 0, width+1  # Console window position
     
-    rfmdata_win = curses.newwin(height, 20, start_y, start_x)
+    rfmdata_win = curses.newwin(height+4, 20, start_y, start_x)
 
     rfmdata_win.clear()
     # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
