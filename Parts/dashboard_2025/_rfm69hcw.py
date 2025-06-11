@@ -157,10 +157,10 @@ def listen_for_keys(stdscr):
 
 def encode_to_bytes(_index, _value):
     # Encode index
-    log_message(f"[INFO] Trying to encode {_value} with index {_index}")
+    log_message(f"[INFO] Trying to encode value {_value} at index {_index}")
     if 0 <= _index < 64:  # Ensure the value is within the 6-bit range
         index = format(_index, '06b')  # Format as a 6-bit binary string
-        log_message(f"[INFO] {_index} becomes {index}")
+        log_message(f"[INFO] {_index} becomes {index:06b}")
 
     else:
         errorstring= "[ERROR] Value must be between 0 and 63 for 6-bit representation."
@@ -168,19 +168,26 @@ def encode_to_bytes(_index, _value):
         return errorstring
     
     value = float_to_half_precision(_value)
-    log_message(f"[INFO] {_value} becomes {value} as {value:016b}")
+    log_message(f"[INFO] {_value} becomes {value:016b}")
+
+    if not (0 <= value < 64):
+        stringg = "6-bit value must be between 0 and 63"
+        log_message(f"[ERROR] {stringg}")
+        return stringg
+    else:
+        log_message(f"[INFO] message ID: 006")
 
     if not (0 <= value < 65536):
         stringg = "16-bit value must be between 0 and 65535."
         log_message(f"[ERROR] {stringg}")
         return stringg
     else:
-        log_message(f"[INFO] message ID: 290")
+        log_message(f"[INFO] message ID: 016")
 
     # Shift the 6-bit value to the left by 16 bits
-    combined_value = (index << 16) | value
+    combined_value = (index << 16) | (value)
 
-    log_message(f"[INFO] Message created: {combined_value}")
+    log_message(f"[INFO] Message created: {combined_value:022b}")
     return combined_value
 
 
