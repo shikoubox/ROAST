@@ -176,7 +176,7 @@ def encode_to_bytes(_index, _value):
         stringg = "16-bit value must be between 0 and 65535."
         log_message(f"[ERROR] {stringg}")
         return stringg
-    else
+    else:
         log_message(f"[INFO] message ID: 290")
 
     # Shift the 6-bit value to the left by 16 bits
