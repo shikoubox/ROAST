@@ -146,13 +146,13 @@ def listen_for_keys(stdscr):
                 b = data_mani.encode_to_bytes(16,1.5)
                 log_message(f"[INFO] Message created: {b:022b}")
             except Exception as e:
-                log_message(e)
+                log_message(f"{e}")
 
             try:
                 byt = data_mani.encode_to_bytes(65,111221.541231)
                 log_message(f"[INFO] Message created: {byt:022b}")
             except Exception as e:
-                log_message(e)
+                log_message(f"{e}")
 
         # keyboard button presses
         if key == ord('u'):
