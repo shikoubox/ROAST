@@ -31,7 +31,7 @@ BIT_RATE=1000
 
 # Message hallola
 messages = ["[INFO] System init..."]
-height, width = 20, 70  # Console window size
+height, width = 20, 80  # Console window size
 
 
 # Initialize RFM69 once
@@ -50,7 +50,7 @@ def main_event_loop(stdscr):
     print_header()
 
     while not exit_program:
-        stdscr.addstr(2, 0, "RFM69 Receiver - Press 'q' to quit. - Press 'u' 't' or 's' for different package tests")
+        stdscr.addstr(0, 2, "RFM69 Receiver - Press 'q' to quit. - Press 'u' 't' or 's' for different package tests")
         print_console(stdscr)
         packet = None
         if rfm69 is not None:
@@ -126,7 +126,7 @@ def listen_for_keys(stdscr):
                 log_message("[INFO] Preparing to send BIG dataset test...")
                 
                 test_data = get_data_test()
-                log_message(f"[DEBUG] Generated data: {str(test_data)[:width-20]}...")  # Only first 80 chars
+                log_message(f"[DEBUG] Generated data: {str(test_data)[:width-27]}...")  # Only first 80 chars
 
                 button_a_data = bytes(test_data, "utf-16")
                 log_message("[DEBUG] Encoded data to bytes.")
@@ -136,7 +136,7 @@ def listen_for_keys(stdscr):
 
             except Exception as e:
                 log_message(f"[ERROR] Failed to send test data: {e}")
-                stdscr.addstr(0,40,e)
+                stdscr.addstr(40,0,f"{e}")
                 with open("thread_error.log", "a") as f:
                     f.write(f"Exception in send BIG dataset test: {e}")
 
