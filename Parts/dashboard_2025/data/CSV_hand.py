@@ -5,121 +5,94 @@ import csv
 import os
 import sys
 
-# __file__ is .../dashboard_2025/data/CSV_hand.py
-# We want .../dashboard_2025/data/data.csv — no extra "data" folder!
+# Path to data.csv (same folder)
 CSV_PATH = os.path.join(os.path.dirname(__file__), "data.csv")
 
-def prepend_new_row(new_data):
-    # Basic validation: must be a dict of str→str
-    if not isinstance(new_data, dict):
-        print("Error: new_data must be a dict", file=sys.stderr)
-        return
-    for k, v in new_data.items():
-        if not isinstance(k, str) or not isinstance(v, str):
-            print(f"Error: invalid key/value in new_data: {k}: {v}", file=sys.stderr)
-            return
-
-    # 1) Read raw bytes to detect & strip BOM
+def _read_rows():
+    """Return (rows, encoding). If file missing, return (None, 'utf-16')."""
     if not os.path.exists(CSV_PATH):
-        print(f"{CSV_PATH} not found → creating new CSV with header only", file=sys.stderr)
-        headers = list(new_data.keys())
-        rows = [headers]
+        return None, 'utf-16'
+    raw = open(CSV_PATH, 'rb').read()
+    if raw.startswith(b'\xff\xfe') or raw.startswith(b'\xfe\xff'):
+        body = raw[2:]; encoding = 'utf-16'
+    elif raw.startswith(b'\xef\xbb\xbf'):
+        body = raw[3:]; encoding = 'utf-8'
     else:
-        with open(CSV_PATH, "rb") as f:
-            raw = f.read()
-        # detect BOM
-        if raw.startswith(b'\xff\xfe') or raw.startswith(b'\xfe\xff'):
-            body = raw[2:]
-            encoding = 'utf-16'
-        elif raw.startswith(b'\xef\xbb\xbf'):
-            body = raw[3:]
-            encoding = 'utf-8'
-        else:
-            body = raw
-            encoding = 'utf-8'
-
-        print(f"Detected encoding: {encoding}", file=sys.stderr)
-
-        try:
-            text = body.decode(encoding)
-        except Exception as e:
-            print(f"Decode error: {e}", file=sys.stderr)
-            return
-
-        try:
-            reader = csv.reader(text.splitlines())
-            all_rows = list(reader)
-            if not all_rows:
-                print("Error: data.csv appears empty or malformed.", file=sys.stderr)
-                return
-        except Exception as e:
-            print(f"CSV parse error: {e}", file=sys.stderr)
-            return
-
-        headers = all_rows[0]
-        rows = [headers] + all_rows[1:]
-
-    # 2) Build & prepend the new row in exactly the header order
+        body = raw; encoding = 'utf-8'
     try:
-        new_row = [ new_data.get(col, "") for col in headers ]
+        text = body.decode(encoding)
     except Exception as e:
-        print(f"Error building new row: {e}", file=sys.stderr)
-        return
+        print(f"ERROR: cannot decode {CSV_PATH}: {e}", file=sys.stderr)
+        sys.exit(1)
+    rows = list(csv.reader(text.splitlines()))
+    if not rows:
+        print("ERROR: data.csv is empty or malformed", file=sys.stderr)
+        sys.exit(1)
+    return rows, encoding
 
-    updated = [rows[0], new_row] + rows[1:]
-    print(f"Total rows after prepend: {len(updated)}", file=sys.stderr)
+def _write_rows(rows, encoding):
+    """Overwrite CSV_PATH in given encoding (utf-16 emits BOM)."""
+    with open(CSV_PATH, 'w', encoding=encoding, newline='') as f:
+        writer = csv.writer(f)
+        writer.writerows(rows)
 
-    # 3) Write back out as UTF-16 (with BOM)
-    try:
-        with open(CSV_PATH, "w", encoding="utf-16", newline="") as f:
-            writer = csv.writer(f)
-            writer.writerows(updated)
-    except Exception as e:
-        print(f"Error writing {CSV_PATH}: {e}", file=sys.stderr)
-        return
+def cmd_update(pairs):
+    """Update only the first data row (row 1)."""
+    rows, enc = _read_rows()
+    if rows is None:
+        # new file: header from pairs, then a data row
+        headers = list(pairs.keys())
+        current = [pairs.get(h, '') for h in headers]
+        rows = [headers, current]
+    else:
+        headers = rows[0]
+        # ensure row 1 exists
+        if len(rows) < 2:
+            rows.append([''] * len(headers))
+        for k, v in pairs.items():
+            if k in headers:
+                rows[1][headers.index(k)] = v
+    _write_rows(rows, enc)
+    print("data.csv: current row updated", file=sys.stderr)
 
-    print(f"{CSV_PATH} updated (prepended new row)", file=sys.stderr)
+def cmd_log():
+    """
+    Snapshot row 1 into history (prepend it right under header),
+    preserving all older rows.
+    """
+    rows, enc = _read_rows()
+    if rows is None or len(rows) < 2:
+        print("ERROR: no current row to log", file=sys.stderr)
+        sys.exit(1)
+    header = rows[0]
+    current = rows[1]
+    # build new list: header, current snapshot, then all existing rows AFTER header
+    new_rows = [header, current] + rows[1:]
+    _write_rows(new_rows, enc)
+    print("data.csv: snapshot logged", file=sys.stderr)
 
+def usage():
+    print("Usage:", file=sys.stderr)
+    print("  CSV_hand.py update key1=val1 [key2=val2 ...]", file=sys.stderr)
+    print("  CSV_hand.py log", file=sys.stderr)
+    sys.exit(1)
 
 if __name__ == "__main__":
-    try:
-        # Example usage; replace with your actual data source
-        example_data = {
-            'current_temp':    '3',
-            'cooling_temp':    '4',
-            'motor_usage':     '5',
-            'speed':           '6',
-            'wh_total':        '7',
-            'distance':        '8',
-            'solar_output':    '9',
-            'brake_status':    '10',
-            'tyre_lf':         '11',
-            'tyre_rf':         '12',
-            'tyre_lr':         '13',
-            'tyre_rr':         '14',
-            'module1_percent': '15',
-            'module1_voltage': '16',
-            'm1c1':            '17',
-            'm1c2':            '18',
-            'm1c3':            '19',
-            'm1c4':            '20',
-            'm1c5':            '21',
-            'm1c6':            '22',
-            'm1c7':            '23',
-            'm1c8':            '24',
-            'module2_percent': '25',
-            'module2_voltage': '26',
-            'm2c1':            '27',
-            'm2c2':            '28',
-            'm2c3':            '29',
-            'm2c4':            '30',
-            'm2c5':            '31',
-            'm2c6':            '32',
-            'm2c7':            '33',
-            'm2c8':            '34',
-            'battery_percent': '35',
-            'battery_voltage': '36',
-        }
-        prepend_new_row(example_data)
-    except Exception as e:
-        print(f"Unexpected error: {e}", file=sys.stderr)
+    if len(sys.argv) < 2:
+        usage()
+    cmd = sys.argv[1]
+    if cmd == "update":
+        if len(sys.argv) < 3:
+            usage()
+        pairs = {}
+        for tok in sys.argv[2:]:
+            if "=" not in tok:
+                print(f"ERROR: invalid token `{tok}`", file=sys.stderr)
+                sys.exit(1)
+            k, v = tok.split("=", 1)
+            pairs[k] = v
+        cmd_update(pairs)
+    elif cmd == "log":
+        cmd_log()
+    else:
+        usage()
