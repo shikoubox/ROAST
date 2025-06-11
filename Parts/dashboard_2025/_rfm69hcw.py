@@ -31,7 +31,7 @@ BIT_RATE=1000
 
 # Message hallola
 messages = ["System init...", "Waiting for data..."]
-height, width = 20, 80  # Console window size
+height, width = 20, 50  # Console window size
 
 
 # Initialize RFM69 once
@@ -57,7 +57,7 @@ def main_event_loop(stdscr):
             stdscr.addstr(1, 1, f"Frequency: {rfm69.frequency_mhz}MHz")
             stdscr.addstr(2, 1, f"Bit rate: {rfm69.bitrate}bit/s")
             stdscr.addstr(3, 1, f"Baud rate: {BAUD_RATE}baud/s")
-            stdscr.addstr(4, 1, f"Frequency deviation: {rfm69.frequency_deviation}hz") 
+            stdscr.addstr(4, 1, f"Frequency deviation: {rfm69.frequency_deviation/1000}kHz") 
             stdscr.addstr(5, 1, f"Tx_Power: {rfm69.tx_power}dBm")
 #           try:
 #               stdscr.addstr(6, 42, f"Temperature: {rfm69.temperature}C")
@@ -221,7 +221,7 @@ def print_console(stdscr):
     curses.curs_set(0)  # Hide cursor
 
     height, width = 20, 100  # Console window size
-    start_y, start_x = 5, 40  # Console window position
+    start_y, start_x = 5, 30  # Console window position
     
     console_win = curses.newwin(height, width, start_y, start_x)
 
