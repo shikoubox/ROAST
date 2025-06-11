@@ -115,10 +115,22 @@ def listen_for_keys(stdscr):
         stdscr.addstr(9,0, "                               ")
 
         if key == ord('t'):
-            log_message('Sending BIG dataset test by clicking keyboard')
-            button_a_data = bytes(get_data_test(),"utf-16")
-            rfm69.send(button_a_data)
-            log_message('Sent BIG dataset test by clicking keyboard')
+            try:
+                log_message("[INFO] Preparing to send BIG dataset test...")
+                
+                test_data = get_data_test()
+                log_message(f"[DEBUG] Generated test data: {str(test_data)[:80]}...")  # Only first 80 chars
+
+                button_a_data = bytes(test_data, "utf-16")
+                log_message("[DEBUG] Encoded data to bytes.")
+
+                rfm69.send(button_a_data)
+                log_message("[SUCCESS] Sent BIG dataset test over radio!")
+
+            except Exception as e:
+                log_message(f"[ERROR] Failed to send test data: {e}")
+                with open("thread_error.log", "a") as f:
+                    f.write(f"Exception in send BIG dataset test: {e}\n")
 
         if key == ord('s'):
             log_message('Sending "super message" by clicking keyboard')
