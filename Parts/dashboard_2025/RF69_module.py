@@ -1,0 +1,88 @@
+import time
+import busio
+from digitalio import DigitalInOut, Direction, Pull
+import board
+import adafruit_rfm69
+from curses_code import log_message
+
+# RFM69 Configuration
+CS = DigitalInOut(board.CE1)
+RESET = DigitalInOut(board.D25)
+spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
+
+# Define radio parameters.
+RADIO_FREQ_MHZ = 433.0  # Frequency of the radio in Mhz
+BAUD_RATE=1000
+BIT_RATE=1000
+# Optional encryption (MUST match on both)
+# rfm69.encryption_key = b'\x01\x02\x03\x04\x05\x06\x07\x08\x01\x02\x03\x04\x05\x06\x07\x08'
+
+rfm69 = None
+
+# Initialize RFM69 once
+def initialise():
+    try:
+        rfm69 = adafruit_rfm69.RFM69(spi, CS, RESET, RADIO_FREQ_MHZ, baudrate=BAUD_RATE, high_power=True)
+        rfm69.bitrate = BIT_RATE
+        prev_packet = None
+        curses_code.update_rfmdata(rfm69)
+        curses_code.update_rfmdata_baudrate(BAUD_RATE)
+        return rfm69
+    except RuntimeError as error:
+        log_message("[ERROR] RFM69")
+        log_message("[ERROR]: {error}")
+        rfm69 = None
+
+
+
+
+def check_for_packets():
+    if rfm69 is None:
+        raise Exception("[WARNING] Trying to check for packets, without an initalised rfm69")
+    else: 
+        packet = rfm69.receive()
+        if packet is not None:
+            rssi = rfm69.last_rssi  # This is your most accurate RSSI reading
+            log_message(f"[INFO] Received signal strength: {rssi} dBm")
+
+            try:
+                new_packet = packet.decode("utf-16")
+                log_message(f"[INFO] Received: {new_packet}")
+                status = CSV_hand.prepend_new_row(new_packet)
+                if status is not None:
+                    log_message(f"{status}")
+                else:
+                    log_message(f"[INFO] Function prepend_new_row() ran without returning a status")
+                return "P"
+            except UnicodeDecodeError:
+                log_message(f"[WARNING] Received (raw): {packet}")
+            except Exception as e:
+                log_message(f"[ERROR] {e}")
+        else:
+            return None
+            time.sleep(1)
+
+def send_string_packet(string):
+
+    if rfm69 is None:
+        raise Exception("[WARNING] Trying to check for packets, without an initalised rfm69")
+    else: 
+        try:
+            packet_data = bytes(string,"utf-16")
+            rfm69.send(packet_data)
+            log_message('[INFO] Sent "{string}" as a packet.')
+        except Exception as e:
+            log_message(f"[ERROR] Failed to send data: {e}")
+
+def send_byte_packet(byte_packet):
+    if rfm69 is None:
+        raise Exception("[WARNING] Trying to check for packets, without an initalised rfm69")
+    else: 
+        try:
+            rfm69.send(byte_packet)
+            log_message('[INFO] Sent a byte packet.')
+
+
+        except Exception as e:
+            log_message(f"[ERROR] Failed to send data: {e}")
+

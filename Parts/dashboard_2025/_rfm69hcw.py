@@ -11,6 +11,7 @@ import curses_code
 from curses_code import log_message
 import threading
 from data import CSV_hand
+import RF69_module
 
 # global exit flag
 exit_program = False
@@ -20,35 +21,8 @@ btnA = DigitalInOut(board.D17)
 btnA.direction = Direction.INPUT
 btnA.pull = Pull.UP
 
-# RFM69 Configuration
-CS = DigitalInOut(board.CE1)
-RESET = DigitalInOut(board.D25)
-spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
-
-# Define radio parameters.
-RADIO_FREQ_MHZ = 433.0  # Frequency of the radio in Mhz
-BAUD_RATE=1000
-BIT_RATE=1000
-# Optional encryption (MUST match on both)
-# rfm69.encryption_key = b'\x01\x02\x03\x04\x05\x06\x07\x08\x01\x02\x03\x04\x05\x06\x07\x08'
-
-# Curses settings
-messages = ["[INFO] System init..."]
-height, width = 20, 75  # Console window size
-## Use Unicode box-drawing characters for fancy borders
-h  = '-'#'─'
-v  = '|'
-c  = '+'
-
 # Initialize RFM69 once
-try:
-    rfm69 = adafruit_rfm69.RFM69(spi, CS, RESET, RADIO_FREQ_MHZ, baudrate=BAUD_RATE, high_power=True)
-    rfm69.bitrate = BIT_RATE
-    prev_packet = None
-except RuntimeError as error:
-    log_message("[ERROR] RFM69")
-    log_message("[ERROR]: {error}")
-    rfm69 = None
+rfm69 = RF69_module.initialise()
 
 # Main loop
 def main_event_loop(stdscr):
@@ -59,39 +33,16 @@ def main_event_loop(stdscr):
         stdscr.addstr(0, 2, "RFM69 Receiver - Press 'q' to quit. Otherwise 'b' 't' 'u' 's'")
         curses_code.print_console()
         packet = None
-        if rfm69 is not None:
-            curses_code.update_rfmdata(rfm69)
-            curses_code.update_rfmdata_baudrate(BAUD_RATE)
+        
+        try:
             # Check for incoming packets
-
-            packet = rfm69.receive()
-            if packet is not None:
-                rssi = rfm69.last_rssi  # This is your most accurate RSSI reading
-                log_message(f"[INFO] Received signal strength: {rssi} dBm")
-
-                prev_packet=packet
-                try:
-                    new_packet = packet.decode("utf-16")
-                    log_message(f"[INFO] Received: {new_packet}")
-                    print(CSV_hand.prepend_new_row(new_packet))
-                    status = CSV_hand.prepend_new_row(new_packet)
-                    print(status)
-                    if status is not None:
-                        log_message(f"{status}")
-                    else:
-                        log_message(f"[INFO] Function prepend_new_row() ran without returning a status")
-
-                except UnicodeDecodeError:
-                    log_message(f"[INFO] Received (raw): {packet}")
-            else:
-                stdscr.addstr(2,3,"[INFO] Waiting for packet")
+            if RF69_module.check_for_packets() is None:
+                stdscr.addstr(2,3,"[Waiting for packet]")
                 stdscr.refresh()
                 time.sleep(1)
-                stdscr.addstr(2,3,"[    ]                   ")
-                
-
-        else:
-            log_message("[ERROR] RFM69 is none")
+                stdscr.addstr(2,3,"[                  ]")
+        except Exception as e:
+            log_message("[ERROR]: {e}")
 
         stdscr.refresh()
 
@@ -103,18 +54,48 @@ def listen_for_keys(stdscr):
     stdscr.refresh() 
 
     while not exit_program:
-        stdscr.addstr(2,29, "[INFO] Listening for keypress")
+        stdscr.addstr(2,29, "[Listening for keypress]")
 
         # Physical button presses?
         if not btnA.value:
-            button_a_data = bytes("test","utf-16")
-            rfm69.send(button_a_data)
-            log_message('[INFO] Sent data test by button click')
+            try:
+                RF69_module.send_string_packet("test")
+            except Exception as e:
+                log_message(f"{e}")
         
         key = stdscr.getch()  # Wait for a key press
         log_message(f"[INFO] You pressed: {chr(key)}")
-        stdscr.addstr(2,29, "[    ]                       ")
+        stdscr.addstr(2,29, "[                      ]")
+        
+        if key == ord('s'):
+            try:
+                log_message('[INFO] Sending "super message" by clicking keyboard')
+                RF69_module.send_string_packet("super message")
+            except Exception as e:
+                log_message(f"{e}")
 
+        if key == ord('b'):
+            log_message('[INFO] Encoding message by clicking keyboard')
+            try:
+                b = data_mani.encode_to_bytes(16,1.5)
+                log_message(f"[INFO] Message created: {b:022b}")
+                message, index = data_mani.bytes_to_message(b)
+                log_message(f"{index}: {message} / {data_mani.decode_float16(message)}")
+            except Exception as e:
+                log_message(f"{e}")
+
+            try:
+                byt = data_mani.encode_to_bytes(65,111221.541231)
+                log_message(f"[INFO] Message created: {byt:022b}")
+            except Exception as e:
+                log_message(f"{e}")
+
+        if key == ord('q'):  # Exit if 'q' is pressed
+            stdscr.clear()
+            stdscr.addstr(3,4,"Exiting...")
+            stdscr.refresh()
+            exit_program = True # Set the exit flag
+'''
         if key == ord('t'):
             try:
                 log_message("[INFO] Preparing to send BIG dataset test...")
@@ -133,38 +114,7 @@ def listen_for_keys(stdscr):
                 stdscr.addstr(30,0,f"{e}")
                 with open("thread_error.log", "a") as f:
                     f.write(f"Exception in send BIG dataset test: {e}")
-
-        if key == ord('s'):
-            log_message('[INFO] Sending "super message" by clicking keyboard')
-            button_a_data = bytes("super message","utf-16")
-            rfm69.send(button_a_data)
-            log_message('[INFO] Sent "super message"')
-
-        if key == ord('b'):
-            log_message('[INFO] Encoding message by clicking keyboard')
-            try:
-                b = data_mani.encode_to_bytes(16,1.5)
-                log_message(f"[INFO] Message created: {b:022b}")
-                message, index = data_mani.bytes_to_message(b)
-                log_message(f"{index}: {message} / {data_mani.decode_float16(message)}")
-            except Exception as e:
-                log_message(f"{e}")
-
-            try:
-                byt = data_mani.encode_to_bytes(65,111221.541231)
-                log_message(f"[INFO] Message created: {byt:022b}")
-            except Exception as e:
-                log_message(f"{e}")
-
-        # keyboard button presses
-        if key == ord('u'):
-            send_data_test(stdscr)
-
-        if key == ord('q'):  # Exit if 'q' is pressed
-            stdscr.clear()
-            stdscr.addstr(3,4,"Exiting...")
-            stdscr.refresh()
-            exit_program = True # Set the exit flag
+'''
 
 
 def send_data_test():
@@ -247,71 +197,6 @@ def get_data_test():
         "battery_voltage":  random.uniform(10.0, 13.0),
     }
     return new_data
-
-def print_rfmdata(_rfm69):
-    curses.curs_set(0)  # Hide cursor
-
-    start_y, start_x = 1, width+1  # Console window position
-    
-    rfmdata_win = curses.newwin(height+4-start_y, 22, start_y, start_x)
-
-    rfmdata_win.clear()
-    # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
-    rfmdata_win.border(v, v, h, h, c, c, c, c)
-
-    rfmdata_win.addstr(1, 1,  "RFM69    : Detected")
-    rfmdata_win.addstr(3, 1, f"Frequency:")
-    rfmdata_win.addstr(4, 1, f"{_rfm69.frequency_mhz} MHz")
-    rfmdata_win.addstr(6, 1, f"Bit rate :")
-    rfmdata_win.addstr(7, 1, f"{_rfm69.bitrate/1000} kbit/s")
-    rfmdata_win.addstr(9, 1, f"Baud rate:")
-    rfmdata_win.addstr(10,1, f"{BAUD_RATE} baud/s")
-    rfmdata_win.addstr(12,1, f"Freq.dev.:") 
-    rfmdata_win.addstr(13,1, f"{_rfm69.frequency_deviation/1000} kHz") 
-    rfmdata_win.addstr(15,1, f"Tx_Power :")
-    rfmdata_win.addstr(16,1, f"{_rfm69.tx_power} dBm")
-
-
-    rfmdata_win.refresh()
-
-
-def print_header():
-    curses.curs_set(0)  # Hide cursor
-
-    start_y, start_x = 1, 0  # Console window position
-    
-    header_win = curses.newwin(3, width, start_y, start_x)
-
-    header_win.clear()
-    # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
-    header_win.border(v, v, h, h, c, c, c, c)
-
-    header_win.refresh()
-
-
-def print_console(stdscr):
-    curses.curs_set(0)  # Hide cursor
-
-    start_y, start_x = 4, 0  # Console window position
-    
-    console_win = curses.newwin(height, width, start_y, start_x)
-
-    
-    console_win.clear()
-    # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
-    console_win.border(v, v, h, h, c, c, c, c)
-
-    for i, msg in enumerate(messages):
-        console_win.addstr(i + 1, 2, msg)  # +1 and +2 to not write over the border
-
-    console_win.refresh()
-
-'''
-def log_message(msg):
-    if len(messages) >= height-2:
-        messages.pop(0)  # Remove oldest
-    messages.append(msg[:width-3])
-'''
 
 
 key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
