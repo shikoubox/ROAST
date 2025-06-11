@@ -102,8 +102,8 @@ def listen_for_keys(stdscr):
             try:
                 log_message("[INFO] Preparing to send dataset test...")
                 b = data_mani.encode_to_bytes(16,2.9)
-                log_message(f"[DEBUG] Message created: {b:022b}")
-                log_message(f"{b}")
+                log_message(f"[DEBUG] {b}")
+                log_message(f"[DEBUG] Message created: {int.from_bytes(byt, 'big'):022b}")
                 RF69_module.send_byte_packet(b)
                 log_message("[SUCCESS] Sent dataset test over radio!")
 
