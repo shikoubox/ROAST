@@ -226,17 +226,16 @@ def print_console(stdscr):
     console_win = curses.newwin(height, width, start_y, start_x)
 
     # Use Unicode box-drawing characters for fancy borders
-    tl = '╭'
-    tr = '╮'
-    bl = '╰'
-    br = '╯'
-    h  = '─'
-    v  = '│'
+    tl = '+'#'╭'
+    tr = '+'#'╮'
+    bl = '+'#'╰'
+    br = '+'#'╯'
+    h  = '-'#'─'
+    v  = '|'
     
     console_win.clear()
     # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
     console_win.border(v, v, h, h, tl, tr, bl, br)
-    #console_win.border()
 
     for i, msg in enumerate(messages):
         console_win.addstr(i + 1, 2, msg)  # +1 and +2 to not write over the border
