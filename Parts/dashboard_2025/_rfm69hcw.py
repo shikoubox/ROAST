@@ -47,18 +47,19 @@ except RuntimeError as error:
 # Main loop
 def main_event_loop(stdscr):
     global exit_program
+    print_header()
 
     while not exit_program:
         stdscr.addstr(0, 0, "RFM69 Receiver - Press 'q' to quit. - Press 'u t or s for different package tests")
         print_console(stdscr)
         packet = None
         if rfm69 is not None:
-            stdscr.addstr(0, 0, "RFM69: Detected")
-            stdscr.addstr(1, 1, f"Frequency: {rfm69.frequency_mhz}MHz")
-            stdscr.addstr(2, 1, f"Bit rate: {rfm69.bitrate}bit/s")
-            stdscr.addstr(3, 1, f"Baud rate: {BAUD_RATE}baud/s")
-            stdscr.addstr(4, 1, f"Frequency deviation: {rfm69.frequency_deviation/1000}kHz") 
-            stdscr.addstr(5, 1, f"Tx_Power: {rfm69.tx_power}dBm")
+            stdscr.addstr(0, 50, "RFM69: Detected")
+            stdscr.addstr(1, 50, f"Frequency: {rfm69.frequency_mhz}MHz")
+            stdscr.addstr(2, 50, f"Bit rate: {rfm69.bitrate}bit/s")
+            stdscr.addstr(3, 50, f"Baud rate: {BAUD_RATE}baud/s")
+            stdscr.addstr(4, 50, f"Frequency deviation: {rfm69.frequency_deviation/1000}kHz") 
+            stdscr.addstr(5, 50, f"Tx_Power: {rfm69.tx_power}dBm")
 #           try:
 #               stdscr.addstr(6, 42, f"Temperature: {rfm69.temperature}C")
 #           except RuntimeError as error:
@@ -85,10 +86,10 @@ def main_event_loop(stdscr):
                 except UnicodeDecodeError:
                     log_message(f"[INFO] Received (raw): {packet}")
             else:
-                stdscr.addstr(8,0,"[INFO] Waiting for packet")
+                stdscr.addstr(2,3,"[INFO] Waiting for packet")
                 stdscr.refresh()
                 time.sleep(1)
-                stdscr.addstr(8,0,"[    ]                   ")
+                stdscr.addstr(2,3,"[    ]                   ")
                 
 
         else:
@@ -105,9 +106,7 @@ def listen_for_keys(stdscr):
     stdscr.refresh() 
 
     while not exit_program:
-        stdscr.addstr(9,0, "Now listening for key presses..")
-
-
+        stdscr.addstr(2,25, "[INFO] Listening for keypress")
 
         # Physical button presses?
         if not btnA.value:
@@ -117,7 +116,7 @@ def listen_for_keys(stdscr):
         
         key = stdscr.getch()  # Wait for a key press
         log_message(f"[INFO] You pressed: {chr(key)}\n")
-        stdscr.addstr(9,0, "                               ")
+        stdscr.addstr(2,25, "[    ]                       ")
 
         if key == ord('t'):
             try:
@@ -236,10 +235,35 @@ def get_data_test():
     }
     return new_data
 
+def print_header():
+    curses.curs_set(0)  # Hide cursor
+
+    start_y, start_x = 1, 1  # Console window position
+    
+    header_win = curses.newwin(3, width, start_y, start_x)
+
+    # Use Unicode box-drawing characters for fancy borders
+    tl = '+'#'╭'
+    tr = '+'#'╮'
+    bl = '+'#'╰'
+    br = '+'#'╯'
+    h  = '-'#'─'
+    v  = '|'
+    
+    header_win.clear()
+    # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
+    header_win.border(v, v, h, h, tl, tr, bl, br)
+
+
+
+
+    header_win.refresh()
+
+
 def print_console(stdscr):
     curses.curs_set(0)  # Hide cursor
 
-    start_y, start_x = 5, 30  # Console window position
+    start_y, start_x = 5, 1  # Console window position
     
     console_win = curses.newwin(height, width, start_y, start_x)
 
