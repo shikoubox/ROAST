@@ -29,10 +29,13 @@ BIT_RATE=1000
 # Optional encryption (MUST match on both)
 # rfm69.encryption_key = b'\x01\x02\x03\x04\x05\x06\x07\x08\x01\x02\x03\x04\x05\x06\x07\x08'
 
-# Message hallola
-messages = ["System init...", "Waiting for data..."]
-height, width = 20, 80  # Console window size
-
+# Curses settings
+messages = ["[INFO] System init..."]
+height, width = 20, 75  # Console window size
+## Use Unicode box-drawing characters for fancy borders
+h  = '-'#'─'
+v  = '|'
+c  = '+'
 
 # Initialize RFM69 once
 try:
@@ -40,54 +43,52 @@ try:
     rfm69.bitrate = BIT_RATE
     prev_packet = None
 except RuntimeError as error:
-    print("RFM69: ERROR")
-    print("RFM69 Error:", error)
+    log_message("[ERROR] RFM69")
+    log_message("[ERROR]: {error}")
     rfm69 = None
 
 # Main loop
 def main_event_loop(stdscr):
     global exit_program
+    print_header()
 
     while not exit_program:
-        stdscr.addstr(0, 0, "RFM69 Receiver - Press 'q' to quit. - Press 'u t or s for different package tests")
+        stdscr.addstr(0, 2, "RFM69 Receiver - Press 'q' to quit. Otherwise 'b' 't' 'u' 's'")
         print_console(stdscr)
         packet = None
         if rfm69 is not None:
-            stdscr.addstr(0, 0, "RFM69: Detected")
-            stdscr.addstr(1, 1, f"Frequency: {rfm69.frequency_mhz}MHz")
-            stdscr.addstr(2, 1, f"Bit rate: {rfm69.bitrate}bit/s")
-            stdscr.addstr(3, 1, f"Baud rate: {BAUD_RATE}baud/s")
-            stdscr.addstr(4, 1, f"Frequency deviation: {rfm69.frequency_deviation/1000}kHz") 
-            stdscr.addstr(5, 1, f"Tx_Power: {rfm69.tx_power}dBm")
-#           try:
-#               stdscr.addstr(6, 42, f"Temperature: {rfm69.temperature}C")
-#           except RuntimeError as error:
-#               stdscr.addstr(6,42, f"{error}")
+            print_rfmdata(rfm69)
 
             # Check for incoming packets
-            
 
             packet = rfm69.receive()
             if packet is not None:
                 rssi = rfm69.last_rssi  # This is your most accurate RSSI reading
-                log_message(f"Received signal strength: {rssi} dBm")
+                log_message(f"[INFO] Received signal strength: {rssi} dBm")
 
                 prev_packet=packet
                 try:
                     new_packet = packet.decode("utf-16")
-                    log_message(f"Received: {new_packet}")
-                    CSV_hand.prepend_new_row(new_packet)
+                    log_message(f"[INFO] Received: {new_packet}")
+                    print(CSV_hand.prepend_new_row(new_packet))
+                    status = CSV_hand.prepend_new_row(new_packet)
+                    print(status)
+                    if status is not None:
+                        log_message(f"{status}")
+                    else:
+                        log_message(f"[INFO] Function prepend_new_row() ran without returning a status")
+
                 except UnicodeDecodeError:
-                    log_message(f"Received (raw): {packet}")
+                    log_message(f"[INFO] Received (raw): {packet}")
             else:
-                stdscr.addstr(8,4,"-Waiting for packet-")
+                stdscr.addstr(2,3,"[INFO] Waiting for packet")
                 stdscr.refresh()
                 time.sleep(1)
-                stdscr.addstr(8,4,"-                  -")
+                stdscr.addstr(2,3,"[    ]                   ")
                 
 
         else:
-            log_message("rfm69 is none")
+            log_message("[ERROR] RFM69 is none")
 
         stdscr.refresh()
         print_console(stdscr)
@@ -100,28 +101,27 @@ def listen_for_keys(stdscr):
     stdscr.refresh() 
 
     while not exit_program:
-        stdscr.addstr(9,0, "Now listening for key presses..")
-
-
+        stdscr.addstr(2,29, "[INFO] Listening for keypress")
 
         # Physical button presses?
         if not btnA.value:
+            stemomg
             button_a_data = bytes("test","utf-16")
             rfm69.send(button_a_data)
-            log_message('Sent data test by button click')
+            log_message('[INFO] Sent data test by button click')
         
         key = stdscr.getch()  # Wait for a key press
-        log_message(f"You pressed: {chr(key)}\n")
-        stdscr.addstr(9,0, "                               ")
+        log_message(f"[INFO] You pressed: {chr(key)}")
+        stdscr.addstr(2,29, "[    ]                       ")
 
         if key == ord('t'):
             try:
                 log_message("[INFO] Preparing to send BIG dataset test...")
                 
                 test_data = get_data_test()
-                log_message(f"[DEBUG] Generated test data: {str(test_data)[:80]}...")  # Only first 80 chars
+                log_message(f"[DEBUG] Generated data: {str(test_data)[:width-27]}...")  # Only first 80 chars
 
-                button_a_data = bytes(test_data, "utf-16")
+                button_a_data = bytes(f"{test_data}", "utf-16")
                 log_message("[DEBUG] Encoded data to bytes.")
 
                 rfm69.send(button_a_data)
@@ -129,15 +129,21 @@ def listen_for_keys(stdscr):
 
             except Exception as e:
                 log_message(f"[ERROR] Failed to send test data: {e}")
+                stdscr.addstr(30,0,f"{e}")
                 with open("thread_error.log", "a") as f:
-                    f.write(f"Exception in send BIG dataset test: {e}\n")
+                    f.write(f"Exception in send BIG dataset test: {e}")
 
         if key == ord('s'):
-            log_message('Sending "super message" by clicking keyboard')
+            log_message('[INFO] Sending "super message" by clicking keyboard')
             button_a_data = bytes("super message","utf-16")
             rfm69.send(button_a_data)
-            log_message('Sent "super message"')
+            log_message('[INFO] Sent "super message"')
 
+        if key == ord('b'):
+            log_message('[INFO] Encoding message by clicking keyboard')
+            encode_to_bytes(16,1.5)
+            encode_to_bytes(16,111221.541231)
+            log_message('[INFO] Done encoding')
 
         # keyboard button presses
         if key == ord('u'):
@@ -148,6 +154,76 @@ def listen_for_keys(stdscr):
             stdscr.addstr(3,4,"Exiting...")
             stdscr.refresh()
             exit_program = True # Set the exit flag
+
+def encode_to_bytes(_index, _value):
+    # Encode index
+    log_message(f"[INFO] Trying to encode {_value} with index {_index}")
+    if 0 <= _index < 64:  # Ensure the value is within the 6-bit range
+        index = format(_index, '06b')  # Format as a 6-bit binary string
+        log_message(f"[INFO] {_index} becomes {index}")
+
+    else:
+        errorstring= "[ERROR] Value must be between 0 and 63 for 6-bit representation."
+        log_message(errorstring)
+        return errorstring
+    
+    value = float_to_half_precision(_value)
+    log_message(f"[INFO] {_value} becomes {value} as {value:016b}")
+
+    if not (0 <= value < 65536):
+        stringg = "16-bit value must be between 0 and 65535."
+        log_message(f"[ERROR] {stringg}")
+        return stringg
+    else:
+        log_message(f"[INFO] message ID: 290")
+
+    # Shift the 6-bit value to the left by 16 bits
+    combined_value = (index << 16) | value
+
+    log_message(f"[INFO] Message created: {combined_value}")
+    return combined_value
+
+
+def float_to_half_precision(value):
+    if value == 0.0:
+        return 0  # Special case for zero
+
+    # Determine the sign bit
+    sign = 0
+    if value < 0:
+        sign = 1
+        value = -value
+
+    # Find the exponent and normalize the value
+    exponent = 0
+    while value >= 2.0:
+        value /= 2.0
+        exponent += 1
+    while value < 1.0:
+        value *= 2.0
+        exponent -= 1
+
+    # Adjust exponent with bias (15 for half-precision)
+    exponent += 15
+
+    # Check for overflow/underflow
+    if exponent >= 31:  # Overflow
+        return (sign << 15) | (31 << 10)  # Return infinity
+    if exponent <= 0:  # Underflow
+        return (sign << 15)  # Return zero
+
+    # Get the mantissa (10 bits)
+    mantissa = int((value - 1) * (1 << 10))  # Scale to 10 bits
+
+    # Combine sign, exponent, and mantissa
+    half_precision = (sign << 15) | (exponent << 10) | (mantissa & 0x3FF)
+    return half_precision
+
+
+
+def encode_to_message():
+    
+    return False
 
 
 def send_data_test():
@@ -189,7 +265,8 @@ def send_data_test():
     }
 
     stdscr.addstr(5,0, 'Sending data test')
-    CSV_hand.prepend_new_row(new_data)
+    status = CSV_hand.prepend_new_row(new_data)
+    log_message(status)
 
 def get_data_test():
     new_data = {
@@ -230,24 +307,58 @@ def get_data_test():
     }
     return new_data
 
+def print_rfmdata(_rfm69):
+    curses.curs_set(0)  # Hide cursor
+
+    start_y, start_x = 1, width+1  # Console window position
+    
+    rfmdata_win = curses.newwin(height+4-start_y, 22, start_y, start_x)
+
+    rfmdata_win.clear()
+    # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
+    rfmdata_win.border(v, v, h, h, c, c, c, c)
+
+    rfmdata_win.addstr(1, 1,  "RFM69    : Detected")
+    rfmdata_win.addstr(3, 1, f"Frequency:")
+    rfmdata_win.addstr(4, 1, f"{_rfm69.frequency_mhz} MHz")
+    rfmdata_win.addstr(6, 1, f"Bit rate :")
+    rfmdata_win.addstr(7, 1, f"{_rfm69.bitrate/1000} kbit/s")
+    rfmdata_win.addstr(9, 1, f"Baud rate:")
+    rfmdata_win.addstr(10,1, f"{BAUD_RATE} baud/s")
+    rfmdata_win.addstr(12,1, f"Freq.dev.:") 
+    rfmdata_win.addstr(13,1, f"{_rfm69.frequency_deviation/1000} kHz") 
+    rfmdata_win.addstr(15,1, f"Tx_Power :")
+    rfmdata_win.addstr(16,1, f"{_rfm69.tx_power} dBm")
+
+
+    rfmdata_win.refresh()
+
+
+def print_header():
+    curses.curs_set(0)  # Hide cursor
+
+    start_y, start_x = 1, 0  # Console window position
+    
+    header_win = curses.newwin(3, width, start_y, start_x)
+
+    header_win.clear()
+    # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
+    header_win.border(v, v, h, h, c, c, c, c)
+
+    header_win.refresh()
+
+
 def print_console(stdscr):
     curses.curs_set(0)  # Hide cursor
 
-    start_y, start_x = 5, 30  # Console window position
+    start_y, start_x = 4, 0  # Console window position
     
     console_win = curses.newwin(height, width, start_y, start_x)
 
-    # Use Unicode box-drawing characters for fancy borders
-    tl = '+'#'╭'
-    tr = '+'#'╮'
-    bl = '+'#'╰'
-    br = '+'#'╯'
-    h  = '-'#'─'
-    v  = '|'
     
     console_win.clear()
     # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
-    console_win.border(v, v, h, h, tl, tr, bl, br)
+    console_win.border(v, v, h, h, c, c, c, c)
 
     for i, msg in enumerate(messages):
         console_win.addstr(i + 1, 2, msg)  # +1 and +2 to not write over the border
@@ -257,7 +368,7 @@ def print_console(stdscr):
 def log_message(msg):
     if len(messages) >= height-2:
         messages.pop(0)  # Remove oldest
-    messages.append(msg[:width-2])
+    messages.append(msg[:width-3])
 
 key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
 key_listener_thread.start()
