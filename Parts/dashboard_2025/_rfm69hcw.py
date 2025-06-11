@@ -166,7 +166,7 @@ def send_data_test():
 def print_console(stdscr):
     curses.curs_set(0)  # Hide cursor
 
-    height, width = 10, 50  # Console window size
+    height, width = 20, 100  # Console window size
     start_y, start_x = 5, 40  # Console window position
     
     console_win = curses.newwin(height, width, start_y, start_x)
