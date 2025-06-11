@@ -46,19 +46,19 @@ except RuntimeError as error:
 # Main loop
 def main_event_loop(stdscr):
     global exit_program
-    stdscr.clear()
-    print_console(stdscr)
 
     while not exit_program:
+        stdscr.clear()
         stdscr.addstr(0, 0, "RFM69 Receiver - Press 'q' to quit.")
+        print_console(stdscr)
         packet = None
         if rfm69 is not None:
-            stdscr.addstr(0, 42, "RFM69: Detected")
-            stdscr.addstr(1, 42, f"Frequency: {rfm69.frequency_mhz}MHz")
-            stdscr.addstr(2, 42, f"Bit rate: {rfm69.bitrate}bit/s")
-            stdscr.addstr(3, 42, f"Baud rate: {BAUD_RATE}baud/s")
-            stdscr.addstr(4, 42, f"Frequency deviation: {rfm69.frequency_deviation}hz") 
-            stdscr.addstr(5, 42, f"Tx_Power: {rfm69.tx_power}dBm")
+            stdscr.addstr(0, 0, "RFM69: Detected")
+            stdscr.addstr(1, 1, f"Frequency: {rfm69.frequency_mhz}MHz")
+            stdscr.addstr(2, 1, f"Bit rate: {rfm69.bitrate}bit/s")
+            stdscr.addstr(3, 1, f"Baud rate: {BAUD_RATE}baud/s")
+            stdscr.addstr(4, 1, f"Frequency deviation: {rfm69.frequency_deviation}hz") 
+            stdscr.addstr(5, 1, f"Tx_Power: {rfm69.tx_power}dBm")
 #           try:
 #               stdscr.addstr(6, 42, f"Temperature: {rfm69.temperature}C")
 #           except RuntimeError as error:
@@ -75,23 +75,20 @@ def main_event_loop(stdscr):
                 prev_packet=packet
                 try:
                     new_packet = packet.decode("utf-16")
-                    stdscr.addstr(2, 0, f"Received: {new_packet}")
+                    log_message(f"Received: {new_packet}")
                     prepend_new_row(stdscr, new_packet)
                 except UnicodeDecodeError:
-                    stdscr.addstr(2, 0, f"Received (raw): {packet}")
+                    lof_message(f"Received (raw): {packet}")
             else:
-                stdscr.addstr(2, 2, "-Waiting for packet-")
+                log_message("-Waiting for packet-")
                 stdscr.refresh()
-                time.sleep(1)
-                stdscr.addstr(2, 2, "-                  -")
                 
 
         else:
-            stdscr.addstr(2, 0, "rfm69 is none")
-        stdscr.refresh()
-        time.sleep(2)
+            log_message("rfm69 is none")
+
         print_console(std_scr)
-        time.sleep(2)
+        stdscr.refresh()
 
 
 def listen_for_keys(stdscr):
@@ -101,20 +98,18 @@ def listen_for_keys(stdscr):
     stdscr.refresh() 
 
     while not exit_program:
-        stdscr.addstr(7, 8, "Now listening for key presses..")
-        stdscr.addstr(8, 8, "Press 'q' to quit.")
-        stdscr.addstr(9, 8, "Press 'u' to update screen.")
+        log_message("Now listening for key presses..")
+        log_message("Press 'q' to quit.")
+        log_message("Press 'u' to update screen.")
 
         # Physical button presses?
         if not btnA.value:
             button_a_data = bytes("test","utf-16")
             rfm69.send(button_a_data)
-            stdscr.addstr(6,0, 'Sent data test')
+            log_message('Sent data test by button click')
         
         key = stdscr.getch()  # Wait for a key press
-        stdscr.addstr(7,8,f"You pressed: {chr(key)}\n")
-        stdscr.addstr(8, 8, "                  ")
-        stdscr.addstr(9, 8, "                           ")
+        log_message(f"You pressed: {chr(key)}\n")
         # keyboard button presses
         if key == ord('u'):
             send_data_test(stdscr)
@@ -171,29 +166,26 @@ def print_console(stdscr):
     curses.curs_set(0)  # Hide cursor
 
     height, width = 10, 50  # Console window size
-    start_y, start_x = 5, 20  # Console window position
+    start_y, start_x = 5, 40  # Console window position
     
     console_win = curses.newwin(height, width, start_y, start_x)
 
     # Use Unicode box-drawing characters for fancy borders
-    tl = '╭'
-    tr = '╮'
-    bl = '╰'
-    br = '╯'
-    h  = '─'
-    v  = '│'
+    tl = '#'#'╭'
+    tr = '#'#'╮'
+    bl = '#'#'╰'
+    br = '#'#'╯'
+    h  = '#'#'─'
+    v  = '#'#'│'
     
     # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
     console_win.border(v, v, h, h, tl, tr, bl, br)
     #console_win.border()
 
-
     for i, msg in enumerate(messages):
         console_win.addstr(i + 1, 2, msg)  # +1 and +2 to not write over the border
         console_win.refresh()
-        curses.napms(1000)  # wait 1 second
 
-    console_win.getch()  # Wait for user input
     
 def log_message(msg):
     if len(messages) >= max_lines:
