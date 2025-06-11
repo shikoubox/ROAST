@@ -171,7 +171,18 @@ def print_console(stdscr):
     curses.curs_set(0)  # Hide cursor
 
     height, width = 10, 50  # Console window size
-    start_y, start_x = 5, 5  # Console window position
+    start_y, start_x = 5, 20  # Console window position
+    
+    # Use Unicode box-drawing characters for fancy borders
+    tl = '╭'
+    tr = '╮'
+    bl = '╰'
+    br = '╯'
+    h  = '─'
+    v  = '│'
+
+    # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
+    console_win.border(v, v, h, h, tl, tr, bl, br)
 
     console_win = curses.newwin(height, width, start_y, start_x)
     console_win.box()
