@@ -104,7 +104,7 @@ def listen_for_keys(stdscr):
                 b = data_mani.encode_to_bytes(16,2.9)
                 log_message(f"[DEBUG] Message created: {b:022b}")
                 log_message(f"{b}")
-                rfm69.send(b)
+                RF69_module.send_byte_packet(b)
                 log_message("[SUCCESS] Sent dataset test over radio!")
 
             except Exception as e:

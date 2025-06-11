@@ -4,7 +4,7 @@ import random
 def encode_to_bytes(_index, _value):
     # Encode index
     if 0 <= _index < 64:  # Ensure the value is within the 6-bit range
-        index = _index & 0x3F
+        index = _index & ((1<<6)-1)
     else:
         raise Exception("[ERROR] 6-bit value must be between 0 and 63")
     
@@ -16,7 +16,7 @@ def encode_to_bytes(_index, _value):
     # Shift the 6-bit value to the left by 16 bits
     combined_value = (index << 16) | (value)
     byte_value = bytes(combined_value, "utf-16")
-    return byte_value 
+    return byte_value.to_bytes(3, 'big')
 
 def encode_float16(value):
     if value == 0.0:
