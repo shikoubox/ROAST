@@ -1,0 +1,115 @@
+#!/usr/bin/env python3
+# data/CSV_hand.py
+
+import csv
+import os
+import sys
+
+# __file__ is .../dashboard_2025/data/CSV_hand.py
+# We want .../dashboard_2025/data/data.csv — no extra "data" folder!
+CSV_PATH = os.path.join(os.path.dirname(__file__), "data.csv")
+
+def prepend_new_row(new_data):
+    # 1) Read raw bytes to detect & strip BOM
+    if not os.path.exists(CSV_PATH):
+        print(f"{CSV_PATH} not found → creating new CSV with header only")
+        headers = list(new_data.keys())
+        rows = [headers]
+    else:
+        with open(CSV_PATH, "rb") as f:
+            raw = f.read()
+        # detect BOM
+        if raw.startswith(b'\xff\xfe') or raw.startswith(b'\xfe\xff'):
+            # UTF-16 BOM
+            body = raw[2:]
+            encoding = 'utf-16'
+        elif raw.startswith(b'\xef\xbb\xbf'):
+            # UTF-8 BOM
+            body = raw[3:]
+            encoding = 'utf-8'
+        else:
+            body = raw
+            encoding = 'utf-8'
+
+        print(f"Detected encoding: {encoding}", file=sys.stderr)
+
+        try:
+            text = body.decode(encoding)
+        except UnicodeDecodeError as e:
+            print(f"Decode error: {e}", file=sys.stderr)
+            return
+
+        reader = csv.reader(text.splitlines())
+        all_rows = list(reader)
+        if not all_rows:
+            print("data.csv appears empty or malformed.", file=sys.stderr)
+            return
+
+        headers = all_rows[0]
+        rows = [headers] + all_rows[1:]
+
+    # 2) Build & prepend the new row in exactly the header order
+    new_row = [ new_data.get(col, "") for col in headers ]
+    updated = [rows[0], new_row] + rows[1:]
+    print(f"Prepending new row: {new_row}", file=sys.stderr)
+    print(f"Total rows after prepend: {len(updated)}", file=sys.stderr)
+
+    # 3) Write back out as UTF-16 (with BOM)
+    try:
+        with open(CSV_PATH, "w", encoding="utf-16", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerows(updated)
+    except Exception as e:
+        print(f"Error writing {CSV_PATH}: {e}", file=sys.stderr)
+        return
+
+    # debug: re-open and show me the first few lines
+    with open(CSV_PATH, "r", encoding="utf-16", newline="") as f2:
+        for i, row in enumerate(f2):
+            print("DEBUG LINE", i, repr(row))
+            if i >= 2: break
+
+
+    print(f"{CSV_PATH} updated (prepended new row)", file=sys.stderr)
+
+
+if __name__ == "__main__":
+    # build your data‐dictionary however you like;
+    # here’s an example to test it:
+    example_data = {
+        'current_temp':    '3',
+        'cooling_temp':    '4',
+        'motor_usage':     '5',
+        'speed':           '6',
+        'wh_total':        '7',
+        'distance':        '8',
+        'solar_output':    '9',
+        'brake_status':    '10',
+        'tyre_lf':         '11',
+        'tyre_rf':         '12',
+        'tyre_lr':         '13',
+        'tyre_rr':         '14',
+        'module1_percent': '15',
+        'module1_voltage': '16',
+        'm1c1':            '17',
+        'm1c2':            '18',
+        'm1c3':            '19',
+        'm1c4':            '20',
+        'm1c5':            '21',
+        'm1c6':            '22',
+        'm1c7':            '23',
+        'm1c8':            '24',
+        'module2_percent': '25',
+        'module2_voltage': '26',
+        'm2c1':            '27',
+        'm2c2':            '28',
+        'm2c3':            '29',
+        'm2c4':            '30',
+        'm2c5':            '31',
+        'm2c6':            '32',
+        'm2c7':            '33',
+        'm2c8':            '34',
+        'battery_percent': '35',
+        'battery_voltage': '36',
+    }
+    prepend_new_row(example_data)
