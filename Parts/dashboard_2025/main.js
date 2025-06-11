@@ -2,6 +2,7 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const fs   = require('fs');
+const { execFile } = require('child_process');  // ← add this
 
 app.disableHardwareAcceleration();
 
@@ -21,6 +22,17 @@ function createWindow() {
 
 app.whenReady().then(() => {
   createWindow();
+
+  // Every 10 seconds, append a snapshot row:
+  setInterval(() => {
+    execFile('python', [path.join(__dirname, 'data', 'CSV_hand.py'), 'log'], (err, stdout, stderr) => {
+      if (err) {
+        console.error('Logging error:', stderr || err);
+      } else {
+        console.log('Logged snapshot:', stdout.trim());
+      }
+    });
+  }, 10_000);  // ← 10 000 ms = 10 s
 
   // Every 200 ms, re-read the “latest” line (line 2) from data.csv
   setInterval(() => {
