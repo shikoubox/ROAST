@@ -111,6 +111,12 @@ def listen_for_keys(stdscr):
         
         key = stdscr.getch()  # Wait for a key press
         log_message(f"You pressed: {chr(key)}\n")
+        if key == ord('s'):
+            button_a_data = bytes("super message","utf-16")
+            rfm69.send(button_a_data)
+            log_message('Sent data test by clicking keyboard')
+
+
         # keyboard button presses
         if key == ord('u'):
             send_data_test(stdscr)
