@@ -30,8 +30,8 @@ BIT_RATE=1000
 # rfm69.encryption_key = b'\x01\x02\x03\x04\x05\x06\x07\x08\x01\x02\x03\x04\x05\x06\x07\x08'
 
 # Message hallola
-messages = ["System init...", "Waiting for data...", "Packet received!", "RSSI: -42 dBm"]
-max_lines=48
+messages = ["System init...", "Waiting for data..."]
+max_lines=19
 
 
 # Initialize RFM69 once
@@ -166,7 +166,7 @@ def send_data_test():
 def print_console(stdscr):
     curses.curs_set(0)  # Hide cursor
 
-    height, width = 10, 50  # Console window size
+    height, width = 20, 100  # Console window size
     start_y, start_x = 5, 40  # Console window position
     
     console_win = curses.newwin(height, width, start_y, start_x)
