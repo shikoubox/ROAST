@@ -29,6 +29,10 @@ BIT_RATE=1000
 # Optional encryption (MUST match on both)
 # rfm69.encryption_key = b'\x01\x02\x03\x04\x05\x06\x07\x08\x01\x02\x03\x04\x05\x06\x07\x08'
 
+# Message hallola
+messages = ["System init...", "Waiting for data...", "Packet received!", "RSSI: -42 dBm"]
+
+
 # Initialize RFM69 once
 try:
     rfm69 = adafruit_rfm69.RFM69(spi, CS, RESET, RADIO_FREQ_MHZ, baudrate=BAUD_RATE, high_power=True)
@@ -43,6 +47,7 @@ except RuntimeError as error:
 def main_event_loop(stdscr):
     global exit_program
     stdscr.clear()
+    print_console(stdscr)
 
     while not exit_program:
         stdscr.addstr(0, 0, "RFM69 Receiver - Press 'q' to quit.")
@@ -64,6 +69,9 @@ def main_event_loop(stdscr):
 
             packet = rfm69.receive()
             if packet is not None:
+                rssi = rfm69.last_rssi  # This is your most accurate RSSI reading
+                log_message("Received signal strength:", rssi, "dBm")
+
                 prev_packet=packet
                 try:
                     new_packet = packet.decode("utf-16")
@@ -82,6 +90,9 @@ def main_event_loop(stdscr):
             stdscr.addstr(2, 0, "rfm69 is none")
         stdscr.refresh()
         time.sleep(2)
+        print_console(std_scr)
+        time.sleep(2)
+
 
 def listen_for_keys(stdscr):
     global exit_program
@@ -115,7 +126,7 @@ def listen_for_keys(stdscr):
             exit_program = True # Set the exit flag
 
 
-def send_data_test(stdscr):
+def send_data_test():
     new_data = {
         "current_temp":     random.uniform(15.0, 35.0),
         "cooling_temp":     random.uniform(25.0, 40.0),
@@ -154,8 +165,36 @@ def send_data_test(stdscr):
     }
 
     stdscr.addstr(5,0, 'Sending data test')
-    prepend_new_row(stdscr, new_data)
+    #prepend_new_row(new_data)
 
+def print_console(stdscr):
+    curses.curs_set(0)  # Hide cursor
+
+    height, width = 10, 50  # Console window size
+    start_y, start_x = 5, 5  # Console window position
+
+    console_win = curses.newwin(height, width, start_y, start_x)
+    console_win.box()
+
+    for i, msg in enumerate(messages):
+        console_win.addstr(i + 1, 2, msg)  # +1 and +2 to not write over the border
+        console_win.refresh()
+        curses.napms(1000)  # wait 1 second
+
+    console_win.getch()  # Wait for user input
+    
+def log_message(msg):
+    if len(messages) >= max_lines:
+        messages.pop(0)  # Remove oldest
+    messages.append(msg)
+
+    console_win.clear()
+    console_win.box()
+
+    for i, m in enumerate(messages):
+        console_win.addstr(i + 1, 2, m[:width - 4])  # Truncate if too long
+
+    console_win.refresh()
 
 key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
 key_listener_thread.start()
