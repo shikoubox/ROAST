@@ -71,7 +71,7 @@ def main_event_loop(stdscr):
             packet = rfm69.receive()
             if packet is not None:
                 rssi = rfm69.last_rssi  # This is your most accurate RSSI reading
-                log_message("Received signal strength:", rssi, "dBm")
+                log_message(f"Received signal strength: {rssi} dBm")
 
                 prev_packet=packet
                 try:
