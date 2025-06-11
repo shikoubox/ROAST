@@ -142,11 +142,17 @@ def listen_for_keys(stdscr):
 
         if key == ord('b'):
             log_message('[INFO] Encoding message by clicking keyboard')
-            data_mani.encode_to_bytes(16,1.5)
-            byt = data_mani.encode_to_bytes(63,111221.541231)
-            log_message(f"[INFO] Message created: {byt:022b}")
-            byt = data_mani.encode_to_bytes(65,111221.541231)
-            log_message(f"[INFO] Message created: {byt:022b}")
+            try:
+                b = data_mani.encode_to_bytes(16,1.5)
+                log_message(f"[INFO] Message created: {b:022b}")
+            except Exception as e:
+                log_message(e)
+
+            try:
+                byt = data_mani.encode_to_bytes(65,111221.541231)
+                log_message(f"[INFO] Message created: {byt:022b}")
+            except Exception as e:
+                log_message(e)
 
         # keyboard button presses
         if key == ord('u'):
