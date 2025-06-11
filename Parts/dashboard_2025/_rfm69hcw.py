@@ -77,7 +77,9 @@ def main_event_loop(stdscr):
                 try:
                     new_packet = packet.decode("utf-16")
                     log_message(f"[INFO] Received: {new_packet}")
+                    print(CSV_hand.prepend_new_row(new_packet))
                     status = CSV_hand.prepend_new_row(new_packet)
+                    print(status)
                     if status is not None:
                         log_message(f"{status}")
                     else:
