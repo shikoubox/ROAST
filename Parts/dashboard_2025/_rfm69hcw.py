@@ -30,8 +30,8 @@ BIT_RATE=1000
 # rfm69.encryption_key = b'\x01\x02\x03\x04\x05\x06\x07\x08\x01\x02\x03\x04\x05\x06\x07\x08'
 
 # Message hallola
-messages = ["System init...", "Waiting for data...", "Packet received!", "RSSI: -42 dBm"]
-max_lines=48
+messages = ["System init...", "Waiting for data..."]
+max_lines=19
 
 
 # Initialize RFM69 once
