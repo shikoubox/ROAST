@@ -3,11 +3,11 @@ import busio
 from digitalio import DigitalInOut, Direction, Pull
 import board
 import adafruit_rfm69
-import csv
 import os
 import random
 import curses
 import threading
+from data import CSV_hand
 
 # global exit flag
 exit_program = False
@@ -77,9 +77,9 @@ def main_event_loop(stdscr):
                 try:
                     new_packet = packet.decode("utf-16")
                     log_message(f"Received: {new_packet}")
-                    prepend_new_row(stdscr, new_packet)
+                    CSV_hand.prepend_new_row(stdscr, new_packet)
                 except UnicodeDecodeError:
-                    lof_message(f"Received (raw): {packet}")
+                    log_message(f"Received (raw): {packet}")
             else:
                 log_message("-Waiting for packet-")
                 stdscr.refresh()
@@ -103,6 +103,8 @@ def listen_for_keys(stdscr):
         log_message("Press 'q' to quit.")
         log_message("Press 'u' to update screen.")
 
+
+
         # Physical button presses?
         if not btnA.value:
             button_a_data = bytes("test","utf-16")
@@ -111,6 +113,12 @@ def listen_for_keys(stdscr):
         
         key = stdscr.getch()  # Wait for a key press
         log_message(f"You pressed: {chr(key)}\n")
+
+        if key == ord('t'):
+            button_a_data = bytes(get_data_test(),"utf-16")
+            rfm69.send(button_a_data)
+            log_message('Sent BIG dataset test by clicking keyboard')
+
         if key == ord('s'):
             button_a_data = bytes("super message","utf-16")
             rfm69.send(button_a_data)
@@ -167,7 +175,46 @@ def send_data_test():
     }
 
     stdscr.addstr(5,0, 'Sending data test')
-    #prepend_new_row(new_data)
+    CSV_hand.prepend_new_row(new_data)
+
+def get_data_test():
+    new_data = {
+        "current_temp":     random.uniform(15.0, 35.0),
+        "cooling_temp":     random.uniform(25.0, 40.0),
+        "motor_usage":      random.uniform(5.0, 30.0),
+        "speed":            random.uniform(15.0, 70.0),
+        "wh_total":         random.uniform(15.0, 30.0),
+        "distance":         random.uniform(15.0, 30.0),
+        "solar_output":     random.uniform(15.0, 30.0),
+        "brake_status":     random.uniform(15.0, 30.0),
+        "tyre_lf":          random.uniform(15.0, 30.0),
+        "tyre_rf":          random.uniform(15.0, 30.0),
+        "tyre_lr":          random.uniform(15.0, 30.0),
+        "tyre_rr":          random.uniform(15.0, 30.0),
+        "module1_percent":  random.uniform(5.0, 100.0),
+        "module1_voltage":  random.uniform(3.0, 18.0),
+        "m1c1":             random.uniform(1.50, 3.0),
+        "m1c2":             random.uniform(1.50, 3.0),
+        "m1c3":             random.uniform(1.50, 3.0),
+        "m1c4":             random.uniform(1.50, 3.0),
+        "m1c5":             random.uniform(1.50, 3.0),
+        "m1c6":             random.uniform(1.50, 3.0),
+        "m1c7":             random.uniform(1.50, 3.0),
+        "m1c8":             random.uniform(1.50, 3.0),
+        "module2_percent":  random.uniform(15.0, 3.0),
+        "module2_voltage":  random.uniform(15.0, 3.0),
+        "m2c1":             random.uniform(1.50, 3.0),
+        "m2c2":             random.uniform(1.50, 3.0),
+        "m2c3":             random.uniform(1.50, 3.0),
+        "m2c4":             random.uniform(1.50, 3.0),
+        "m2c5":             random.uniform(1.50, 3.0),
+        "m2c6":             random.uniform(1.50, 3.0),
+        "m2c7":             random.uniform(1.50, 3.0),
+        "m2c8":             random.uniform(1.50, 3.0),
+        "battery_percent":  random.uniform(10.0, 100.0),
+        "battery_voltage":  random.uniform(10.0, 13.0),
+    }
+    return new_data
 
 def print_console(stdscr):
     curses.curs_set(0)  # Hide cursor
