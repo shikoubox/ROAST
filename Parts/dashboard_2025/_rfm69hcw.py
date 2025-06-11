@@ -160,6 +160,7 @@ def encode_to_bytes(_index, _value):
     log_message(f"[INFO] Trying to encode value {_value} at index {_index}")
     if 0 <= _index < 64:  # Ensure the value is within the 6-bit range
         index = format(_index, '06b')  # Format as a 6-bit binary string
+        index = _index & 0x3F
         log_message(f"[INFO] {_index} becomes {index:06b}")
 
     else:
@@ -189,6 +190,7 @@ def encode_to_bytes(_index, _value):
 
     log_message(f"[INFO] Message created: {combined_value:022b}")
     return combined_value
+
 
 
 def float_to_half_precision(value):
