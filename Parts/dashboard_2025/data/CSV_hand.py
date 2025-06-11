@@ -51,7 +51,6 @@ def prepend_new_row(new_data):
     # 2) Build & prepend the new row in exactly the header order
     new_row = [ new_data.get(col, "") for col in headers ]
     updated = [rows[0], new_row] + rows[1:]
-    print(f"Prepending new row: {new_row}", file=sys.stderr)
     print(f"Total rows after prepend: {len(updated)}", file=sys.stderr)
 
     # 3) Write back out as UTF-16 (with BOM)
@@ -62,13 +61,6 @@ def prepend_new_row(new_data):
     except Exception as e:
         print(f"Error writing {CSV_PATH}: {e}", file=sys.stderr)
         return
-
-    # debug: re-open and show me the first few lines
-    with open(CSV_PATH, "r", encoding="utf-16", newline="") as f2:
-        for i, row in enumerate(f2):
-            print("DEBUG LINE", i, repr(row))
-            if i >= 2: break
-
 
     print(f"{CSV_PATH} updated (prepended new row)", file=sys.stderr)
 
