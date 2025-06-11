@@ -50,16 +50,16 @@ def main_event_loop(stdscr):
     print_header()
 
     while not exit_program:
-        stdscr.addstr(0, 0, "RFM69 Receiver - Press 'q' to quit. - Press 'u t or s for different package tests")
+        stdscr.addstr(2, 0, "RFM69 Receiver - Press 'q' to quit. - Press 'u' 't' or 's' for different package tests")
         print_console(stdscr)
         packet = None
         if rfm69 is not None:
-            stdscr.addstr(2, width+2, "RFM69: Detected")
-            stdscr.addstr(3, width+2, f"Frequency: {rfm69.frequency_mhz}MHz")
-            stdscr.addstr(4, width+2, f"Bit rate: {rfm69.bitrate}bit/s")
-            stdscr.addstr(5, width+2, f"Baud rate: {BAUD_RATE}baud/s")
-            stdscr.addstr(6, width+2, f"Frequency deviation: {rfm69.frequency_deviation/1000}kHz") 
-            stdscr.addstr(7, width+2, f"Tx_Power: {rfm69.tx_power}dBm")
+            stdscr.addstr(2, width+3, "RFM69     : Detected")
+            stdscr.addstr(3, width+3, f"Frequency: {rfm69.frequency_mhz} MHz")
+            stdscr.addstr(4, width+3, f"Bit rate : {rfm69.bitrate/1000} kbit/s")
+            stdscr.addstr(5, width+3, f"Baud rate: {BAUD_RATE} baud/s")
+            stdscr.addstr(6, width+3, f"Freq.dev.: {rfm69.frequency_deviation/1000} kHz") 
+            stdscr.addstr(7, width+3, f"Tx_Power : {rfm69.tx_power} dBm")
 #           try:
 #               stdscr.addstr(6, 42, f"Temperature: {rfm69.temperature}C")
 #           except RuntimeError as error:
@@ -112,12 +112,13 @@ def listen_for_keys(stdscr):
 
         # Physical button presses?
         if not btnA.value:
+            stemomg
             button_a_data = bytes("test","utf-16")
             rfm69.send(button_a_data)
             log_message('[INFO] Sent data test by button click')
         
         key = stdscr.getch()  # Wait for a key press
-        log_message(f"[INFO] You pressed: {chr(key)}\n")
+        log_message(f"[INFO] You pressed: {chr(key)}")
         stdscr.addstr(2,29, "[    ]                       ")
 
         if key == ord('t'):
@@ -125,7 +126,7 @@ def listen_for_keys(stdscr):
                 log_message("[INFO] Preparing to send BIG dataset test...")
                 
                 test_data = get_data_test()
-                log_message(f"[DEBUG] Generated test data: {str(test_data)[:80]}...")  # Only first 80 chars
+                log_message(f"[DEBUG] Generated data: {str(test_data)[:width-20]}...")  # Only first 80 chars
 
                 button_a_data = bytes(test_data, "utf-16")
                 log_message("[DEBUG] Encoded data to bytes.")
@@ -135,8 +136,9 @@ def listen_for_keys(stdscr):
 
             except Exception as e:
                 log_message(f"[ERROR] Failed to send test data: {e}")
+                stdscr.addstr(0,40,e)
                 with open("thread_error.log", "a") as f:
-                    f.write(f"Exception in send BIG dataset test: {e}\n")
+                    f.write(f"Exception in send BIG dataset test: {e}")
 
         if key == ord('s'):
             log_message('Sending "super message" by clicking keyboard')
