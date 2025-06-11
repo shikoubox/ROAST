@@ -128,7 +128,7 @@ def listen_for_keys(stdscr):
                 test_data = get_data_test()
                 log_message(f"[DEBUG] Generated data: {str(test_data)[:width-27]}...")  # Only first 80 chars
 
-                button_a_data = bytes(test_data, "utf-16")
+                button_a_data = bytes(f"{test_data}", "utf-16")
                 log_message("[DEBUG] Encoded data to bytes.")
 
                 rfm69.send(button_a_data)
@@ -136,15 +136,15 @@ def listen_for_keys(stdscr):
 
             except Exception as e:
                 log_message(f"[ERROR] Failed to send test data: {e}")
-                stdscr.addstr(40,0,f"{e}")
+                stdscr.addstr(30,0,f"{e}")
                 with open("thread_error.log", "a") as f:
                     f.write(f"Exception in send BIG dataset test: {e}")
 
         if key == ord('s'):
-            log_message('Sending "super message" by clicking keyboard')
+            log_message('[INFO] Sending "super message" by clicking keyboard')
             button_a_data = bytes("super message","utf-16")
             rfm69.send(button_a_data)
-            log_message('Sent "super message"')
+            log_message('[INFO] Sent "super message"')
 
 
         # keyboard button presses
