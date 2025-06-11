@@ -8,7 +8,7 @@ def encode_to_bytes(_index, _value):
     else:
         raise Exception("[ERROR] 6-bit value must be between 0 and 63")
     
-    value = float_to_half_precision(_value)
+    value = encode_float16(_value)
 
     if not (0 <= value < 65536):
         raise Exception("[ERROR] 16-bit value must be between 0 and 65535.")
@@ -18,7 +18,7 @@ def encode_to_bytes(_index, _value):
 
     return combined_value
 
-def float_to_half_precision(value):
+def encode_float16(value):
     if value == 0.0:
         return 0  # Special case for zero
 
@@ -53,7 +53,32 @@ def float_to_half_precision(value):
     half_precision = (sign << 15) | (exponent << 10) | (mantissa & 0x3FF)
     return half_precision
 
+def decode_float16(half_float):
+    # Extract the sign, exponent, and mantissa
+    sign = (half_float >> 15) & 0x1  # Get the sign bit
+    exponent = (half_float >> 10) & 0x1F  # Get the exponent bits
+    mantissa = half_float & 0x3FF  # Get the mantissa bits
 
+    # Calculate the value
+    if exponent == 0 and mantissa == 0:
+        # Zero case
+        return 0.0
+    elif exponent == 0:
+        # Subnormal numbers
+        return ((-1) ** sign) * (mantissa / (1 << 10)) * (2 ** -14)
+    elif exponent == 31:
+        # Inf or NaN
+        return float('inf') if mantissa == 0 else float('nan')
+    
+    # Normalized numbers
+    exponent -= 15  # Adjust the exponent (bias of 15)
+    value = (1 + mantissa / (1 << 10)) * (2 ** exponent)
+    return (-1) ** sign * value
+
+def bytes_to_message(msg):
+    message = msg & 16
+    index = (msg >> 16) & 6
+    return message, index
 
 def encode_to_message():
     

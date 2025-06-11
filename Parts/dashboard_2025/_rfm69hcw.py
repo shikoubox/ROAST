@@ -154,6 +154,9 @@ def listen_for_keys(stdscr):
             except Exception as e:
                 log_message(f"{e}")
 
+            message, index = data_mani.decode_float16(byt)
+            log_message(f"{index}: {message}")
+
         # keyboard button presses
         if key == ord('u'):
             send_data_test(stdscr)
