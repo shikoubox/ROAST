@@ -54,12 +54,12 @@ def main_event_loop(stdscr):
         print_console(stdscr)
         packet = None
         if rfm69 is not None:
-            stdscr.addstr(0, 50, "RFM69: Detected")
-            stdscr.addstr(1, 50, f"Frequency: {rfm69.frequency_mhz}MHz")
-            stdscr.addstr(2, 50, f"Bit rate: {rfm69.bitrate}bit/s")
-            stdscr.addstr(3, 50, f"Baud rate: {BAUD_RATE}baud/s")
-            stdscr.addstr(4, 50, f"Frequency deviation: {rfm69.frequency_deviation/1000}kHz") 
-            stdscr.addstr(5, 50, f"Tx_Power: {rfm69.tx_power}dBm")
+            stdscr.addstr(0, width+2, "RFM69: Detected")
+            stdscr.addstr(1, width+2, f"Frequency: {rfm69.frequency_mhz}MHz")
+            stdscr.addstr(2, width+2, f"Bit rate: {rfm69.bitrate}bit/s")
+            stdscr.addstr(3, width+2, f"Baud rate: {BAUD_RATE}baud/s")
+            stdscr.addstr(4, width+2, f"Frequency deviation: {rfm69.frequency_deviation/1000}kHz") 
+            stdscr.addstr(5, width+2, f"Tx_Power: {rfm69.tx_power}dBm")
 #           try:
 #               stdscr.addstr(6, 42, f"Temperature: {rfm69.temperature}C")
 #           except RuntimeError as error:
@@ -106,7 +106,7 @@ def listen_for_keys(stdscr):
     stdscr.refresh() 
 
     while not exit_program:
-        stdscr.addstr(2,25, "[INFO] Listening for keypress")
+        stdscr.addstr(2,29, "[INFO] Listening for keypress")
 
         # Physical button presses?
         if not btnA.value:
