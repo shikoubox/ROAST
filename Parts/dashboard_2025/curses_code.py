@@ -106,7 +106,7 @@ def print_rfmdata():
 
     rfmdata_win.refresh()
 
-def update update_rfmdata_baudrate(_baudrate)
+def update_rfmdata_baudrate(_baudrate)
     baudrate = _baudrate
     print_rfmdata()
 
