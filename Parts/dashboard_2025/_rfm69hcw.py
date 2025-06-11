@@ -15,19 +15,22 @@ import RF69_module
 
 # global exit flag
 exit_program = False
+rfm69 = None
 
 # Button A
 btnA = DigitalInOut(board.D17)
 btnA.direction = Direction.INPUT
 btnA.pull = Pull.UP
 
-# Initialize RFM69 once
-rfm69 = RF69_module.initialise()
 
 # Main loop
 def main_event_loop(stdscr):
     global exit_program
     curses_code.print_header()
+
+    if rfm69 is None
+        # Initialize RFM69 once
+        rfm69 = RF69_module.initialise()
 
     while not exit_program:
         stdscr.addstr(0, 2, "RFM69 Receiver - Press 'q' to quit. Otherwise 'b' 't' 'u' 's'")
