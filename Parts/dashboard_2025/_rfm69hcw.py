@@ -77,7 +77,9 @@ def main_event_loop(stdscr):
                     new_packet = packet.decode("utf-16")
                     log_message(f"[INFO] Received: {new_packet}")
                     status = CSV_hand.prepend_new_row(new_packet)
-                    log_message(status)
+                    if status is not None:
+                        log_message(f"{status}")
+
                 except UnicodeDecodeError:
                     log_message(f"[INFO] Received (raw): {packet}")
             else:
