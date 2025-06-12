@@ -79,12 +79,15 @@ def listen_for_keys(stdscr):
         if key == ord('b'):
             log_message('[INFO] Encoding message by clicking keyboard')
             try:
-                b = data_mani.encode_to_bytes(16,1.5)
+                b = data_mani.encode_to_bytes(1,69.69)
                 log_message(f"[DEBUG] Message created: {int.from_bytes(b, 'big'):022b}")
                 message, index = data_mani.bytes_to_message(b)
                 log_message(f"{index}: {message} / {data_mani.decode_float16(message)}")
+                CSV_handler.cmd_update(b)
+                log_message(f"[DEBUG] Message sent to CSV handler") 
             except Exception as e:
                 log_message(f"{e}")
+            
 
             try:
                 byt = data_mani.encode_to_bytes(65,111221.541231)

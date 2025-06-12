@@ -36,7 +36,7 @@ def initialise():
         return rfm69
     except RuntimeError as error:
         log_message("[ERROR] RFM69")
-        log_message("[ERROR]: {error}")
+        log_message(f"[ERROR]: {error}")
         rfm69 = None
 
 
@@ -77,7 +77,7 @@ def send_string_packet(string):
         try:
             packet_data = bytes(string,"utf-16")
             rfm69.send(packet_data)
-            log_message('[INFO] Sent "{string}" as a packet.')
+            log_message(f'[INFO] Sent "{string}" as a packet.')
         except Exception as e:
             log_message(f"[ERROR] Failed to send data: {e}")
 
