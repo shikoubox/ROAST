@@ -54,7 +54,9 @@ def main_event_loop(stdscr):
                 time.sleep(1)
                 stdscr.addstr(2,3,"[                  ]")
             else:
+                log_message(f"[DEBUG]: Packet is not None")
                 CSV_hand.cmd_bits(packet)
+                log_message(f"[INFO]: Packet was handled by csv_hand")
         except Exception as e:
             log_message(f"[ERROR]: {e}")
 

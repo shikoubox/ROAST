@@ -45,28 +45,41 @@ def check_for_packets():
     global rfm69
     if rfm69 is None:
         raise Exception("[WARNING] Trying to check for packets, without an initalised rfm69")
-    else: 
-        packet = rfm69.receive()
-        if packet is not None:
-            rssi = rfm69.last_rssi  # This is your most accurate RSSI reading
-            log_message(f"[INFO] Received signal strength: {rssi} dBm")
 
-            try:
-                new_packet = packet#.decode("utf-16")
-                log_message(f"[INFO] Received: {new_packet}")
-                #status = CSV_hand.prepend_new_row(new_packet)
-               # if status is not None:
-               #     log_message(f"[STATUS] {status}")
-               # else:
-               #     log_message(f"[INFO] Function prepend_new_row() ran without returning a status")
-                return new_packet
-           # except UnicodeDecodeError:
-           #     log_message(f"[WARNING] Received (raw): {packet}")
-            except Exception as e:
-                log_message(f"[ERROR] {e}")
-        else:
-            return None
-            time.sleep(1)
+    packet = rfm69.receive()
+    if packet is not None:
+        rssi = rfm69.last_rssi
+        log_message(f"[INFO] Received signal strength: {rssi} dBm")
+        log_message(f"[INFO] Raw packet bytes: {packet}")
+
+        try:
+            if len(packet) == 3:  # 22-bit = 3 bytes
+                # Treat as binary payload
+                log_message(f"[INFO] Interpreting as 22-bit binary payload")
+                #status = CSV_hand.cmd_bits(packet)
+                #if status:
+                #    log_message(f"[STATUS] {status}")
+                return packet
+
+            else:
+                # Try decoding as string
+                try:
+                    new_packet = packet.decode("utf-16")
+                    log_message(f"[INFO] Received string: {new_packet}")
+                    status = CSV_hand.prepend_new_row(new_packet)
+                    if status is not None:
+                        log_message(f"[STATUS] {status}")
+                    else:
+                        log_message(f"[INFO] Function prepend_new_row() ran without returning a status")
+                    return new_packet
+                except UnicodeDecodeError:
+                    log_message(f"[WARNING] Failed to decode packet as UTF-16 string")
+
+        except Exception as e:
+            log_message(f"[ERROR] Exception in packet processing: {e}")
+    else:
+        return None
+
 
 def send_string_packet(string):
     global rfm69
