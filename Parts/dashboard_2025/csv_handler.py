@@ -5,9 +5,10 @@ import csv
 import os
 import sys
 import re
+import encoding
 
 # Path to data.csv (same folder)
-CSV_PATH = os.path.join(os.path.dirname(__file__), "data.csv")
+CSV_PATH = os.path.join(os.path.dirname(__file__), "data", "data.csv")
 
 def _read_rows():
     """Return (rows, encoding). If file missing, return (None, 'utf-16')."""
@@ -86,7 +87,7 @@ def cmd_bits(bitstr):
         # ensure index bits no more than 6 bits (truncate higher bits)
         idx_bits = idx_bits[-6:].rjust(6, '0')
         idx = int(idx_bits, 2)
-        val = int(val_bits, 2)
+        val = encoding.decode_float16(int(val_bits, 2))
         rows, _ = _read_rows()
         if rows is None:
             print("ERROR: cannot bit-update without existing header", file=sys.stderr)

@@ -3,8 +3,8 @@ import busio
 from digitalio import DigitalInOut, Direction, Pull
 import board
 import adafruit_rfm69
-import curses_code
-from curses_code import log_message
+import graphics as curses_code
+from graphics import log_message
 
 # Optional encryption (MUST match on both)
 # rfm69.encryption_key = b'\x01\x02\x03\x04\x05\x06\x07\x08\x01\x02\x03\x04\x05\x06\x07\x08'

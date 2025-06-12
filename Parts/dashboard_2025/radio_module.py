@@ -5,13 +5,13 @@ import board
 import adafruit_rfm69
 import os
 import random
-import data_mani
+import encoding as data_mani
 import curses
-import curses_code
-from curses_code import log_message
+import graphics as curses_code
+from graphics import log_message
 import threading
-from data import CSV_hand
-import RF69_module
+import csv_handler as CSV_hand
+import rfm69_utils as RF69_module
 
 # global exit flag
 exit_program = False
