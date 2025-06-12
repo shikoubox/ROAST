@@ -52,16 +52,16 @@ def check_for_packets():
             log_message(f"[INFO] Received signal strength: {rssi} dBm")
 
             try:
-                new_packet = packet.decode("utf-16")
+                new_packet = packet#.decode("utf-16")
                 log_message(f"[INFO] Received: {new_packet}")
-                status = CSV_hand.prepend_new_row(new_packet)
-                if status is not None:
-                    log_message(f"{status}")
-                else:
-                    log_message(f"[INFO] Function prepend_new_row() ran without returning a status")
+                #status = CSV_hand.prepend_new_row(new_packet)
+               # if status is not None:
+               #     log_message(f"[STATUS] {status}")
+               # else:
+               #     log_message(f"[INFO] Function prepend_new_row() ran without returning a status")
                 return new_packet
-            except UnicodeDecodeError:
-                log_message(f"[WARNING] Received (raw): {packet}")
+           # except UnicodeDecodeError:
+           #     log_message(f"[WARNING] Received (raw): {packet}")
             except Exception as e:
                 log_message(f"[ERROR] {e}")
         else:

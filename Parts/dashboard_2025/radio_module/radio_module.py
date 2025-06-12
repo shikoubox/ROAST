@@ -121,7 +121,7 @@ def listen_for_keys(stdscr):
         if key == ord('t'):
             try:
                 log_message("[INFO] Preparing to send dataset test...")
-                b = data_mani.encode_to_bytes(16,2.9)
+                b = data_mani.encode_to_bytes(4,2.9)
                 log_message(f"[DEBUG] {b}")
                 log_message(f"[DEBUG] Message created: {int.from_bytes(b, 'big'):022b}")
                 rfm69_utils.send_byte_packet(b)
@@ -134,7 +134,7 @@ def listen_for_keys(stdscr):
         if key == ord('r'):
             try:
                 log_message("[INFO] Preparing to send dataset test...")
-                b = data_mani.encode_to_bytes(16,69)
+                b = data_mani.encode_to_bytes(4,69)
                 log_message(f"[DEBUG] {b}")
                 log_message(f"[DEBUG] Message created: {int.from_bytes(b, 'big'):022b}")
                 rfm69_utils.send_byte_packet(b)
