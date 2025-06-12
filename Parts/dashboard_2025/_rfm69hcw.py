@@ -83,7 +83,7 @@ def listen_for_keys(stdscr):
                 log_message(f"[DEBUG] Message created: {int.from_bytes(b, 'big'):022b}")
                 message, index = data_mani.bytes_to_message(b)
                 log_message(f"{index}: {message} / {data_mani.decode_float16(message)}")
-                CSV_handler.cmd_update_22(b)
+                CSV_hand.cmd_update_22(b)
                 log_message(f"[DEBUG] Message sent to CSV handler") 
             except Exception as e:
                 log_message(f"{e}")
