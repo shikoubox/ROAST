@@ -84,7 +84,6 @@ def send_string_packet(string):
         try:
             packet_data = bytes(string,"utf-16")
             rfm69.send(packet_data)
-            log_message(f'[INFO] Sent "{string}" as a packet.')
         except Exception as e:
             log_message(f"[ERROR] Failed to send data: {e}")
 
@@ -95,9 +94,6 @@ def send_byte_packet(byte_packet):
     else: 
         try:
             rfm69.send(byte_packet)
-            log_message('[INFO] Sent a byte packet.')
-
-
         except Exception as e:
             log_message(f"[ERROR] Failed to send data: {e}")
 
