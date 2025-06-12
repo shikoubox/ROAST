@@ -71,27 +71,28 @@ def cmd_log():
     print("data.csv: snapshot logged", file=sys.stderr)
 
 def cmd_bits(bitstr):
-    """Decode a >=16-bit payload: leading bits = index, last 16 bits = value."""
-    # at least 16 bits for value
-    if len(bitstr) < 16:
-        print("ERROR: bitstring too short (need >=16 bits)", file=sys.stderr)
-        sys.exit(1)
-    val_bits = bitstr[-16:]
-    idx_bits = bitstr[:-16] or '0'
-    # ensure index bits no more than 6 bits (truncate higher bits)
-    idx_bits = idx_bits[-6:].rjust(6, '0')
-    idx = int(idx_bits, 2)
-    val = int(val_bits, 2)
-    rows, _ = _read_rows()
-    if rows is None:
-        print("ERROR: cannot bit-update without existing header", file=sys.stderr)
-        sys.exit(1)
-    headers = rows[0]
-    if idx < 0 or idx >= len(headers):
-        print(f"ERROR: index {idx} out of range (0–{len(headers)-1})", file=sys.stderr)
-        sys.exit(1)
-    key = headers[idx]
-    cmd_update({ key: str(val) })
+    try:
+        """Decode a >=16-bit payload: leading bits = index, last 16 bits = value."""
+        # at least 16 bits for value
+        if len(bitstr) < 16:
+            print("ERROR: bitstring too short (need >=16 bits)", file=sys.stderr)
+            sys.exit(1)
+        val_bits = bitstr[-16:]
+        idx_bits = bitstr[:-16] or '0'
+        # ensure index bits no more than 6 bits (truncate higher bits)
+        idx_bits = idx_bits[-6:].rjust(6, '0')
+        idx = int(idx_bits, 2)
+        val = int(val_bits, 2)
+        rows, _ = _read_rows()
+        if rows is None:
+            print("ERROR: cannot bit-update without existing header", file=sys.stderr)
+            sys.exit(1)
+        headers = rows[0]
+        if idx < 0 or idx >= len(headers):
+            print(f"ERROR: index {idx} out of range (0–{len(headers)-1})", file=sys.stderr)
+            sys.exit(1)
+        key = headers[idx]
+        cmd_update({ key: str(val) })
 
 def usage():
     print("Usage:", file=sys.stderr)
