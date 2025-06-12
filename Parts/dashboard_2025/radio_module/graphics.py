@@ -4,7 +4,7 @@ import curses
 
 # Curses settings
 messages = ["[INFO] System init..."]
-height, width = 20, 75  # Console window size
+height, width = 20, 120  # Console window size
 ## Use Unicode box-drawing characters for fancy borders
 h  = '-'#'─'
 v  = '|'
