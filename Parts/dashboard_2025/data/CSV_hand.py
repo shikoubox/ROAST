@@ -93,6 +93,8 @@ def cmd_bits(bitstr):
             sys.exit(1)
         key = headers[idx]
         cmd_update({ key: str(val) })
+    except Exception as e:
+        raise Exception(f"{e}")
 
 def usage():
     print("Usage:", file=sys.stderr)
