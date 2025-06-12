@@ -75,8 +75,10 @@ def decode_float16(half_float):
     return (-1) ** sign * value
 
 def bytes_to_message(msg):
-    message = msg & ((1<<16)-1)
-    index = (msg >> 16) & ((1<<6)-1)
+    _msg = int.from_bytes(msg, "big")
+    message = _msg & ((1<<16)-1)
+    index = (_msg >> 16) & ((1<<6)-1)
+
     return message, index
 
 def encode_to_message():
