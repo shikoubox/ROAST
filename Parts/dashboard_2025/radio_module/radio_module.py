@@ -101,8 +101,9 @@ def listen_for_keys(stdscr):
                 log_message(f"{e}")
             
 
+        if key == ord('b'):
             try:
-                b = data_mani.encode_to_bytes(14,11121.54231)
+                b = data_mani.encode_to_bytes(2,11121.54231)
                 log_message(f"[DEBUG] Message created: {int.from_bytes(b, 'big'):022b}")
                 message, index = data_mani.bytes_to_message(b)
                 log_message(f"{index}: {message} / {data_mani.decode_float16(message)}")
@@ -121,6 +122,19 @@ def listen_for_keys(stdscr):
             try:
                 log_message("[INFO] Preparing to send dataset test...")
                 b = data_mani.encode_to_bytes(16,2.9)
+                log_message(f"[DEBUG] {b}")
+                log_message(f"[DEBUG] Message created: {int.from_bytes(b, 'big'):022b}")
+                rfm69_utils.send_byte_packet(b)
+                log_message("[SUCCESS] Sent dataset test over radio!")
+
+            except Exception as e:
+                log_message(f"[ERROR] Failed to send test data: {e}")
+                stdscr.addstr(27,0,f"{e}")
+
+        if key == ord('r'):
+            try:
+                log_message("[INFO] Preparing to send dataset test...")
+                b = data_mani.encode_to_bytes(16,69)
                 log_message(f"[DEBUG] {b}")
                 log_message(f"[DEBUG] Message created: {int.from_bytes(b, 'big'):022b}")
                 rfm69_utils.send_byte_packet(b)
