@@ -81,7 +81,7 @@ def cmd_log():
 
 def cmd_bits(bitstr):
     log_message(f"[DEBUG] cmd_bits() called with: {bitstr} (type: {type(bitstr)})")
-    if isinstance(bitstr, bytes):
+    if isinstance(bitstr, (bytes, bytearray)):
         try:
             int_val = int.from_bytes(bitstr, 'big')
             bitstr = f"{int_val:0{len(bitstr)*8}b}"
@@ -90,7 +90,7 @@ def cmd_bits(bitstr):
             raise Exception(f"Byte-to-bitstring conversion failed: {e}")
 
     if not isinstance(bitstr, str):
-        raise Exception(f"Input to cmd_bits must be str or bytes, got {type(bitstr)}")
+        raise Exception(f"Input to cmd_bits must be str, bytearray or bytes, got {type(bitstr)}")
 
     if len(bitstr) < 16:
         raise Exception("Bitstring too short (< 16 bits)")
