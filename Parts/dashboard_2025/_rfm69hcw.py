@@ -90,7 +90,7 @@ def listen_for_keys(stdscr):
             
 
             try:
-                byt = data_mani.encode_to_bytes(14,11121.54231)
+                b = data_mani.encode_to_bytes(14,11121.54231)
                 log_message(f"[DEBUG] Message created: {int.from_bytes(b, 'big'):022b}")
                 message, index = data_mani.bytes_to_message(b)
                 log_message(f"{index}: {message} / {data_mani.decode_float16(message)}")
