@@ -36,11 +36,9 @@ def _read_rows():
         text = body.decode(encoding)
     except Exception as e:
         print(f"ERROR: cannot decode {CSV_PATH}: {e}", file=sys.stderr)
-        sys.exit(1)
     rows = list(csv.reader(text.splitlines()))
     if not rows:
         print("ERROR: data.csv is empty or malformed", file=sys.stderr)
-        sys.exit(1)
     return rows, encoding
 
 def _write_rows(rows, encoding):
@@ -75,7 +73,6 @@ def cmd_log():
     rows, enc = _read_rows()
     if rows is None or len(rows) < 2:
         print("ERROR: no current row to log", file=sys.stderr)
-        sys.exit(1)
     header = rows[0]
     current = rows[1]
     new_rows = [header, current] + rows[1:]
@@ -94,7 +91,6 @@ def cmd_bits(bitstr):
         # at least 16 bits for value
         if len(bitstr) < 16:
             print("ERROR: bitstring too short (need >=16 bits)", file=sys.stderr)
-            sys.exit(1)
         val_bits = bitstr[-16:]
         idx_bits = bitstr[:-16] or '0'
         # ensure index bits no more than 6 bits (truncate higher bits)
@@ -124,25 +120,20 @@ def usage():
     print("  CSV_hand.py update key1=val1 [key2=val2 ...]", file=sys.stderr)
     print("  CSV_hand.py log", file=sys.stderr)
     print("  CSV_hand.py <binary-string>   # >=16 bits: [idx-bits][16-bit value]", file=sys.stderr)
-    sys.exit(1)
 
 if __name__ == "__main__":
     if len(sys.argv)==2 and re.fullmatch(r'[01]+', sys.argv[1]):
         headers = rows[0]
         if idx < 0 or idx >= len(headers):
             print(f"ERROR: index {idx} out of range (0–{len(headers)-1})", file=sys.stderr)
-            sys.exit(1)
         key = headers[idx]
         cmd_update({ key: str(val) })
-    except Exception as e:
-        raise Exception(f"{e}")
 
 def usage():
     print("Usage:", file=sys.stderr)
     print("  CSV_hand.py update key1=val1 [key2=val2 ...]", file=sys.stderr)
     print("  CSV_hand.py log", file=sys.stderr)
     print("  CSV_hand.py <binary-string>   # >=16 bits: [idx-bits][16-bit value]", file=sys.stderr)
-    sys.exit(1)
 
 if __name__ == "__main__":
     if len(sys.argv)==2 and re.fullmatch(r'[01]+', sys.argv[1]):
@@ -158,7 +149,6 @@ if __name__ == "__main__":
             for tok in sys.argv[2:]:
                 if "=" not in tok:
                     print(f"ERROR: invalid token `{tok}`", file=sys.stderr)
-                    sys.exit(1)
                 k, v = tok.split("=", 1)
                 pairs[k] = v
             cmd_update(pairs)
