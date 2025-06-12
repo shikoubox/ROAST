@@ -30,15 +30,15 @@ def print_rfmdata():
 
     rfmdata_win.addstr(1, 1,  "RFM69    : Detected")
     rfmdata_win.addstr(3, 1, f"Frequency:")
-    rfmdata_win.addstr(4, 1, f"{rfm69.frequency_mhz} MHz")
+    rfmdata_win.addstr(4, 1, f"{frequency} MHz")
     rfmdata_win.addstr(6, 1, f"Bit rate :")
-    rfmdata_win.addstr(7, 1, f"{rfm69.bitrate/1000} kbit/s")
+    rfmdata_win.addstr(7, 1, f"{bitrate/1000} kbit/s")
     rfmdata_win.addstr(9, 1, f"Baud rate:")
     rfmdata_win.addstr(10,1, f"{baudrate} baud/s")
     rfmdata_win.addstr(12,1, f"Freq.dev.:") 
-    rfmdata_win.addstr(13,1, f"{rfm69.frequency_deviation/1000} kHz") 
+    rfmdata_win.addstr(13,1, f"{frequency_deviation/1000} kHz") 
     rfmdata_win.addstr(15,1, f"Tx_Power :")
-    rfmdata_win.addstr(16,1, f"{rfm69.tx_power} dBm")
+    rfmdata_win.addstr(16,1, f"{tx_power} dBm")
 
 
     rfmdata_win.refresh()

@@ -18,10 +18,12 @@ exit_program = False
 rfm69 = None
 
 # Button A
-btnA = DigitalInOut(board.D17)
-btnA.direction = Direction.INPUT
-btnA.pull = Pull.UP
-
+try:
+    btnA = DigitalInOut(board.D17)
+    btnA.direction = Direction.INPUT
+    btnA.pull = Pull.UP
+except Exception as e:
+    print(f"Not on a RPI probably, here is error: {e}")
 
 # Main loop
 def main_event_loop(stdscr):
@@ -30,6 +32,8 @@ def main_event_loop(stdscr):
     curses_code.print_header()
 
     RF69_module.initialise()
+
+    curses_code.update_rfmdata(rfm69)
 
     while not exit_program:
         stdscr.addstr(0, 2, "RFM69 Receiver - Press 'q' to quit. Otherwise 'b' 't' 'u' 's'")

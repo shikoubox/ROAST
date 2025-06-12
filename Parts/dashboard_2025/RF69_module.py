@@ -31,7 +31,6 @@ def initialise():
         prev_packet = None
 
         # Update graphics
-        curses_code.update_rfmdata(rfm69)
         curses_code.update_rfmdata_baudrate(BAUD_RATE)
         return rfm69
     except RuntimeError as error:
