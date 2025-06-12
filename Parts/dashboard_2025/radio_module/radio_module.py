@@ -41,12 +41,15 @@ def main_event_loop(stdscr):
         packet = None
         
         try:
+            packet = RFM69_module.check_for_packets()
             # Check for incoming packets
-            if RF69_module.check_for_packets() is None:
+            if packet is None:
                 stdscr.addstr(2,3,"[Waiting for packet]")
                 stdscr.refresh()
                 time.sleep(1)
                 stdscr.addstr(2,3,"[                  ]")
+            else:
+                CSV_hand.cmd_bits(packet)
         except Exception as e:
             log_message(f"[ERROR]: {e}")
 

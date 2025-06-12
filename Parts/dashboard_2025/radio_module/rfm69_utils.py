@@ -59,7 +59,7 @@ def check_for_packets():
                     log_message(f"{status}")
                 else:
                     log_message(f"[INFO] Function prepend_new_row() ran without returning a status")
-                return "P"
+                return new_packet
             except UnicodeDecodeError:
                 log_message(f"[WARNING] Received (raw): {packet}")
             except Exception as e:

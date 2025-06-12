@@ -7,8 +7,19 @@ import sys
 import re
 import encoding
 
-# Path to data.csv (same folder)
+# Path to data.csv
 CSV_PATH = os.path.join(os.path.dirname(__file__), "data", "data.csv")
+
+# Define the path to the parent folder
+parent_folder = os.path.dirname(os.path.abspath(__file__))  # Gets the directory of the current script
+
+# Define the path to the subfolder and the data file
+subfolder = 'data'  # Replace with your subfolder name
+data_file = 'data.csv'    # Replace with your data file name
+
+# Construct the full path to the data file
+CSV_PATH = os.path.join(parent_folder, subfolder, data_file)
+
 
 def _read_rows():
     """Return (rows, encoding). If file missing, return (None, 'utf-16')."""
