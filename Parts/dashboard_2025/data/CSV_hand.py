@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
 # data/CSV_hand.py
 
-
 import csv
 import os
 import sys
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-import data_mani
+import re
 
 # Path to data.csv (same folder)
 CSV_PATH = os.path.join(os.path.dirname(__file__), "data.csv")
@@ -49,7 +47,6 @@ def cmd_update(pairs):
         rows = [headers, current]
     else:
         headers = rows[0]
-        # ensure row 1 exists
         if len(rows) < 2:
             rows.append([''] * len(headers))
         for k, v in pairs.items():
@@ -57,28 +54,6 @@ def cmd_update(pairs):
                 rows[1][headers.index(k)] = v
     _write_rows(rows, enc)
     print("data.csv: current row updated", file=sys.stderr)
-
-def cmd_update_22(byte22):
-    """Update only the first data row (row 1)."""
-    rows, enc = _read_rows()
-    if rows is None:
-        # new file: header from pairs, then a data row
-        headers = list(pairs.keys())
-        current = [pairs.get(h, '') for h in headers]
-        rows = [headers, current]
-    else:
-        headers = rows[0]
-        # ensure row 1 exists
-        if len(rows) < 2:
-            rows.append([''] * len(headers))
-        v, k = data_mani.bytes_to_message(byte22)
-        
-        rows[1][headers.index(3)] = data_mani.decode_float16(v)
-        rows[1][headers.index(k)] = data_mani.decode_float16(v)
-    _write_rows(rows, enc)
-    print("data.csv: current row updated", file=sys.stderr)
-
-
 
 def cmd_log():
     """
@@ -91,33 +66,59 @@ def cmd_log():
         sys.exit(1)
     header = rows[0]
     current = rows[1]
-    # build new list: header, current snapshot, then all existing rows AFTER header
     new_rows = [header, current] + rows[1:]
     _write_rows(new_rows, enc)
     print("data.csv: snapshot logged", file=sys.stderr)
+
+def cmd_bits(bitstr):
+    """Decode a >=16-bit payload: leading bits = index, last 16 bits = value."""
+    # at least 16 bits for value
+    if len(bitstr) < 16:
+        print("ERROR: bitstring too short (need >=16 bits)", file=sys.stderr)
+        sys.exit(1)
+    val_bits = bitstr[-16:]
+    idx_bits = bitstr[:-16] or '0'
+    # ensure index bits no more than 6 bits (truncate higher bits)
+    idx_bits = idx_bits[-6:].rjust(6, '0')
+    idx = int(idx_bits, 2)
+    val = int(val_bits, 2)
+    rows, _ = _read_rows()
+    if rows is None:
+        print("ERROR: cannot bit-update without existing header", file=sys.stderr)
+        sys.exit(1)
+    headers = rows[0]
+    if idx < 0 or idx >= len(headers):
+        print(f"ERROR: index {idx} out of range (0–{len(headers)-1})", file=sys.stderr)
+        sys.exit(1)
+    key = headers[idx]
+    cmd_update({ key: str(val) })
 
 def usage():
     print("Usage:", file=sys.stderr)
     print("  CSV_hand.py update key1=val1 [key2=val2 ...]", file=sys.stderr)
     print("  CSV_hand.py log", file=sys.stderr)
+    print("  CSV_hand.py <binary-string>   # >=16 bits: [idx-bits][16-bit value]", file=sys.stderr)
     sys.exit(1)
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
+    if len(sys.argv)==2 and re.fullmatch(r'[01]+', sys.argv[1]):
+        cmd_bits(sys.argv[1])
+    elif len(sys.argv) < 2:
         usage()
-    cmd = sys.argv[1]
-    if cmd == "update":
-        if len(sys.argv) < 3:
-            usage()
-        pairs = {}
-        for tok in sys.argv[2:]:
-            if "=" not in tok:
-                print(f"ERROR: invalid token `{tok}`", file=sys.stderr)
-                sys.exit(1)
-            k, v = tok.split("=", 1)
-            pairs[k] = v
-        cmd_update(pairs)
-    elif cmd == "log":
-        cmd_log()
     else:
-        usage()
+        cmd = sys.argv[1]
+        if cmd == "update":
+            if len(sys.argv) < 3:
+                usage()
+            pairs = {}
+            for tok in sys.argv[2:]:
+                if "=" not in tok:
+                    print(f"ERROR: invalid token `{tok}`", file=sys.stderr)
+                    sys.exit(1)
+                k, v = tok.split("=", 1)
+                pairs[k] = v
+            cmd_update(pairs)
+        elif cmd == "log":
+            cmd_log()
+        else:
+            usage()
