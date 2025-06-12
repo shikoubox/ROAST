@@ -72,6 +72,14 @@ def cmd_log():
 
 def cmd_bits(bitstr):
     try:
+        # If input is bytes, convert to bitstring
+        if isinstance(bitstr, bytes):
+            bitstr = f"{int.from_bytes(bitstr, 'big'):0{len(bitstr)*8}b}"
+
+        if len(bitstr) < 16:
+            print("ERROR: bitstring too short (need >=16 bits)", file=sys.stderr)
+            sys.exit(1)
+    try:
         """Decode a >=16-bit payload: leading bits = index, last 16 bits = value."""
         # at least 16 bits for value
         if len(bitstr) < 16:
