@@ -54,11 +54,13 @@ def main_event_loop(stdscr):
                 time.sleep(1)
                 stdscr.addstr(2,3,"[                  ]")
             else:
-                log_message(f"[DEBUG]: Packet is not None")
-                CSV_hand.cmd_bits(packet)
-                log_message(f"[INFO]: Packet was handled by csv_hand")
+                try:
+                    CSV_hand.cmd_bits(packet)
+                    log_message(f"[INFO]: Packet was handled by CSV_hand.cmd_bits")
+                except Exception as cmd_error:
+                    log_message(f"[ERROR]: cmd_bits failed: {cmd_error}")
         except Exception as e:
-            log_message(f"[ERROR]: {e}")
+            log_message(f"[ERROR]: Check for packets failed {e}")
 
         stdscr.refresh()
 

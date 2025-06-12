@@ -6,6 +6,7 @@ import os
 import sys
 import re
 import encoding
+from graphics import log_message
 
 # Define the path to the parent folder
 parent_folder = os.path.dirname(os.path.abspath(__file__))  # Gets the directory of the current script
@@ -83,6 +84,7 @@ def cmd_log():
 
 def cmd_bits(bitstr):
     try:
+        log_message(f"[DEBUG] cmd_bits() called with: {bitstr} (type: {type(bitstr)})")
         # If input is bytes, convert to bitstring
         if isinstance(bitstr, bytes):
             bitstr = f"{int.from_bytes(bitstr, 'big'):0{len(bitstr)*8}b}"

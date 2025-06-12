@@ -66,11 +66,6 @@ def check_for_packets():
                 try:
                     new_packet = packet.decode("utf-16")
                     log_message(f"[INFO] Received string: {new_packet}")
-                    status = CSV_hand.prepend_new_row(new_packet)
-                    if status is not None:
-                        log_message(f"[STATUS] {status}")
-                    else:
-                        log_message(f"[INFO] Function prepend_new_row() ran without returning a status")
                     return new_packet
                 except UnicodeDecodeError:
                     log_message(f"[WARNING] Failed to decode packet as UTF-16 string")
