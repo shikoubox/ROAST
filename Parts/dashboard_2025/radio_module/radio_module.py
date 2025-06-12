@@ -11,7 +11,7 @@ import graphics as curses_code
 from graphics import log_message
 import threading
 import csv_handler as CSV_hand
-import rfm69_utils as RF69_module
+import rfm69_utils
 
 # global exit flag
 exit_program = False
@@ -31,7 +31,7 @@ def main_event_loop(stdscr):
     global rfm69
     curses_code.print_header()
 
-    rfm69 = RF69_module.initialise()
+    rfm69 = rfm69_utils.initialise()
 
     if rfm69 is None:
         log_message("[ERROR] Failed to initialize RFM69 module")
@@ -46,7 +46,7 @@ def main_event_loop(stdscr):
         packet = None
         
         try:
-            packet = RFM69_module.check_for_packets()
+            packet = rfm69_utils.check_for_packets()
             # Check for incoming packets
             if packet is None:
                 stdscr.addstr(2,3,"[Waiting for packet]")
@@ -73,7 +73,7 @@ def listen_for_keys(stdscr):
         # Physical button presses?
         if not btnA.value:
             try:
-                RF69_module.send_string_packet("test")
+                rfm69_utils.send_string_packet("test")
             except Exception as e:
                 log_message(f"{e}")
         
@@ -84,7 +84,7 @@ def listen_for_keys(stdscr):
         if key == ord('s'):
             try:
                 log_message('[INFO] Sending "super message" by clicking keyboard')
-                RF69_module.send_string_packet("super message")
+                rfm69_utils.send_string_packet("super message")
             except Exception as e:
                 log_message(f"{e}")
 
@@ -123,7 +123,7 @@ def listen_for_keys(stdscr):
                 b = data_mani.encode_to_bytes(16,2.9)
                 log_message(f"[DEBUG] {b}")
                 log_message(f"[DEBUG] Message created: {int.from_bytes(b, 'big'):022b}")
-                RF69_module.send_byte_packet(b)
+                rfm69_utils.send_byte_packet(b)
                 log_message("[SUCCESS] Sent dataset test over radio!")
 
             except Exception as e:
