@@ -73,6 +73,7 @@ def cmd_update_22(byte22):
             rows.append([''] * len(headers))
         v, k = data_mani.bytes_to_message(byte22)
         
+        rows[1][headers.index(3)] = data_mani.decode_float16(v)
         rows[1][headers.index(k)] = data_mani.decode_float16(v)
     _write_rows(rows, enc)
     print("data.csv: current row updated", file=sys.stderr)
