@@ -45,22 +45,28 @@ def main_event_loop(stdscr):
         curses_code.print_console()
         packet = None
         
+        # Check for incoming packets
         try:
-            packet = rfm69_utils.check_for_packets()
-            # Check for incoming packets
-            if packet is None:
+            packet = RFM69_module.check_for_packets()
+            if packet:
+                log_message(f"[INFO] Main loop got packet: {packet} (len={len(packet)})")
+                if len(packet) == 3:
+                    try:
+                        log_message(f"[DEBUG]")
+                        time.sleep(1)
+                        CSV_hand.cmd_bits(packet)
+                        log_message("[INFO] Processed 22-bit packet")
+                    except Exception as e:
+                        log_message(f"[ERROR] Failed in cmd_bits: {e}")
+                else:
+                    log_message(f"[INFO] Packet not 3 bytes, skipping processing")
+            else:
                 stdscr.addstr(2,3,"[Waiting for packet]")
                 stdscr.refresh()
                 time.sleep(1)
                 stdscr.addstr(2,3,"[                  ]")
-            else:
-                try:
-                    CSV_hand.cmd_bits(packet)
-                    log_message(f"[INFO]: Packet was handled by CSV_hand.cmd_bits")
-                except Exception as cmd_error:
-                    log_message(f"[ERROR]: cmd_bits failed: {cmd_error}")
         except Exception as e:
-            log_message(f"[ERROR]: Check for packets failed {e}")
+            log_message(f"[ERROR] Packet handler crash: {e}")
 
         stdscr.refresh()
 
