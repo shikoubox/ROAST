@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 # data/CSV_hand.py
 
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import csv
 import os
 import sys
+import data_mani
 
 # Path to data.csv (same folder)
 CSV_PATH = os.path.join(os.path.dirname(__file__), "data.csv")
@@ -54,6 +57,28 @@ def cmd_update(pairs):
                 rows[1][headers.index(k)] = v
     _write_rows(rows, enc)
     print("data.csv: current row updated", file=sys.stderr)
+
+def cmd_update_22(byte22):
+    """Update only the first data row (row 1)."""
+    rows, enc = _read_rows()
+    if rows is None:
+        # new file: header from pairs, then a data row
+        headers = list(pairs.keys())
+        current = [pairs.get(h, '') for h in headers]
+        rows = [headers, current]
+    else:
+        headers = rows[0]
+        # ensure row 1 exists
+        if len(rows) < 2:
+            rows.append([''] * len(headers))
+        v, k = data_mani.bytes_to_message(byte22)
+
+        if k in headers:
+            rows[1][headers.index(k)] = v
+    _write_rows(rows, enc)
+    print("data.csv: current row updated", file=sys.stderr)
+
+
 
 def cmd_log():
     """
