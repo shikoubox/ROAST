@@ -10,70 +10,6 @@ h  = '-'#'─'
 v  = '|'
 c  = '+'
 
-'''
-def listen_for_keys(stdscr):
-    global exit_program
-    curses.cbreak()  # Enable cbreak mode
-    stdscr.keypad(True)  # Enable keypad input
-    stdscr.refresh() 
-
-    while not exit_program:
-        stdscr.addstr(2,29, "[INFO] Listening for keypress")
-
-        # Physical button presses?
-        if not btnA.value:
-            stemomg
-            button_a_data = bytes("test","utf-16")
-            rfm69.send(button_a_data)
-            log_message('[INFO] Sent data test by button click')
-        
-        key = stdscr.getch()  # Wait for a key press
-        log_message(f"[INFO] You pressed: {chr(key)}")
-        stdscr.addstr(2,29, "[    ]                       ")
-
-        if key == ord('t'):
-            try:
-                log_message("[INFO] Preparing to send BIG dataset test...")
-                
-                test_data = get_data_test()
-                log_message(f"[DEBUG] Generated data: {str(test_data)[:width-27]}...")  # Only first 80 chars
-
-                button_a_data = bytes(f"{test_data}", "utf-16")
-                log_message("[DEBUG] Encoded data to bytes.")
-
-                rfm69.send(button_a_data)
-                log_message("[SUCCESS] Sent BIG dataset test over radio!")
-
-            except Exception as e:
-                log_message(f"[ERROR] Failed to send test data: {e}")
-                stdscr.addstr(30,0,f"{e}")
-                with open("thread_error.log", "a") as f:
-                    f.write(f"Exception in send BIG dataset test: {e}")
-
-        if key == ord('s'):
-            log_message('[INFO] Sending "super message" by clicking keyboard')
-            button_a_data = bytes("super message","utf-16")
-            rfm69.send(button_a_data)
-            log_message('[INFO] Sent "super message"')
-
-        if key == ord('b'):
-            log_message('[INFO] Encoding message by clicking keyboard')
-            encode_to_bytes(16,1.5)
-            encode_to_bytes(16,111221.541231)
-            log_message('[INFO] Done encoding')
-
-        # keyboard button presses
-        if key == ord('u'):
-            send_data_test(stdscr)
-
-        if key == ord('q'):  # Exit if 'q' is pressed
-            stdscr.clear()
-            stdscr.addstr(3,4,"Exiting...")
-            stdscr.refresh()
-            exit_program = True # Set the exit flag
-'''
-
-
 frequency = 0
 bitrate = 0
 baudrate = 0
@@ -81,6 +17,7 @@ frequency_deviation = 0
 tx_power = 0
 
 def print_rfmdata():
+    global rfm69
     curses.curs_set(0)  # Hide cursor
 
     start_y, start_x = 1, width+1  # Console window position
