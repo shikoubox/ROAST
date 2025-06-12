@@ -28,7 +28,6 @@ def initialise():
         # Pass it to rfm module
         rfm69 = adafruit_rfm69.RFM69(spi, CS, RESET, RADIO_FREQ_MHZ, baudrate=BAUD_RATE, high_power=True)
         rfm69.bitrate = BIT_RATE
-        prev_packet = None
 
         # Update graphics
         curses_code.update_rfmdata_baudrate(BAUD_RATE)
@@ -37,6 +36,7 @@ def initialise():
         log_message("[ERROR] RFM69")
         log_message(f"[ERROR]: {error}")
         rfm69 = None
+        return None
 
 
 

@@ -31,7 +31,12 @@ def main_event_loop(stdscr):
     global rfm69
     curses_code.print_header()
 
-    RF69_module.initialise()
+    rfm69 = RF69_module.initialise()
+
+    if rfm69 is None:
+        log_message("[ERROR] Failed to initialize RFM69 module")
+        return
+
 
     curses_code.update_rfmdata(rfm69)
 
