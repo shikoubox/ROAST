@@ -80,12 +80,10 @@ def cmd_log():
     print("data.csv: snapshot logged", file=sys.stderr)
 
 def cmd_bits(bitstr):
-    log_message(f"[DEBUG] cmd_bits() called with: {bitstr} (type: {type(bitstr)})")
     if isinstance(bitstr, (bytes, bytearray)):
         try:
             int_val = int.from_bytes(bitstr, 'big')
             bitstr = f"{int_val:0{len(bitstr)*8}b}"
-            log_message(f"[DEBUG] Converted bytes to bitstring: {bitstr}")
         except Exception as e:
             raise Exception(f"Byte-to-bitstring conversion failed: {e}")
 
@@ -99,7 +97,6 @@ def cmd_bits(bitstr):
         # If input is bytes, convert to bitstring
         if isinstance(bitstr, bytes):
             bitstr = f"{int.from_bytes(bitstr, 'big'):0{len(bitstr)*8}b}"
-            log_message(f"[DEBUG] Converted to bitstring: {bitstr}")
 
         """Decode a >=16-bit payload: leading bits = index, last 16 bits = value."""
         # at least 16 bits for value
@@ -109,17 +106,14 @@ def cmd_bits(bitstr):
         idx_bits = bitstr[:-16] or '0'
         # ensure index bits no more than 6 bits (truncate higher bits)
         idx_bits = idx_bits[-6:].rjust(6, '0')
-        log_message(f"[DEBUG] Index bits: {idx_bits}, Value bits: {val_bits}")
         idx = int(idx_bits, 2)
         val = encoding.decode_float16(int(val_bits, 2))
-        log_message(f"[DEBUG] Parsed index: {idx}, value: {val}")
         rows, _ = _read_rows()
         if rows is None:
             print("ERROR: cannot bit-update without existing header", file=sys.stderr)
             log_message("[ERROR] No rows found in CSV!")
             raise Exception("ERROR: cannot bit-update without existing header")
         headers = rows[0]
-        log_message(f"[DEBUG] Headers: {headers}")
         if idx < 0 or idx >= len(headers):
             print(f"ERROR: index {idx} out of range (0–{len(headers)-1})", file=sys.stderr)
             log_message(f"[ERROR] Index {idx} out of range (0-{len(headers)-1})")

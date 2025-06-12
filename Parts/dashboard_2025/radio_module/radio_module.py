@@ -52,7 +52,6 @@ def main_event_loop(stdscr):
                 log_message(f"[INFO] Main loop got packet: {packet} (len={len(packet)})")
                 if len(packet) == 3:
                     try:
-                        log_message(f"[DEBUG]")
                         time.sleep(1)
                         CSV_hand.cmd_bits(packet)
                         log_message("[INFO] Processed 22-bit packet")
@@ -102,23 +101,19 @@ def listen_for_keys(stdscr):
             log_message('[INFO] Encoding message by clicking keyboard')
             try:
                 b = data_mani.encode_to_bytes(2,69.69)
-                log_message(f"[DEBUG] Message created: {int.from_bytes(b, 'big'):022b}")
                 message, index = data_mani.bytes_to_message(b)
                 log_message(f"{index}: {message} / {data_mani.decode_float16(message)}")
                 CSV_hand.cmd_bits(b)
-                log_message(f"[DEBUG] Message sent to CSV handler") 
             except Exception as e:
                 log_message(f"{e}")
             
 
-        if key == ord('b'):
+        if key == ord('d'):
             try:
                 b = data_mani.encode_to_bytes(2,11121.54231)
-                log_message(f"[DEBUG] Message created: {int.from_bytes(b, 'big'):022b}")
                 message, index = data_mani.bytes_to_message(b)
                 log_message(f"{index}: {message} / {data_mani.decode_float16(message)}")
                 CSV_hand.cmd_bits(b)
-                log_message(f"[DEBUG] Message sent to CSV handler") 
             except Exception as e:
                 log_message(f"{e}")
 
@@ -132,8 +127,6 @@ def listen_for_keys(stdscr):
             try:
                 log_message("[INFO] Preparing to send dataset test...")
                 b = data_mani.encode_to_bytes(4,2.9)
-                log_message(f"[DEBUG] {b}")
-                log_message(f"[DEBUG] Message created: {int.from_bytes(b, 'big'):022b}")
                 rfm69_utils.send_byte_packet(b)
                 log_message("[SUCCESS] Sent dataset test over radio!")
 
@@ -145,8 +138,6 @@ def listen_for_keys(stdscr):
             try:
                 log_message("[INFO] Preparing to send dataset test...")
                 b = data_mani.encode_to_bytes(4,69)
-                log_message(f"[DEBUG] {b}")
-                log_message(f"[DEBUG] Message created: {int.from_bytes(b, 'big'):022b}")
                 rfm69_utils.send_byte_packet(b)
                 log_message("[SUCCESS] Sent dataset test over radio!")
 
