@@ -48,10 +48,10 @@ def update_rfmdata_baudrate(_baudrate):
     print_rfmdata()
 
 def update_rfmdata(_rfm69):
-    frequency = _rfm69.frequency_mhz
-    bitrate=_rfm69.bitrate
-    frequency_deviation = _rfm69.frequency_deviation
-    tx_power = _rfm69.tx_power
+    #frequency = _rfm69.frequency_mhz
+    #bitrate=_rfm69.bitrate
+    #frequency_deviation = _rfm69.frequency_deviation
+    #tx_power = _rfm69.tx_power
     print_rfmdata()
 
 
