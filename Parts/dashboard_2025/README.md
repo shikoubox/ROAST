@@ -26,20 +26,13 @@ git add <desired_directory>
 git commit -m "Copied directory from desired_branch to source_branch"
 
 ## Setup CircuitPython
-python3 -m venv RF
+python3 -m venv ~/ROAST/Parts/dashboard_2025/RF
 source ~/ROAST/Parts/dashboard_2025/RF/bin/activate
 pip3 install --upgrade adafruit-python-shell
-wget https://raw.githubusercontent.com/adafruit/Raspberry-Pi-Installer-Scripts/master/raspi-blinka.py
-sudo -E env PATH=$PATH python3 raspi-blinka.py
-#### for v4 and below
-pip3 install RPi.GPIO
-#### for RPI v5
-pip3 uninstall -y RPi.GPIO
+sudo -E env PATH=$PATH python3 setup_circuitpython.py
 
 ### Check if RF is setup correctly
-python3 rfm69_check.py ### is somewhere in dashboard_2025 folder
-wget -O font5x8.bin https://github.com/adafruit/Adafruit_CircuitPython_framebuf/blob/main/examples/font5x8.bin?raw=true
-
+python3 radio_module.py ### is somewhere in dashboard_2025/radio_module folder
 
 ## Setup nodejs and npm on Raspberry PI
 ```bash

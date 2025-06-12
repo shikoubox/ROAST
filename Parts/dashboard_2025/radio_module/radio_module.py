@@ -47,7 +47,7 @@ def main_event_loop(stdscr):
         
         # Check for incoming packets
         try:
-            packet = RFM69_module.check_for_packets()
+            packet = rfm69_utils.check_for_packets()
             if packet:
                 log_message(f"[INFO] Main loop got packet: {packet} (len={len(packet)})")
                 if len(packet) == 3:
