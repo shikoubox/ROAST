@@ -77,7 +77,7 @@ def print_console():
     console_win = curses.newwin(height, width, start_y, start_x)
 
     
-    console_win.clear()
+    # console_win.clear()
     # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
     console_win.border(v, v, h, h, c, c, c, c)
 

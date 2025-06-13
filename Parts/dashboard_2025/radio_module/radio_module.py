@@ -1,35 +1,26 @@
 import time
 import busio
 from digitalio import DigitalInOut, Direction, Pull
-import board
-import adafruit_rfm69
 import os
 import random
-import encoding as data_mani
+import encoding
 import curses
-import graphics as curses_code
+import graphics 
 from graphics import log_message
 import threading
-import csv_handler as CSV_hand
+import csv_handler
 import rfm69_utils
+
 
 # global exit flag
 exit_program = False
 rfm69 = None
 
-# Button A
-try:
-    btnA = DigitalInOut(board.D17)
-    btnA.direction = Direction.INPUT
-    btnA.pull = Pull.UP
-except Exception as e:
-    print(f"Not on a RPI probably, here is error: {e}")
-
 # Main loop
 def main_event_loop(stdscr):
     global exit_program
     global rfm69
-    curses_code.print_header()
+    graphics.print_header()
 
     rfm69 = rfm69_utils.initialise()
 
@@ -38,22 +29,23 @@ def main_event_loop(stdscr):
         return
 
 
-    curses_code.update_rfmdata(rfm69)
+    graphics.update_rfmdata(rfm69)
 
     while not exit_program:
-        stdscr.addstr(0, 2, "RFM69 Receiver - Press 'q' to quit. Otherwise 'b' 't' 'u' 's'")
-        curses_code.print_console()
+        stdscr.addstr(0, 2, "RFM69 Receiver - Press 'q' to quit. Otherwise 'w' 'e' 'r' 't'")
+        graphics.print_console()
         packet = None
         
         # Check for incoming packets
         try:
-            packet = rfm69_utils.check_for_packets()
+            packet, rssi = rfm69_utils.check_for_packets()
             if packet:
                 log_message(f"[INFO] Main loop got packet: {packet} (len={len(packet)})")
                 if len(packet) == 3:
                     try:
                         time.sleep(1)
-                        CSV_hand.cmd_bits(packet)
+                        csv_handler.cmd_bits(packet)
+                        csv_handler.cmd_bits(encoding.encode_to_bytes(36,rssi))
                         log_message("[INFO] Processed 22-bit packet")
                     except Exception as e:
                         log_message(f"[ERROR] Failed in cmd_bits: {e}")
@@ -79,43 +71,27 @@ def listen_for_keys(stdscr):
     while not exit_program:
         stdscr.addstr(2,29, "[Listening for keypress]")
 
-        # Physical button presses?
-        if not btnA.value:
-            try:
-                rfm69_utils.send_string_packet("test")
-            except Exception as e:
-                log_message(f"{e}")
-        
         key = stdscr.getch()  # Wait for a key press
         log_message(f"[INFO] You pressed: {chr(key)}")
         stdscr.addstr(2,29, "[                      ]")
         
-        if key == ord('s'):
+        if key == ord('w'):
             try:
                 log_message('[INFO] Sending "super message" by clicking keyboard')
                 rfm69_utils.send_string_packet("super message")
             except Exception as e:
                 log_message(f"{e}")
 
-        if key == ord('b'):
+        if key == ord('e'):
             log_message('[INFO] Encoding message by clicking keyboard')
             try:
-                b = data_mani.encode_to_bytes(2,69.69)
-                message, index = data_mani.bytes_to_message(b)
-                log_message(f"{index}: {message} / {data_mani.decode_float16(message)}")
-                CSV_hand.cmd_bits(b)
+                b = encoding.encode_to_bytes(2,69.69)
+                message, index = encoding.bytes_to_message(b)
+                log_message(f"{index}: {message} / {encoding.decode_float16(message)}")
+                csv_handler.cmd_bits(b)
             except Exception as e:
                 log_message(f"{e}")
             
-
-        if key == ord('d'):
-            try:
-                b = data_mani.encode_to_bytes(2,11121.54231)
-                message, index = data_mani.bytes_to_message(b)
-                log_message(f"{index}: {message} / {data_mani.decode_float16(message)}")
-                CSV_hand.cmd_bits(b)
-            except Exception as e:
-                log_message(f"{e}")
 
         if key == ord('q'):  # Exit if 'q' is pressed
             stdscr.clear()
@@ -125,8 +101,8 @@ def listen_for_keys(stdscr):
 
         if key == ord('t'):
             try:
-                log_message("[INFO] Preparing to send dataset test...")
-                b = data_mani.encode_to_bytes(4,2.9)
+                log_message("[INFO] Trying to send packet with 69 on index 3.")
+                b = encoding.encode_to_bytes(3,69)
                 rfm69_utils.send_byte_packet(b)
                 log_message("[SUCCESS] Sent dataset test over radio!")
 
@@ -136,96 +112,16 @@ def listen_for_keys(stdscr):
 
         if key == ord('r'):
             try:
-                log_message("[INFO] Preparing to send dataset test...")
-                b = data_mani.encode_to_bytes(4,69)
+                value = random.uniform(0,420)
+                index = random.uniform(0,30)
+                log_message(f"[INFO] Trying to send packet with value {value} on index {index}.")
+                b = encoding.encode_to_bytes(index,value)
                 rfm69_utils.send_byte_packet(b)
                 log_message("[SUCCESS] Sent dataset test over radio!")
 
             except Exception as e:
                 log_message(f"[ERROR] Failed to send test data: {e}")
                 stdscr.addstr(27,0,f"{e}")
-
-
-def send_data_test():
-    new_data = {
-        "current_temp":     random.uniform(15.0, 35.0),
-        "cooling_temp":     random.uniform(25.0, 40.0),
-        "motor_usage":      random.uniform(5.0, 30.0),
-        "speed":            random.uniform(15.0, 70.0),
-        "wh_total":         random.uniform(15.0, 30.0),
-        "distance":         random.uniform(15.0, 30.0),
-        "solar_output":     random.uniform(15.0, 30.0),
-        "brake_status":     random.uniform(15.0, 30.0),
-        "tyre_lf":          random.uniform(15.0, 30.0),
-        "tyre_rf":          random.uniform(15.0, 30.0),
-        "tyre_lr":          random.uniform(15.0, 30.0),
-        "tyre_rr":          random.uniform(15.0, 30.0),
-        "module1_percent":  random.uniform(5.0, 100.0),
-        "module1_voltage":  random.uniform(3.0, 18.0),
-        "m1c1":             random.uniform(1.50, 3.0),
-        "m1c2":             random.uniform(1.50, 3.0),
-        "m1c3":             random.uniform(1.50, 3.0),
-        "m1c4":             random.uniform(1.50, 3.0),
-        "m1c5":             random.uniform(1.50, 3.0),
-        "m1c6":             random.uniform(1.50, 3.0),
-        "m1c7":             random.uniform(1.50, 3.0),
-        "m1c8":             random.uniform(1.50, 3.0),
-        "module2_percent":  random.uniform(15.0, 3.0),
-        "module2_voltage":  random.uniform(15.0, 3.0),
-        "m2c1":             random.uniform(1.50, 3.0),
-        "m2c2":             random.uniform(1.50, 3.0),
-        "m2c3":             random.uniform(1.50, 3.0),
-        "m2c4":             random.uniform(1.50, 3.0),
-        "m2c5":             random.uniform(1.50, 3.0),
-        "m2c6":             random.uniform(1.50, 3.0),
-        "m2c7":             random.uniform(1.50, 3.0),
-        "m2c8":             random.uniform(1.50, 3.0),
-        "battery_percent":  random.uniform(10.0, 100.0),
-        "battery_voltage":  random.uniform(10.0, 13.0),
-    }
-
-    stdscr.addstr(5,0, 'Sending data test')
-    status = CSV_hand.prepend_new_row(new_data)
-    log_message(status)
-
-def get_data_test():
-    new_data = {
-        "current_temp":     random.uniform(15.0, 35.0),
-        "cooling_temp":     random.uniform(25.0, 40.0),
-        "motor_usage":      random.uniform(5.0, 30.0),
-        "speed":            random.uniform(15.0, 70.0),
-        "wh_total":         random.uniform(15.0, 30.0),
-        "distance":         random.uniform(15.0, 30.0),
-        "solar_output":     random.uniform(15.0, 30.0),
-        "brake_status":     random.uniform(15.0, 30.0),
-        "tyre_lf":          random.uniform(15.0, 30.0),
-        "tyre_rf":          random.uniform(15.0, 30.0),
-        "tyre_lr":          random.uniform(15.0, 30.0),
-        "tyre_rr":          random.uniform(15.0, 30.0),
-        "module1_percent":  random.uniform(5.0, 100.0),
-        "module1_voltage":  random.uniform(3.0, 18.0),
-        "m1c1":             random.uniform(1.50, 3.0),
-        "m1c2":             random.uniform(1.50, 3.0),
-        "m1c3":             random.uniform(1.50, 3.0),
-        "m1c4":             random.uniform(1.50, 3.0),
-        "m1c5":             random.uniform(1.50, 3.0),
-        "m1c6":             random.uniform(1.50, 3.0),
-        "m1c7":             random.uniform(1.50, 3.0),
-        "m1c8":             random.uniform(1.50, 3.0),
-        "module2_percent":  random.uniform(15.0, 3.0),
-        "module2_voltage":  random.uniform(15.0, 3.0),
-        "m2c1":             random.uniform(1.50, 3.0),
-        "m2c2":             random.uniform(1.50, 3.0),
-        "m2c3":             random.uniform(1.50, 3.0),
-        "m2c4":             random.uniform(1.50, 3.0),
-        "m2c5":             random.uniform(1.50, 3.0),
-        "m2c6":             random.uniform(1.50, 3.0),
-        "m2c7":             random.uniform(1.50, 3.0),
-        "m2c8":             random.uniform(1.50, 3.0),
-        "battery_percent":  random.uniform(10.0, 100.0),
-        "battery_voltage":  random.uniform(10.0, 13.0),
-    }
-    return new_data
 
 
 key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))

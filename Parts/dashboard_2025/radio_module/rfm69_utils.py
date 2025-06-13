@@ -3,8 +3,9 @@ import busio
 from digitalio import DigitalInOut, Direction, Pull
 import board
 import adafruit_rfm69
-import graphics as curses_code
+import graphics
 from graphics import log_message
+import csv_handler
 
 # Optional encryption (MUST match on both)
 # rfm69.encryption_key = b'\x01\x02\x03\x04\x05\x06\x07\x08\x01\x02\x03\x04\x05\x06\x07\x08'
@@ -30,8 +31,10 @@ def initialise():
         rfm69.bitrate = BIT_RATE
 
         # Update graphics
-        curses_code.update_rfmdata_baudrate(BAUD_RATE)
+        graphics.update_rfmdata_baudrate(BAUD_RATE)
         return rfm69
+    except AttributeError as error:
+        log_message("[ERROR] board not loaded properly: {error}")
     except RuntimeError as error:
         log_message("[ERROR] RFM69")
         log_message(f"[ERROR]: {error}")
@@ -56,10 +59,7 @@ def check_for_packets():
             if len(packet) == 3:  # 22-bit = 3 bytes
                 # Treat as binary payload
                 log_message(f"[INFO] Interpreting as 22-bit binary payload")
-                #status = CSV_hand.cmd_bits(packet)
-                #if status:
-                #    log_message(f"[STATUS] {status}")
-                return packet
+                return packet, rssi
 
             else:
                 # Try decoding as string
