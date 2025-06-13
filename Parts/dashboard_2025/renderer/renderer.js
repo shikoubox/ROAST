@@ -7,9 +7,10 @@
 //  • Brake status, tyre pressures, module state, etc.
 
 // 1) Toggle theme and Download CSV functions (you can keep or remove if not used)
-function toggleTheme() {
-  document.body.classList.toggle("dark-mode");
-}
+const toggleButton = document.getElementById('theme_toggle');
+toggleButton.addEventListener('click', ()=> {
+    document.body.classList.toggle('dark-mode');
+});
 
 function downloadCSV() {
   const csvContent = `speed,battery,engine_temp,fuel
@@ -55,11 +56,15 @@ window.electronAPI.onCSVData((data) => {
   document.getElementById("solar_output").textContent = `${solarValue.toFixed(0)} W`;
   document.querySelector(".solar-cumulative").textContent = `Cumulative: ${solarCum.toFixed(1)} Wh`;
 
-  // 3.4 BRAKE STATUS
-  const brakeState = data.brake_status === "applied" ? "applied" : "released";
+  // 3.4 BRAKE and PERIPHERAL STATUS
+  const brakeState = data.brake_status === "1" ? "1" : "0";
   const brakeIndicator = document.getElementById("brake-status");
-  brakeIndicator.textContent = brakeState === "applied" ? "Applied" : "Released";
-  brakeIndicator.className = brakeState === "applied" ? "brake-indicator applied" : "brake-indicator released";
+  brakeIndicator.textContent = brakeState === "1" ? "Applied" : "Released";
+  brakeIndicator.className = brakeState === "applied" ? "indicator green" : "indicator red";
+    
+
+  const radioState = parseFloat(data.radio_state || "0");
+  document.getElementById('dBm').textContent = `Last radio packet strength: ${radioState} dBm`;
 
   // 3.5 TYRE PRESSURES
   document.getElementById("tyre_lf").textContent = `${parseFloat(data.tyre_lf || "0").toFixed(1)} PSI`;
@@ -110,6 +115,7 @@ window.electronAPI.onCSVData((data) => {
   document.getElementById("m2c7").textContent = `${parseFloat(data.m2c7 || "0").toFixed(3)} V`;
   document.querySelector("#m2c8-bar").style.width = `${clamp((parseFloat(data.m2c8 || "0") / 5) * 100, 0, 100)}%`;
   document.getElementById("m2c8").textContent = `${parseFloat(data.m2c8 || "0").toFixed(3)} V`;
+
 
   // 3.8 12V BATTERY: Percent & Voltage
   const battPercent = clamp(parseFloat(data.battery_percent || "0"), 0, 100);

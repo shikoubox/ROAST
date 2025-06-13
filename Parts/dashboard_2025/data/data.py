@@ -33,7 +33,7 @@ def prepend_new_row():
     i += 1
     write_counter(i)
 
-    # 2) Build a new‐data dictionary just like in your JS version:
+    # 2) Build a new‐data dictionary   
     new_data = {
         "current_temp":     f"3{i}",
         "cooling_temp":     f"4{i}",
@@ -69,6 +69,7 @@ def prepend_new_row():
         "m2c8":             f"34{i}",
         "battery_percent":  f"35{i}",
         "battery_voltage":  f"36{i}",
+        "radio_dBm":        f"37{i}",
     }
 
     # 3) Read the existing CSV file entirely

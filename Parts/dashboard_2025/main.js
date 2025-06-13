@@ -1,10 +1,12 @@
 // main.js
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const fs   = require('fs');
 const { execFile } = require('child_process');  // ← add this
 
 app.disableHardwareAcceleration();
+
+
 
 let mainWindow = null;
 function createWindow() {
@@ -22,12 +24,16 @@ function createWindow() {
   mainWindow.loadFile(path.join(__dirname, 'renderer', 'index.html'));
 }
 
+ipcMain.on('log-to-console', (event, message) => {
+  console.log(message);
+});
+
 app.whenReady().then(() => {
   createWindow();
 
   // Every 10 seconds, append a snapshot row:
   setInterval(() => {
-    execFile('python', [path.join(__dirname, 'data', 'CSV_hand.py'), 'log'], (err, stdout, stderr) => {
+    execFile('python', [path.join(__dirname, 'radio_module', 'csv_handler.py'), 'log'], (err, stdout, stderr) => {
       if (err) {
         console.error('Logging error:', stderr || err);
       } else {
@@ -69,6 +75,7 @@ app.whenReady().then(() => {
     });
   }, 200);
 });
+
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Electron App</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solar Vehicle Telemetry Dashboard</title>
@@ -86,7 +87,7 @@
           <li><span class="indicator green">LB   </span></li>
           <li><span class="indicator green">RB   </span></li>
           <li><span class="indicator red"  >BL   </span></li>
-          <li><span class="indicator red"  >Brake</span></li>
+          <li><span class="indicator red" id="brake-status">Brake</span></li>
 
         </ul>
         <h2>Peripherals</h2>
@@ -97,7 +98,7 @@
           <li><span class="indicator green">Solar    </span> </li>
           <li><span class="indicator green">Motor    </span> </li>
           <li><span class="indicator green">Cooling  </span> </li>
-          <li><span class="indicator green" id="dBm">-15 dBm</span> </li>
+          <li><span class="indicator green" id="dBm">-20 dBm</span> </li>
         </ul>
       </div>
     </section>
@@ -372,14 +373,6 @@
   </div>
   </section>
 
-  <!-- RENDERER JS + THEME‐TOGGLE LOGIC -->
   <script src="renderer.js"></script>
-  <script>
-    // On page load, wire up the "Toggle Theme" button.
-    const toggleButton = document.getElementById('theme_toggle');
-    toggleButton.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-    });
-  </script>
 </body>
 </html>
