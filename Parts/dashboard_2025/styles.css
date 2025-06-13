@@ -18,9 +18,10 @@ body {
    ============================ */
 .button-container {
   display: flex;
+  flex-direction: column;
   gap: 10px;
   justify-content: center; /* or 'space-between', 'flex-start' */
-  align-items: center;
+  align-items: left;
   position: fixed;
   top: 12px;
   left: 12px;
