@@ -54,7 +54,7 @@ def check_for_packets():
     if packet is not None:
         rssi = rfm69.last_rssi
         log_message(f"[INFO] Received signal strength: {rssi} dBm")
-        csv_handler.cmdbits(encoding.encode_to_bytes(36,rssi))
+        csv_handler.cmd_bits(encoding.encode_to_bytes(36,rssi))
         log_message(f"[INFO] Raw packet bytes: {packet}")
 
         try:
