@@ -111,8 +111,8 @@ def listen_for_keys(stdscr):
 
         if key == ord('r'):
             try:
-                value = random.uniform(0,420)
-                index = random.uniform(0,30)
+                value = random.randint(0,420)
+                index = random.randint(0,30)
                 log_message(f"[INFO] Trying to send packet with value {value} on index {index}.")
                 b = encoding.encode_to_bytes(index,value)
                 rfm69_utils.send_byte_packet(b)
