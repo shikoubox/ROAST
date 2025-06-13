@@ -16,13 +16,17 @@ body {
 /* ============================
    2. THEME TOGGLE BUTTON
    ============================ */
-.theme-toggle-container {
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: center; /* or 'space-between', 'flex-start' */
+  align-items: center;
   position: fixed;
   top: 12px;
   left: 12px;
   z-index: 1000;
 }
-.theme-toggle-container button {
+.button-container button {
   background-color: #3b82f6;
   color: #ffffff;
   border: none;
@@ -32,7 +36,7 @@ body {
   cursor: pointer;
   transition: background-color 0.2s, opacity 0.2s;
 }
-.theme-toggle-container button:hover {
+.button-container button:hover {
   opacity: 0.9;
 }
 
@@ -251,10 +255,10 @@ header h1 {
 }
 
 .indicator {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  color: #ffffff;
 }
 .indicator.green {
   background-color: #1f9d55;
@@ -284,19 +288,6 @@ header h1 {
 .brake-status span {
   font-size: 1rem;
 }
-.brake-indicator {
-  padding: 6px 12px;
-  border-radius: 6px;
-  font-weight: bold;
-  color: #ffffff;
-}
-.brake-indicator.released {
-  background-color: #22c55e;
-}
-.brake-indicator.applied {
-  background-color: #dc2626;
-}
-
 .tyre-pressure h3 {
   margin: 0 0 10px 0;
   font-size: 1rem;

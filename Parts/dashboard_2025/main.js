@@ -9,14 +9,16 @@ app.disableHardwareAcceleration();
 let mainWindow = null;
 function createWindow() {
   mainWindow = new BrowserWindow({
-    width: 800,
-    height: 480,
+    width: 1200,
+    height: 870,
+    autoHideMenuBar: true,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       contextIsolation: true,
       nodeIntegration: false
     }
   });
+  mainWindow.setMenuBarVisibility(false);
   mainWindow.loadFile(path.join(__dirname, 'renderer', 'index.html'));
 }
 

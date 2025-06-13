@@ -9,11 +9,12 @@
 </head>
 <body>
   <!-- ==============================================
-       THEME TOGGLE BUTTON (placed at top‐left)
+       BUTTONS (placed at top‐left)
   ============================================== -->
-  <div class="theme-toggle-container">
+  <section class="button-container">
     <button id="theme_toggle">Toggle Theme</button>
-  </div>
+    <button onclick="downloadCSV()">Download CSV</button>
+  </section>
 
   <!-- MAIN DASHBOARD CONTENT -->
   <main class="dashboard">
@@ -80,56 +81,30 @@
       <div class="lights-card">
         <h2>Lights</h2>
         <ul class="lights-list row">
-          <li><span class="indicator green"></span> LF</li>
-          <li><span class="indicator green"></span> RF</li>
-          <li><span class="indicator green"></span> LB</li>
-          <li><span class="indicator green"></span> RB</li>
-          <li><span class="indicator red"></span> BL</li>
+          <li><span class="indicator green">LF   </span></li>
+          <li><span class="indicator green">RF   </span></li>
+          <li><span class="indicator green">LB   </span></li>
+          <li><span class="indicator green">RB   </span></li>
+          <li><span class="indicator red"  >BL   </span></li>
+          <li><span class="indicator red"  >Brake</span></li>
+
         </ul>
         <h2>Peripherals</h2>
         <ul class="peripherals-list row">
-          <li><span class="indicator green"></span> Comms</li>
-          <li><span class="indicator green"></span> Batt Temp</li>
-          <li><span class="indicator green"></span> CAN-bus</li>
-          <li><span class="indicator green"></span> Solar</li>
-          <li><span class="indicator green"></span> Motor</li>
-          <li><span class="indicator green"></span> Cooling</li>
+          <li><span class="indicator green">Comms    </span> </li>
+          <li><span class="indicator green">Batt Temp</span> </li>
+          <li><span class="indicator green">CAN-bus  </span> </li>
+          <li><span class="indicator green">Solar    </span> </li>
+          <li><span class="indicator green">Motor    </span> </li>
+          <li><span class="indicator green">Cooling  </span> </li>
+          <li><span class="indicator green" id="dBm">-15 dBm</span> </li>
         </ul>
       </div>
     </section>
   </main>
 
-  <!-- BOTTOM SECTION: Brake Status, Tyre Pressure, Modules, Download -->
+  <!-- BOTTOM SECTION: Tyre Pressure, Battery Modules-->
   <section class="bottom-section">
-    <!-- Brake Status & Tyre Pressure -->
-    <div class="status-row">
-      <div class="brake-status">
-        <span>Brake:</span>
-        <span class="brake-indicator released" id="brake-status">Released</span>
-      </div>
-      <div class="tyre-pressure">
-        <h3>Tyre Pressure</h3>
-        <div class="tyre-grid">
-          <div class="tyre-item">
-            <span class="tyre-label">LF</span>
-            <span class="tyre-value" id="tyre_lf">36.0 PSI</span>
-          </div>
-          <div class="tyre-item">
-            <span class="tyre-label">RF</span>
-            <span class="tyre-value" id="tyre_rf">36.0 PSI</span>
-          </div>
-          <div class="tyre-item">
-            <span class="tyre-label">LR</span>
-            <span class="tyre-value" id="tyre_lr">35.1 PSI</span>
-          </div>
-          <div class="tyre-item">
-            <span class="tyre-label">RR</span>
-            <span class="tyre-value" id="tyre_rr">34.9 PSI</span>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <!-- MODULES ROW: Module 1, Module 2, 12V Battery -->
     <div class="modules-row">
       <!-- MODULE 1 CARD -->
@@ -371,12 +346,30 @@
         </div>
       </div>
     </div>
-
-
-    <!-- DOWNLOAD BUTTON -->
-    <div class="download-card">
-      <button onclick="downloadCSV()">Download CSV</button>
-    </div>
+    <!-- Brake Status & Tyre Pressure -->
+   <div class="module-card status-row">
+      <div class="tyre-pressure">
+        <h3>Tyre Pressure</h3>
+        <div class="tyre-grid">
+          <div class="tyre-item">
+            <span class="tyre-label">LF</span>
+            <span class="tyre-value" id="tyre_lf">36.0 PSI</span>
+          </div>
+          <div class="tyre-item">
+            <span class="tyre-label">RF</span>
+            <span class="tyre-value" id="tyre_rf">36.0 PSI</span>
+          </div>
+          <div class="tyre-item">
+            <span class="tyre-label">LR</span>
+            <span class="tyre-value" id="tyre_lr">35.1 PSI</span>
+          </div>
+          <div class="tyre-item">
+            <span class="tyre-label">RR</span>
+            <span class="tyre-value" id="tyre_rr">34.9 PSI</span>
+          </div>
+        </div>
+      </div>
+  </div>
   </section>
 
   <!-- RENDERER JS + THEME‐TOGGLE LOGIC -->
