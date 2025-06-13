@@ -38,14 +38,13 @@ def main_event_loop(stdscr):
         
         # Check for incoming packets
         try:
-            packet, rssi = rfm69_utils.check_for_packets()
+            packet = rfm69_utils.check_for_packets()
             if packet:
                 log_message(f"[INFO] Main loop got packet: {packet} (len={len(packet)})")
                 if len(packet) == 3:
                     try:
                         time.sleep(1)
                         csv_handler.cmd_bits(packet)
-                        csv_handler.cmd_bits(encoding.encode_to_bytes(36,rssi))
                         log_message("[INFO] Processed 22-bit packet")
                     except Exception as e:
                         log_message(f"[ERROR] Failed in cmd_bits: {e}")

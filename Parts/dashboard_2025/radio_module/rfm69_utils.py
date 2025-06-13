@@ -6,6 +6,7 @@ import adafruit_rfm69
 import graphics
 from graphics import log_message
 import csv_handler
+import encoding
 
 # Optional encryption (MUST match on both)
 # rfm69.encryption_key = b'\x01\x02\x03\x04\x05\x06\x07\x08\x01\x02\x03\x04\x05\x06\x07\x08'
@@ -53,13 +54,14 @@ def check_for_packets():
     if packet is not None:
         rssi = rfm69.last_rssi
         log_message(f"[INFO] Received signal strength: {rssi} dBm")
+        csv_handler.cmdbits(encoding.encode_to_bytes(36,rssi))
         log_message(f"[INFO] Raw packet bytes: {packet}")
 
         try:
             if len(packet) == 3:  # 22-bit = 3 bytes
                 # Treat as binary payload
                 log_message(f"[INFO] Interpreting as 22-bit binary payload")
-                return packet, rssi
+                return packet
 
             else:
                 # Try decoding as string
