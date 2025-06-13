@@ -35,7 +35,7 @@ def initialise():
         graphics.update_rfmdata_baudrate(BAUD_RATE)
         return rfm69
     except AttributeError as error:
-        log_message("[ERROR] board not loaded properly: {error}")
+        log_message(f"[ERROR] board not loaded properly: {error}")
     except RuntimeError as error:
         log_message("[ERROR] RFM69")
         log_message(f"[ERROR]: {error}")
@@ -54,7 +54,7 @@ def check_for_packets():
     if packet is not None:
         rssi = rfm69.last_rssi
         log_message(f"[INFO] Received signal strength: {rssi} dBm")
-        csv_handler.cmd_bits(encoding.encode_to_bytes(36,rssi))
+        csv_handler.cmd_bits(encoding.encode_to_bytes(34,rssi))
         log_message(f"[INFO] Raw packet bytes: {packet}")
 
         try:

@@ -115,9 +115,7 @@ def cmd_bits(bitstr):
             raise Exception("ERROR: cannot bit-update without existing header")
         headers = rows[0]
         if idx < 0 or idx >= len(headers):
-            print(f"ERROR: index {idx} out of range (0–{len(headers)-1})", file=sys.stderr)
-            log_message(f"[ERROR] Index {idx} out of range (0-{len(headers)-1})")
-            raise Exception("ERROR: index {idx} out of range (0–{len(headers)-1})")
+            raise Exception(f"index {idx} out of range (0–{len(headers)-1})")
         key = headers[idx]
         cmd_update({ key: str(val) })
     except Exception as e:
