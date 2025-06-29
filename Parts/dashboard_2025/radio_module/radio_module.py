@@ -7,8 +7,6 @@ import sys
 import random
 import encoding
 import curses
-import graphics 
-#from graphics import log_message
 import threading
 import csv_handler
 import rfm69_utils
@@ -176,12 +174,13 @@ if __name__ == "__main__":
     else:
         cmd = sys.argv[1]
         if cmd == "tui":
+            import graphics
+            from graphics import log_message
             key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
             key_listener_thread.start()
             # Wait for the key listener thread to finish
             key_listener_thread.join()
             curses.wrapper(main_event_loop) # Run the curses main event loop
-            from graphics import log_message
         elif cmd == "v":
             verbose = True
             main_loop()

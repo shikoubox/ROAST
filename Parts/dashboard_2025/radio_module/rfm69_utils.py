@@ -48,29 +48,30 @@ def check_for_packets(verbose = False):
     packet = rfm69.receive()
     if packet is not None:
         rssi = rfm69.last_rssi
-        if verbose:
-            print(f"[INFO] Received signal strength: {rssi} dBm")
         csv_handler.cmd_bits(encoding.encode_to_bytes(34,rssi))
         if verbose:
+            print(f"[INFO] Received signal strength: {rssi} dBm")
             print(f"[INFO] Raw packet bytes: {packet}")
         try:
             if len(packet) == 3:  # 22-bit = 3 bytes
                 # Treat as binary payload
                 if verbose:
-                    log_message(f"[INFO] Interpreting as 22-bit binary payload")
+                    print(f"[INFO] Interpreting as 22-bit binary payload")
                 return packet, rssi
 
             else:
                 # Try decoding as string
                 try:
                     new_packet = packet.decode("utf-16")
-                    log_message(f"[INFO] Received string: {new_packet}")
+                    if verbose:
+                        print(f"[INFO] Received string: {new_packet}")
                     return new_packet
                 except UnicodeDecodeError:
-                    log_message(f"[WARNING] Failed to decode packet as UTF-16 string")
+                    if verbose:
+                        print(f"[WARNING] Failed to decode packet as UTF-16 string")
 
         except Exception as e:
-            log_message(f"[ERROR] Exception in packet processing: {e}")
+            raise Exception(f"[ERROR] Exception in packet processing: {e}")
     else:
         return None
 
@@ -87,7 +88,7 @@ def send_ACK_packet(packet_data):
             rfm69.send_with_ack()
             rfm69.send(packet_data)
         except Exception as e:
-            log_message(f"[ERROR] Failed to send data: {e}")
+            raise Exception(f"[ERROR] Failed to send data: {e}")
 
 
 
@@ -101,7 +102,7 @@ def send_string_packet(string):
             packet_data = bytes(string,"utf-16")
             rfm69.send(packet_data)
         except Exception as e:
-            log_message(f"[ERROR] Failed to send data: {e}")
+            raise Exception(f"[ERROR] Failed to send data: {e}")
 
 def send_byte_packet(byte_packet):
     global rfm69
@@ -111,5 +112,5 @@ def send_byte_packet(byte_packet):
         try:
             rfm69.send(byte_packet)
         except Exception as e:
-            log_message(f"[ERROR] Failed to send data: {e}")
+            raise Exception(f"[ERROR] Failed to send data: {e}")
 
