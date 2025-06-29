@@ -1,3 +1,5 @@
+#radio_module/graphics.py
+
 import os
 import random
 import curses
@@ -41,8 +43,9 @@ def print_rfmdata():
     rfmdata_win.addstr(16,1, f"{tx_power} dBm")
 
 
-    rfmdata_win.refresh()
 
+    rfmdata_win.refresh()
+\
 def update_rfmdata_baudrate(_baudrate):
     baudrate = _baudrate
     print_rfmdata()

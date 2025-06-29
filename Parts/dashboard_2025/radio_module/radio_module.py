@@ -1,12 +1,14 @@
+# radio_module/radio_module.py
 import time
 import busio
 from digitalio import DigitalInOut, Direction, Pull
 import os
+import sys
 import random
 import encoding
 import curses
 import graphics 
-from graphics import log_message
+#from graphics import log_message
 import threading
 import csv_handler
 import rfm69_utils
@@ -15,8 +17,43 @@ import rfm69_utils
 # global exit flag
 exit_program = False
 rfm69 = None
+verbose = False
 
-# Main loop
+def main_loop():
+    global exit_program
+    global rfm69
+    global verbose
+
+    rfm69 = rfm69_utils.initialise()
+
+    if rfm69 is None:
+        print("[ERROR] Failed to initialize RFM69 module")
+        return
+
+    while not exit_program:
+        packet = None
+        # Check for incoming packets
+        try:
+            packet = rfm69_utils.check_for_packets()
+            if packet:
+                print(f"[INFO] Main loop got packet: {packet} (len={len(packet)})")
+                if len(packet) == 3:
+                    try:
+                        time.sleep(1)
+                        csv_handler.cmd_bits(packet)
+                        print("[INFO] Processed 22-bit packet")
+                    except Exception as e:
+                        print(f"[ERROR] Failed in cmd_bits: {e}")
+                else:
+                    print(f"[INFO] Packet not 3 bytes, skipping processing")
+            elif verbose:
+                print("[Waiting for packet]")
+                time.sleep(0.3)
+        except Exception as e:
+            print(f"[ERROR] Packet handler crash: {e}")
+
+
+# Main curses loop
 def main_event_loop(stdscr):
     global exit_program
     global rfm69
@@ -123,12 +160,33 @@ def listen_for_keys(stdscr):
                 stdscr.addstr(27,0,f"{e}")
 
 
-key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
-key_listener_thread.start()
 
-# Run the main event loop
-curses.wrapper(main_event_loop)
 
-# Wait for the key listener thread to finish
-key_listener_thread.join()
 
+
+def usage():
+    print("Usage:", file=sys.stderr)
+    print("  radio_module.py tui", file=sys.stderr)
+    print("  radio_module.py v", file=sys.stderr)
+
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        usage()
+    else:
+        cmd = sys.argv[1]
+        if cmd == "tui":
+            key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
+            key_listener_thread.start()
+            # Wait for the key listener thread to finish
+            key_listener_thread.join()
+            curses.wrapper(main_event_loop) # Run the curses main event loop
+            from graphics import log_message
+        elif cmd == "v":
+            verbose = True
+            main_loop()
+            print("Not implemented yet", file=sys.stderr)
+        else:
+            main_loop()
+            verbose = False
+            print("Not implemented yet", file=sys.stderr)

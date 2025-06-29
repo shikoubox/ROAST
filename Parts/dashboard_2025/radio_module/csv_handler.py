@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
-# radio_module/CSV_hand.py
+# radio_module/csv_handler.py
 
 import csv
 import os
 import sys
 import re
 import encoding
-from graphics import log_message
 
 # Define the path to the parent folder
 parent_folder = os.path.dirname(os.path.abspath(__file__))  # Gets the directory of the current script
@@ -101,7 +100,7 @@ def cmd_bits(bitstr):
         """Decode a >=16-bit payload: leading bits = index, last 16 bits = value."""
         # at least 16 bits for value
         if len(bitstr) < 16:
-            print("ERROR: bitstring too short (need >=16 bits)", file=sys.stderr)
+            print("[ERROR] bitstring too short (need >=16 bits)", file=sys.stderr)
         val_bits = bitstr[-16:]
         idx_bits = bitstr[:-16] or '0'
         # ensure index bits no more than 6 bits (truncate higher bits)
@@ -110,9 +109,8 @@ def cmd_bits(bitstr):
         val = encoding.decode_float16(int(val_bits, 2))
         rows, _ = _read_rows()
         if rows is None:
-            print("ERROR: cannot bit-update without existing header", file=sys.stderr)
-            log_message("[ERROR] No rows found in CSV!")
-            raise Exception("ERROR: cannot bit-update without existing header")
+            print("[ERROR] cannot bit-update without existing header", file=sys.stderr)
+            raise Exception("[ERROR] cannot bit-update without existing header")
         headers = rows[0]
         if idx < 0 or idx >= len(headers):
             raise Exception(f"index {idx} out of range (0–{len(headers)-1})")
@@ -123,31 +121,17 @@ def cmd_bits(bitstr):
 
 def usage():
     print("Usage:", file=sys.stderr)
-    print("  CSV_hand.py update key1=val1 [key2=val2 ...]", file=sys.stderr)
-    print("  CSV_hand.py log", file=sys.stderr)
-    print("  CSV_hand.py <binary-string>   # >=16 bits: [idx-bits][16-bit value]", file=sys.stderr)
+    print("  csv_handler.py update key1=val1 [key2=val2 ...]", file=sys.stderr)
+    print("  csv_handler.py log", file=sys.stderr)
+    print("  csv_handler.py <binary-string>   # >=16 bits: [idx-bits][16-bit value]", file=sys.stderr)
 
 if __name__ == "__main__":
-    if len(sys.argv)==2 and re.fullmatch(r'[01]+', sys.argv[1]):
-        headers = rows[0]
-        if idx < 0 or idx >= len(headers):
-            print(f"ERROR: index {idx} out of range (0–{len(headers)-1})", file=sys.stderr)
-        key = headers[idx]
-        cmd_update({ key: str(val) })
-
-def usage():
-    print("Usage:", file=sys.stderr)
-    print("  CSV_hand.py update key1=val1 [key2=val2 ...]", file=sys.stderr)
-    print("  CSV_hand.py log", file=sys.stderr)
-    print("  CSV_hand.py <binary-string>   # >=16 bits: [idx-bits][16-bit value]", file=sys.stderr)
-
-if __name__ == "__main__":
-    if len(sys.argv)==2 and re.fullmatch(r'[01]+', sys.argv[1]):
-        cmd_bits(sys.argv[1])
-    elif len(sys.argv) < 2:
+    if len(sys.argv) < 2:
         usage()
     else:
         cmd = sys.argv[1]
+        if re.fullmatch(r'[01]+', cmd):
+            cmd_bits(sys.argv[1])
         if cmd == "update":
             if len(sys.argv) < 3:
                 usage()

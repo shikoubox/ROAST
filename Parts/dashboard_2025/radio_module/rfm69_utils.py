@@ -3,8 +3,6 @@ import busio
 from digitalio import DigitalInOut, Direction, Pull
 import board
 import adafruit_rfm69
-import graphics
-from graphics import log_message
 import csv_handler
 import encoding
 
@@ -31,21 +29,18 @@ def initialise():
         rfm69 = adafruit_rfm69.RFM69(spi, CS, RESET, RADIO_FREQ_MHZ, baudrate=BAUD_RATE, high_power=True)
         rfm69.bitrate = BIT_RATE
 
-        # Update graphics
-        graphics.update_rfmdata_baudrate(BAUD_RATE)
         return rfm69
     except AttributeError as error:
-        log_message(f"[ERROR] board not loaded properly: {error}")
+        raise Exception(f"[ERROR] board not loaded properly: {error}")
     except RuntimeError as error:
-        log_message("[ERROR] RFM69")
-        log_message(f"[ERROR]: {error}")
+        raise Exception(f"[ERROR]: {error}")
         rfm69 = None
         return None
 
 
 
 
-def check_for_packets():
+def check_for_packets(verbose = False):
     global rfm69
     if rfm69 is None:
         raise Exception("[WARNING] Trying to check for packets, without an initalised rfm69")
@@ -53,15 +48,17 @@ def check_for_packets():
     packet = rfm69.receive()
     if packet is not None:
         rssi = rfm69.last_rssi
-        log_message(f"[INFO] Received signal strength: {rssi} dBm")
+        if verbose:
+            print(f"[INFO] Received signal strength: {rssi} dBm")
         csv_handler.cmd_bits(encoding.encode_to_bytes(34,rssi))
-        log_message(f"[INFO] Raw packet bytes: {packet}")
-
+        if verbose:
+            print(f"[INFO] Raw packet bytes: {packet}")
         try:
             if len(packet) == 3:  # 22-bit = 3 bytes
                 # Treat as binary payload
-                log_message(f"[INFO] Interpreting as 22-bit binary payload")
-                return packet
+                if verbose:
+                    log_message(f"[INFO] Interpreting as 22-bit binary payload")
+                return packet, rssi
 
             else:
                 # Try decoding as string
@@ -76,6 +73,23 @@ def check_for_packets():
             log_message(f"[ERROR] Exception in packet processing: {e}")
     else:
         return None
+
+
+def send_ACK_packet(packet_data):
+    global rfm69
+    if rfm69 is None:
+        raise Exception("[WARNING] Trying to check for packets, without an initalised rfm69")
+    else: 
+        try:
+            ack_delay
+            ack_retries
+            ack_wait
+            rfm69.send_with_ack()
+            rfm69.send(packet_data)
+        except Exception as e:
+            log_message(f"[ERROR] Failed to send data: {e}")
+
+
 
 
 def send_string_packet(string):
