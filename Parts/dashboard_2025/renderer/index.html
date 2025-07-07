@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solar Vehicle Telemetry Dashboard</title>
   <!-- Adjust the href if your styles.css lives somewhere else -->
-  <link rel="stylesheet" href="../styles.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- ==============================================
@@ -114,7 +114,11 @@
         <div class="module-progress">
           <span class="module-percent" id="module1_percent">80.0 %</span>
           <div class="progress-bar">
-            <div class="progress-fill" style="width: 80%;"></div>
+            <div
+              class="progress-fill"
+              style="width: 80%;"
+              id="m1-bar"
+            ></div>
           </div>
           <span class="module-voltage" id="module1_voltage">V: 16.21 V</span>
         </div>
@@ -228,7 +232,11 @@
         <div class="module-progress">
           <span class="module-percent" id="module2_percent">77.0 %</span>
           <div class="progress-bar">
-            <div class="progress-fill" style="width: 77%;"></div>
+            <div
+              class="progress-fill"
+              style="width: 77%;"
+              id="m2-bar"
+            ></div>
           </div>
           <span class="module-voltage" id="module2_voltage">V: 16.10 V</span>
         </div>

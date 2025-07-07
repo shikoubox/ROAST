@@ -28,6 +28,8 @@ ipcMain.on('log-to-console', (event, message) => {
   console.log(message);
 });
 
+let previousParsed = {};
+
 app.whenReady().then(() => {
   createWindow();
 
@@ -69,9 +71,30 @@ app.whenReady().then(() => {
         parsed[h] = values[i] ?? '';
       });
 
-      if (mainWindow && mainWindow.webContents) {
+      // Compare the new parsed data with the previous data
+      const changes = {};
+      let hasChanges = false;
+
+
+      for (const key in parsed) {
+        if (parsed[key] !== previousParsed[key]) {
+          changes[key] = parsed[key];
+          hasChanges = true;
+        }
+      }
+
+      if (hasChanges && mainWindow && mainWindow.webContents) {
         mainWindow.webContents.send('csv-data', parsed);
       }
+
+      // If there are changes, send only the changed pairs
+      //if (hasChanges && mainWindow && mainWindow.webContents) {
+      //  mainWindow.webContents.send('csv-data', changes);
+      //}
+      // NOT IMPLEMENTED IN RENDERER.JS, thus leave ito ut for now.
+
+
+      previousParsed = parsed;
     });
   }, 200);
 });

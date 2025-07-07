@@ -3,7 +3,7 @@
 // and updates every piece of the dashboard, including:
 //  • Temperature bar height & readouts
 //  • Speed, Motor Usage, Total Wh, Distance, Solar, etc.
-//  • Eight per‐module cell bars (0–5 V → width%)
+//  • Eight per‐module cell bars (0–5 V → height%)
 //  • Brake status, tyre pressures, module state, etc.
 
 // 1) Toggle theme and Download CSV functions (you can keep or remove if not used)
@@ -77,44 +77,30 @@ window.electronAPI.onCSVData((data) => {
   const m1Voltage = parseFloat(data.module1_voltage || "0");
   document.getElementById("module1_percent").textContent = `${m1Percent.toFixed(1)} %`;
   document.getElementById("module1_voltage").textContent = `V: ${m1Voltage.toFixed(2)} V`;
-  document.querySelector("#m1c1-bar").style.width = `${clamp((parseFloat(data.m1c1 || "0") / 5) * 100, 0, 100)}%`;
-  document.getElementById("m1c1").textContent = `${parseFloat(data.m1c1 || "0").toFixed(3)} V`;
-  document.querySelector("#m1c2-bar").style.width = `${clamp((parseFloat(data.m1c2 || "0") / 5) * 100, 0, 100)}%`;
-  document.getElementById("m1c2").textContent = `${parseFloat(data.m1c2 || "0").toFixed(3)} V`;
-  document.querySelector("#m1c3-bar").style.width = `${clamp((parseFloat(data.m1c3 || "0") / 5) * 100, 0, 100)}%`;
-  document.getElementById("m1c3").textContent = `${parseFloat(data.m1c3 || "0").toFixed(3)} V`;
-  document.querySelector("#m1c4-bar").style.width = `${clamp((parseFloat(data.m1c4 || "0") / 5) * 100, 0, 100)}%`;
-  document.getElementById("m1c4").textContent = `${parseFloat(data.m1c4 || "0").toFixed(3)} V`;
-  document.querySelector("#m1c5-bar").style.width = `${clamp((parseFloat(data.m1c5 || "0") / 5) * 100, 0, 100)}%`;
-  document.getElementById("m1c5").textContent = `${parseFloat(data.m1c5 || "0").toFixed(3)} V`;
-  document.querySelector("#m1c6-bar").style.width = `${clamp((parseFloat(data.m1c6 || "0") / 5) * 100, 0, 100)}%`;
-  document.getElementById("m1c6").textContent = `${parseFloat(data.m1c6 || "0").toFixed(3)} V`;
-  document.querySelector("#m1c7-bar").style.width = `${clamp((parseFloat(data.m1c7 || "0") / 5) * 100, 0, 100)}%`;
-  document.getElementById("m1c7").textContent = `${parseFloat(data.m1c7 || "0").toFixed(3)} V`;
-  document.querySelector("#m1c8-bar").style.width = `${clamp((parseFloat(data.m1c8 || "0") / 5) * 100, 0, 100)}%`;
-  document.getElementById("m1c8").textContent = `${parseFloat(data.m1c8 || "0").toFixed(3)} V`;
+  document.querySelector("#m1-bar").style.width    = `${clamp(parseFloat(m1Percent || "0"), 0, 100)}%`;
+  updateCellBar("#m1c1-bar", "m1c1", data.m1c1);
+  updateCellBar("#m1c2-bar", "m1c2", data.m1c2);
+  updateCellBar("#m1c3-bar", "m1c3", data.m1c3);
+  updateCellBar("#m1c4-bar", "m1c4", data.m1c4);
+  updateCellBar("#m1c5-bar", "m1c5", data.m1c5);
+  updateCellBar("#m1c6-bar", "m1c6", data.m1c6);
+  updateCellBar("#m1c7-bar", "m1c7", data.m1c7);
+  updateCellBar("#m1c8-bar", "m1c8", data.m1c8);
 
   // 3.7 MODULE 2: Percent, Voltage, and 8 Cell Bars
   const m2Percent = clamp(parseFloat(data.module2_percent || "0"), 0, 100);
   const m2Voltage = parseFloat(data.module2_voltage || "0");
   document.getElementById("module2_percent").textContent = `${m2Percent.toFixed(1)} %`;
   document.getElementById("module2_voltage").textContent = `V: ${m2Voltage.toFixed(2)} V`;
-  document.querySelector("#m2c1-bar").style.width = `${clamp((parseFloat(data.m2c1 || "0") / 5) * 100, 0, 100)}%`;
-  document.getElementById("m2c1").textContent = `${parseFloat(data.m2c1 || "0").toFixed(3)} V`;
-  document.querySelector("#m2c2-bar").style.width = `${clamp((parseFloat(data.m2c2 || "0") / 5) * 100, 0, 100)}%`;
-  document.getElementById("m2c2").textContent = `${parseFloat(data.m2c2 || "0").toFixed(3)} V`;
-  document.querySelector("#m2c3-bar").style.width = `${clamp((parseFloat(data.m2c3 || "0") / 5) * 100, 0, 100)}%`;
-  document.getElementById("m2c3").textContent = `${parseFloat(data.m2c3 || "0").toFixed(3)} V`;
-  document.querySelector("#m2c4-bar").style.width = `${clamp((parseFloat(data.m2c4 || "0") / 5) * 100, 0, 100)}%`;
-  document.getElementById("m2c4").textContent = `${parseFloat(data.m2c4 || "0").toFixed(3)} V`;
-  document.querySelector("#m2c5-bar").style.width = `${clamp((parseFloat(data.m2c5 || "0") / 5) * 100, 0, 100)}%`;
-  document.getElementById("m2c5").textContent = `${parseFloat(data.m2c5 || "0").toFixed(3)} V`;
-  document.querySelector("#m2c6-bar").style.width = `${clamp((parseFloat(data.m2c6 || "0") / 5) * 100, 0, 100)}%`;
-  document.getElementById("m2c6").textContent = `${parseFloat(data.m2c6 || "0").toFixed(3)} V`;
-  document.querySelector("#m2c7-bar").style.width = `${clamp((parseFloat(data.m2c7 || "0") / 5) * 100, 0, 100)}%`;
-  document.getElementById("m2c7").textContent = `${parseFloat(data.m2c7 || "0").toFixed(3)} V`;
-  document.querySelector("#m2c8-bar").style.width = `${clamp((parseFloat(data.m2c8 || "0") / 5) * 100, 0, 100)}%`;
-  document.getElementById("m2c8").textContent = `${parseFloat(data.m2c8 || "0").toFixed(3)} V`;
+  document.querySelector("#m2-bar").style.width    = `${clamp(parseFloat(m2Percent || "0"), 0, 100)}%`;
+  updateCellBar("#m2c1-bar", "m2c1", data.m2c1);
+  updateCellBar("#m2c2-bar", "m2c2", data.m2c2);
+  updateCellBar("#m2c3-bar", "m2c3", data.m2c3);
+  updateCellBar("#m2c4-bar", "m2c4", data.m2c4);
+  updateCellBar("#m2c5-bar", "m2c5", data.m2c5);
+  updateCellBar("#m2c6-bar", "m2c6", data.m2c6);
+  updateCellBar("#m2c7-bar", "m2c7", data.m2c7);
+  updateCellBar("#m2c8-bar", "m2c8", data.m2c8);
 
 
   // 3.8 12V BATTERY: Percent & Voltage
@@ -123,3 +109,20 @@ window.electronAPI.onCSVData((data) => {
   document.getElementById("battery_percent").textContent = `${battPercent.toFixed(1)} %`;
   document.getElementById("battery_voltage").textContent = `V: ${battVoltage.toFixed(2)} V`;
 });
+
+function updateCellBar(barSelector, voltageId, voltageData) {
+  const cellPercent = clamp((parseFloat(voltageData || "0") / 5) * 100, 0, 100);
+  document.querySelector(barSelector).style.height = `${cellPercent}%`;
+
+  // Change background color based on height
+  if (cellPercent < 81 && cellPercent > 63) {
+    document.querySelector(barSelector).style.backgroundColor = '#22c55e'; // Green
+  } else if (cellPercent >= 59 && cellPercent < 85) {
+
+    document.querySelector(barSelector).style.backgroundColor = '#f59e0b'; // Yellow
+  } else {
+    document.querySelector(barSelector).style.backgroundColor = '#ef4444'; // Red
+  }
+  document.getElementById(voltageId).textContent = `${parseFloat(voltageData || "0").toFixed(3)} V`;
+}
+

@@ -10,17 +10,16 @@ import curses
 import threading
 import csv_handler
 import rfm69_utils
+import argparse
 
 
 # global exit flag
 exit_program = False
 rfm69 = None
-verbose = False
 
-def main_loop():
+def main_loop(verbose = False):
     global exit_program
     global rfm69
-    global verbose
 
     rfm69 = rfm69_utils.initialise()
 
@@ -158,22 +157,22 @@ def listen_for_keys(stdscr):
                 stdscr.addstr(27,0,f"{e}")
 
 
-
-
-
-
-def usage():
-    print("Usage:", file=sys.stderr)
-    print("  radio_module.py tui", file=sys.stderr)
-    print("  radio_module.py v", file=sys.stderr)
-
-
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        usage()
-    else:
-        cmd = sys.argv[1]
-        if cmd == "tui":
+    parser = argparse.ArgumentParser(description="Radio Module CLI")
+    parser.add_argument('-v', '--version', action='version', version='%(prog)s 1.0', help='show the version of the program')
+    #parser.add_argument('-h', '--help', action='store_true', help='Show this help message and exit')
+    parser.add_argument('-V', '--verbose', action='store_true', help='run the program verbose')
+    parser.add_argument('-t', '--tui', action='store_true', help='run program with terminal interface')
+
+    # Parse the arguments
+    args, unknown = parser.parse_known_args()
+
+    # Handle unknown commands
+    if unknown:
+        print(f"Unknown command: {' '.join(unknown)}", file=sys.stderr)
+        sys.exit(1)
+
+    if args.tui:
             import graphics
             from graphics import log_message
             key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
@@ -181,11 +180,9 @@ if __name__ == "__main__":
             # Wait for the key listener thread to finish
             key_listener_thread.join()
             curses.wrapper(main_event_loop) # Run the curses main event loop
-        elif cmd == "v":
+    elif args.verbose:
             verbose = True
-            main_loop()
-            print("Not implemented yet", file=sys.stderr)
-        else:
-            main_loop()
-            verbose = False
-            print("Not implemented yet", file=sys.stderr)
+            main_loop(verbose)
+    else:
+            main_loop(False)
+            
