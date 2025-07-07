@@ -11,6 +11,8 @@ import threading
 import csv_handler
 import rfm69_utils
 import argparse
+import graphics
+from graphics import log_message
 
 
 # global exit flag
@@ -122,6 +124,9 @@ def listen_for_keys(stdscr):
                 message, index = encoding.bytes_to_message(b)
                 log_message(f"{index}: {message} / {encoding.decode_float16(message)}")
                 csv_handler.cmd_bits(b)
+                value = random.randint(0,420)
+                index = random.randint(1,4)
+                csv_handler.cmd_bits(encoding.encode_to_bytes(index, value))
             except Exception as e:
                 log_message(f"{e}")
             
@@ -173,8 +178,6 @@ if __name__ == "__main__":
         sys.exit(1)
 
     if args.tui:
-            import graphics
-            from graphics import log_message
             key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
             key_listener_thread.start()
             # Wait for the key listener thread to finish
