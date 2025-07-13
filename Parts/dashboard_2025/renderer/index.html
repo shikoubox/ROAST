@@ -5,25 +5,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Solar Vehicle Telemetry Dashboard</title>
-  <!-- Adjust the href if your styles.css lives somewhere else -->
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- ==============================================
-       BUTTONS (placed at top‐left)
-  ============================================== -->
+  <!-- Buttons -->
   <section class="button-container">
     <button id="theme_toggle">Toggle Theme</button>
     <button onclick="downloadCSV()">Download CSV</button>
   </section>
 
-  <!-- MAIN DASHBOARD CONTENT -->
+  <!-- Main dashboard content -->
   <main class="dashboard">
-    <!-- LEFT COLUMN: Module Temperature -->
+  <!-- Left column: Module temperature -->
     <section class="module-temp">
       <div class="temp-bar-container">
         <div class="temp-bar">
-          <!-- inline height=40% is just an example; JS will update this -->
           <div class="temp-fill" style="height: 40%;"></div>
         </div>
       </div>
@@ -34,24 +30,24 @@
       </div>
     </section>
 
-    <!-- CENTER COLUMN: Motor Usage / Speed / Total Wh -->
+    <!-- Center column: Motor usage / Speed / Total Wh -->
     <section class="core-stats">
       <div class="stats-row">
-        <!-- Motor Usage (half‐size number) -->
+        <!-- Motor Usage -->
         <div class="motor-usage">
           <span class="label">Motor Usage</span>
           <span class="value" id="motor_usage">0</span>
           <span class="unit">W</span>
         </div>
 
-        <!-- Speed (extra‐large number) -->
+        <!-- Speed -->
         <div class="speed-display">
           <span class="label">Speed</span>
           <span class="value" id="speed">0</span>
           <span class="unit">km/h</span>
         </div>
 
-        <!-- Total power (half‐size number) -->
+        <!-- Total power -->
         <div class="wh-total">
           <span class="label">Total power</span>
           <span class="value" id="wh_total">240</span>
@@ -59,7 +55,7 @@
         </div>
       </div>
 
-      <!-- SUMMARY CARD: Distance Traveled & Solar Output -->
+      <!-- Distance traveled and solar output -->
       <div class="summary-card">
         <div class="summary-left">
           <div class="distance-traveled">
@@ -77,7 +73,7 @@
       </div>
     </section>
 
-    <!-- RIGHT COLUMN: Lights & Peripherals -->
+    <!-- Right column: Lights  and peripherals -->
     <section class="lights-peripherals">
       <div class="lights-card">
         <h2>Lights</h2>
@@ -104,11 +100,11 @@
     </section>
   </main>
 
-  <!-- BOTTOM SECTION: Tyre Pressure, Battery Modules-->
+  <!-- Bottom section: Tyre pressure and battery modules -->
   <section class="bottom-section">
-    <!-- MODULES ROW: Module 1, Module 2, 12V Battery -->
+    <!-- Modules row: Module one, Module two, 12V battery -->
     <div class="modules-row">
-      <!-- MODULE 1 CARD -->
+      <!-- Module one -->
       <div class="module-card">
         <h3>Module 1</h3>
         <div class="module-progress">
@@ -123,7 +119,7 @@
           <span class="module-voltage" id="module1_voltage">V: 16.21 V</span>
         </div>
 
-        <!-- SINGLE WRAPPER FOR ALL 8 CELLS -->
+        <!-- Wrapper for all 8 cells in module one -->
         <div class="cells-wrapper">
           <div class="cells-grid">
             <!-- Cell 1 -->
@@ -226,7 +222,7 @@
         </div>
       </div>
 
-      <!-- MODULE 2 CARD: same pattern, just different IDs -->
+      <!-- Module two -->
       <div class="module-card">
         <h3>Module 2</h3>
         <div class="module-progress">
@@ -241,6 +237,7 @@
           <span class="module-voltage" id="module2_voltage">V: 16.10 V</span>
         </div>
 
+        <!-- Wrapper for all 8 cells in module two -->
         <div class="cells-wrapper">
           <div class="cells-grid">
             <!-- Cell 1 -->
@@ -343,7 +340,7 @@
         </div>
       </div>
 
-      <!-- 12V BATTERY CARD -->
+      <!-- 12 V battery -->
       <div class="module-card battery-card">
         <h3>12V Battery</h3>
         <div class="module-progress">
@@ -355,7 +352,7 @@
         </div>
       </div>
     </div>
-    <!-- Brake Status & Tyre Pressure -->
+    <!-- Brake status and tyre pressure -->
    <div class="module-card status-row">
       <div class="tyre-pressure">
         <h3>Tyre Pressure</h3>
