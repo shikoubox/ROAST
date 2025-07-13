@@ -23,7 +23,7 @@ def print_rfmdata():
     curses.curs_set(0)  # Hide cursor
 
     start_y, start_x = 1, width+1  # Console window position
-    
+
     rfmdata_win = curses.newwin(height+4-start_y, 22, start_y, start_x)
 
     rfmdata_win.clear()
@@ -62,7 +62,7 @@ def print_header():
     curses.curs_set(0)  # Hide cursor
 
     start_y, start_x = 1, 0  # Console window position
-    
+
     header_win = curses.newwin(3, width, start_y, start_x)
 
     header_win.clear()
@@ -76,10 +76,10 @@ def print_console():
     curses.curs_set(0)  # Hide cursor
 
     start_y, start_x = 4, 0  # Console window position
-    
+
     console_win = curses.newwin(height, width, start_y, start_x)
 
-    
+
     # console_win.clear()
     # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
     console_win.border(v, v, h, h, c, c, c, c)
@@ -88,7 +88,7 @@ def print_console():
         console_win.addstr(i + 1, 2, msg)  # +1 and +2 to not write over the border
 
     console_win.refresh()
-    
+
 def log_message(msg):
     if len(messages) >= height-2:
         messages.pop(0)  # Remove oldest
@@ -97,11 +97,8 @@ def log_message(msg):
 '''
 key_listener_thread = threading.Thread(target=curses.wrapper, args=(listen_for_keys,))
 key_listener_thread.start()
-
 # Run the main event loop
 curses.wrapper(main_event_loop)
-
 # Wait for the key listener thread to finish
 key_listener_thread.join()
-
 '''

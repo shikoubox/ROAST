@@ -2,8 +2,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const fs   = require('fs');
-const { execFile } = require('child_process');  // ← add this
-
+const { execFile } = require('child_process');
 app.disableHardwareAcceleration();
 
 
@@ -24,6 +23,7 @@ function createWindow() {
   mainWindow.loadFile(path.join(__dirname, 'renderer', 'index.html'));
 }
 
+
 ipcMain.on('log-to-console', (event, message) => {
   console.log(message);
 });
@@ -33,7 +33,7 @@ let previousParsed = {};
 app.whenReady().then(() => {
   createWindow();
 
-  // Every 10 seconds, append a snapshot row:
+  // Every 10 seconds, make a snapshot of the second row:
   setInterval(() => {
     execFile('python', [path.join(__dirname, 'radio_module', 'csv_handler.py'), 'log'], (err, stdout, stderr) => {
       if (err) {
@@ -42,9 +42,9 @@ app.whenReady().then(() => {
         console.log('Logged snapshot:', stdout.trim());
       }
     });
-  }, 10_000);  // ← 10 000 ms = 10 s
+  }, 10_000);  // 10.000 ms = 10 s
 
-  // Every 200 ms, re-read the “latest” line (line 2) from data.csv
+  // Every 200 ms, re-read the latest second row from data.csv
   setInterval(() => {
     const csvPath = path.join(__dirname, 'data', 'data.csv');
     fs.readFile(csvPath, null, (err, buffer) => {
@@ -86,19 +86,12 @@ app.whenReady().then(() => {
       if (hasChanges && mainWindow && mainWindow.webContents) {
         mainWindow.webContents.send('csv-data', parsed);
       }
-
       // If there are changes, send only the changed pairs
-      //if (hasChanges && mainWindow && mainWindow.webContents) {
-      //  mainWindow.webContents.send('csv-data', changes);
-      //}
-      // NOT IMPLEMENTED IN RENDERER.JS, thus leave ito ut for now.
-
 
       previousParsed = parsed;
     });
   }, 200);
 });
-
 
 app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {

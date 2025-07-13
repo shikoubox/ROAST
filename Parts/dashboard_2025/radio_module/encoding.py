@@ -7,7 +7,7 @@ def encode_to_bytes(_index, _value):
         index = _index & ((1<<6)-1)
     else:
         raise Exception("[ERROR] 6-bit value must be between 0 and 63")
-    
+
     value = encode_float16(_value)
 
     if not (0 <= value < 65536):
@@ -68,7 +68,7 @@ def decode_float16(half_float):
     elif exponent == 31:
         # Inf or NaN
         return float('inf') if mantissa == 0 else float('nan')
-    
+
     # Normalized numbers
     exponent -= 15  # Adjust the exponent (bias of 15)
     value = (1 + mantissa / (1 << 10)) * (2 ** exponent)
@@ -82,5 +82,5 @@ def bytes_to_message(msg):
     return message, index
 
 def encode_to_message():
-    
+
     return False
