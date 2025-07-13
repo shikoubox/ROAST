@@ -6,7 +6,7 @@ import adafruit_rfm69
 import csv_handler
 import encoding
 
-# Optional encryption (MUST match on both)
+# Optional 16 byte long string, AES encryption key. That must match on both transmitter and receiver.
 # rfm69.encryption_key = b'\x01\x02\x03\x04\x05\x06\x07\x08\x01\x02\x03\x04\x05\x06\x07\x08'
 
 rfm69 = None
@@ -37,9 +37,8 @@ def initialise():
         rfm69 = None
         return None
 
-
-
-
+# Tries to receive packet until receive_timeout has elapsed
+# If a packet is found, RSSI and payload bytes are returned, otherwise None.
 def check_for_packets(verbose = False):
     global rfm69
     if rfm69 is None:
@@ -53,12 +52,11 @@ def check_for_packets(verbose = False):
             print(f"[INFO] Received signal strength: {rssi} dBm")
             print(f"[INFO] Raw packet bytes: {packet}")
         try:
-            if len(packet) == 3:  # 22-bit = 3 bytes
+            if len(packet) == 3:  # 24-bits = 3 bytes
                 # Treat as binary payload
                 if verbose:
-                    print(f"[INFO] Interpreting as 22-bit binary payload")
+                    print(f"[INFO] Interpreting as 24-bit binary payload")
                 return packet, rssi
-
             else:
                 # Try decoding as string
                 try:
@@ -75,25 +73,26 @@ def check_for_packets(verbose = False):
     else:
         return None
 
+# Sends packet and waits for ACK from receiver, retries on failure
+#############################################3
 
-def send_ACK_packet(packet_data):
-    global rfm69
-    if rfm69 is None:
-        raise Exception("[WARNING] Trying to check for packets, without an initalised rfm69")
-    else: 
-        try:
-            ack_delay
-            ack_retries
-            ack_wait
-            rfm69.send_with_ack()
-            rfm69.send(packet_data)
-        except Exception as e:
-            raise Exception(f"[ERROR] Failed to send data: {e}")
+#def send_ACK_packet(packet_data):
+#    global rfm69
+#    if rfm69 is None:
+#        raise Exception("[WARNING] Trying to check for packets, without an initalised RFM69 module")
+#    else: 
+#        try:
+#            ack_delay
+#            ack_retries
+#            ack_wait
+#            rfm69.send_with_ack()
+#            rfm69.send(packet_data)
+#        except Exception as e:
+#            raise Exception(f"[ERROR] Failed to send data: {e}")
 
 
 
-
-def send_string_packet(string):
+def send_string_packet(string)
     global rfm69
     if rfm69 is None:
         raise Exception("[WARNING] Trying to check for packets, without an initalised rfm69")
