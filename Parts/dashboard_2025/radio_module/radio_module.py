@@ -19,6 +19,9 @@ from graphics import log_message
 exit_program = False
 rfm69 = None
 
+
+# Non-Verbose main loop
+##########################
 def main_loop(verbose = False):
     global exit_program
     global rfm69
@@ -52,7 +55,8 @@ def main_loop(verbose = False):
             print(f"[ERROR] Packet handler crash: {e}")
 
 
-# Main curses loop
+# TUI curses main loop
+#####################
 def main_event_loop(stdscr):
     global exit_program
     global rfm69
@@ -63,7 +67,6 @@ def main_event_loop(stdscr):
     if rfm69 is None:
         log_message("[ERROR] Failed to initialize RFM69 module")
         return
-
 
     graphics.update_rfmdata(rfm69)
 
@@ -96,7 +99,8 @@ def main_event_loop(stdscr):
 
         stdscr.refresh()
 
-
+# Input thread for TUI mode.
+#####################
 def listen_for_keys(stdscr):
     global exit_program
     curses.cbreak()  # Enable cbreak mode
@@ -125,7 +129,7 @@ def listen_for_keys(stdscr):
                 log_message(f"{index}: {message} / {encoding.decode_float16(message)}")
                 csv_handler.cmd_bits(b)
                 value = random.randint(0,420)
-                index = random.randint(1,4)
+                index = random.randint(2,6)
                 csv_handler.cmd_bits(encoding.encode_to_bytes(index, value))
             except Exception as e:
                 log_message(f"{e}")
@@ -161,7 +165,8 @@ def listen_for_keys(stdscr):
                 log_message(f"[ERROR] Failed to send test data: {e}")
                 stdscr.addstr(27,0,f"{e}")
 
-
+# Parser for running program
+####################
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Radio Module CLI")
     parser.add_argument('-v', '--version', action='version', version='%(prog)s 1.0', help='show the version of the program')
