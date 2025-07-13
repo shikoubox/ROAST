@@ -18,6 +18,8 @@ baudrate = 0
 frequency_deviation = 0
 tx_power = 0
 
+# Prints configuration of RF-module, in a side window.
+##############################
 def print_rfmdata():
     global rfm69
     curses.curs_set(0)  # Hide cursor
@@ -45,7 +47,9 @@ def print_rfmdata():
 
 
     rfmdata_win.refresh()
-\
+
+# Update baudrate for 
+#################3
 def update_rfmdata_baudrate(_baudrate):
     baudrate = _baudrate
     print_rfmdata()
