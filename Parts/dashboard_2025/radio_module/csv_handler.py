@@ -19,9 +19,8 @@ data_file = 'data.csv'    # Replace with your data file name
 CSV_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'data.csv')
 
 
-
 def _read_rows():
-    """Return (rows, encoding). If file missing, return (None, 'utf-16')."""
+    # Return (rows, encoding). If file missing, return (None, 'utf-16').
     if not os.path.exists(CSV_PATH):
         return None, 'utf-16'
     raw = open(CSV_PATH, 'rb').read()
@@ -41,13 +40,13 @@ def _read_rows():
     return rows, encoding
 
 def _write_rows(rows, encoding):
-    """Overwrite CSV_PATH in given encoding (utf-16 emits BOM)."""
+    # Overwrite CSV_PATH in given encoding (utf-16 emits BOM)
     with open(CSV_PATH, 'w', encoding=encoding, newline='') as f:
         writer = csv.writer(f)
         writer.writerows(rows)
 
 def cmd_update(pairs):
-    """Update only the first data row (row 1)."""
+    # Update only the first data row (row 1)
     rows, enc = _read_rows()
     if rows is None:
         # new file: header from pairs, then a data row
@@ -65,10 +64,7 @@ def cmd_update(pairs):
     print("data.csv: current row updated", file=sys.stderr)
 
 def cmd_log():
-    """
-    Snapshot row 1 into history (prepend it right under header),
-    preserving all older rows.
-    """
+    # Snapshot row one into history (prepend it right under header), preserving all older rows.
     rows, enc = _read_rows()
     if rows is None or len(rows) < 2:
         print("ERROR: no current row to log", file=sys.stderr)
@@ -97,8 +93,7 @@ def cmd_bits(bitstr):
         if isinstance(bitstr, bytes):
             bitstr = f"{int.from_bytes(bitstr, 'big'):0{len(bitstr)*8}b}"
 
-        """Decode a >=16-bit payload: leading bits = index, last 16 bits = value."""
-        # at least 16 bits for value
+        # Decode a >=16-bit payload: leading bits = index, last 16 bits = value at least 16 bits for value
         if len(bitstr) < 16:
             print("[ERROR] bitstring too short (need >=16 bits)", file=sys.stderr)
         val_bits = bitstr[-16:]

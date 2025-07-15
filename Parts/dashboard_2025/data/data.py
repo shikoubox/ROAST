@@ -7,12 +7,11 @@ import os
 CSV_PATH = os.path.join(os.path.dirname(__file__), "data.csv")
 
 # We keep a simple “counter.txt” file alongside data.csv to remember
-# which value “i” should be on the next run. If no counter file exists,
-# start at 0.
+# which value “i” should be on the next run. If no counter file exists, it starts at 0.
 COUNTER_PATH = os.path.join(os.path.dirname(__file__), "counter.txt")
 
 def read_counter():
-    """Read the integer value of i from counter.txt. If missing, return 0."""
+    # Read the integer value of i from counter.txt. If missing, return 0.
     if not os.path.exists(COUNTER_PATH):
         return 0
     with open(COUNTER_PATH, "r", encoding="utf-8") as f:
@@ -23,17 +22,17 @@ def read_counter():
             return 0
 
 def write_counter(i_value):
-    """Write the integer i_value back to counter.txt."""
+    # Write the integer i_value back to counter.txt.
     with open(COUNTER_PATH, "w", encoding="utf-8") as f:
         f.write(str(i_value))
 
 def prepend_new_row():
-    # 1) Read and increment the counter `i`
+    # Read and increment the counter `i`
     i = read_counter()
     i += 1
     write_counter(i)
 
-    # 2) Build a new‐data dictionary   
+    # Build a new‐data dictionary   
     new_data = {
         "current_temp":     f"3{i}",
         "cooling_temp":     f"4{i}",
@@ -72,7 +71,7 @@ def prepend_new_row():
         "radio_dBm":        f"37{i}",
     }
 
-    # 3) Read the existing CSV file entirely
+    # Read the existing CSV file entirely
     if not os.path.exists(CSV_PATH):
         print(f"Could not find data.csv at {CSV_PATH}")
         return
@@ -85,22 +84,22 @@ def prepend_new_row():
         print("data.csv appears empty or malformed.")
         return
 
-    # 4) The first row is always the header
+    # The first row is the header
     header = all_rows[0]
-    old_rows = all_rows[1:]  # everything after the header
+    old_rows = all_rows[1:]
 
-    # 5) Build the new row in the exact same column order as the header
+    # Build the new row in the exact same column order as the header
     new_row = []
     for col_name in header:
         if col_name in new_data:
             new_row.append(new_data[col_name])
         else:
-            new_row.append("")  # leave blank if missing
+            new_row.append("")  # Anly missing value is left empty
 
-    # 6) Prepend the new row—keeping header on top, then new_row, then old_rows
+    # Prepend the new row—keeping header on top, then new_row, then old_rows
     updated_rows = [header, new_row] + old_rows
 
-    # 7) Overwrite data.csv with the new content:
+    # Overwrite data.csv with the new data
     with open(CSV_PATH, "w", encoding="utf-8", newline="") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerows(updated_rows)
