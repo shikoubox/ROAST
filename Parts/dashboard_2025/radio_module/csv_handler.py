@@ -20,7 +20,7 @@ CSV_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__
 
 
 def _read_rows():
-    # Return (rows, encoding). If file missing, return (None, 'utf-16').
+    # Reads the CSV_PATH and returns a list of rows, or None if the file does not exist.
     if not os.path.exists(CSV_PATH):
         return None, 'utf-16'
     raw = open(CSV_PATH, 'rb').read()
@@ -49,7 +49,7 @@ def cmd_update(pairs):
     # Update only the first data row (row 1)
     rows, enc = _read_rows()
     if rows is None:
-        # new file: header from pairs, then a data row
+        # New file: header from pairs, then a data row
         headers = list(pairs.keys())
         current = [pairs.get(h, '') for h in headers]
         rows = [headers, current]
@@ -93,13 +93,13 @@ def cmd_bits(bitstr):
         if isinstance(bitstr, bytes):
             bitstr = f"{int.from_bytes(bitstr, 'big'):0{len(bitstr)*8}b}"
 
-        # Decode a >=16-bit payload: leading bits = index, last 16 bits = value at least 16 bits for value
+        # The decoder takes 8 leading bits as the index value, and the last 16 or more bits as the value (at least 16 bits for value)
         if len(bitstr) < 16:
             print("[ERROR] bitstring too short (need >=16 bits)", file=sys.stderr)
         val_bits = bitstr[-16:]
         idx_bits = bitstr[:-16] or '0'
-        # ensure index bits no more than 6 bits (truncate higher bits)
-        idx_bits = idx_bits[-6:].rjust(6, '0')
+        # Ensure index bits no more than 8 bits (truncate higher bits)
+        idx_bits = idx_bits[-8:].rjust(8, '0')
         idx = int(idx_bits, 2)
         val = encoding.decode_float16(int(val_bits, 2))
         rows, _ = _read_rows()
