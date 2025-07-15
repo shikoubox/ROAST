@@ -19,8 +19,8 @@ data_file = 'data.csv'    # Replace with your data file name
 CSV_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'data', 'data.csv')
 
 
+# Reads the CSV_PATH and returns a list of rows, or None if the file does not exist.
 def _read_rows():
-    # Reads the CSV_PATH and returns a list of rows, or None if the file does not exist.
     if not os.path.exists(CSV_PATH):
         return None, 'utf-16'
     raw = open(CSV_PATH, 'rb').read()
@@ -45,8 +45,8 @@ def _write_rows(rows, encoding):
         writer = csv.writer(f)
         writer.writerows(rows)
 
+# Update only the first data row (row 1)
 def cmd_update(pairs):
-    # Update only the first data row (row 1)
     rows, enc = _read_rows()
     if rows is None:
         # New file: header from pairs, then a data row
@@ -63,8 +63,8 @@ def cmd_update(pairs):
     _write_rows(rows, enc)
     print("data.csv: current row updated", file=sys.stderr)
 
+# Snapshot row one into history (prepend it right under header), preserving all older rows.
 def cmd_log():
-    # Snapshot row one into history (prepend it right under header), preserving all older rows.
     rows, enc = _read_rows()
     if rows is None or len(rows) < 2:
         print("ERROR: no current row to log", file=sys.stderr)
@@ -74,6 +74,7 @@ def cmd_log():
     _write_rows(new_rows, enc)
     print("data.csv: snapshot logged", file=sys.stderr)
 
+# Update first data row, with a bit string as argument
 def cmd_bits(bitstr):
     if isinstance(bitstr, (bytes, bytearray)):
         try:
