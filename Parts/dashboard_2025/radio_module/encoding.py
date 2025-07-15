@@ -1,12 +1,13 @@
 import os
 import random
 
+# Encodes float index and value to 3 bytes.
 def encode_to_bytes(_index, _value):
     # Encode index
-    if 0 <= _index < 64:  # Ensure the value is within the 6-bit range
-        index = _index & ((1<<6)-1)
+    if 0 <= _index < 256:  # Ensure the value is within the 8-bit range
+        index = _index & ((1<<8)-1)
     else:
-        raise Exception("[ERROR] 6-bit value must be between 0 and 63")
+        raise Exception("[ERROR] 6-bit value must be between 0 and 255")
 
     value = encode_float16(_value)
 
@@ -17,6 +18,7 @@ def encode_to_bytes(_index, _value):
     combined_value = (index << 16) | (value)
     return combined_value.to_bytes(3, 'big')
 
+# Encode float to float16
 def encode_float16(value):
     if value == 0.0:
         return 0  # Special case for zero
@@ -52,6 +54,7 @@ def encode_float16(value):
     half_precision = (sign << 15) | (exponent << 10) | (mantissa & 0x3FF)
     return half_precision
 
+# Decode float16 to float
 def decode_float16(half_float):
     # Extract the sign, exponent, and mantissa
     sign = (half_float >> 15) & 0x1  # Get the sign bit
@@ -74,6 +77,9 @@ def decode_float16(half_float):
     value = (1 + mantissa / (1 << 10)) * (2 ** exponent)
     return (-1) ** sign * value
 
+###########################
+# Decode bytes to message #
+###########################
 def bytes_to_message(msg):
     _msg = int.from_bytes(msg, "big")
     message = _msg & ((1<<16)-1)
@@ -81,6 +87,3 @@ def bytes_to_message(msg):
 
     return message, index
 
-def encode_to_message():
-
-    return False
