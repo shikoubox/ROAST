@@ -19,7 +19,6 @@ frequency_deviation = 0
 tx_power = 0
 
 # Prints configuration of RF-module, in a side window.
-
 def print_rfmdata():
     global rfm69
     curses.curs_set(0)  # Hide cursor
@@ -49,13 +48,11 @@ def print_rfmdata():
     rfmdata_win.refresh()
 
 # Update baudrate for configuration side panel
-
 def update_rfmdata_baudrate(_baudrate):
     baudrate = _baudrate
     print_rfmdata()
 
 # Prints configuration of RF-module, in a side window.
-
 def update_rfmdata(_rfm69):
     #frequency = _rfm69.frequency_mhz
     #bitrate=_rfm69.bitrate
@@ -65,7 +62,6 @@ def update_rfmdata(_rfm69):
 
 
 # Print header with usage information
-
 def print_header():
     curses.curs_set(0)  # Hide cursor
 
@@ -81,7 +77,6 @@ def print_header():
 
 
 # Print log messages in console
-
 def print_console():
     curses.curs_set(0)  # Hide cursor
 
@@ -99,7 +94,6 @@ def print_console():
 
 
 # Add message to log
-
 def log_message(msg):
     if len(messages) >= height-2:
         messages.pop(0)  # Remove oldest

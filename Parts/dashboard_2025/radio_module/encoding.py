@@ -77,9 +77,8 @@ def decode_float16(half_float):
     value = (1 + mantissa / (1 << 10)) * (2 ** exponent)
     return (-1) ** sign * value
 
-###########################
-# Decode bytes to message #
-###########################
+
+# Decode bytes to message
 def bytes_to_message(msg):
     _msg = int.from_bytes(msg, "big")
     message = _msg & ((1<<16)-1)
