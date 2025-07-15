@@ -7,7 +7,7 @@ import curses
 # Curses settings
 messages = ["[INFO] System init..."]
 height, width = 20, 120  # Console window size
-## Use Unicode box-drawing characters for fancy borders
+# Use Unicode box-drawing characters for fancy borders
 h  = '-'#'─'
 v  = '|'
 c  = '+'
@@ -19,7 +19,7 @@ frequency_deviation = 0
 tx_power = 0
 
 # Prints configuration of RF-module, in a side window.
-##############################
+
 def print_rfmdata():
     global rfm69
     curses.curs_set(0)  # Hide cursor
@@ -49,13 +49,13 @@ def print_rfmdata():
     rfmdata_win.refresh()
 
 # Update baudrate for configuration side panel
-#################3
+
 def update_rfmdata_baudrate(_baudrate):
     baudrate = _baudrate
     print_rfmdata()
 
 # Prints configuration of RF-module, in a side window.
-##################
+
 def update_rfmdata(_rfm69):
     #frequency = _rfm69.frequency_mhz
     #bitrate=_rfm69.bitrate
@@ -65,7 +65,7 @@ def update_rfmdata(_rfm69):
 
 
 # Print header with usage information
-#######
+
 def print_header():
     curses.curs_set(0)  # Hide cursor
 
@@ -81,14 +81,14 @@ def print_header():
 
 
 # Print log messages in console
-#######
+
 def print_console():
     curses.curs_set(0)  # Hide cursor
 
     start_y, start_x = 4, 0  # Console window position
     console_win = curses.newwin(height, width, start_y, start_x)
 
-    # console_win.clear()
+    # Console_win.clear()
     # Custom border: (ls, rs, ts, bs, tl, tr, bl, br)
     console_win.border(v, v, h, h, c, c, c, c)
 
@@ -99,7 +99,7 @@ def print_console():
 
 
 # Add message to log
-################
+
 def log_message(msg):
     if len(messages) >= height-2:
         messages.pop(0)  # Remove oldest

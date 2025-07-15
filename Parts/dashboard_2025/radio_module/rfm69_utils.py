@@ -12,6 +12,7 @@ import encoding
 rfm69 = None
 
 # Initialize RFM69 once
+
 def initialise():
     global rfm69
     try:
@@ -21,11 +22,13 @@ def initialise():
         spi = busio.SPI(board.SCK, MOSI=board.MOSI, MISO=board.MISO)
 
         # Define radio parameters.
+
         RADIO_FREQ_MHZ = 433.0  # Frequency of the radio in Mhz
         BAUD_RATE=1000
         BIT_RATE=1000
 
         # Pass it to rfm module
+
         rfm69 = adafruit_rfm69.RFM69(spi, CS, RESET, RADIO_FREQ_MHZ, baudrate=BAUD_RATE, high_power=True)
         rfm69.bitrate = BIT_RATE
 
@@ -39,6 +42,7 @@ def initialise():
 
 # Tries to receive packet until receive_timeout has elapsed
 # If a packet is found, RSSI and payload bytes are returned, otherwise None.
+
 def check_for_packets(verbose = False):
     global rfm69
     if rfm69 is None:
@@ -74,9 +78,8 @@ def check_for_packets(verbose = False):
         return None
 
 # Sends packet and waits for ACK from receiver, retries on failure
-#############################################3
 
-#def send_ACK_packet(packet_data):
+# def send_ACK_packet(packet_data):
 #    global rfm69
 #    if rfm69 is None:
 #        raise Exception("[WARNING] Trying to check for packets, without an initalised RFM69 module")

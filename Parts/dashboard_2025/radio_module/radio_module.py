@@ -15,13 +15,13 @@ import graphics
 from graphics import log_message
 
 
-# global exit flag
+# Global exit flag
 exit_program = False
 rfm69 = None
 
 
 # Non-Verbose main loop
-##########################
+
 def main_loop(verbose = False):
     global exit_program
     global rfm69
@@ -56,7 +56,7 @@ def main_loop(verbose = False):
 
 
 # TUI curses main loop
-#####################
+
 def main_event_loop(stdscr):
     global exit_program
     global rfm69
@@ -100,7 +100,7 @@ def main_event_loop(stdscr):
         stdscr.refresh()
 
 # Input thread for TUI mode.
-#####################
+
 def listen_for_keys(stdscr):
     global exit_program
     curses.cbreak()  # Enable cbreak mode
@@ -166,18 +166,20 @@ def listen_for_keys(stdscr):
                 stdscr.addstr(27,0,f"{e}")
 
 # Parser for running program
-####################
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Radio Module CLI")
     parser.add_argument('-v', '--version', action='version', version='%(prog)s 1.0', help='show the version of the program')
-    #parser.add_argument('-h', '--help', action='store_true', help='Show this help message and exit')
+    # Parser.add_argument('-h', '--help', action='store_true', help='Show this help message and exit')
     parser.add_argument('-V', '--verbose', action='store_true', help='run the program verbose')
     parser.add_argument('-t', '--tui', action='store_true', help='run program with terminal interface')
 
     # Parse the arguments
+    
     args, unknown = parser.parse_known_args()
 
     # Handle unknown commands
+
     if unknown:
         print(f"Unknown command: {' '.join(unknown)}", file=sys.stderr)
         sys.exit(1)
