@@ -821,6 +821,18 @@
 		)
 		(uuid "ef264208-1347-489c-b881-bad59d3a2098")
 	)
+	(rectangle
+		(start 57.15 13.97)
+		(end 105.41 48.26)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 220e4787-9a5a-4c10-9a3f-aaaf3dcca0c3)
+	)
 	(image
 		(at 50.8 106.68)
 		(scale 0.148617)
@@ -5781,6 +5793,17 @@
 		)
 		(uuid "35dcdb3a-d56a-42be-b0c4-d35fc89ada6a")
 	)
+	(text "For connecting external LEDs,\nthat dim with buttons"
+		(exclude_from_sim no)
+		(at 81.28 45.72 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "8cf5ce56-115a-4313-ad44-7d08eeb9a724")
+	)
 	(text "Suitable current-limiting resistor\n\nBy burning LEDs\n\nBlue and Green works fine at 3.3v\nRed works fine at 3.3V with 47Ω resistor\n\nFor red LED\n(3v-2.3v)/15mA = 47Ω\n(5v-2.3v)/15mA = 180Ω\n(7v-2.3v)/15mA = 313Ω\n\nFor green and blue at higher voltages\n(5v-3.3v)/15mA = 113Ω\n(7v-3.3v)/15mA = 246Ω"
 		(exclude_from_sim no)
 		(at 14.732 41.148 0)
@@ -6921,7 +6944,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "52a7988b-ac78-404e-adae-a146fd91e239")
 		(property "Reference" "J13"
 			(at 85.09 42.672 0)
@@ -7016,7 +7039,7 @@
 		(exclude_from_sim yes)
 		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "745a6f8c-b844-4f55-98b1-ec88bfbf9b07")
 		(property "Reference" "JP8"
 			(at 74.422 42.418 0)

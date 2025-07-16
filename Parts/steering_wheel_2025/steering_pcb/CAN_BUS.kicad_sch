@@ -7392,7 +7392,7 @@
 		(exclude_from_sim yes)
 		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "0c5bd78c-367a-48f3-b469-77f83e52ff56")
 		(property "Reference" "JP3"
 			(at 151.13 78.994 0)
@@ -8393,7 +8393,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGF1001TCE"
 			(at 154.94 35.56 0)
 			(effects
 				(font
@@ -8439,6 +8439,15 @@
 			)
 		)
 		(property "Rating" ""
+			(at 154.94 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 154.94 35.56 0)
 			(effects
 				(font
@@ -8622,7 +8631,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Four pin 16MHz crystal, GND on pins 2 and 4, small symbol"
+		(property "Description" "X322516MLB4SI"
 			(at 102.87 69.85 0)
 			(effects
 				(font
@@ -8677,6 +8686,15 @@
 			)
 		)
 		(property "Rating" ""
+			(at 102.87 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 102.87 69.85 0)
 			(effects
 				(font
@@ -9029,7 +9047,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGF1001TCE"
 			(at 147.32 35.56 0)
 			(effects
 				(font
@@ -9083,6 +9101,15 @@
 				(hide yes)
 			)
 		)
+		(property "Note" "basic"
+			(at 147.32 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4f5262ae-ec11-4267-b121-159e77ee5403")
 		)
@@ -9105,7 +9132,7 @@
 		(exclude_from_sim yes)
 		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "73c06295-8fe8-47cd-b2d0-b3b2d6ab79b6")
 		(property "Reference" "JP5"
 			(at 143.764 27.94 0)
@@ -9196,6 +9223,15 @@
 				(hide yes)
 			)
 		)
+		(property "Note" "CAN power connection"
+			(at 140.97 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f0038d3e-26c4-4479-a9a0-3653b74f1b37")
 		)
@@ -9247,7 +9283,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 167.64 62.23 0)
 			(effects
 				(font
@@ -9256,7 +9292,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 167.64 62.23 0)
 			(effects
 				(font
@@ -9302,6 +9338,15 @@
 			)
 		)
 		(property "Rating" ""
+			(at 167.64 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 167.64 62.23 0)
 			(effects
 				(font
@@ -9995,7 +10040,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGF1200TCE"
 			(at 200.66 55.88 0)
 			(effects
 				(font
@@ -10049,6 +10094,15 @@
 				(hide yes)
 			)
 		)
+		(property "Note" "basic"
+			(at 200.66 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "d4a66a5c-fcf9-4f8a-91a0-2773f9e64bde")
 		)
@@ -10071,7 +10125,7 @@
 		(exclude_from_sim yes)
 		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "d207b0ce-db2d-446b-bfcd-82d486d7a09c")
 		(property "Reference" "JP4"
 			(at 203.2 48.2599 90)

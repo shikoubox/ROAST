@@ -1268,6 +1268,126 @@
 				)
 			)
 		)
+		(symbol "power:+12V"
+			(power)
+			(pin_numbers hide)
+			(pin_names
+				(offset 0) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "#PWR"
+				(at 0 -3.81 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Value" "+12V"
+				(at 0 3.556 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Power symbol creates a global label with name \"+12V\""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "global power"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "+12V_0_1"
+				(polyline
+					(pts
+						(xy -0.762 1.27) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 0) (xy 0 2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 0 2.54) (xy 0.762 1.27)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "+12V_1_1"
+				(pin power_in line
+					(at 0 0 90)
+					(length 0)
+					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "power:+5V"
 			(power)
 			(pin_numbers hide)
@@ -2407,7 +2527,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 162.56 54.61 0)
 			(effects
 				(font
@@ -2416,7 +2536,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 162.56 54.61 0)
 			(effects
 				(font
@@ -2470,6 +2590,15 @@
 				(hide yes)
 			)
 		)
+		(property "Note" "basic"
+			(at 162.56 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "88ae651a-198c-4843-9632-09672c3e04b6")
 		)
@@ -2486,17 +2615,16 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 215.9 48.26 0)
+		(lib_id "power:+12V")
+		(at 162.56 50.8 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1b5d1f39-244a-463f-81ed-fe84c4586c43")
-		(property "Reference" "#PWR042"
-			(at 215.9 52.07 0)
+		(uuid "3d3c86d6-a088-4dab-a7e0-a0e355ac6256")
+		(property "Reference" "#PWR38"
+			(at 162.56 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2504,16 +2632,16 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
-			(at 215.9 43.18 0)
+		(property "Value" "+5V_MCU"
+			(at 162.56 46.736 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 0.635 0.635)
 				)
 			)
 		)
 		(property "Footprint" ""
-			(at 215.9 48.26 0)
+			(at 162.56 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2522,7 +2650,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 215.9 48.26 0)
+			(at 162.56 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2530,8 +2658,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 215.9 48.26 0)
+		(property "Description" ""
+			(at 162.56 50.8 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2540,12 +2668,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "596ddcbb-8bfd-45c7-bb38-44eeef7cc11e")
+			(uuid "346eb0bb-ed48-43d4-b2e7-260823391228")
 		)
 		(instances
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/3158a1dc-35f2-49d2-93b5-e8517c53d7ab"
-					(reference "#PWR042")
+					(reference "#PWR38")
 					(unit 1)
 				)
 			)
@@ -2588,7 +2716,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 193.04 52.07 0)
 			(effects
 				(font
@@ -2597,7 +2725,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 193.04 52.07 0)
 			(effects
 				(font
@@ -2643,6 +2771,15 @@
 			)
 		)
 		(property "Rating" ""
+			(at 193.04 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 193.04 52.07 0)
 			(effects
 				(font
@@ -2815,7 +2952,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 139.7 52.07 0)
 			(effects
 				(font
@@ -2824,7 +2961,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 139.7 52.07 0)
 			(effects
 				(font
@@ -2870,6 +3007,15 @@
 			)
 		)
 		(property "Rating" ""
+			(at 139.7 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 139.7 52.07 0)
 			(effects
 				(font
@@ -2959,16 +3105,16 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 162.56 50.8 0)
+		(lib_id "power:+12V")
+		(at 215.9 48.26 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "7bfea6e9-12bb-4efc-8eca-fef816414767")
-		(property "Reference" "#PWR038"
-			(at 162.56 54.61 0)
+		(uuid "72a91003-9ea5-4e96-ab4e-9cd8b9df681a")
+		(property "Reference" "#PWR107"
+			(at 215.9 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2976,16 +3122,16 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "+5V"
-			(at 165.862 49.022 0)
+		(property "Value" "+5V_MCU"
+			(at 215.9 44.196 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 0.635 0.635)
 				)
 			)
 		)
 		(property "Footprint" ""
-			(at 162.56 50.8 0)
+			(at 215.9 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2994,7 +3140,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 162.56 50.8 0)
+			(at 215.9 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3002,8 +3148,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 162.56 50.8 0)
+		(property "Description" ""
+			(at 215.9 48.26 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3012,12 +3158,12 @@
 			)
 		)
 		(pin "1"
-			(uuid "4d80496b-075d-413d-a910-43279a8243ff")
+			(uuid "65323145-9af4-48b1-9fed-307d1b164b31")
 		)
 		(instances
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/3158a1dc-35f2-49d2-93b5-e8517c53d7ab"
-					(reference "#PWR038")
+					(reference "#PWR107")
 					(unit 1)
 				)
 			)
@@ -3280,7 +3426,7 @@
 		(exclude_from_sim yes)
 		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "8b93b217-b93d-4f15-a0fb-807306ee9797")
 		(property "Reference" "JP1"
@@ -3373,6 +3519,15 @@
 				(hide yes)
 			)
 		)
+		(property "Note" "I2C address pin"
+			(at 33.02 119.38 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "5ac86880-5be9-4b5c-ab34-d53ccd96fbea")
 		)
@@ -3425,7 +3580,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 215.9 52.07 0)
 			(effects
 				(font
@@ -3434,7 +3589,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 215.9 52.07 0)
 			(effects
 				(font
@@ -3480,6 +3635,15 @@
 			)
 		)
 		(property "Rating" ""
+			(at 215.9 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 215.9 52.07 0)
 			(effects
 				(font
@@ -3756,7 +3920,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 33.02 129.54 0)
 			(effects
 				(font
@@ -3765,7 +3929,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 33.02 129.54 0)
 			(effects
 				(font
@@ -3811,6 +3975,15 @@
 			)
 		)
 		(property "Rating" ""
+			(at 33.02 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 33.02 129.54 0)
 			(effects
 				(font
@@ -4019,7 +4192,7 @@
 		(exclude_from_sim yes)
 		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "fed4adae-717f-465e-9489-c52f018b59d7")
 		(property "Reference" "JP6"
@@ -4105,6 +4278,15 @@
 		)
 		(property "Rating" ""
 			(at 91.44 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "Gyroscope power solder jumper"
+			(at 91.44 41.91 90)
 			(effects
 				(font
 					(size 1.27 1.27)

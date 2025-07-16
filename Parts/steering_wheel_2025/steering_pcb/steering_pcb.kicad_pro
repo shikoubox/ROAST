@@ -58,7 +58,25 @@
           "width": 0.0
         }
       ],
-      "drc_exclusions": [],
+      "drc_exclusions": [
+        "clearance|209556691|41201066|e5d193dd-f067-4cac-8fe7-16eea66d583d|a1a717cf-5f8c-45c8-b9ba-8d206a869acc",
+        "clearance|209706691|41726066|a1a717cf-5f8c-45c8-b9ba-8d206a869acc|b5e5feaa-df1d-4f2c-9b1e-1306d7fefa26",
+        "clearance|209706691|42226066|b5e5feaa-df1d-4f2c-9b1e-1306d7fefa26|2a7af9a7-8248-4834-9299-a48046b346d6",
+        "clearance|209706691|43076066|3410afb7-d8d6-47e9-b061-e011fba78c3f|2a7af9a7-8248-4834-9299-a48046b346d6",
+        "clearance|209731691|43076066|3410afb7-d8d6-47e9-b061-e011fba78c3f|82f65f13-3ade-4074-a95b-192c494aad11",
+        "clearance|210056691|40751066|3270b421-d5f0-4e68-a6e9-624653a6bc4f|e5d193dd-f067-4cac-8fe7-16eea66d583d",
+        "clearance|210231691|43076066|82f65f13-3ade-4074-a95b-192c494aad11|b85c567e-3bc3-410e-a7fa-4071f946a639",
+        "clearance|210556691|40751066|61acc723-0859-4d6a-9e91-e44bd812540f|3270b421-d5f0-4e68-a6e9-624653a6bc4f",
+        "clearance|210731691|43076066|b85c567e-3bc3-410e-a7fa-4071f946a639|1a6be46d-9f3c-4831-98ab-5a1a0852a66f",
+        "clearance|211056691|40751066|f7f5045b-7e6b-454c-ba9a-cac1d56dec55|61acc723-0859-4d6a-9e91-e44bd812540f",
+        "clearance|211231691|41551066|3d207212-3f26-460b-a091-11f33108474d|f7f5045b-7e6b-454c-ba9a-cac1d56dec55",
+        "clearance|211231691|43076066|1a6be46d-9f3c-4831-98ab-5a1a0852a66f|925508a9-f99e-4a69-9e01-cfd2d3596794",
+        "clearance|211531691|42551066|925508a9-f99e-4a69-9e01-cfd2d3596794|6f512c20-14ef-476f-9f98-a11cc942c905",
+        "lib_footprint_mismatch|183822700|137820400|e7fd8568-99c7-4456-9b5c-0ff799ea0e97|00000000-0000-0000-0000-000000000000",
+        "lib_footprint_mismatch|221186954|104476889|835c6ac8-f39d-432a-8e23-1403478f84c9|00000000-0000-0000-0000-000000000000",
+        "solder_mask_bridge|205847300|101299200|fb9043b9-a8be-4707-a708-5614fa01df95|c70fab7d-717b-430b-a92b-279a43498187",
+        "unconnected_items|264000000|52600000|de994465-ddad-480c-ae97-de5a23f7406d|d44990cf-055d-4fb9-bb2e-fd7bce8d138f"
+      ],
       "meta": {
         "version": 2
       },
@@ -123,7 +141,7 @@
         "min_hole_to_hole": 0.25,
         "min_microvia_diameter": 0.2,
         "min_microvia_drill": 0.1,
-        "min_resolved_spokes": 2,
+        "min_resolved_spokes": 1,
         "min_silk_clearance": 0.0,
         "min_text_height": 0.8,
         "min_text_thickness": 0.08,
@@ -213,8 +231,8 @@
           "drill": 0.0
         },
         {
-          "diameter": 0.35,
-          "drill": 0.2
+          "diameter": 0.4,
+          "drill": 0.25
         },
         {
           "diameter": 0.6,
@@ -581,7 +599,7 @@
     },
     "bom_presets": [],
     "bom_settings": {
-      "exclude_dnp": false,
+      "exclude_dnp": true,
       "fields_ordered": [
         {
           "group_by": false,
@@ -672,10 +690,16 @@
           "label": "Indicator",
           "name": "Indicator",
           "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Note",
+          "name": "Note",
+          "show": true
         }
       ],
       "filter_string": "",
-      "group_symbols": false,
+      "group_symbols": true,
       "name": "",
       "sort_asc": true,
       "sort_field": "Reference"

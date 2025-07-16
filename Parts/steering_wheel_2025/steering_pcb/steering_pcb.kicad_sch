@@ -5699,10 +5699,22 @@
 		(uuid "1695a0e7-4db3-4779-8b81-394dc48fd78d")
 	)
 	(junction
+		(at 82.55 44.45)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "21ae3562-f090-46d4-864c-1b2cf745b899")
+	)
+	(junction
 		(at 246.38 129.54)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "28ab4757-348d-479f-8816-7028fecbe2d8")
+	)
+	(junction
+		(at 260.35 53.34)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2a66c28b-10c3-42d9-ba09-f29f0a64e3cf")
 	)
 	(junction
 		(at 238.76 36.83)
@@ -5715,12 +5727,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3d8cbdbc-8420-4812-a8bb-e4e4c65fc871")
-	)
-	(junction
-		(at 82.55 49.53)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "3f008ec1-d613-4be9-841b-784d67e2251f")
 	)
 	(junction
 		(at 45.72 172.72)
@@ -5745,6 +5751,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "732d49be-5d23-402e-8891-8c40d724039b")
+	)
+	(junction
+		(at 274.32 143.51)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "77a87206-8836-4e97-8ae0-7e01177bcca6")
 	)
 	(junction
 		(at 260.35 129.54)
@@ -5819,6 +5831,12 @@
 		(uuid "ae0f5fc8-70fe-4406-9703-31c7bcd581f7")
 	)
 	(junction
+		(at 260.35 48.26)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b3511251-1b80-4e16-871c-7d65d47993c0")
+	)
+	(junction
 		(at 130.81 133.35)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -5877,6 +5895,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ed34c440-e3ed-43de-b8e7-d9ce467fe867")
+	)
+	(junction
+		(at 274.32 148.59)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "f1c713b1-2af7-4ba9-90f7-177c70825d45")
 	)
 	(junction
 		(at 260.35 46.99)
@@ -6010,7 +6034,7 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 80.01) (xy 166.37 80.01)
+			(xy 167.64 77.47) (xy 167.64 78.74)
 		)
 		(stroke
 			(width 0)
@@ -6180,6 +6204,16 @@
 	)
 	(wire
 		(pts
+			(xy 274.32 143.51) (xy 276.86 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "2ea8dca2-ee17-447e-a614-6b6a8e0c1197")
+	)
+	(wire
+		(pts
 			(xy 199.39 127) (xy 199.39 129.54)
 		)
 		(stroke
@@ -6210,16 +6244,6 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 82.55) (xy 166.37 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "321ad98b-cdd7-4bc7-95a0-ba3b49631564")
-	)
-	(wire
-		(pts
 			(xy 45.72 179.07) (xy 45.72 175.26)
 		)
 		(stroke
@@ -6237,16 +6261,6 @@
 			(type default)
 		)
 		(uuid "3d0c44b1-9052-496f-bd16-e3033d527240")
-	)
-	(wire
-		(pts
-			(xy 229.87 78.74) (xy 237.49 78.74)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "3d36a242-2b29-4425-80ae-3f55e7d7b0a4")
 	)
 	(wire
 		(pts
@@ -6280,17 +6294,7 @@
 	)
 	(wire
 		(pts
-			(xy 86.36 49.53) (xy 82.55 49.53)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "407acc58-6ba8-4b67-8ef8-3371e17a0b85")
-	)
-	(wire
-		(pts
-			(xy 184.15 80.01) (xy 177.8 80.01)
+			(xy 167.64 91.44) (xy 167.64 90.17)
 		)
 		(stroke
 			(width 0)
@@ -6377,6 +6381,16 @@
 			(type default)
 		)
 		(uuid "4bdff710-2b75-4063-a8e3-7e1f23015792")
+	)
+	(wire
+		(pts
+			(xy 270.51 143.51) (xy 274.32 143.51)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4ce9d9a4-384a-4d94-9a13-2795de07dc13")
 	)
 	(wire
 		(pts
@@ -6500,7 +6514,7 @@
 	)
 	(wire
 		(pts
-			(xy 82.55 49.53) (xy 82.55 54.61)
+			(xy 82.55 44.45) (xy 82.55 54.61)
 		)
 		(stroke
 			(width 0)
@@ -6537,6 +6551,16 @@
 			(type default)
 		)
 		(uuid "60bef234-2fe4-447a-9fe1-938185966747")
+	)
+	(wire
+		(pts
+			(xy 170.18 92.71) (xy 170.18 90.17)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6192b7a9-d738-4609-8e69-ec05705caefd")
 	)
 	(wire
 		(pts
@@ -6690,6 +6714,16 @@
 	)
 	(wire
 		(pts
+			(xy 260.35 48.26) (xy 261.62 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "80f4d93b-0bef-492b-823a-9ba9e2365c7f")
+	)
+	(wire
+		(pts
 			(xy 115.57 36.83) (xy 115.57 66.04)
 		)
 		(stroke
@@ -6820,6 +6854,16 @@
 	)
 	(wire
 		(pts
+			(xy 259.08 53.34) (xy 260.35 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9ae3c2e6-643b-4f2a-b888-65cdf401d984")
+	)
+	(wire
+		(pts
 			(xy 72.39 36.83) (xy 72.39 50.8)
 		)
 		(stroke
@@ -6880,6 +6924,16 @@
 	)
 	(wire
 		(pts
+			(xy 274.32 148.59) (xy 276.86 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a556e0c5-c6ef-4536-bc31-a1890db7baed")
+	)
+	(wire
+		(pts
 			(xy 111.76 127) (xy 115.57 127)
 		)
 		(stroke
@@ -6917,6 +6971,16 @@
 			(type default)
 		)
 		(uuid "ab81ed38-4983-4853-90af-a1cfa59e4e2f")
+	)
+	(wire
+		(pts
+			(xy 229.87 78.74) (xy 237.49 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ac36f5c9-0119-47e1-8c1a-77e7e777da85")
 	)
 	(wire
 		(pts
@@ -6970,6 +7034,16 @@
 	)
 	(wire
 		(pts
+			(xy 259.08 48.26) (xy 260.35 48.26)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bc1907d7-9460-4e71-b2a3-eaa2c7cf955d")
+	)
+	(wire
+		(pts
 			(xy 130.81 133.35) (xy 135.89 133.35)
 		)
 		(stroke
@@ -6977,6 +7051,16 @@
 			(type default)
 		)
 		(uuid "bce45cad-826e-4d8d-9161-fd40b70ed8e2")
+	)
+	(wire
+		(pts
+			(xy 270.51 148.59) (xy 274.32 148.59)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bf3db99a-7992-4a19-acf9-5680f42efea8")
 	)
 	(wire
 		(pts
@@ -7067,16 +7151,6 @@
 			(type default)
 		)
 		(uuid "ca9ed5b5-b039-4f5e-8d0c-9de9861555fb")
-	)
-	(wire
-		(pts
-			(xy 184.15 82.55) (xy 177.8 82.55)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cb45528a-78d6-4a9c-a76d-cd8cef8f3360")
 	)
 	(wire
 		(pts
@@ -7190,6 +7264,16 @@
 	)
 	(wire
 		(pts
+			(xy 260.35 53.34) (xy 261.62 53.34)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e1a9ac4c-5b41-4c2a-968d-06ca636f5c09")
+	)
+	(wire
+		(pts
 			(xy 123.19 138.43) (xy 135.89 138.43)
 		)
 		(stroke
@@ -7237,16 +7321,6 @@
 			(type default)
 		)
 		(uuid "e67af766-fae1-40c9-ba94-2a52fac05398")
-	)
-	(wire
-		(pts
-			(xy 82.55 49.53) (xy 82.55 44.45)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e6994c9f-037e-4626-8d80-9dcf40cce9fa")
 	)
 	(wire
 		(pts
@@ -7342,7 +7416,7 @@
 	)
 	(rectangle
 		(start 156.845 67.31)
-		(end 251.46 100.33)
+		(end 213.36 100.33)
 		(stroke
 			(width 0)
 			(type default)
@@ -7365,7 +7439,7 @@
 		(uuid b0a6262c-da21-42a0-a9e2-71e13d4493db)
 	)
 	(image
-		(at 208.915 80.645)
+		(at 201.295 86.995)
 		(scale 0.189833)
 		(uuid "175ab58b-aa7b-48b1-af5a-331167f8ffce")
 		(data "iVBORw0KGgoAAAANSUhEUgAAAjMAAAJRCAYAAACwbjaTAAAAAXNSR0IArs4c6QAAAARnQU1BAACx"
@@ -12601,7 +12675,7 @@
 	)
 	(text "Quick Release connection"
 		(exclude_from_sim no)
-		(at 157.988 70.866 0)
+		(at 159.258 70.866 0)
 		(effects
 			(font
 				(size 2 2)
@@ -12647,28 +12721,6 @@
 			)
 		)
 	)
-	(global_label "CAN_H"
-		(shape input)
-		(at 184.15 82.55 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify left)
-		)
-		(uuid "10df114f-a683-4a2c-9767-e8dc510c594d")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 191.2145 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-	)
 	(global_label "button5_1"
 		(shape input)
 		(at 111.76 175.26 0)
@@ -12693,22 +12745,22 @@
 	)
 	(global_label "CAN_L"
 		(shape input)
-		(at 184.15 80.01 0)
+		(at 167.64 91.44 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1 1)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "140a08ef-c9fe-4a7b-9ca6-b55a89c529d1")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 190.9764 80.01 0)
+			(at 160.8136 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -13018,28 +13070,6 @@
 					(size 1.27 1.27)
 				)
 				(justify right)
-				(hide yes)
-			)
-		)
-	)
-	(global_label "MCU_5V"
-		(shape input)
-		(at 86.36 49.53 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify left)
-		)
-		(uuid "3f7f41c1-cec7-4f19-9cc5-8d479dfee562")
-		(property "Intersheetrefs" "${INTERSHEET_REFS}"
-			(at 94.4722 49.53 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
 				(hide yes)
 			)
 		)
@@ -13541,6 +13571,28 @@
 		(uuid "a56bde7f-005a-4ed2-a4c9-cf38c300be51")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 35.941 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "CAN_H"
+		(shape input)
+		(at 167.64 77.47 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify right)
+		)
+		(uuid "a6fb9536-58c2-41bb-bd28-f897dc4a1715")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 160.5755 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -14172,6 +14224,72 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 170.18 92.71 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0a63a445-11d0-4991-8052-a187e8664a15")
+		(property "Reference" "#PWR16"
+			(at 170.18 99.06 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 170.18 97.79 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 170.18 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.18 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 170.18 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "61b1e208-7288-41a3-b32d-7c3f14d77f81")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
+					(reference "#PWR16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_name "+5V_1")
 		(lib_id "power:+5V")
 		(at 274.32 128.27 0)
@@ -14497,7 +14615,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "GRM32ER61E226KE15L"
+		(property "Value" "22uF"
 			(at 183.642 43.434 90)
 			(effects
 				(font
@@ -14506,7 +14624,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 180.34 47.752 0)
 			(effects
 				(font
@@ -14515,7 +14633,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2009251934_Capxon-International-Elec-HV100M100E077ETR_C699521.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/13537-CL31A226KAHNNNE/C12891"
 			(at 184.15 47.498 0)
 			(effects
 				(font
@@ -14524,7 +14642,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "22uF"
+		(property "Description" "CL31A226KAHNNNE"
 			(at 176.53 44.45 90)
 			(effects
 				(font
@@ -14533,7 +14651,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C699521"
+		(property "JLCPCB" "C12891"
 			(at 184.15 46.99 0)
 			(effects
 				(font
@@ -14560,6 +14678,15 @@
 				(hide yes)
 			)
 		)
+		(property "Note" "basic"
+			(at 184.15 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "bdb42dd7-7746-4386-81c7-0c023878dad8")
 		)
@@ -14570,71 +14697,6 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
 					(reference "C16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:GND")
-		(at 162.56 82.55 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "136065cd-539c-4e6c-a1a4-bc73aa74c87f")
-		(property "Reference" "#PWR016"
-			(at 162.56 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 162.56 87.63 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 162.56 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 162.56 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 162.56 82.55 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "511ccc2f-527d-4711-bbbb-eb400d0eb24d")
-		)
-		(instances
-			(project "steering_pcb"
-				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
-					(reference "#PWR016")
 					(unit 1)
 				)
 			)
@@ -14758,7 +14820,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "1a9bd8a3-ffce-4e07-89e9-198018ce91aa")
 		(property "Reference" "A1"
@@ -15138,7 +15200,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "1ad25320-7eb4-4140-9dd9-e883da2e618a")
 		(property "Reference" "J15"
@@ -15316,7 +15378,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 274.32 134.62 0)
 			(effects
 				(font
@@ -15325,7 +15387,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402"
+		(property "Description" "0402WGJ0103TCE"
 			(at 274.32 134.62 0)
 			(effects
 				(font
@@ -15371,6 +15433,15 @@
 			)
 		)
 		(property "Rating" ""
+			(at 274.32 134.62 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 274.32 134.62 0)
 			(effects
 				(font
@@ -15514,7 +15585,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "244d84d4-9453-40a6-b9b4-e8b3963f75a4")
 		(property "Reference" "J16"
 			(at 32.512 148.336 90)
@@ -15581,7 +15652,7 @@
 		(exclude_from_sim yes)
 		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "25fdcedd-f5ed-49b1-b0e3-2b69f8d125f2")
 		(property "Reference" "H3"
@@ -15725,7 +15796,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "GRM32ER61E226KE15L"
+		(property "Value" "22uF"
 			(at 184.912 136.144 90)
 			(effects
 				(font
@@ -15734,7 +15805,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 181.61 140.462 0)
 			(effects
 				(font
@@ -15743,7 +15814,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2009251934_Capxon-International-Elec-HV100M100E077ETR_C699521.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/13537-CL31A226KAHNNNE/C12891"
 			(at 185.42 140.208 0)
 			(effects
 				(font
@@ -15752,7 +15823,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "22uF"
+		(property "Description" "CL31A226KAHNNNE"
 			(at 177.8 137.16 90)
 			(effects
 				(font
@@ -15761,7 +15832,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C699521"
+		(property "JLCPCB" "C12891"
 			(at 185.42 139.7 0)
 			(effects
 				(font
@@ -15780,6 +15851,15 @@
 			)
 		)
 		(property "Rating" ""
+			(at 185.42 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 185.42 139.7 0)
 			(effects
 				(font
@@ -15953,7 +16033,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 134.62 142.24 0)
 			(effects
 				(font
@@ -15962,7 +16042,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 134.62 142.24 0)
 			(effects
 				(font
@@ -15990,6 +16070,15 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 134.62 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 134.62 142.24 0)
 			(effects
 				(font
@@ -16048,7 +16137,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 130.81 142.24 0)
 			(effects
 				(font
@@ -16057,7 +16146,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 130.81 142.24 0)
 			(effects
 				(font
@@ -16085,6 +16174,15 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 130.81 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 130.81 142.24 0)
 			(effects
 				(font
@@ -16480,72 +16578,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+12V")
-		(at 162.56 80.01 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4472eacb-05c6-4447-9942-da61d4285b5e")
-		(property "Reference" "#PWR014"
-			(at 162.56 83.82 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+12V"
-			(at 159.512 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 162.56 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 162.56 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+12V\""
-			(at 162.56 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "338a346c-d5cd-4adc-95d2-01a556c4c148")
-		)
-		(instances
-			(project "steering_pcb"
-				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
-					(reference "#PWR014")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "PCM_SL_Devices:Capacitor_PO")
 		(at 199.39 139.7 270)
 		(unit 1)
@@ -16563,7 +16595,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "GRM32ER61E226KE15L"
+		(property "Value" "22uF"
 			(at 198.882 136.144 90)
 			(effects
 				(font
@@ -16572,7 +16604,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 195.58 140.462 0)
 			(effects
 				(font
@@ -16581,7 +16613,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2009251934_Capxon-International-Elec-HV100M100E077ETR_C699521.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/13537-CL31A226KAHNNNE/C12891"
 			(at 199.39 140.208 0)
 			(effects
 				(font
@@ -16590,7 +16622,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "22uF"
+		(property "Description" "CL31A226KAHNNNE"
 			(at 191.77 137.16 90)
 			(effects
 				(font
@@ -16599,7 +16631,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C699521"
+		(property "JLCPCB" "C12891"
 			(at 199.39 139.7 0)
 			(effects
 				(font
@@ -16618,6 +16650,15 @@
 			)
 		)
 		(property "Rating" ""
+			(at 199.39 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 199.39 139.7 0)
 			(effects
 				(font
@@ -16766,121 +16807,6 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
 					(reference "#PWR0103")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small")
-		(at 260.35 50.8 0)
-		(mirror y)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "62248987-91c2-4e68-92a0-393c84832c7d")
-		(property "Reference" "R5"
-			(at 265.43 49.784 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "FRC0402F2101TS"
-			(at 261.62 51.816 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 260.35 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2308241947_FOJAN-FRC0402F2101TS_C2998067.pdf"
-			(at 260.35 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "2.1k"
-			(at 260.35 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C2998067"
-			(at 260.35 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 260.35 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 260.35 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Indicator" ""
-			(at 260.35 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Rating" ""
-			(at 260.35 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "26fbe8d0-f3e6-44a1-90b2-0973c3350511")
-		)
-		(pin "2"
-			(uuid "b752e66a-894a-49d0-ba61-c493f22f17ea")
-		)
-		(instances
-			(project "steering_pcb"
-				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
-					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -17343,16 +17269,16 @@
 	)
 	(symbol
 		(lib_id "PCM_SL_Pin_Headers:PINHD_2x2_Female")
-		(at 171.45 81.28 180)
+		(at 168.91 83.82 270)
+		(mirror x)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
+		(dnp yes)
 		(uuid "77d6fd1f-bd2a-450c-8844-9e7e39e58560")
 		(property "Reference" "J0"
-			(at 172.085 88.9 0)
+			(at 175.26 85.09 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17360,15 +17286,15 @@
 			)
 		)
 		(property "Value" "Quick_connector"
-			(at 172.085 86.36 0)
+			(at 180.34 82.55 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_2x02_P2.54mm_Vertical"
-			(at 168.91 91.44 0)
+		(property "Footprint" "Connector_Molex:Molex_Micro-Fit_3.0_43045-0412_2x02_P3.00mm_Vertical"
+			(at 179.07 81.28 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17377,7 +17303,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 171.45 88.9 0)
+			(at 176.53 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17386,7 +17312,7 @@
 			)
 		)
 		(property "Description" "Pin Header female with pin space 2.54mm. Pin Count -4"
-			(at 171.45 81.28 0)
+			(at 168.91 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17395,7 +17321,7 @@
 			)
 		)
 		(property "JLCPCB" "C1329356"
-			(at 171.45 81.28 0)
+			(at 168.91 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17404,7 +17330,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 171.45 81.28 0)
+			(at 168.91 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17413,7 +17339,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 171.45 81.28 0)
+			(at 168.91 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17422,7 +17348,7 @@
 			)
 		)
 		(property "Indicator" ""
-			(at 171.45 81.28 0)
+			(at 168.91 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17431,7 +17357,7 @@
 			)
 		)
 		(property "Rating" ""
-			(at 171.45 81.28 0)
+			(at 168.91 83.82 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -17478,7 +17404,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "GRM32ER61E226KE15L"
+		(property "Value" "22uF"
 			(at 170.942 136.144 90)
 			(effects
 				(font
@@ -17487,7 +17413,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 167.64 140.462 0)
 			(effects
 				(font
@@ -17496,7 +17422,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2009251934_Capxon-International-Elec-HV100M100E077ETR_C699521.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/13537-CL31A226KAHNNNE/C12891"
 			(at 171.45 140.208 0)
 			(effects
 				(font
@@ -17505,7 +17431,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "22uF"
+		(property "Description" "CL31A226KAHNNNE"
 			(at 163.83 137.16 90)
 			(effects
 				(font
@@ -17514,7 +17440,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C699521"
+		(property "JLCPCB" "C12891"
 			(at 171.45 139.7 0)
 			(effects
 				(font
@@ -17541,6 +17467,15 @@
 				(hide yes)
 			)
 		)
+		(property "Note" "basic"
+			(at 171.45 139.7 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d0b3b5ff-733f-45d5-a996-4039bdbd8686")
 		)
@@ -17551,6 +17486,226 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
 					(reference "C10")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 247.65 60.96 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
+		(dnp yes)
+		(uuid "792b7a10-8851-4e68-ad44-b9522f405c29")
+		(property "Reference" "R5"
+			(at 252.73 59.944 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2.1k"
+			(at 248.92 61.976 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 247.65 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2308241947_FOJAN-FRC0402F2101TS_C2998067.pdf"
+			(at 247.65 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "FRC0402F2101TS"
+			(at 247.65 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C2998067"
+			(at 247.65 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 247.65 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 247.65 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" ""
+			(at 247.65 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" ""
+			(at 247.65 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "fb119d03-3389-489c-99de-b27815a52cbc")
+		)
+		(pin "2"
+			(uuid "82bc5530-6df1-4849-b86f-9c897670fa68")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
+					(reference "R5")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 270.51 146.05 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "792d640b-5a54-4f75-a850-25575a5fa215")
+		(property "Reference" "R90"
+			(at 265.43 145.034 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "200k"
+			(at 269.24 147.066 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 270.51 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/26507-0402WGF2003TCE/C25764"
+			(at 270.51 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "0402WGF2003TCE"
+			(at 270.51 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C25764"
+			(at 270.51 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" ""
+			(at 270.51 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "±1%"
+			(at 270.51 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
+			(at 270.51 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bcbd22cf-a9ee-46be-98a8-889409412dc3")
+		)
+		(pin "2"
+			(uuid "37b0c1bc-9a23-4d6e-be5f-9582302a3b01")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
+					(reference "R90")
 					(unit 1)
 				)
 			)
@@ -17628,7 +17783,7 @@
 		(exclude_from_sim yes)
 		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "7b1d5614-1bbe-4d14-aeb9-c7d79aee5eae")
 		(property "Reference" "H4"
@@ -17724,7 +17879,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 127 142.24 0)
 			(effects
 				(font
@@ -17733,7 +17888,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 127 142.24 0)
 			(effects
 				(font
@@ -17761,6 +17916,15 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 127 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 127 142.24 0)
 			(effects
 				(font
@@ -17868,7 +18032,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "GRM32ER61E226KE15L"
+		(property "Value" "22uF"
 			(at 197.612 43.434 90)
 			(effects
 				(font
@@ -17877,7 +18041,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 194.31 47.752 0)
 			(effects
 				(font
@@ -17886,7 +18050,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2009251934_Capxon-International-Elec-HV100M100E077ETR_C699521.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/13537-CL31A226KAHNNNE/C12891"
 			(at 198.12 47.498 0)
 			(effects
 				(font
@@ -17895,7 +18059,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "22uF"
+		(property "Description" "CL31A226KAHNNNE"
 			(at 190.5 44.45 90)
 			(effects
 				(font
@@ -17904,7 +18068,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C699521"
+		(property "JLCPCB" "C12891"
 			(at 198.12 46.99 0)
 			(effects
 				(font
@@ -17923,6 +18087,15 @@
 			)
 		)
 		(property "Rating" ""
+			(at 198.12 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 198.12 46.99 0)
 			(effects
 				(font
@@ -18200,6 +18373,73 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+12V")
+		(at 170.18 78.74 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9104cf0b-b95f-4547-a01b-3c8b190c7652")
+		(property "Reference" "#PWR14"
+			(at 170.18 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+12V"
+			(at 173.228 74.93 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 170.18 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.18 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+12V\""
+			(at 170.18 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "92f92dcf-7834-43d5-982a-649349bd7212")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
+					(reference "#PWR14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 233.68 57.15 0)
 		(unit 1)
@@ -18299,7 +18539,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 123.19 142.24 0)
 			(effects
 				(font
@@ -18308,7 +18548,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 123.19 142.24 0)
 			(effects
 				(font
@@ -18344,6 +18584,15 @@
 				(hide yes)
 			)
 		)
+		(property "Note" "basic"
+			(at 123.19 142.24 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "029d0ded-6572-4fcc-b00e-40601aa52f43")
 		)
@@ -18354,6 +18603,194 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
 					(reference "R86")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small")
+		(at 259.08 50.8 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9c95a5ca-2fa6-444e-bdbe-aba3aa2ab44b")
+		(property "Reference" "R93"
+			(at 254 49.784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "47k"
+			(at 257.81 51.816 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 259.08 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/26535-0402WGF4702TCE/C25792"
+			(at 259.08 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "0402WGF4702TCE"
+			(at 259.08 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C25792"
+			(at 259.08 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 259.08 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 259.08 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" ""
+			(at 259.08 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" ""
+			(at 259.08 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
+			(at 259.08 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0a39faf7-6073-4e1d-87c1-551a1fcb2964")
+		)
+		(pin "2"
+			(uuid "edb0b39f-a412-4318-8a83-2229eddf5432")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
+					(reference "R93")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+12V")
+		(at 82.55 44.45 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "a153da94-d1df-4102-950e-caffd9676b5b")
+		(property "Reference" "#PWR106"
+			(at 82.55 48.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V_MCU"
+			(at 82.55 40.386 0)
+			(effects
+				(font
+					(size 0.635 0.635)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 82.55 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 82.55 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 82.55 44.45 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "168a30be-82f0-4d4f-9a1c-245d20b8be39")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
+					(reference "#PWR106")
 					(unit 1)
 				)
 			)
@@ -18574,7 +19011,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 260.35 41.91 0)
 			(effects
 				(font
@@ -18583,7 +19020,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 260.35 41.91 0)
 			(effects
 				(font
@@ -18629,6 +19066,15 @@
 			)
 		)
 		(property "Rating" ""
+			(at 260.35 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 260.35 41.91 0)
 			(effects
 				(font
@@ -18725,7 +19171,7 @@
 		(exclude_from_sim yes)
 		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "cbb72995-4e9d-475d-9597-cc8069182a6e")
 		(property "Reference" "H1"
@@ -18788,16 +19234,16 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small")
-		(at 274.32 146.05 0)
+		(at 254 151.13 0)
 		(mirror y)
 		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
+		(dnp yes)
 		(uuid "cfb8fbbb-f108-4b37-aaa7-5bf5ceb1b86e")
 		(property "Reference" "R7"
-			(at 279.4 145.034 0)
+			(at 259.08 150.114 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18806,7 +19252,7 @@
 			)
 		)
 		(property "Value" "3.24k"
-			(at 275.59 147.066 0)
+			(at 255.27 152.146 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18815,7 +19261,7 @@
 			)
 		)
 		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
-			(at 274.32 146.05 0)
+			(at 254 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18824,7 +19270,7 @@
 			)
 		)
 		(property "Datasheet" "https://jlcpcb.com/partdetail/Yageo-RC0402FR073K24L/C327346"
-			(at 274.32 146.05 0)
+			(at 254 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18833,7 +19279,7 @@
 			)
 		)
 		(property "Description" "RC0402FR-073K24L"
-			(at 274.32 146.05 0)
+			(at 254 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18842,7 +19288,7 @@
 			)
 		)
 		(property "JLCPCB" "C327346"
-			(at 274.32 146.05 0)
+			(at 254 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18851,7 +19297,7 @@
 			)
 		)
 		(property "Indicator" ""
-			(at 274.32 146.05 0)
+			(at 254 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18860,7 +19306,7 @@
 			)
 		)
 		(property "Rating" ""
-			(at 274.32 146.05 0)
+			(at 254 151.13 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -18884,13 +19330,137 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_Small")
+		(at 261.62 50.8 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "d8fd1332-85ea-4feb-bfe7-5790a3fa2d03")
+		(property "Reference" "R92"
+			(at 266.7 49.784 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2.2k"
+			(at 262.89 51.816 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 261.62 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/26622-0402WGF2201TCE/C25879"
+			(at 261.62 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "0402WGF2201TCE"
+			(at 261.62 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C25879"
+			(at 261.62 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 261.62 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 261.62 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" ""
+			(at 261.62 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" ""
+			(at 261.62 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
+			(at 261.62 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "7fd6bc6e-8b45-4292-8d58-a30d4ed34b37")
+		)
+		(pin "2"
+			(uuid "7b10191b-15b6-43b9-a1ce-3165a47bcad6")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
+					(reference "R92")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Mechanical:MountingHole_Pad")
 		(at 229.87 76.2 0)
 		(unit 1)
 		(exclude_from_sim yes)
 		(in_bom no)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "e145e596-5087-4cad-ac14-b5c784024126")
 		(property "Reference" "H2"
@@ -19131,13 +19701,119 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_Small")
+		(at 276.86 146.05 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f243c292-59a7-454f-99c7-ed19fc96a0cc")
+		(property "Reference" "R91"
+			(at 281.94 145.034 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "3.3k"
+			(at 278.13 147.066 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric_Pad0.72x0.64mm_HandSolder"
+			(at 276.86 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/26633-0402WGF3301TCE/C25890"
+			(at 276.86 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "0402WGF3301TCE"
+			(at 276.86 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C25890"
+			(at 276.86 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" ""
+			(at 276.86 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" ""
+			(at 276.86 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
+			(at 276.86 146.05 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "acada0d5-6a2e-4d67-9e84-fe71c48fb625")
+		)
+		(pin "2"
+			(uuid "990a44b7-c08c-48df-aa61-c458ea9e65c5")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd"
+					(reference "R91")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Conn_01x04_Pin")
 		(at 140.97 135.89 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "f3f88578-f5d9-4048-8344-452cbcb6c7c7")
 		(property "Reference" "J14"
@@ -19159,7 +19835,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_1x04_P1.00mm_Vertical"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical"
 			(at 140.97 135.89 0)
 			(effects
 				(font
@@ -19225,7 +19901,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "GRM32ER61E226KE15L"
+		(property "Value" "22uF"
 			(at 169.672 43.434 90)
 			(effects
 				(font
@@ -19234,7 +19910,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_1210_3225Metric_Pad1.33x2.70mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_1206_3216Metric_Pad1.33x1.80mm_HandSolder"
 			(at 166.37 47.752 0)
 			(effects
 				(font
@@ -19243,7 +19919,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2009251934_Capxon-International-Elec-HV100M100E077ETR_C699521.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/13537-CL31A226KAHNNNE/C12891"
 			(at 170.18 47.498 0)
 			(effects
 				(font
@@ -19252,7 +19928,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "22uF"
+		(property "Description" "CL31A226KAHNNNE"
 			(at 162.56 44.45 90)
 			(effects
 				(font
@@ -19261,7 +19937,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C699521"
+		(property "JLCPCB" "C12891"
 			(at 170.18 46.99 0)
 			(effects
 				(font
@@ -19280,6 +19956,15 @@
 			)
 		)
 		(property "Rating" ""
+			(at 170.18 46.99 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 170.18 46.99 0)
 			(effects
 				(font

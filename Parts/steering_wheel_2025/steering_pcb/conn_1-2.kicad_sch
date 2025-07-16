@@ -3748,7 +3748,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 109.22 39.37 0)
 			(effects
 				(font
@@ -3757,7 +3757,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 109.22 39.37 0)
 			(effects
 				(font
@@ -3785,6 +3785,15 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 109.22 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 109.22 39.37 0)
 			(effects
 				(font
@@ -3864,7 +3873,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 135.89 68.58 0)
 			(effects
 				(font
@@ -3873,7 +3882,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 135.89 68.58 0)
 			(effects
 				(font
@@ -3901,6 +3910,15 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 135.89 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 135.89 68.58 0)
 			(effects
 				(font
@@ -4797,7 +4815,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 119.38 68.58 0)
 			(effects
 				(font
@@ -4806,7 +4824,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 119.38 68.58 0)
 			(effects
 				(font
@@ -4834,6 +4852,15 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 119.38 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 119.38 68.58 0)
 			(effects
 				(font
@@ -4913,7 +4940,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 158.75 68.58 0)
 			(effects
 				(font
@@ -4922,7 +4949,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 158.75 68.58 0)
 			(effects
 				(font
@@ -4950,6 +4977,15 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 158.75 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 158.75 68.58 0)
 			(effects
 				(font
@@ -5754,7 +5790,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 191.77 68.58 0)
 			(effects
 				(font
@@ -5763,7 +5799,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 191.77 68.58 0)
 			(effects
 				(font
@@ -5791,6 +5827,15 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 191.77 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 191.77 68.58 0)
 			(effects
 				(font
@@ -6337,7 +6382,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 102.87 68.58 0)
 			(effects
 				(font
@@ -6346,7 +6391,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 102.87 68.58 0)
 			(effects
 				(font
@@ -6374,6 +6419,15 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 102.87 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 102.87 68.58 0)
 			(effects
 				(font
@@ -6453,7 +6507,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 175.26 68.58 0)
 			(effects
 				(font
@@ -6462,7 +6516,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 175.26 68.58 0)
 			(effects
 				(font
@@ -6490,6 +6544,15 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 175.26 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 175.26 68.58 0)
 			(effects
 				(font
@@ -6568,7 +6631,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://jlcpcb.com/partdetail/25819-0402WGF1000TCE/C25076"
 			(at 176.53 39.37 0)
 			(effects
 				(font
@@ -6577,7 +6640,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "100"
+		(property "Description" "0402WGF1000TCE"
 			(at 176.53 39.37 0)
 			(effects
 				(font
@@ -6586,7 +6649,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" ""
+		(property "JLCPCB" "C25076"
 			(at 176.53 39.37 0)
 			(effects
 				(font
@@ -6605,6 +6668,15 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 176.53 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 176.53 39.37 0)
 			(effects
 				(font
@@ -6769,7 +6841,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://jlcpcb.com/partdetail/25819-0402WGF1000TCE/C25076"
 			(at 120.65 39.37 0)
 			(effects
 				(font
@@ -6778,7 +6850,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "100"
+		(property "Description" "0402WGF1000TCE"
 			(at 120.65 39.37 0)
 			(effects
 				(font
@@ -6787,7 +6859,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" ""
+		(property "JLCPCB" "C25076"
 			(at 120.65 39.37 0)
 			(effects
 				(font
@@ -6806,6 +6878,15 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 120.65 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 120.65 39.37 0)
 			(effects
 				(font
@@ -7012,7 +7093,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205311845_UNI-ROYAL-Uniroyal-Elec-0402WGJ0103TCE_C25531.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/C25531"
 			(at 165.1 39.37 0)
 			(effects
 				(font
@@ -7021,7 +7102,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small symbol"
+		(property "Description" "0402WGJ0103TCE"
 			(at 165.1 39.37 0)
 			(effects
 				(font
@@ -7049,6 +7130,15 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 165.1 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 165.1 39.37 0)
 			(effects
 				(font
