@@ -13,7 +13,9 @@ Please provide technical drawings in .pdf, to avoid need for SolidWorks.
 # Circuit Boards
 All PCB design is done in KiCad.
 There are old projects done in Eagle, but Autodesk has killed the Eagle.
-Please provide schematics in .pdf, to avoid need for KiCad or Eagle.
+Please provide schematics in .pdf, to avoid need for KiCad or Eagle, to see the circuit/board layout.
+
+Also, both pdf, project, and silkscreen needs a tag with appropriate PCB title, date, revision no., and who made it (e.g. study number).
 
 # Communication, discussion and questions
 Please use the discord:
