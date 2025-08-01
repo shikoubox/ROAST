@@ -1,8 +1,0 @@
-EESchema-DOCLIB  Version 2.0
-#
-$CMP TCAN1044VDRQ1
-D CAN Interface IC Automotive high speed CAN transceiver 8-SOIC -40 to 125
-F https://www.ti.com/lit/gpn/TCAN1044V-Q1
-$ENDCMP
-#
-#End Doc Library

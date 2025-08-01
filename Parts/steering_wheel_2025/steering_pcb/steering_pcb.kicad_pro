@@ -60,58 +60,6 @@
       ],
       "drc_exclusions": [
         [
-          "clearance|209556691|41201066|e5d193dd-f067-4cac-8fe7-16eea66d583d|a1a717cf-5f8c-45c8-b9ba-8d206a869acc",
-          ""
-        ],
-        [
-          "clearance|209706691|41726066|a1a717cf-5f8c-45c8-b9ba-8d206a869acc|b5e5feaa-df1d-4f2c-9b1e-1306d7fefa26",
-          ""
-        ],
-        [
-          "clearance|209706691|42226066|b5e5feaa-df1d-4f2c-9b1e-1306d7fefa26|2a7af9a7-8248-4834-9299-a48046b346d6",
-          ""
-        ],
-        [
-          "clearance|209706691|43076066|3410afb7-d8d6-47e9-b061-e011fba78c3f|2a7af9a7-8248-4834-9299-a48046b346d6",
-          ""
-        ],
-        [
-          "clearance|209731691|43076066|3410afb7-d8d6-47e9-b061-e011fba78c3f|82f65f13-3ade-4074-a95b-192c494aad11",
-          ""
-        ],
-        [
-          "clearance|210056691|40751066|3270b421-d5f0-4e68-a6e9-624653a6bc4f|e5d193dd-f067-4cac-8fe7-16eea66d583d",
-          ""
-        ],
-        [
-          "clearance|210231691|43076066|82f65f13-3ade-4074-a95b-192c494aad11|b85c567e-3bc3-410e-a7fa-4071f946a639",
-          ""
-        ],
-        [
-          "clearance|210556691|40751066|61acc723-0859-4d6a-9e91-e44bd812540f|3270b421-d5f0-4e68-a6e9-624653a6bc4f",
-          ""
-        ],
-        [
-          "clearance|210731691|43076066|b85c567e-3bc3-410e-a7fa-4071f946a639|1a6be46d-9f3c-4831-98ab-5a1a0852a66f",
-          ""
-        ],
-        [
-          "clearance|211056691|40751066|f7f5045b-7e6b-454c-ba9a-cac1d56dec55|61acc723-0859-4d6a-9e91-e44bd812540f",
-          ""
-        ],
-        [
-          "clearance|211231691|41551066|3d207212-3f26-460b-a091-11f33108474d|f7f5045b-7e6b-454c-ba9a-cac1d56dec55",
-          ""
-        ],
-        [
-          "clearance|211231691|43076066|1a6be46d-9f3c-4831-98ab-5a1a0852a66f|925508a9-f99e-4a69-9e01-cfd2d3596794",
-          ""
-        ],
-        [
-          "clearance|211531691|42551066|925508a9-f99e-4a69-9e01-cfd2d3596794|6f512c20-14ef-476f-9f98-a11cc942c905",
-          ""
-        ],
-        [
           "lib_footprint_mismatch|183822700|137820400|e7fd8568-99c7-4456-9b5c-0ff799ea0e97|00000000-0000-0000-0000-000000000000",
           ""
         ],
@@ -205,7 +153,7 @@
         "min_track_width": 0.2,
         "min_via_annular_width": 0.05,
         "min_via_diameter": 0.4,
-        "solder_mask_to_copper_clearance": 0.0,
+        "solder_mask_to_copper_clearance": 0.005,
         "use_height_for_length_calcs": true
       },
       "teardrop_options": [

@@ -1,7 +1,7 @@
 (kicad_sch
-	(version 20231120)
+	(version 20250114)
 	(generator "eeschema")
-	(generator_version "8.0")
+	(generator_version "9.0")
 	(uuid "c96e5950-7f8d-4be0-bd68-2afa22f69008")
 	(paper "A4")
 	(title_block
@@ -13,7 +13,9 @@
 	(lib_symbols
 		(symbol "Jumper:SolderJumper_3_Bridged12"
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim yes)
 			(in_bom no)
 			(on_board yes)
@@ -79,52 +81,6 @@
 				)
 			)
 			(symbol "SolderJumper_3_Bridged12_0_1"
-				(rectangle
-					(start -1.016 0.508)
-					(end -0.508 -0.508)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(arc
-					(start -1.016 1.016)
-					(mid -2.0276 0)
-					(end -1.016 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start -1.016 1.016)
-					(mid -2.0276 0)
-					(end -1.016 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
-				(rectangle
-					(start -0.508 1.016)
-					(end 0.508 -1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
-					)
-				)
 				(polyline
 					(pts
 						(xy -2.54 0) (xy -2.032 0)
@@ -149,6 +105,52 @@
 						(type none)
 					)
 				)
+				(rectangle
+					(start -1.016 0.508)
+					(end -0.508 -0.508)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(arc
+					(start -1.016 -1.016)
+					(mid -2.0276 0)
+					(end -1.016 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -1.016 -1.016)
+					(mid -2.0276 0)
+					(end -1.016 1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -0.508 1.016)
+					(end 0.508 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
 				(polyline
 					(pts
 						(xy 0 -1.27) (xy 0 -1.016)
@@ -159,6 +161,30 @@
 					)
 					(fill
 						(type none)
+					)
+				)
+				(arc
+					(start 1.016 1.016)
+					(mid 2.0276 0)
+					(end 1.016 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 1.016 1.016)
+					(mid 2.0276 0)
+					(end 1.016 -1.016)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
 					)
 				)
 				(polyline
@@ -183,30 +209,6 @@
 					)
 					(fill
 						(type none)
-					)
-				)
-				(arc
-					(start 1.016 -1.016)
-					(mid 2.0276 0)
-					(end 1.016 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 1.016 -1.016)
-					(mid 2.0276 0)
-					(end 1.016 1.016)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type outline)
 					)
 				)
 			)
@@ -266,6 +268,7 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "PCM_SL_Pin_Headers:PINHD_1x1_Male"
 			(exclude_from_sim no)
@@ -389,9 +392,12 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "PCM_Transistor_MOSFET_AKL:BS170"
-			(pin_names hide)
+			(pin_names
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -452,18 +458,6 @@
 			(symbol "BS170_0_1"
 				(polyline
 					(pts
-						(xy 0.254 -1.27) (xy -2.54 -1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
 						(xy 0.254 1.905) (xy 0.254 -1.905)
 					)
 					(stroke
@@ -476,7 +470,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0.762 -1.778) (xy 2.54 -1.778)
+						(xy 0.254 -1.27) (xy -2.54 -1.27)
 					)
 					(stroke
 						(width 0)
@@ -488,7 +482,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0.762 -1.27) (xy 0.762 -2.286)
+						(xy 0.762 2.286) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0.254)
@@ -512,7 +506,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0.762 2.286) (xy 0.762 1.27)
+						(xy 0.762 -1.27) (xy 0.762 -2.286)
 					)
 					(stroke
 						(width 0.254)
@@ -524,31 +518,7 @@
 				)
 				(polyline
 					(pts
-						(xy 2.54 1.778) (xy 0.762 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 2.54) (xy 2.54 1.778)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
+						(xy 0.762 -1.778) (xy 2.54 -1.778)
 					)
 					(stroke
 						(width 0)
@@ -581,6 +551,30 @@
 						(type background)
 					)
 				)
+				(polyline
+					(pts
+						(xy 2.54 2.54) (xy 2.54 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 1.778) (xy 0.762 1.778)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
 				(circle
 					(center 2.54 -1.778)
 					(radius 0.1778)
@@ -592,26 +586,20 @@
 						(type outline)
 					)
 				)
-			)
-			(symbol "BS170_1_1"
-				(pin passive line
-					(at 2.54 5.08 270)
-					(length 2.54)
-					(name "D"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
+				(polyline
+					(pts
+						(xy 2.54 -2.54) (xy 2.54 0) (xy 0.762 0)
 					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
 					)
 				)
+			)
+			(symbol "BS170_1_1"
 				(pin input line
 					(at -3.81 -1.27 0)
 					(length 2.54)
@@ -623,6 +611,24 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 2.54 5.08 270)
+					(length 2.54)
+					(name "D"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -649,12 +655,17 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
 		(symbol "power:+5V"
 			(power)
-			(pin_numbers hide)
+			(pin_numbers
+				(hide yes)
+			)
 			(pin_names
-				(offset 0) hide)
+				(offset 0)
+				(hide yes)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -726,7 +737,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 0) (xy 0 2.54)
+						(xy 0 2.54) (xy 0.762 1.27)
 					)
 					(stroke
 						(width 0)
@@ -738,7 +749,7 @@
 				)
 				(polyline
 					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
+						(xy 0 0) (xy 0 2.54)
 					)
 					(stroke
 						(width 0)
@@ -769,7 +780,64 @@
 					)
 				)
 			)
+			(embedded_fonts no)
 		)
+	)
+	(rectangle
+		(start 57.15 13.97)
+		(end 105.41 48.26)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 220e4787-9a5a-4c10-9a3f-aaaf3dcca0c3)
+	)
+	(text "Transistor for turning on LEDs\nThe 2N7002 requires a Vgs of around 2-4V to turn\non fully\n\nBZX84C3V3TS-7-F is a zener diode that blocks for voltages below 3.3v.\n"
+		(exclude_from_sim no)
+		(at 14.478 120.142 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "242d8a87-2ddc-4a77-94be-4384f4c1ea8b")
+	)
+	(text "Using other buttons than x_0, the 7V connection as HIGH is neccessary.\nFor x_0, one can get away with a 5V HIGH connection."
+		(exclude_from_sim no)
+		(at 14.478 143.51 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "35dcdb3a-d56a-42be-b0c4-d35fc89ada6a")
+	)
+	(text "For connecting external LEDs,\nthat dim with buttons"
+		(exclude_from_sim no)
+		(at 81.28 45.72 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "8cf5ce56-115a-4313-ad44-7d08eeb9a724")
+	)
+	(text "Suitable current-limiting resistor\n\nBy burning LEDs\n\nBlue and Green works fine at 3.3v\nRed works fine at 3.3V with 47Ω resistor\n\nFor red LED\n(3v-2.3v)/15mA = 47Ω\n(5v-2.3v)/15mA = 180Ω\n(7v-2.3v)/15mA = 313Ω\n\nFor green and blue at higher voltages\n(5v-3.3v)/15mA = 113Ω\n(7v-3.3v)/15mA = 246Ω"
+		(exclude_from_sim no)
+		(at 14.732 41.148 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "eb4c3f1d-33ed-4ce9-9571-a725609417e2")
 	)
 	(wire
 		(pts
@@ -820,18 +888,6 @@
 			(type default)
 		)
 		(uuid "ef264208-1347-489c-b881-bad59d3a2098")
-	)
-	(rectangle
-		(start 57.15 13.97)
-		(end 105.41 48.26)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(fill
-			(type none)
-		)
-		(uuid 220e4787-9a5a-4c10-9a3f-aaaf3dcca0c3)
 	)
 	(image
 		(at 50.8 106.68)
@@ -5771,50 +5827,6 @@
 			"uq1rxylnVbwAAAAASUVORK5CYII="
 		)
 	)
-	(text "Transistor for turning on LEDs\nThe 2N7002 requires a Vgs of around 2-4V to turn\non fully\n\nBZX84C3V3TS-7-F is a zener diode that blocks for voltages below 3.3v.\n"
-		(exclude_from_sim no)
-		(at 14.478 120.142 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "242d8a87-2ddc-4a77-94be-4384f4c1ea8b")
-	)
-	(text "Using other buttons than x_0, the 7V connection as HIGH is neccessary.\nFor x_0, one can get away with a 5V HIGH connection."
-		(exclude_from_sim no)
-		(at 14.478 143.51 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "35dcdb3a-d56a-42be-b0c4-d35fc89ada6a")
-	)
-	(text "For connecting external LEDs,\nthat dim with buttons"
-		(exclude_from_sim no)
-		(at 81.28 45.72 0)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify left)
-		)
-		(uuid "8cf5ce56-115a-4313-ad44-7d08eeb9a724")
-	)
-	(text "Suitable current-limiting resistor\n\nBy burning LEDs\n\nBlue and Green works fine at 3.3v\nRed works fine at 3.3V with 47Ω resistor\n\nFor red LED\n(3v-2.3v)/15mA = 47Ω\n(5v-2.3v)/15mA = 180Ω\n(7v-2.3v)/15mA = 313Ω\n\nFor green and blue at higher voltages\n(5v-3.3v)/15mA = 113Ω\n(7v-3.3v)/15mA = 246Ω"
-		(exclude_from_sim no)
-		(at 14.732 41.148 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "eb4c3f1d-33ed-4ce9-9571-a725609417e2")
-	)
 	(global_label "button10_1"
 		(shape input)
 		(at 185.42 68.58 180)
@@ -7338,6 +7350,10 @@
 	(sheet
 		(at 124.46 34.29)
 		(size 33.02 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -7376,83 +7392,83 @@
 		)
 		(pin "button_2_1" input
 			(at 124.46 43.18 180)
+			(uuid "47dd7d87-24de-48cb-a382-e0e1754d1d8c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "47dd7d87-24de-48cb-a382-e0e1754d1d8c")
 		)
 		(pin "button_1_0" input
 			(at 157.48 38.1 0)
+			(uuid "553b97e4-f326-4fb6-b025-550d30e0223d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "553b97e4-f326-4fb6-b025-550d30e0223d")
 		)
 		(pin "button_2_3" input
 			(at 124.46 48.26 180)
+			(uuid "52516ada-7dae-47a9-ad2c-6dc85e44d789")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "52516ada-7dae-47a9-ad2c-6dc85e44d789")
 		)
 		(pin "button_2_2" input
 			(at 124.46 45.72 180)
+			(uuid "1e923a0a-3847-472f-b9e0-a639e2f634d9")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "1e923a0a-3847-472f-b9e0-a639e2f634d9")
 		)
 		(pin "button_1_2" input
 			(at 157.48 45.72 0)
+			(uuid "aacc43a3-1dbe-43ff-bed0-a792b279a23b")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "aacc43a3-1dbe-43ff-bed0-a792b279a23b")
 		)
 		(pin "button_1_3" input
 			(at 157.48 48.26 0)
+			(uuid "2ff5d135-b6a8-4503-ab93-f5bd3562d7c7")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "2ff5d135-b6a8-4503-ab93-f5bd3562d7c7")
 		)
 		(pin "button_2_0" input
 			(at 124.46 38.1 180)
+			(uuid "92740b7f-4942-4950-afd5-7b830f44cb14")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "92740b7f-4942-4950-afd5-7b830f44cb14")
 		)
 		(pin "button_1_1" input
 			(at 157.48 43.18 0)
+			(uuid "cc873ccd-e2eb-4a8d-9dbd-6292bcafcfce")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "cc873ccd-e2eb-4a8d-9dbd-6292bcafcfce")
 		)
 		(instances
 			(project "steering_pcb"
@@ -7465,6 +7481,10 @@
 	(sheet
 		(at 185.42 85.09)
 		(size 33.02 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -7503,83 +7523,83 @@
 		)
 		(pin "button_2_1" input
 			(at 185.42 93.98 180)
+			(uuid "268220f4-9214-4605-bd66-6edd30912dc3")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "268220f4-9214-4605-bd66-6edd30912dc3")
 		)
 		(pin "button_1_0" input
 			(at 218.44 88.9 0)
+			(uuid "89497726-4a6b-4172-91ee-b9b539158848")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "89497726-4a6b-4172-91ee-b9b539158848")
 		)
 		(pin "button_2_3" input
 			(at 185.42 99.06 180)
+			(uuid "4aab011f-f5b2-4459-ac6d-211ab3ac490c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "4aab011f-f5b2-4459-ac6d-211ab3ac490c")
 		)
 		(pin "button_2_2" input
 			(at 185.42 96.52 180)
+			(uuid "d8ce1e78-1220-4e92-8dc8-33e2345ed50a")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "d8ce1e78-1220-4e92-8dc8-33e2345ed50a")
 		)
 		(pin "button_1_2" input
 			(at 218.44 96.52 0)
+			(uuid "1a6acebd-502b-447b-ba5e-9f88d677358b")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "1a6acebd-502b-447b-ba5e-9f88d677358b")
 		)
 		(pin "button_1_3" input
 			(at 218.44 99.06 0)
+			(uuid "5f49a282-7849-4f2f-9165-32cd1225445e")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "5f49a282-7849-4f2f-9165-32cd1225445e")
 		)
 		(pin "button_2_0" input
 			(at 185.42 88.9 180)
+			(uuid "c8c7ce04-aa0f-4399-9d8d-a9b5809f6658")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "c8c7ce04-aa0f-4399-9d8d-a9b5809f6658")
 		)
 		(pin "button_1_1" input
 			(at 218.44 93.98 0)
+			(uuid "e9eac637-a8df-462f-8068-1485d7a80ab2")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "e9eac637-a8df-462f-8068-1485d7a80ab2")
 		)
 		(instances
 			(project "steering_pcb"
@@ -7592,6 +7612,10 @@
 	(sheet
 		(at 124.46 85.09)
 		(size 33.02 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -7630,83 +7654,83 @@
 		)
 		(pin "button_2_1" input
 			(at 124.46 93.98 180)
+			(uuid "8cc34210-969d-4b41-b22d-5774ee147efc")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "8cc34210-969d-4b41-b22d-5774ee147efc")
 		)
 		(pin "button_1_0" input
 			(at 157.48 88.9 0)
+			(uuid "a06f1bb7-bfc6-418f-8098-f0333de28e08")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "a06f1bb7-bfc6-418f-8098-f0333de28e08")
 		)
 		(pin "button_2_3" input
 			(at 124.46 99.06 180)
+			(uuid "164d6787-1b59-4cf0-b1f2-4a148917858d")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "164d6787-1b59-4cf0-b1f2-4a148917858d")
 		)
 		(pin "button_2_2" input
 			(at 124.46 96.52 180)
+			(uuid "6ee133c2-ed5b-4252-b6f2-176ac0868e59")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "6ee133c2-ed5b-4252-b6f2-176ac0868e59")
 		)
 		(pin "button_1_2" input
 			(at 157.48 96.52 0)
+			(uuid "9d406b6c-532a-4814-9cb2-8a9eb5dc0359")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "9d406b6c-532a-4814-9cb2-8a9eb5dc0359")
 		)
 		(pin "button_1_3" input
 			(at 157.48 99.06 0)
+			(uuid "0b363937-5952-4980-9dfa-24d3a90640bb")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "0b363937-5952-4980-9dfa-24d3a90640bb")
 		)
 		(pin "button_2_0" input
 			(at 124.46 88.9 180)
+			(uuid "e3896938-c4b1-47b8-aa3e-84c3604279c1")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "e3896938-c4b1-47b8-aa3e-84c3604279c1")
 		)
 		(pin "button_1_1" input
 			(at 157.48 93.98 0)
+			(uuid "135cda0f-7bde-4c60-a2a4-4e58a9cee055")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "135cda0f-7bde-4c60-a2a4-4e58a9cee055")
 		)
 		(instances
 			(project "steering_pcb"
@@ -7719,6 +7743,10 @@
 	(sheet
 		(at 185.42 34.29)
 		(size 33.02 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -7757,83 +7785,83 @@
 		)
 		(pin "button_2_1" input
 			(at 185.42 43.18 180)
+			(uuid "8709109b-5ecf-4aeb-a6b1-100fc31141a2")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "8709109b-5ecf-4aeb-a6b1-100fc31141a2")
 		)
 		(pin "button_1_0" input
 			(at 218.44 38.1 0)
+			(uuid "2a6f7cdc-22bd-482e-a5c5-b03be2786651")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "2a6f7cdc-22bd-482e-a5c5-b03be2786651")
 		)
 		(pin "button_2_3" input
 			(at 185.42 48.26 180)
+			(uuid "d7250f4e-402b-4486-a101-5b75f4006db3")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "d7250f4e-402b-4486-a101-5b75f4006db3")
 		)
 		(pin "button_2_2" input
 			(at 185.42 45.72 180)
+			(uuid "901c86be-6f86-4f4f-8698-1e98814535cc")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "901c86be-6f86-4f4f-8698-1e98814535cc")
 		)
 		(pin "button_1_2" input
 			(at 218.44 45.72 0)
+			(uuid "d1ac1698-c73f-424f-bab0-23c4e33fba34")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "d1ac1698-c73f-424f-bab0-23c4e33fba34")
 		)
 		(pin "button_1_3" input
 			(at 218.44 48.26 0)
+			(uuid "1a6644b3-87f0-43a0-87d0-9388f679b393")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "1a6644b3-87f0-43a0-87d0-9388f679b393")
 		)
 		(pin "button_2_0" input
 			(at 185.42 38.1 180)
+			(uuid "2a0ff404-718b-4dc9-9291-a0ee92e3f215")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "2a0ff404-718b-4dc9-9291-a0ee92e3f215")
 		)
 		(pin "button_1_1" input
 			(at 218.44 43.18 0)
+			(uuid "f6b6fe25-73d0-4938-a75f-a053202bbc2b")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "f6b6fe25-73d0-4938-a75f-a053202bbc2b")
 		)
 		(instances
 			(project "steering_pcb"
@@ -7846,6 +7874,10 @@
 	(sheet
 		(at 124.46 59.69)
 		(size 33.02 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -7884,83 +7916,83 @@
 		)
 		(pin "button_2_1" input
 			(at 124.46 68.58 180)
+			(uuid "9780d2c9-303f-4450-bf22-2407b43f13e1")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "9780d2c9-303f-4450-bf22-2407b43f13e1")
 		)
 		(pin "button_1_0" input
 			(at 157.48 63.5 0)
+			(uuid "2c959497-1bb1-45dd-b5aa-472cf87f9af8")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "2c959497-1bb1-45dd-b5aa-472cf87f9af8")
 		)
 		(pin "button_2_3" input
 			(at 124.46 73.66 180)
+			(uuid "1886fba4-5de4-41a4-9331-be98e9c4e732")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "1886fba4-5de4-41a4-9331-be98e9c4e732")
 		)
 		(pin "button_2_2" input
 			(at 124.46 71.12 180)
+			(uuid "1b4689f2-3b5f-44c7-9387-47395f689803")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "1b4689f2-3b5f-44c7-9387-47395f689803")
 		)
 		(pin "button_1_2" input
 			(at 157.48 71.12 0)
+			(uuid "8c795316-4158-4768-b541-6c267f2ec3f6")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "8c795316-4158-4768-b541-6c267f2ec3f6")
 		)
 		(pin "button_1_3" input
 			(at 157.48 73.66 0)
+			(uuid "13d7e868-8f76-4f2f-be2c-9f400d53234f")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "13d7e868-8f76-4f2f-be2c-9f400d53234f")
 		)
 		(pin "button_2_0" input
 			(at 124.46 63.5 180)
+			(uuid "e69eaa7e-f2df-43cf-8d4c-bc0b7595344c")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "e69eaa7e-f2df-43cf-8d4c-bc0b7595344c")
 		)
 		(pin "button_1_1" input
 			(at 157.48 68.58 0)
+			(uuid "0aaeb7a0-ace8-4352-89af-7de12edcdeaf")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "0aaeb7a0-ace8-4352-89af-7de12edcdeaf")
 		)
 		(instances
 			(project "steering_pcb"
@@ -7973,6 +8005,10 @@
 	(sheet
 		(at 185.42 59.69)
 		(size 33.02 17.78)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
 		(fields_autoplaced yes)
 		(stroke
 			(width 0.1524)
@@ -8011,83 +8047,83 @@
 		)
 		(pin "button_2_1" input
 			(at 185.42 68.58 180)
+			(uuid "1838bc1a-3f2b-4c86-9658-5bfe54180da9")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "1838bc1a-3f2b-4c86-9658-5bfe54180da9")
 		)
 		(pin "button_1_0" input
 			(at 218.44 63.5 0)
+			(uuid "b523e247-1cea-4fb6-bfa3-e1ea6a4b17eb")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "b523e247-1cea-4fb6-bfa3-e1ea6a4b17eb")
 		)
 		(pin "button_2_3" input
 			(at 185.42 73.66 180)
+			(uuid "64e021d3-db5c-4852-8c23-940cc4119fd0")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "64e021d3-db5c-4852-8c23-940cc4119fd0")
 		)
 		(pin "button_2_2" input
 			(at 185.42 71.12 180)
+			(uuid "f51a1375-3c28-4ff7-837e-72374b3f7190")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "f51a1375-3c28-4ff7-837e-72374b3f7190")
 		)
 		(pin "button_1_2" input
 			(at 218.44 71.12 0)
+			(uuid "b4cc7080-b16a-46bc-b061-dc1cf2bf8252")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "b4cc7080-b16a-46bc-b061-dc1cf2bf8252")
 		)
 		(pin "button_1_3" input
 			(at 218.44 73.66 0)
+			(uuid "964a0f29-3668-404a-aa7b-9580322e5df6")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "964a0f29-3668-404a-aa7b-9580322e5df6")
 		)
 		(pin "button_2_0" input
 			(at 185.42 63.5 180)
+			(uuid "f4080557-f6cb-4e2f-9ccc-f367cf760718")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify left)
 			)
-			(uuid "f4080557-f6cb-4e2f-9ccc-f367cf760718")
 		)
 		(pin "button_1_1" input
 			(at 218.44 68.58 0)
+			(uuid "a53b9e00-b4b8-4176-a3ed-a171283508c3")
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 				(justify right)
 			)
-			(uuid "a53b9e00-b4b8-4176-a3ed-a171283508c3")
 		)
 		(instances
 			(project "steering_pcb"
