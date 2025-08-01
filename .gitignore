@@ -1,6 +1,11 @@
 ##### Software
 *.pio
 *.vscode
+node_modules/
+__pycache__/
+
+
+
 ##### Software end
 
 ##### PCB
