@@ -7227,7 +7227,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "PCM_Package_TO_SOT_THT_AKL:TO-92_Inline_Wide_DGS"
+		(property "Footprint" "Package_TO_SOT_THT:TO-92_Inline_Wide"
 			(at 73.66 24.13 0)
 			(effects
 				(font
@@ -7254,7 +7254,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C2998067"
+		(property "JLCPCB" "C111691"
 			(at 78.74 26.67 0)
 			(effects
 				(font
@@ -7291,6 +7291,24 @@
 			)
 		)
 		(property "Rating" ""
+			(at 78.74 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "BS170"
+			(at 78.74 26.67 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "maybe?? no"
 			(at 78.74 26.67 0)
 			(effects
 				(font

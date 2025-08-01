@@ -416,7 +416,7 @@
 				)
 			)
 		)
-		(symbol "PCM_Transistor_MOSFET_AKL:BSS138BKS"
+		(symbol "PCM_Transistor_MOSFET_AKL:2N7002DW"
 			(pin_names
 				(offset 1.016) hide)
 			(exclude_from_sim no)
@@ -431,7 +431,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "BSS138BKS"
+			(property "Value" "2N7002DW"
 				(at 3.81 -1.27 0)
 				(effects
 					(font
@@ -449,7 +449,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "https://www.tme.eu/Document/c01b72f1a597b0396dc8d2adde480d6f/BSS138BKS.pdf"
+			(property "Datasheet" "https://www.tme.eu/Document/09843a37f7fde1b4a748e12ae0daa880/2N7002DWH6327XTSA1.pdf"
 				(at 0 7.62 0)
 				(effects
 					(font
@@ -458,7 +458,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "SOT-363 Dual NMOS enchancement mode transistor, 60V, 320mA, 445mW, Alternate KiCAD Library"
+			(property "Description" "SOT-363 Dual NMOS enchancement mode transistor, 60V, 300mA, 500mW, Alternate KiCAD Library"
 				(at 0 0 0)
 				(effects
 					(font
@@ -475,7 +475,7 @@
 					)
 				)
 			)
-			(property "ki_keywords" "enchancement mosfet nmosfet n-mosfet nmos n-mos emos emosfet dual BSS138BKS"
+			(property "ki_keywords" "enchancement mosfet nmosfet n-mosfet nmos n-mos emos emosfet dual 2N7002DW"
 				(at 0 0 0)
 				(effects
 					(font
@@ -484,7 +484,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "BSS138BKS_1_1"
+			(symbol "2N7002DW_1_1"
 				(polyline
 					(pts
 						(xy -1.016 1.905) (xy -1.016 -1.905)
@@ -708,7 +708,7 @@
 					)
 				)
 			)
-			(symbol "BSS138BKS_2_1"
+			(symbol "2N7002DW_2_1"
 				(polyline
 					(pts
 						(xy -1.016 1.905) (xy -1.016 -1.905)
@@ -2491,6 +2491,132 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_Transistor_MOSFET_AKL:2N7002DW")
+		(at 151.13 58.42 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0592dd68-6b41-474d-b363-127e8ca0f12f")
+		(property "Reference" "Q1"
+			(at 153.416 60.452 0)
+			(effects
+				(font
+					(size 0.9 0.9)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2N7002DW"
+			(at 151.892 60.452 0)
+			(effects
+				(font
+					(size 0.7 0.7)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-363_SC-70-6"
+			(at 158.75 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2201191030_Jiangsu-Changjing-Electronics-Technology-Co---Ltd--2N7002DW_C2961242.pdf"
+			(at 158.75 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "SOT-363 Dual NMOS enchancement mode transistor, 60V, 300mA, 500mW, Alternate KiCAD Library"
+			(at 151.13 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C2961242"
+			(at 151.13 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 151.13 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 151.13 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
+			(at 151.13 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "2N7002DW"
+			(at 151.13 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "b3d7df57-0f5f-41a7-a0f5-4e7dc30af3b3")
+		)
+		(pin "3"
+			(uuid "1d1c70f2-3d22-4f8c-9793-e60949617250")
+		)
+		(pin "2"
+			(uuid "f2c1f0a8-8326-4154-92b5-064f2a1fe9d6")
+		)
+		(pin "4"
+			(uuid "6fb43458-fea3-4dc2-872a-8075892a2f37")
+		)
+		(pin "1"
+			(uuid "deb5538a-ced3-4c83-95f6-88dd55c19b5b")
+		)
+		(pin "5"
+			(uuid "0f7c3fd2-626d-4cb5-a5ab-a57c608f8e4c")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/3158a1dc-35f2-49d2-93b5-e8517c53d7ab"
+					(reference "Q1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 162.56 54.61 0)
 		(unit 1)
@@ -2536,7 +2662,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGJ0103TCE"
+		(property "Description" ""
 			(at 162.56 54.61 0)
 			(effects
 				(font
@@ -2591,6 +2717,15 @@
 			)
 		)
 		(property "Note" "basic"
+			(at 162.56 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0402WGJ0103TCE"
 			(at 162.56 54.61 0)
 			(effects
 				(font
@@ -2725,7 +2860,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGJ0103TCE"
+		(property "Description" ""
 			(at 193.04 52.07 0)
 			(effects
 				(font
@@ -2788,6 +2923,15 @@
 				(hide yes)
 			)
 		)
+		(property "Product" "0402WGJ0103TCE"
+			(at 193.04 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "b0cfbca4-e5ed-49b1-aa49-a6439dab7c54")
 		)
@@ -2810,7 +2954,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "51978414-ded8-4883-97ba-0631b413fd0d")
 		(property "Reference" "TP_SDA3v1"
 			(at 75.438 56.134 0)
@@ -2916,6 +3060,132 @@
 		)
 	)
 	(symbol
+		(lib_id "PCM_Transistor_MOSFET_AKL:2N7002DW")
+		(at 204.47 58.42 270)
+		(unit 2)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "6470f452-4055-442e-89ff-0b6eb7378ba5")
+		(property "Reference" "Q1"
+			(at 203.2 60.706 0)
+			(effects
+				(font
+					(size 0.9 0.9)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "2N7002DW"
+			(at 201.676 60.706 0)
+			(effects
+				(font
+					(size 0.7 0.7)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-363_SC-70-6"
+			(at 212.09 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2201191030_Jiangsu-Changjing-Electronics-Technology-Co---Ltd--2N7002DW_C2961242.pdf"
+			(at 212.09 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "SOT-363 Dual NMOS enchancement mode transistor, 60V, 300mA, 500mW, Alternate KiCAD Library"
+			(at 204.47 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C2961242"
+			(at 204.47 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 204.47 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 204.47 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
+			(at 204.47 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "2N7002DW"
+			(at 204.47 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "6"
+			(uuid "497dde9a-52a7-4fae-a40c-ac727df9b7ac")
+		)
+		(pin "3"
+			(uuid "d744c926-b028-4058-85f7-4369291b25eb")
+		)
+		(pin "2"
+			(uuid "de16687d-0138-41c8-8a31-c9395d5c4e1a")
+		)
+		(pin "4"
+			(uuid "eb870366-a1df-4ff7-8845-82317054b141")
+		)
+		(pin "1"
+			(uuid "f18ae8b9-4a0e-4e10-a080-48607c08d40f")
+		)
+		(pin "5"
+			(uuid "1cf8caa5-4fdc-4e1f-959c-6ea6040b6cb4")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/3158a1dc-35f2-49d2-93b5-e8517c53d7ab"
+					(reference "Q1")
+					(unit 2)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 139.7 52.07 0)
 		(unit 1)
@@ -2961,7 +3231,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGJ0103TCE"
+		(property "Description" ""
 			(at 139.7 52.07 0)
 			(effects
 				(font
@@ -3016,6 +3286,15 @@
 			)
 		)
 		(property "Note" "basic"
+			(at 139.7 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0402WGJ0103TCE"
 			(at 139.7 52.07 0)
 			(effects
 				(font
@@ -3164,256 +3443,6 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/3158a1dc-35f2-49d2-93b5-e8517c53d7ab"
 					(reference "#PWR107")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_Transistor_MOSFET_AKL:BSS138BKS")
-		(at 204.47 58.42 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "80b1b8a6-92bc-4b96-b74b-b60a7660ca43")
-		(property "Reference" "Q6"
-			(at 204.47 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "BSS138BKS"
-			(at 204.47 64.77 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-363_SC-70-6"
-			(at 212.09 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Nexperia-BSS138BKS-115_C456075.pdf"
-			(at 212.09 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "SOT-363 Dual NMOS enchancement mode transistor, 60V, 320mA, 445mW, Alternate KiCAD Library"
-			(at 204.47 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C456075"
-			(at 204.47 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 204.47 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 204.47 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Indicator" ""
-			(at 204.47 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Rating" ""
-			(at 204.47 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "0c80c0d5-fec1-43fe-9d29-1e13b070fdd6")
-		)
-		(pin "6"
-			(uuid "3e78ac41-f1f4-4f07-a9e9-1530555460bf")
-		)
-		(pin "2"
-			(uuid "d031c36e-2942-4a4f-85d1-328ec8227773")
-		)
-		(pin "4"
-			(uuid "dcd1c318-f404-482e-a40a-13ef010c14ac")
-		)
-		(pin "5"
-			(uuid "45c664d1-1af3-4f1e-a127-a2bd00bd7877")
-		)
-		(pin "3"
-			(uuid "f2ae5396-c313-4ae7-9664-da1ac1e4efc8")
-		)
-		(instances
-			(project "steering_pcb"
-				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/3158a1dc-35f2-49d2-93b5-e8517c53d7ab"
-					(reference "Q6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "PCM_Transistor_MOSFET_AKL:BSS138BKS")
-		(at 151.13 58.42 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "872b31c2-11fb-4f3d-9039-479831b13f8c")
-		(property "Reference" "Q1"
-			(at 151.13 62.23 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "BSS138BKS"
-			(at 151.13 64.77 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-363_SC-70-6"
-			(at 158.75 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_Nexperia-BSS138BKS-115_C456075.pdf"
-			(at 158.75 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "SOT-363 Dual NMOS enchancement mode transistor, 60V, 320mA, 445mW, Alternate KiCAD Library"
-			(at 151.13 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C456075"
-			(at 151.13 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 151.13 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 151.13 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Indicator" ""
-			(at 151.13 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Rating" ""
-			(at 151.13 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d30e87bb-e994-4270-a323-3fa6e932c593")
-		)
-		(pin "6"
-			(uuid "10a762f1-9204-426f-8cdb-82bdbfa9971a")
-		)
-		(pin "2"
-			(uuid "840cd9d6-5838-4ae6-ad78-0b2b2de2704d")
-		)
-		(pin "4"
-			(uuid "6ca0edc4-3540-425b-8d1d-3911d08f0239")
-		)
-		(pin "5"
-			(uuid "129f9bad-354a-4d0c-9bdf-414f3477a037")
-		)
-		(pin "3"
-			(uuid "5e240eca-4ece-4b15-acd0-6230d104733f")
-		)
-		(instances
-			(project "steering_pcb"
-				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/3158a1dc-35f2-49d2-93b5-e8517c53d7ab"
-					(reference "Q1")
 					(unit 1)
 				)
 			)
@@ -3589,7 +3618,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGJ0103TCE"
+		(property "Description" ""
 			(at 215.9 52.07 0)
 			(effects
 				(font
@@ -3644,6 +3673,15 @@
 			)
 		)
 		(property "Note" "basic"
+			(at 215.9 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0402WGJ0103TCE"
 			(at 215.9 52.07 0)
 			(effects
 				(font
@@ -3832,6 +3870,15 @@
 				(hide yes)
 			)
 		)
+		(property "Note" "no"
+			(at 93.98 67.31 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "12"
 			(uuid "75277b07-7977-4b75-9677-871e63a7cc27")
 		)
@@ -3929,7 +3976,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGJ0103TCE"
+		(property "Description" ""
 			(at 33.02 129.54 0)
 			(effects
 				(font
@@ -3992,6 +4039,15 @@
 				(hide yes)
 			)
 		)
+		(property "Product" "0402WGJ0103TCE"
+			(at 33.02 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "866dd4fb-3bde-409d-8209-18c686d681d3")
 		)
@@ -4015,7 +4071,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "daf45911-e9f4-4c08-9834-1f5924c09f95")
 		(property "Reference" "TP_SCL3v1"
 			(at 75.438 68.326 0)

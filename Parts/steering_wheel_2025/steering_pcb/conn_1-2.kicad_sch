@@ -2825,6 +2825,24 @@
 				(hide yes)
 			)
 		)
+		(property "Note" "no"
+			(at 133.35 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "2N7002DW"
+			(at 133.35 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "6"
 			(uuid "a7938cb5-7f72-43f8-af0d-705a606f87e6")
 		)
@@ -2890,7 +2908,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BAS16VYs"
+		(property "Value" "~"
 			(at 196.85 55.118 90)
 			(effects
 				(font
@@ -2917,7 +2935,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "SOT-363 Triple Diode, Small Signal, Fast Switching, 100V, 200mA, 4ns, Alternate KiCad Library"
+		(property "Description" "3 Independent 200mA 1.25V@150mA 100V SOT-363 Diodes - General Purpose ROHS"
 			(at 191.516 54.61 0)
 			(effects
 				(font
@@ -2945,6 +2963,24 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 195.58 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "BAS16VYs"
+			(at 195.58 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
 			(at 195.58 54.61 0)
 			(effects
 				(font
@@ -3104,7 +3140,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BAS16VYs"
+		(property "Value" "~"
 			(at 140.97 55.118 90)
 			(effects
 				(font
@@ -3131,7 +3167,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "SOT-363 Triple Diode, Small Signal, Fast Switching, 100V, 200mA, 4ns, Alternate KiCad Library"
+		(property "Description" "3 Independent 200mA 1.25V@150mA 100V SOT-363 Diodes - General Purpose ROHS"
 			(at 135.636 54.61 0)
 			(effects
 				(font
@@ -3159,6 +3195,24 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 139.7 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "BAS16VYs"
+			(at 139.7 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
 			(at 139.7 54.61 0)
 			(effects
 				(font
@@ -3232,7 +3286,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "180"
+		(property "Value" "100"
 			(at 106.68 54.61 90)
 			(effects
 				(font
@@ -3249,7 +3303,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010000_UNI-ROYAL-Uniroyal-Elec-0402WGF1800TCE_C38941.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/25819-0402WGF1000TCE/C25076"
 			(at 106.68 54.61 0)
 			(effects
 				(font
@@ -3267,7 +3321,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C38941"
+		(property "JLCPCB" "C25076"
 			(at 106.68 54.61 0)
 			(effects
 				(font
@@ -3286,6 +3340,24 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 106.68 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
+			(at 106.68 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0402WGF1000TCE"
 			(at 106.68 54.61 0)
 			(effects
 				(font
@@ -3402,6 +3474,24 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 161.29 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
+			(at 161.29 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "2N7002DW"
 			(at 161.29 62.23 0)
 			(effects
 				(font
@@ -3666,6 +3756,24 @@
 				(hide yes)
 			)
 		)
+		(property "Product" "BZX84C3V3TS-7-F"
+			(at 101.6 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
+			(at 101.6 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "6"
 			(uuid "e9d51cd6-f98e-4269-8b36-40f1b4c4a94c")
 		)
@@ -3757,7 +3865,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGJ0103TCE"
+		(property "Description" ""
 			(at 109.22 39.37 0)
 			(effects
 				(font
@@ -3794,6 +3902,15 @@
 			)
 		)
 		(property "Note" "basic"
+			(at 109.22 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0402WGJ0103TCE"
 			(at 109.22 39.37 0)
 			(effects
 				(font
@@ -3882,7 +3999,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGJ0103TCE"
+		(property "Description" ""
 			(at 135.89 68.58 0)
 			(effects
 				(font
@@ -3919,6 +4036,15 @@
 			)
 		)
 		(property "Note" "basic"
+			(at 135.89 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0402WGJ0103TCE"
 			(at 135.89 68.58 0)
 			(effects
 				(font
@@ -4036,6 +4162,24 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 116.84 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
+			(at 116.84 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "2N7002DW"
 			(at 116.84 62.23 0)
 			(effects
 				(font
@@ -4250,6 +4394,24 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 119.38 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "BZX84C3V3TS-7-F"
+			(at 119.38 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
 			(at 119.38 57.15 0)
 			(effects
 				(font
@@ -4824,7 +4986,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGJ0103TCE"
+		(property "Description" ""
 			(at 119.38 68.58 0)
 			(effects
 				(font
@@ -4861,6 +5023,15 @@
 			)
 		)
 		(property "Note" "basic"
+			(at 119.38 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0402WGJ0103TCE"
 			(at 119.38 68.58 0)
 			(effects
 				(font
@@ -4949,7 +5120,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGJ0103TCE"
+		(property "Description" ""
 			(at 158.75 68.58 0)
 			(effects
 				(font
@@ -4986,6 +5157,15 @@
 			)
 		)
 		(property "Note" "basic"
+			(at 158.75 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0402WGJ0103TCE"
 			(at 158.75 68.58 0)
 			(effects
 				(font
@@ -5102,6 +5282,24 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 175.26 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "BZX84C3V3TS-7-F"
+			(at 175.26 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
 			(at 175.26 57.15 0)
 			(effects
 				(font
@@ -5238,6 +5436,24 @@
 				(hide yes)
 			)
 		)
+		(property "Product" "BZX84C3V3TS-7-F"
+			(at 191.77 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
+			(at 191.77 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "6"
 			(uuid "9942e546-c631-4cad-b670-be648952f3a9")
 		)
@@ -5303,7 +5519,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "BAS16VYs"
+		(property "Value" "~"
 			(at 152.908 54.61 90)
 			(effects
 				(font
@@ -5330,7 +5546,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "SOT-363 Triple Diode, Small Signal, Fast Switching, 100V, 200mA, 4ns, Alternate KiCad Library"
+		(property "Description" "3 Independent 200mA 1.25V@150mA 100V SOT-363 Diodes - General Purpose ROHS"
 			(at 150.876 54.61 0)
 			(effects
 				(font
@@ -5358,6 +5574,24 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 154.94 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "BAS16VYs"
+			(at 154.94 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
 			(at 154.94 54.61 0)
 			(effects
 				(font
@@ -5517,7 +5751,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BAS16VYs"
+		(property "Value" "~"
 			(at 123.444 61.214 90)
 			(effects
 				(font
@@ -5544,7 +5778,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "SOT-363 Triple Diode, Small Signal, Fast Switching, 100V, 200mA, 4ns, Alternate KiCad Library"
+		(property "Description" "3 Independent 200mA 1.25V@150mA 100V SOT-363 Diodes - General Purpose ROHS"
 			(at 119.126 59.69 0)
 			(effects
 				(font
@@ -5572,6 +5806,24 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 123.19 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "BAS16VYs"
+			(at 123.19 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
 			(at 123.19 59.69 0)
 			(effects
 				(font
@@ -5645,7 +5897,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "BAS16VYs"
+		(property "Value" "~"
 			(at 97.028 54.61 90)
 			(effects
 				(font
@@ -5672,7 +5924,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "SOT-363 Triple Diode, Small Signal, Fast Switching, 100V, 200mA, 4ns, Alternate KiCad Library"
+		(property "Description" "3 Independent 200mA 1.25V@150mA 100V SOT-363 Diodes - General Purpose ROHS"
 			(at 94.996 54.61 0)
 			(effects
 				(font
@@ -5700,6 +5952,24 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 99.06 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "BAS16VYs"
+			(at 99.06 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
 			(at 99.06 54.61 0)
 			(effects
 				(font
@@ -5799,7 +6069,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGJ0103TCE"
+		(property "Description" ""
 			(at 191.77 68.58 0)
 			(effects
 				(font
@@ -5836,6 +6106,15 @@
 			)
 		)
 		(property "Note" "basic"
+			(at 191.77 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0402WGJ0103TCE"
 			(at 191.77 68.58 0)
 			(effects
 				(font
@@ -6044,6 +6323,24 @@
 				(hide yes)
 			)
 		)
+		(property "Product" "BZX84C3V3TS-7-F"
+			(at 135.89 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
+			(at 135.89 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "6"
 			(uuid "abdcf5de-82eb-43c2-8f9b-31ba97fe065e")
 		)
@@ -6165,6 +6462,24 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 189.23 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
+			(at 189.23 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "2N7002DW"
 			(at 189.23 57.15 0)
 			(effects
 				(font
@@ -6299,6 +6614,24 @@
 				(hide yes)
 			)
 		)
+		(property "Product" "BZX84C3V3TS-7-F"
+			(at 157.48 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
+			(at 157.48 52.07 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "6"
 			(uuid "6d27306a-0a02-466d-b3f1-e77fc787466f")
 		)
@@ -6391,7 +6724,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGJ0103TCE"
+		(property "Description" ""
 			(at 102.87 68.58 0)
 			(effects
 				(font
@@ -6428,6 +6761,15 @@
 			)
 		)
 		(property "Note" "basic"
+			(at 102.87 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0402WGJ0103TCE"
 			(at 102.87 68.58 0)
 			(effects
 				(font
@@ -6516,7 +6858,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGJ0103TCE"
+		(property "Description" ""
 			(at 175.26 68.58 0)
 			(effects
 				(font
@@ -6553,6 +6895,15 @@
 			)
 		)
 		(property "Note" "basic"
+			(at 175.26 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0402WGJ0103TCE"
 			(at 175.26 68.58 0)
 			(effects
 				(font
@@ -6640,7 +6991,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGF1000TCE"
+		(property "Description" "Resistor, small symbol"
 			(at 176.53 39.37 0)
 			(effects
 				(font
@@ -6677,6 +7028,15 @@
 			)
 		)
 		(property "Note" "basic"
+			(at 176.53 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0402WGF1000TCE"
 			(at 176.53 39.37 0)
 			(effects
 				(font
@@ -6850,7 +7210,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGF1000TCE"
+		(property "Description" "Resistor, small symbol"
 			(at 120.65 39.37 0)
 			(effects
 				(font
@@ -6887,6 +7247,15 @@
 			)
 		)
 		(property "Note" "basic"
+			(at 120.65 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0402WGF1000TCE"
 			(at 120.65 39.37 0)
 			(effects
 				(font
@@ -7011,6 +7380,24 @@
 				(hide yes)
 			)
 		)
+		(property "Note" "no"
+			(at 105.41 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "2N7002DW"
+			(at 105.41 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "6"
 			(uuid "497dde9a-52a7-4fae-a40c-ac727df9b7ac")
 		)
@@ -7102,7 +7489,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGJ0103TCE"
+		(property "Description" ""
 			(at 165.1 39.37 0)
 			(effects
 				(font
@@ -7139,6 +7526,15 @@
 			)
 		)
 		(property "Note" "basic"
+			(at 165.1 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0402WGJ0103TCE"
 			(at 165.1 39.37 0)
 			(effects
 				(font
@@ -7286,7 +7682,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "180"
+		(property "Value" "100"
 			(at 162.56 54.61 90)
 			(effects
 				(font
@@ -7303,7 +7699,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010000_UNI-ROYAL-Uniroyal-Elec-0402WGF1800TCE_C38941.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/25819-0402WGF1000TCE/C25076"
 			(at 162.56 54.61 0)
 			(effects
 				(font
@@ -7321,7 +7717,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C38941"
+		(property "JLCPCB" "C25076"
 			(at 162.56 54.61 0)
 			(effects
 				(font
@@ -7340,6 +7736,24 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 162.56 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
+			(at 162.56 54.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0402WGF1000TCE"
 			(at 162.56 54.61 0)
 			(effects
 				(font
@@ -7465,6 +7879,24 @@
 				(hide yes)
 			)
 		)
+		(property "Note" "no"
+			(at 172.72 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "2N7002DW"
+			(at 172.72 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "6"
 			(uuid "e5ad2aaa-c671-4b91-a1c1-bb17e381bbdc")
 		)
@@ -7530,7 +7962,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "BAS16VYs"
+		(property "Value" "~"
 			(at 179.578 61.214 90)
 			(effects
 				(font
@@ -7557,7 +7989,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "SOT-363 Triple Diode, Small Signal, Fast Switching, 100V, 200mA, 4ns, Alternate KiCad Library"
+		(property "Description" "3 Independent 200mA 1.25V@150mA 100V SOT-363 Diodes - General Purpose ROHS"
 			(at 175.006 59.69 0)
 			(effects
 				(font
@@ -7585,6 +8017,24 @@
 			)
 		)
 		(property "Sim.Pins" ""
+			(at 179.07 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "BAS16VYs"
+			(at 179.07 59.69 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
 			(at 179.07 59.69 0)
 			(effects
 				(font

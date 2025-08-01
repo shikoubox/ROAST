@@ -74,8 +74,7 @@
         "clearance|211531691|42551066|925508a9-f99e-4a69-9e01-cfd2d3596794|6f512c20-14ef-476f-9f98-a11cc942c905",
         "lib_footprint_mismatch|183822700|137820400|e7fd8568-99c7-4456-9b5c-0ff799ea0e97|00000000-0000-0000-0000-000000000000",
         "lib_footprint_mismatch|221186954|104476889|835c6ac8-f39d-432a-8e23-1403478f84c9|00000000-0000-0000-0000-000000000000",
-        "solder_mask_bridge|205847300|101299200|fb9043b9-a8be-4707-a708-5614fa01df95|c70fab7d-717b-430b-a92b-279a43498187",
-        "unconnected_items|264000000|52600000|de994465-ddad-480c-ae97-de5a23f7406d|d44990cf-055d-4fb9-bb2e-fd7bce8d138f"
+        "net_conflict|246380000|21209000|9e011e24-9422-44dd-b1db-c98bdd2a89a6|00000000-0000-0000-0000-000000000000"
       ],
       "meta": {
         "version": 2
@@ -231,8 +230,8 @@
           "drill": 0.0
         },
         {
-          "diameter": 0.4,
-          "drill": 0.25
+          "diameter": 0.45,
+          "drill": 0.3
         },
         {
           "diameter": 0.6,
@@ -559,6 +558,8 @@
       "MCU_SDA": "DP",
       "Net-(D13-K)": "HV",
       "Net-(D15-K)": "HV",
+      "Net-(D18-K)": "HV",
+      "Net-(D19-K)": "HV",
       "Net-(D8-K)": "HV",
       "Net-(D9-K)": "HV",
       "button_light": "HC"
@@ -680,10 +681,10 @@
           "show": false
         },
         {
-          "group_by": false,
+          "group_by": true,
           "label": "Product",
           "name": "Product",
-          "show": false
+          "show": true
         },
         {
           "group_by": false,

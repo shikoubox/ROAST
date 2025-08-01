@@ -2421,6 +2421,12 @@
 		(uuid "3bd356ab-4cf7-4432-92b0-f895eec04500")
 	)
 	(junction
+		(at 198.12 59.69)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "4bfbe8b3-20ca-465d-8a9c-56e74c47db9d")
+	)
+	(junction
 		(at 147.32 45.72)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2431,12 +2437,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "6fd88ed9-065b-48d7-aab9-74aaef5c53d5")
-	)
-	(junction
-		(at 198.12 59.69)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7e946a2e-a748-4c37-8910-e53add9b2c59")
 	)
 	(junction
 		(at 180.34 36.83)
@@ -2656,7 +2656,7 @@
 	)
 	(wire
 		(pts
-			(xy 198.12 59.69) (xy 200.66 59.69)
+			(xy 193.04 59.69) (xy 198.12 59.69)
 		)
 		(stroke
 			(width 0)
@@ -2896,6 +2896,16 @@
 	)
 	(wire
 		(pts
+			(xy 198.12 59.69) (xy 200.66 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b556a397-2100-48fc-95a4-f26365f355c4")
+	)
+	(wire
+		(pts
 			(xy 102.87 72.39) (xy 102.87 73.66)
 		)
 		(stroke
@@ -2996,16 +3006,6 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 59.69) (xy 198.12 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e9cc4c24-7b96-4c32-9993-83cf6efd5274")
-	)
-	(wire
-		(pts
 			(xy 110.49 45.72) (xy 113.03 45.72)
 		)
 		(stroke
@@ -3083,6 +3083,18 @@
 			(type default)
 		)
 		(uuid "fcbdbdba-313a-4748-bacf-60abd532a36b")
+	)
+	(rectangle
+		(start 177.8 87.63)
+		(end 236.22 99.06)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(fill
+			(type none)
+		)
+		(uuid 9c0810c4-f63e-49b1-b4e5-d49a7761563f)
 	)
 	(rectangle
 		(start 87.63 18.542)
@@ -7175,6 +7187,17 @@
 			"AAAAAElFTkSuQmCC"
 		)
 	)
+	(text "caps were replaced\nwith cheaper 20pF\nversions"
+		(exclude_from_sim no)
+		(at 213.36 92.71 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "96ecedcc-f9c2-4f09-913c-1506efe3fbc1")
+	)
 	(text "Inspiration from:\nhttps://learn.adafruit.com/adafruit-can-pal\nhttps://learn.adafruit.com/adafruit-can-bus-featherwing\nhttps://learn.adafruit.com/adafruit-feather-m4-express-atsamd51"
 		(exclude_from_sim no)
 		(at 177.292 171.45 0)
@@ -7582,7 +7605,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "KT-0603R"
+		(property "Value" "~"
 			(at 156.718 40.894 90)
 			(effects
 				(font
@@ -7609,7 +7632,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "3mm diameter small LED"
+		(property "Description" "-40℃~+85℃ Red 0603 LED Indication - Discrete ROHS"
 			(at 154.94 41.91 0)
 			(effects
 				(font
@@ -7655,6 +7678,24 @@
 			)
 		)
 		(property "Rating" ""
+			(at 154.94 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "KT-0603R"
+			(at 154.94 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
 			(at 154.94 41.91 0)
 			(effects
 				(font
@@ -7696,7 +7737,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "KT-0603R"
+		(property "Value" "~"
 			(at 145.542 40.894 90)
 			(effects
 				(font
@@ -7723,7 +7764,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "3mm diameter small LED"
+		(property "Description" "-40℃~+85℃ Red 0603 LED Indication - Discrete ROHS"
 			(at 147.32 41.91 0)
 			(effects
 				(font
@@ -7777,6 +7818,24 @@
 				(hide yes)
 			)
 		)
+		(property "Product" "KT-0603R"
+			(at 147.32 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
+			(at 147.32 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "f78ec207-1174-46d1-ae08-01f2d3bf3ec3")
 		)
@@ -7787,6 +7846,129 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/a694142a-996e-4441-9d95-ee5898e2f3f0"
 					(reference "D16")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 194.31 92.71 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
+		(dnp yes)
+		(uuid "2999a980-5969-4ed3-b011-acb7e0a56dc7")
+		(property "Reference" "C14"
+			(at 197.104 91.694 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "14pF"
+			(at 197.104 94.234 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+			(at 194.31 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_FH--Guangdong-Fenghua-Advanced-Tech-0805CG150J500NT_C63339.pdf"
+			(at 194.31 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 194.31 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C63339"
+			(at 194.31 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 194.31 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 194.31 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" ""
+			(at 194.31 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" ""
+			(at 194.31 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0805CG150J500NT"
+			(at 194.31 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2282f91b-d833-4753-b7e4-0a9d029bf52f")
+		)
+		(pin "2"
+			(uuid "f896e058-0deb-4613-a1fc-fd423106da7a")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/a694142a-996e-4441-9d95-ee5898e2f3f0"
+					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -7989,33 +8171,34 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 208.28 53.34 0)
+		(at 185.42 92.71 180)
 		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "317e043e-a448-4d15-88eb-d57be5f31c47")
-		(property "Reference" "C12"
-			(at 211.074 52.324 0)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
+		(dnp yes)
+		(fields_autoplaced yes)
+		(uuid "30820519-7c39-46c2-8e29-27b9b67d5962")
+		(property "Reference" "C15"
+			(at 187.96 91.4335 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Value" "14pF"
-			(at 211.074 54.864 0)
+			(at 187.96 93.9735 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify left)
+				(justify right)
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
-			(at 208.28 53.34 0)
+			(at 185.42 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8024,7 +8207,7 @@
 			)
 		)
 		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_FH--Guangdong-Fenghua-Advanced-Tech-0805CG150J500NT_C63339.pdf"
-			(at 208.28 53.34 0)
+			(at 185.42 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8033,7 +8216,7 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 208.28 53.34 0)
+			(at 185.42 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8042,7 +8225,7 @@
 			)
 		)
 		(property "JLCPCB" "C63339"
-			(at 208.28 53.34 0)
+			(at 185.42 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8051,7 +8234,7 @@
 			)
 		)
 		(property "Sim.Device" ""
-			(at 208.28 53.34 0)
+			(at 185.42 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8060,7 +8243,7 @@
 			)
 		)
 		(property "Sim.Pins" ""
-			(at 208.28 53.34 0)
+			(at 185.42 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8069,7 +8252,7 @@
 			)
 		)
 		(property "Indicator" ""
-			(at 208.28 53.34 0)
+			(at 185.42 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8078,7 +8261,16 @@
 			)
 		)
 		(property "Rating" ""
-			(at 208.28 53.34 0)
+			(at 185.42 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0805CG150J500NT"
+			(at 185.42 92.71 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8087,15 +8279,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "dbedaee7-5455-4f9e-a2be-9b63adb46cfc")
+			(uuid "b027e983-b7b0-44df-99e9-ffcc4963b922")
 		)
 		(pin "2"
-			(uuid "2ac3188c-6a93-4927-b978-14366826d0be")
+			(uuid "8c0ff90b-a396-473f-bf5b-a4b73aedbd38")
 		)
 		(instances
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/a694142a-996e-4441-9d95-ee5898e2f3f0"
-					(reference "C12")
+					(reference "C15")
 					(unit 1)
 				)
 			)
@@ -8162,6 +8354,129 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/a694142a-996e-4441-9d95-ee5898e2f3f0"
 					(reference "#PWR012")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 208.28 53.34 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "33a48da9-d39f-41ca-b179-f7dc1ba23c0e")
+		(property "Reference" "C18"
+			(at 210.82 52.0635 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "20pF"
+			(at 210.82 54.6035 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+			(at 208.28 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/2150-CL21C200JBANNNC/C1798"
+			(at 208.28 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 208.28 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C1798"
+			(at 208.28 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 208.28 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 208.28 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" ""
+			(at 208.28 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" ""
+			(at 208.28 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
+			(at 208.28 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "a262c3d2-9eac-4a23-98e8-a28df9af485d")
+		)
+		(pin "2"
+			(uuid "e2bd13e9-d1de-4555-80eb-cee140b99f4d")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/a694142a-996e-4441-9d95-ee5898e2f3f0"
+					(reference "C18")
 					(unit 1)
 				)
 			)
@@ -8269,7 +8584,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_TORCH-CT41G-0805-2X1-50V-0-1-F-K-N_C126469.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB104/C49678"
 			(at 185.42 39.37 0)
 			(effects
 				(font
@@ -8278,7 +8593,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" ""
 			(at 185.42 39.37 0)
 			(effects
 				(font
@@ -8287,7 +8602,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C126469"
+		(property "JLCPCB" "C49678"
 			(at 185.42 39.37 0)
 			(effects
 				(font
@@ -8324,6 +8639,24 @@
 			)
 		)
 		(property "Rating" ""
+			(at 185.42 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
+			(at 185.42 39.37 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "YAGEO-CC0805KRX7R9BB104"
 			(at 185.42 39.37 0)
 			(effects
 				(font
@@ -8393,7 +8726,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGF1001TCE"
+		(property "Description" ""
 			(at 154.94 35.56 0)
 			(effects
 				(font
@@ -8456,6 +8789,15 @@
 				(hide yes)
 			)
 		)
+		(property "Product" "0402WGF1001TCE"
+			(at 154.94 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4c39630d-4bd5-43af-89a1-b69bd546d17e")
 		)
@@ -8488,7 +8830,7 @@
 				)
 			)
 		)
-		(property "Value" "PESD1CAN"
+		(property "Value" "~"
 			(at 234.95 49.276 0)
 			(effects
 				(font
@@ -8496,7 +8838,7 @@
 				)
 			)
 		)
-		(property "Footprint" "PCM_Package_TO_SOT_SMD_AKL:SOT-23"
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 226.06 62.23 0)
 			(effects
 				(font
@@ -8568,6 +8910,24 @@
 				(hide yes)
 			)
 		)
+		(property "Product" "PESD1CAN"
+			(at 226.06 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
+			(at 226.06 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "650735b6-9b56-44f6-944f-29fae96c2de2")
 		)
@@ -8631,7 +8991,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "X322516MLB4SI"
+		(property "Description" ""
 			(at 102.87 69.85 0)
 			(effects
 				(font
@@ -8703,6 +9063,15 @@
 				(hide yes)
 			)
 		)
+		(property "Product" "X322516MLB4SI"
+			(at 102.87 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "3d2e0b97-118c-44b6-9ce5-30436597f76d")
 		)
@@ -8742,7 +9111,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "15pF"
+		(property "Value" "20pF"
 			(at 96.774 78.486 0)
 			(effects
 				(font
@@ -8760,7 +9129,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_FH--Guangdong-Fenghua-Advanced-Tech-0805CG150J500NT_C63339.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/2150-CL21C200JBANNNC/C1798"
 			(at 102.87 76.2 0)
 			(effects
 				(font
@@ -8769,7 +9138,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" ""
 			(at 102.87 76.2 0)
 			(effects
 				(font
@@ -8778,7 +9147,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C63339"
+		(property "JLCPCB" "C1798"
 			(at 102.87 76.2 0)
 			(effects
 				(font
@@ -8823,6 +9192,24 @@
 				(hide yes)
 			)
 		)
+		(property "Note" "basic"
+			(at 102.87 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "CL21C200JBANNNC"
+			(at 102.87 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "542bd163-a29f-4ee5-bfb7-a9385c1f1da1")
 		)
@@ -8833,6 +9220,129 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/a694142a-996e-4441-9d95-ee5898e2f3f0"
 					(reference "C2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 198.12 62.23 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5e472588-5291-4299-9e21-65bca06d59c9")
+		(property "Reference" "C20"
+			(at 200.66 60.9535 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "20pF"
+			(at 200.66 63.4935 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+			(at 198.12 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/2150-CL21C200JBANNNC/C1798"
+			(at 198.12 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 198.12 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C1798"
+			(at 198.12 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 198.12 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 198.12 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" ""
+			(at 198.12 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" ""
+			(at 198.12 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
+			(at 198.12 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e46dbcd4-76d4-461b-99dd-fd0283b783fe")
+		)
+		(pin "2"
+			(uuid "64a61c1c-9bfd-4e80-a63f-703b81aca083")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/a694142a-996e-4441-9d95-ee5898e2f3f0"
+					(reference "C20")
 					(unit 1)
 				)
 			)
@@ -8930,6 +9440,15 @@
 			)
 		)
 		(property "Rating" ""
+			(at 128.27 60.96 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "no"
 			(at 128.27 60.96 0)
 			(effects
 				(font
@@ -9047,7 +9566,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGF1001TCE"
+		(property "Description" ""
 			(at 147.32 35.56 0)
 			(effects
 				(font
@@ -9110,6 +9629,15 @@
 				(hide yes)
 			)
 		)
+		(property "Product" "0402WGF1001TCE"
+			(at 147.32 35.56 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "4f5262ae-ec11-4267-b121-159e77ee5403")
 		)
@@ -9120,6 +9648,129 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/a694142a-996e-4441-9d95-ee5898e2f3f0"
 					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 198.12 40.64 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "73193014-9ec7-44c8-9cb8-dee27b9788cb")
+		(property "Reference" "C19"
+			(at 200.66 39.3635 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "20pF"
+			(at 200.66 41.9035 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+			(at 198.12 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://jlcpcb.com/partdetail/2150-CL21C200JBANNNC/C1798"
+			(at 198.12 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 198.12 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C1798"
+			(at 198.12 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 198.12 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 198.12 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" ""
+			(at 198.12 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" ""
+			(at 198.12 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
+			(at 198.12 40.64 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "10c6b0df-9242-4125-8522-f394b9a88729")
+		)
+		(pin "2"
+			(uuid "333c4e97-eb4c-4259-9b60-7b2df59e8a30")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/a694142a-996e-4441-9d95-ee5898e2f3f0"
+					(reference "C19")
 					(unit 1)
 				)
 			)
@@ -9292,7 +9943,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGJ0103TCE"
+		(property "Description" ""
 			(at 167.64 62.23 0)
 			(effects
 				(font
@@ -9355,6 +10006,15 @@
 				(hide yes)
 			)
 		)
+		(property "Product" "0402WGJ0103TCE"
+			(at 167.64 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "b1c2717f-2d21-4509-ab9b-5aea79d190ba")
 		)
@@ -9365,120 +10025,6 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/a694142a-996e-4441-9d95-ee5898e2f3f0"
 					(reference "R2")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Small")
-		(at 198.12 62.23 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "76dbf294-ec7c-4eac-a086-ed046ed60541")
-		(property "Reference" "C14"
-			(at 200.914 61.214 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "14pF"
-			(at 200.914 63.754 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
-			(at 198.12 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_FH--Guangdong-Fenghua-Advanced-Tech-0805CG150J500NT_C63339.pdf"
-			(at 198.12 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 198.12 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C63339"
-			(at 198.12 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 198.12 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 198.12 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Indicator" ""
-			(at 198.12 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Rating" ""
-			(at 198.12 62.23 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "5d7ff28b-dcda-49e4-ac1e-01c6ceea788d")
-		)
-		(pin "2"
-			(uuid "a15ea3bb-20e9-4347-84b0-07903756d18d")
-		)
-		(instances
-			(project "steering_pcb"
-				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/a694142a-996e-4441-9d95-ee5898e2f3f0"
-					(reference "C14")
 					(unit 1)
 				)
 			)
@@ -9502,7 +10048,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "15pF"
+		(property "Value" "20pF"
 			(at 105.41 63.4935 0)
 			(effects
 				(font
@@ -9520,7 +10066,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_FH--Guangdong-Fenghua-Advanced-Tech-0805CG150J500NT_C63339.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/2150-CL21C200JBANNNC/C1798"
 			(at 102.87 62.23 0)
 			(effects
 				(font
@@ -9529,7 +10075,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" ""
 			(at 102.87 62.23 0)
 			(effects
 				(font
@@ -9538,7 +10084,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C63339"
+		(property "JLCPCB" "C1798"
 			(at 102.87 62.23 0)
 			(effects
 				(font
@@ -9575,6 +10121,24 @@
 			)
 		)
 		(property "Rating" ""
+			(at 102.87 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
+			(at 102.87 62.23 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "CL21C200JBANNNC"
 			(at 102.87 62.23 0)
 			(effects
 				(font
@@ -9995,6 +10559,129 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:C_Small")
+		(at 204.47 92.71 0)
+		(unit 1)
+		(exclude_from_sim yes)
+		(in_bom no)
+		(on_board no)
+		(dnp yes)
+		(uuid "b2876812-9b8c-497b-a812-9d60eabcc9df")
+		(property "Reference" "C12"
+			(at 207.264 91.694 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "14pF"
+			(at 207.264 94.234 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
+			(at 204.47 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_FH--Guangdong-Fenghua-Advanced-Tech-0805CG150J500NT_C63339.pdf"
+			(at 204.47 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 204.47 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "JLCPCB" "C63339"
+			(at 204.47 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" ""
+			(at 204.47 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" ""
+			(at 204.47 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Indicator" ""
+			(at 204.47 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" ""
+			(at 204.47 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0805CG150J500NT"
+			(at 204.47 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9439fffd-1ad1-4deb-b7f9-533d40cbc940")
+		)
+		(pin "2"
+			(uuid "a99faa56-0f45-473a-bea6-91b83037ff16")
+		)
+		(instances
+			(project "steering_pcb"
+				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/a694142a-996e-4441-9d95-ee5898e2f3f0"
+					(reference "C12")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:R_Small")
 		(at 200.66 55.88 0)
 		(mirror y)
@@ -10040,7 +10727,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "0402WGF1200TCE"
+		(property "Description" ""
 			(at 200.66 55.88 0)
 			(effects
 				(font
@@ -10095,6 +10782,15 @@
 			)
 		)
 		(property "Note" "basic"
+			(at 200.66 55.88 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "0402WGF1200TCE"
 			(at 200.66 55.88 0)
 			(effects
 				(font
@@ -10335,7 +11031,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_TORCH-CT41G-0805-2X1-50V-0-1-F-K-N_C126469.pdf"
+		(property "Datasheet" "https://jlcpcb.com/partdetail/YAGEO-CC0805KRX7R9BB104/C49678"
 			(at 123.19 36.83 0)
 			(effects
 				(font
@@ -10344,7 +11040,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Unpolarized capacitor, small symbol"
+		(property "Description" ""
 			(at 123.19 36.83 0)
 			(effects
 				(font
@@ -10353,7 +11049,7 @@
 				(hide yes)
 			)
 		)
-		(property "JLCPCB" "C126469"
+		(property "JLCPCB" "C49678"
 			(at 123.19 36.83 0)
 			(effects
 				(font
@@ -10390,6 +11086,24 @@
 			)
 		)
 		(property "Rating" ""
+			(at 123.19 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Note" "basic"
+			(at 123.19 36.83 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Product" "YAGEO-CC0805KRX7R9BB104"
 			(at 123.19 36.83 0)
 			(effects
 				(font
@@ -10513,6 +11227,15 @@
 				(hide yes)
 			)
 		)
+		(property "Note" "no"
+			(at 180.34 53.34 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "5f5cdee5-b0d1-4e07-be59-bee8f7e9d4f6")
 		)
@@ -10606,121 +11329,6 @@
 			(project "steering_pcb"
 				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/a694142a-996e-4441-9d95-ee5898e2f3f0"
 					(reference "#PWR059")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:C_Small")
-		(at 198.12 40.64 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "eced1be0-9597-4a6e-9b19-ee676cfd8607")
-		(property "Reference" "C15"
-			(at 200.66 39.3635 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Value" "14pF"
-			(at 200.66 41.9035 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric_Pad1.18x1.45mm_HandSolder"
-			(at 198.12 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_FH--Guangdong-Fenghua-Advanced-Tech-0805CG150J500NT_C63339.pdf"
-			(at 198.12 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Unpolarized capacitor, small symbol"
-			(at 198.12 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "JLCPCB" "C63339"
-			(at 198.12 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Device" ""
-			(at 198.12 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Sim.Pins" ""
-			(at 198.12 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Indicator" ""
-			(at 198.12 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Rating" ""
-			(at 198.12 40.64 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c58775af-407e-4503-8cab-d3f81ae0731a")
-		)
-		(pin "2"
-			(uuid "dc8c9560-c7c0-4334-b8a7-54690433fc8e")
-		)
-		(instances
-			(project "steering_pcb"
-				(path "/27c2abcd-4c9d-416a-9e0c-4ab4decfd0fd/a694142a-996e-4441-9d95-ee5898e2f3f0"
-					(reference "C15")
 					(unit 1)
 				)
 			)
